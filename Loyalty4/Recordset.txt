@@ -1,0 +1,4360 @@
+DbVersion
+
+LineId = ?
+
+SELECT 
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT COUNT(*) FROM Accounts
+
+UserID >= ? AND UserID <= ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+ExternalAccounts
+
+Column3 = ?
+
+SELECT 
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT 
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250731 ) OR ( ExpireDate = 00 ) )
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT COUNT(*) FROM Accounts
+
+UserID >= ? AND UserID <= ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+ExternalAccounts
+
+Column3 = ?
+
+SELECT 
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT 
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250728 ) OR ( ExpireDate = 99999999 ) )
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+UserID = 1 AND Edition != 1 AND StampOfferID = 1
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT COUNT(*) FROM Accounts
+
+UserID >= ? AND UserID <= ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+ExternalAccounts
+
+Column3 = ?
+
+SELECT 
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT 
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250701 AND ExpireDate <= 20250919 ) OR ( ExpireDate = 99999999 ) )
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+DbVersion
+
+LineId = ?
+
+SELECT 
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT COUNT(*) FROM Accounts
+
+UserID >= ? AND UserID <= ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+ExternalAccounts
+
+Column3 = ?
+
+SELECT 
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT 
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250831 ) OR ( ExpireDate = 99999999 ) )
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+DbVersion
+
+LineId = ?
+
+SELECT 
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT LineId,Version  FROM DbVersion WHERE LineId = ?
+
+LineId = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT COUNT(*) FROM Accounts
+
+UserID >= ? AND UserID <= ?
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+ExternalAccounts
+
+Column3 = ?
+
+SELECT 
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+SELECT Column1,Column2,Column3  FROM ExternalAccounts WHERE Column3 = ?
+
+Column3 = ?
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups
+
+
+
+SELECT 
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+SELECT SchemeName,SchemeNo  FROM LoyaltySchemes
+
+
+
+AccountGroups
+
+GroupNo = ?
+
+SELECT 
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT GroupName,GroupNo,SchemeNo,RefreshType,RefreshFlags,RefreshAppend,Purse1Allow,Purse2Allow,MaxSpendType,RewardType,RewardPoints,RedeemType,RedeemTrip,RefreshValue,MaxSpendPeriod1,MaxSpendPeriod2,MaxSpendPeriod3,MaxSpendPeriod4,MaxSpendPeriod5,MaxSpendPeriod6,MaxOverdraftPeriod1,MaxOverdraftPeriod2,MaxOverdraftPeriod3,MaxOverdraftPeriod4,MaxOverdraftPeriod5,MaxOverdraftPeriod6,RewardTrip,RewardBonus,RewardLimit,RewardTrigger,RedeemValue,StampOfferFlag,PointsDisable,NoDeptBonus,RewardFlag,RewardDisable,RedeemFlag,RedeemDisable  FROM AccountGroups WHERE GroupNo = ?
+
+GroupNo = ?
+
+SELECT 
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo
+
+
+
+OfferStamps
+
+UserID = ?
+
+SELECT 
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = ?
+
+UserID = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT 
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+UserID = 1 AND StampOfferID = 1 AND LEN(ExpireDate) = 8 AND (( ExpireDate >= 20250728 AND ExpireDate <= 20250905 ) OR ( ExpireDate = 99999999 ) )
+
+Accounts
+UserID
+UserID = ?
+
+SELECT 
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+SELECT Fullname,Forename,Surname,DOB,ExpiryDate,Gender,Info1,Info2,Info3,Info4,Address1,Address2,Address3,Address4,Address5,Phone1,Phone2,ExternalRef,QRInfo,Purse1LastSpendDate,Purse1LastSpendTime,Purse2LastSpendDate,Purse2LastSpendTime,Purse2RefreshedDate,Purse2RefreshedTime,CashLastSpendDate,CashLastSpendTime,HotlistDate,HotlistTime,AlertCodes,GroupNo,SchemeNo,Points,PointsToDate,HotlistCode,UserID,PreviousUserID,NextUserID,Purse1Balance,Purse1LastSpend,Purse1SpendToDate,Purse2Balance,Purse2LastSpend,Purse2SpendToDate,CashLastSpend,CashSpendToDate,MaxSpend,MaxOverdraft,Inactive,RowVersion  FROM Accounts WHERE UserID = ? ORDER BY UserID
+UserID
+UserID = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+StampOfferInfo
+
+StampOfferID = ?
+
+SELECT 
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+SELECT Description,StampOfferID,Edition,Threshold,Expiry,Enabled  FROM StampOfferInfo WHERE StampOfferID = ?
+
+StampOfferID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+OfferStamps
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+AwardDate = ? AND ExpireDate = ? AND Edition = ? AND StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE 1 = 0
+
+1 = 0
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT TOP 1 1 FROM CCNo
+
+Type = ?
+
+CCNo
+
+Type = ?
+
+SELECT 
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+SELECT Type,Number  FROM CCNo WHERE Type = ?
+
+Type = ?
+
+OfferStamps
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT AwardDate,ExpireDate,StampOfferID,Edition,StampCount,UserID  FROM OfferStamps WHERE StampOfferID = ? AND UserID = ?
+
+StampOfferID = ? AND UserID = ?
+
+SELECT 
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+
+SELECT Fullname,ExpiryDate,Info1,Address1,Info2,Info3,Info4,Address5,AlertCodes,GroupNo,HotlistCode,Points,PointsToDate,UserID,Purse1Balance,Purse1SpendToDate,Purse2Balance,Purse2SpendToDate,CashSpendToDate,Inactive  FROM Accounts ORDER BY UserID
+UserID
+
+

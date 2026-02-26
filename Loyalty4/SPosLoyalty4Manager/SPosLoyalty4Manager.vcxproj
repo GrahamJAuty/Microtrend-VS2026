@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{8E2B1AFC-866D-4F1C-846B-78D33B9C217E}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>SPosLoyalty4Manager</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>
+    </ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;LOYMAN;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>ssmapi32d.lib;subsd.lib;datetimesubsd.lib;winsubsd.lib;repsubsd.lib;dbased.lib;expd.lib;sysset3d.lib;sortd.lib;SmartUIDd.lib;winscard.lib ;commsd.lib;chilkatdbg.lib;ws2_32.lib;crypt32.lib;dnsapi.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+      <AdditionalManifestFiles>$(ProjectDir)sposloyalty4manager.exe.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LOYMAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>ssmapi32.lib;subs.lib;datetimesubs.lib;winsubs.lib;repsubs.lib;dbase.lib;exp.lib;sysset3.lib;sort.lib;SmartUID.lib;winscard.lib ;comms.lib;chilkatrel.lib;ws2_32.lib;crypt32.lib;dnsapi.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+      <AdditionalManifestFiles>$(ProjectDir)sposloyalty4manager.exe.manifest</AdditionalManifestFiles>
+    </Manifest>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SPosLoyalty4Shared\AccountFieldValidator.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\AccountIdentifier.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\AESHelpers.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\AlertText_base.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\AuditRecord_base.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\AuditReportTexts.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\Consolidation.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ConsolidationMap.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\DateRangeHelpers.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\Defines.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\DiagnosticTimer.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\EnhancedIniFile.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ExpiryDateRange.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\FilenameHandler.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\FileRecycler.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\FileRemover.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\GlobalFunctions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\GlobalState.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\GroupHeaderHelpers.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ImageHandler.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyAuditAppend.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyAuditFile.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyCommandLineInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyHeaderHelpers.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyLockManager.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltySubs.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\MessageLogger.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\MyMessageBoxInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\MyMessageBoxStatic.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\PresentationOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\RedeemPoints.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\RepmanDefines.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ReportConsolidationArray.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ReportConsolidationMap.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ServerData.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ServiceOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLBuilderBind.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLConnectionOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLConnectionPool.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLDb.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLDefines.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLFieldValidatorBase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLHelpers.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLNamespaces.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLRecordSetConnectionPool.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLRecordSetMetadata.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLResultInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLStampOfferBuffer.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLStampOfferCache.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLFieldValidatorAccount.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRepositoryAccount.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRecordSetAccountFull.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRecordSetAccountUserID.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRowAccountFind.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRowAccountFull.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRowAccountList.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLFieldValidatorAuditPeriod.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRepositoryAuditPeriod.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRecordSetAuditPeriod.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRowAuditPeriod.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRowSetAuditPeriod.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLFieldValidatorCCNo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLRepositoryCCNo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLRecordSetCCNo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLRowCCNo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DbVersion\SQLFieldValidatorDbVersion.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DbVersion\SQLRecordSetDbVersion.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DbVersion\SQLRowDbVersion.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLFieldValidatorDeptInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLRepositoryDeptInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLRecordSetDeptInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLRowDeptInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLFieldValidatorEcrmanDatabase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLRepositoryEcrmanDatabase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLRecordSetEcrmanDatabase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLRowEcrmanDatabase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLFieldValidatorExternalAccount.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLRepositoryExternalAccount.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLRecordSetExternalAccount.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLRowExternalAccount.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLFieldValidatorGroupTopupBonus.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLRepositoryGroupTopupBonus.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLRecordSetGroupTopupBonus.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLRowGroupTopupBonus.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLFieldValidatorGroup.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRepositoryGroup.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRecordSetGroup.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRecordSetGroupLegacy.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRowGroup.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRowGroupLegacy.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLFieldValidatorOfferStamp.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLRepositoryOfferStamp.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLRecordSetOfferStamp.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLRowOfferStamp.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLFieldValidatorPluInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLRepositoryPluInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLRecordSetPluInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLRowPluInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLFieldValidatorScheme.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLRepositoryScheme.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLRecordSetScheme.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLRowScheme.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLFieldValidatorStaffCard.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLRepositoryStaffCard.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLRecordSetStaffCard.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLRowStaffCard.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLFieldValidatorStaffGiftException.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLRepositoryStaffGiftException.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLRecordSetStaffGiftException.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLRowStaffGiftException.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLFieldValidatorStampOfferInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLRepositoryStampOfferInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLRecordSetStampOfferInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLRowStampOfferInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTranBase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLTranImportDatabase.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SQLWhereBuilder.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SystemData.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\TLogRecord_base.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\TrackedFile.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\UserTexts.h" />
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="AccumulatorPropertyPage1.h" />
+    <ClInclude Include="AccumulatorPropertyPage2.h" />
+    <ClInclude Include="AccumulatorPropertySheet.h" />
+    <ClInclude Include="AddCashDlg.h" />
+    <ClInclude Include="AddLoyaltyDlg.h" />
+    <ClInclude Include="AddPointsDlg.h" />
+    <ClInclude Include="AlertText.h" />
+    <ClInclude Include="AtcArchiveDlg.h" />
+    <ClInclude Include="AtcDateList.h" />
+    <ClInclude Include="AuditFix.h" />
+    <ClInclude Include="AuditRecord.h" />
+    <ClInclude Include="AuditReport.h" />
+    <ClInclude Include="AuditReportActionDlg.h" />
+    <ClInclude Include="AuditReportDlg.h" />
+    <ClInclude Include="AuditReportWrapper.h" />
+    <ClInclude Include="AutoBackupOptions.h" />
+    <ClInclude Include="AutoBackupProcessor.h" />
+    <ClInclude Include="BackupErrors.h" />
+    <ClInclude Include="BackupFilter.h" />
+    <ClInclude Include="BackupInfoDlg.h" />
+    <ClInclude Include="BackupProgressDlg.h" />
+    <ClInclude Include="BackupPromptDlg.h" />
+    <ClInclude Include="BackupResultDlg.h" />
+    <ClInclude Include="BackupTypeDlg.h" />
+    <ClInclude Include="BatchAccountDetailMemory.h" />
+    <ClInclude Include="BatchAccountBalanceMemory.h" />
+    <ClInclude Include="BatchPropertyPage1.h" />
+    <ClInclude Include="BatchPropertyPage2.h" />
+    <ClInclude Include="BatchPropertyPage3.h" />
+    <ClInclude Include="BatchPropertyPage5.h" />
+    <ClInclude Include="BatchPropertySheet.h" />
+    <ClInclude Include="BatchUpdate.h" />
+    <ClInclude Include="BatchUpdateHelpers.h" />
+    <ClInclude Include="BirthdaysReportDlg.h" />
+    <ClInclude Include="BitmapInfo.h" />
+    <ClInclude Include="CalculateBonus.h" />
+    <ClInclude Include="CalculateSpendBonus.h" />
+    <ClInclude Include="CardArchiveDlg.h" />
+    <ClInclude Include="CardPicker.h" />
+    <ClInclude Include="CardPickerDlg.h" />
+    <ClInclude Include="CashlessAuditDlg.h" />
+    <ClInclude Include="CashlessTotal.h" />
+    <ClInclude Include="ColourButton.h" />
+    <ClInclude Include="ColourEditDlg.h" />
+    <ClInclude Include="ColumnHandler.h" />
+    <ClInclude Include="ColumnListDlg.h" />
+    <ClInclude Include="ColumnManager.h" />
+    <ClInclude Include="ColumnNames.h" />
+    <ClInclude Include="CommentDlg.h" />
+    <ClInclude Include="CommentHandler.h" />
+    <ClInclude Include="DatabaseExport.h" />
+    <ClInclude Include="DatabaseImportForManager.h" />
+    <ClInclude Include="DatabaseReportsDlg.h" />
+    <ClInclude Include="DateRangeDlg.h" />
+    <ClInclude Include="DateSelectorRange.h" />
+    <ClInclude Include="DateSelectorSingle.h" />
+    <ClInclude Include="DbExportEditor.h" />
+    <ClInclude Include="DbExportHandler.h" />
+    <ClInclude Include="DbExportHelpers.h" />
+    <ClInclude Include="DbReportHandler.h" />
+    <ClInclude Include="DefEditDlg.h" />
+    <ClInclude Include="DefEditEmailDlg.h" />
+    <ClInclude Include="DefTextEmailAddress.h" />
+    <ClInclude Include="DemoWarning.h" />
+    <ClInclude Include="EditAccountBuffer.h" />
+    <ClInclude Include="EditAccountPropertyPage1.h" />
+    <ClInclude Include="EditAccountPropertyPage2.h" />
+    <ClInclude Include="EditAccountPropertyPage4.h" />
+    <ClInclude Include="EditAccountPropertyPage5.h" />
+    <ClInclude Include="EditLoyaltyRecord.h" />
+    <ClInclude Include="EditAccountPropertySheet.h" />
+    <ClInclude Include="EditStaffCardDlg.h" />
+    <ClInclude Include="EditStampsDlg.h" />
+    <ClInclude Include="EmailOptions.h" />
+    <ClInclude Include="ExportPropertyPage1.h" />
+    <ClInclude Include="ExportPropertyPage2.h" />
+    <ClInclude Include="ExportPropertyPage3.h" />
+    <ClInclude Include="ExportPropertyPage4.h" />
+    <ClInclude Include="ExportPropertySheet.h" />
+    <ClInclude Include="FileRemoverBackup.h" />
+    <ClInclude Include="FindDlg.h" />
+    <ClInclude Include="FindSingleDlg.h" />
+    <ClInclude Include="FontTable.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="GroupComboHelpers.h" />
+    <ClInclude Include="GroupImportForManager.h" />
+    <ClInclude Include="GroupNoDlg.h" />
+    <ClInclude Include="GroupPropertyPage1.h" />
+    <ClInclude Include="GroupPropertyPage2.h" />
+    <ClInclude Include="GroupPropertyPage4.h" />
+    <ClInclude Include="GroupPropertySheet.h" />
+    <ClInclude Include="HeaderWarnDlg.h" />
+    <ClInclude Include="HotlistDlg.h" />
+    <ClInclude Include="HotlistTraceDlg.h" />
+    <ClInclude Include="ImportDataHandler.h" />
+    <ClInclude Include="ImportRecordsDlg.h" />
+    <ClInclude Include="ImportStatsDlg.h" />
+    <ClInclude Include="ListDataDatabaseTestDlg.h" />
+    <ClInclude Include="ListDataDeleteDlg.h" />
+    <ClInclude Include="ListDataDlg.h" />
+    <ClInclude Include="ListDataEmailAddressDlg.h" />
+    <ClInclude Include="ListDataGroupDlg.h" />
+    <ClInclude Include="ListDataHeaderChangeDlg.h" />
+    <ClInclude Include="ListDataPrinterSelectDlg.h" />
+    <ClInclude Include="ListDataRestoreDlg.h" />
+    <ClInclude Include="ListDataSchemeNamesDlg.h" />
+    <ClInclude Include="ListDataStaffCardDlg.h" />
+    <ClInclude Include="ListDataStaffGiftExceptionDlg.h" />
+    <ClInclude Include="ListDataStampOfferInfoDlg.h" />
+    <ClInclude Include="ListDataStampOfferPluDlg.h" />
+    <ClInclude Include="LockManager.h" />
+    <ClInclude Include="LoyaltyManager.h" />
+    <ClInclude Include="LoyaltyManagerDlg.h" />
+    <ClInclude Include="MyMessageBoxDlg.h" />
+    <ClInclude Include="MyMifare.h" />
+    <ClInclude Include="PasswordData.h" />
+    <ClInclude Include="PasswordDlg.h" />
+    <ClInclude Include="PasswordListDlg.h" />
+    <ClInclude Include="PasswordLogDlg.h" />
+    <ClInclude Include="PasswordLogger.h" />
+    <ClInclude Include="PasswordLogReport.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="PCOptions.h" />
+    <ClInclude Include="PersistentSelectionEdit.h" />
+    <ClInclude Include="PhotoIDDlg.h" />
+    <ClInclude Include="PhotoIDEditDlg.h" />
+    <ClInclude Include="PhotoIDFilenameStack.h" />
+    <ClInclude Include="PhotoIDListData.h" />
+    <ClInclude Include="PhotoIDListDlg.h" />
+    <ClInclude Include="ProjectSQLRecordSetAccountFull.h" />
+    <ClInclude Include="ProjectSQLRecordSetAuditPeriod.h" />
+    <ClInclude Include="ProjectSQLRecordSetCCNo.h" />
+    <ClInclude Include="ProjectSQLRecordSetDbVersion.h" />
+    <ClInclude Include="ProjectSQLRecordSetDeptInfo.h" />
+    <ClInclude Include="ProjectSQLRecordSetEcrmanDatabase.h" />
+    <ClInclude Include="ProjectSQLRecordSetExternalAccount.h" />
+    <ClInclude Include="ProjectSQLRecordSetGroup.h" />
+    <ClInclude Include="ProjectSQLRecordSetGroupTopupBonus.h" />
+    <ClInclude Include="ProjectSQLRecordSetOfferStamp.h" />
+    <ClInclude Include="ProjectSQLRecordSetPluInfo.h" />
+    <ClInclude Include="ProjectSQLRecordSetScheme.h" />
+    <ClInclude Include="ProjectSQLRecordSetStaffCard.h" />
+    <ClInclude Include="ProjectSQLRecordSetStaffGiftException.h" />
+    <ClInclude Include="ProjectSQLRecordSetStampOfferInfo.h" />
+    <ClInclude Include="ProjectSQLRepositoryAccount.h" />
+    <ClInclude Include="ProjectSQLRepositoryAuditPeriod.h" />
+    <ClInclude Include="ProjectSQLRepositoryCCNo.h" />
+    <ClInclude Include="ProjectSQLRepositoryDeptInfo.h" />
+    <ClInclude Include="ProjectSQLRepositoryEcrmanDatabase.h" />
+    <ClInclude Include="ProjectSQLRepositoryExternalAccount.h" />
+    <ClInclude Include="ProjectSQLRepositoryGroup.h" />
+    <ClInclude Include="ProjectSQLRepositoryGroupTopupBonus.h" />
+    <ClInclude Include="ProjectSQLRepositoryOfferStamp.h" />
+    <ClInclude Include="ProjectSQLRepositoryPluInfo.h" />
+    <ClInclude Include="ProjectSQLRepositoryScheme.h" />
+    <ClInclude Include="ProjectSQLRepositoryStaffCard.h" />
+    <ClInclude Include="ProjectSQLRepositoryStaffGiftException.h" />
+    <ClInclude Include="ProjectSQLRepositoryStampOfferInfo.h" />
+    <ClInclude Include="Prompter.h" />
+    <ClInclude Include="PropertySheetBackup.h" />
+    <ClInclude Include="PropPageBackupMode.h" />
+    <ClInclude Include="PropPageBackupSchedule.h" />
+    <ClInclude Include="PurchaseReport.h" />
+    <ClInclude Include="RecordTransferDlg.h" />
+    <ClInclude Include="Recsort.h" />
+    <ClInclude Include="RedeemPointsDlg.h" />
+    <ClInclude Include="RefreshDaysDlg.h" />
+    <ClInclude Include="RefreshWeeklyDlg.h" />
+    <ClInclude Include="RefreshYearlyDlg.h" />
+    <ClInclude Include="RepmanHandler.h" />
+    <ClInclude Include="ReportAccumulator.h" />
+    <ClInclude Include="ReportBirthday.h" />
+    <ClInclude Include="ReportCashlessLiability.h" />
+    <ClInclude Include="ReportCashlessPosting.h" />
+    <ClInclude Include="ReportCSVFile.h" />
+    <ClInclude Include="ReportDailyDifference.h" />
+    <ClInclude Include="ReportDatabase.h" />
+    <ClInclude Include="ReportDefaultHandler.h" />
+    <ClInclude Include="ReportGroupPeriodSales.h" />
+    <ClInclude Include="ReportGroupPeriodSalesDlg.h" />
+    <ClInclude Include="ReportInfoAccumulator.h" />
+    <ClInclude Include="AuditReportConfig.h" />
+    <ClInclude Include="ReportInfoBirthday.h" />
+    <ClInclude Include="ReportInfoCashless.h" />
+    <ClInclude Include="ReportInfoDateRange.h" />
+    <ClInclude Include="ReportInfoDateRangeBase.h" />
+    <ClInclude Include="ReportInfoPeriodSales.h" />
+    <ClInclude Include="ReportInfoPurchaseHistory.h" />
+    <ClInclude Include="ReportInfoStartingBalance.h" />
+    <ClInclude Include="ReportLocationControls.h" />
+    <ClInclude Include="ReportPhotoIDList.h" />
+    <ClInclude Include="ReportPluRanking.h" />
+    <ClInclude Include="ReportPurchaseHistoryDlg.h" />
+    <ClInclude Include="ReportStartingBalance.h" />
+    <ClInclude Include="ReportStartingBalanceDlg.h" />
+    <ClInclude Include="ReportVisitTotaliser.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectAlertDlg.h" />
+    <ClInclude Include="SelectMultipleEntityDlg.h" />
+    <ClInclude Include="SelectMultipleEntityInfo.h" />
+    <ClInclude Include="SelectMultiplePasswordDlg.h" />
+    <ClInclude Include="ServerPropertyPage1.h" />
+    <ClInclude Include="ServerPropertyPage2.h" />
+    <ClInclude Include="ServerPropertyPage3.h" />
+    <ClInclude Include="ServerPropertyPage4.h" />
+    <ClInclude Include="ServerPropertyPage5.h" />
+    <ClInclude Include="ServerPropertyPage6.h" />
+    <ClInclude Include="ServerPropertyPage7.h" />
+    <ClInclude Include="ServerPropertyPage8.h" />
+    <ClInclude Include="ServerPropertyPage9.h" />
+    <ClInclude Include="ServerPropertySheet.h" />
+    <ClInclude Include="ServiceInstallDlg.h" />
+    <ClInclude Include="ServiceLogonDlg.h" />
+    <ClInclude Include="SetupAlertTextsDlg.h" />
+    <ClInclude Include="SetupAuditPeriodsDlg.h" />
+    <ClInclude Include="SetupEposPathsDlg.h" />
+    <ClInclude Include="SetupGroupPeriodsDlg.h" />
+    <ClInclude Include="PasswordOptionsDlg.h" />
+    <ClInclude Include="SetupPhotoIDDlg.h" />
+    <ClInclude Include="SetupReaderDlg.h" />
+    <ClInclude Include="SetupUserTextsDlg.h" />
+    <ClInclude Include="SimulateReaderDlg.h" />
+    <ClInclude Include="SingleListHelpers.h" />
+    <ClInclude Include="SMTPEmailHelpers.h" />
+    <ClInclude Include="SMTPErrorDlg.h" />
+    <ClInclude Include="SMTPResultsDlg.h" />
+    <ClInclude Include="SQLIn.h" />
+    <ClInclude Include="SQLOut.h" />
+    <ClInclude Include="SQLRecordSetAccountList.h" />
+    <ClInclude Include="SQLRowSetAccountFind.h" />
+    <ClInclude Include="SQLRowSetAccountList.h" />
+    <ClInclude Include="SQLRowSetGroup.h" />
+    <ClInclude Include="SQLRowSetGroupTopupBonus.h" />
+    <ClInclude Include="SQLRowSetStaffCard.h" />
+    <ClInclude Include="SQLRowSetStaffGiftException.h" />
+    <ClInclude Include="SQLRowSetStampOfferInfo.h" />
+    <ClInclude Include="SQLSchema\SQLBuilderCreateTable.h" />
+    <ClInclude Include="SQLSchema\SQLBuildSchema.h" />
+    <ClInclude Include="SQLSchema\SQLTranBuildSchema.h" />
+    <ClInclude Include="SQLSchema\SQLTranMigrateSchema.h" />
+    <ClInclude Include="SQLScriptExport.h" />
+    <ClInclude Include="SQLTranBatchAdd.h" />
+    <ClInclude Include="SQLTranBatchUpdate.h" />
+    <ClInclude Include="SQLTranDeleteAccount.h" />
+    <ClInclude Include="SQLTranRefundStaffGift.h" />
+    <ClInclude Include="SQLTranRetryStaffGift.h" />
+    <ClInclude Include="SQLTranSaveAccount.h" />
+    <ClInclude Include="SQLTranSaveGroup.h" />
+    <ClInclude Include="SQLTranSaveStaffCard.h" />
+    <ClInclude Include="SQLTranScriptImport.h" />
+    <ClInclude Include="SQLTranStampManualAdd.h" />
+    <ClInclude Include="SQLTranStampManualEdit.h" />
+    <ClInclude Include="SQLTranUnhotlistAccount.h" />
+    <ClInclude Include="SQLTranXFerAccount.h" />
+    <ClInclude Include="SQLTweakDlg.h" />
+    <ClInclude Include="sslibset.h" />
+    <ClInclude Include="StampOfferDeleteDlg.h" />
+    <ClInclude Include="StampOfferModifyDlg.h" />
+    <ClInclude Include="StampOfferReport.h" />
+    <ClInclude Include="StampOfferReportConfig.h" />
+    <ClInclude Include="StampOfferReportDlg.h" />
+    <ClInclude Include="StampOfferReportWrapper.h" />
+    <ClInclude Include="StandardCombos.h" />
+    <ClInclude Include="SystemBackup.h" />
+    <ClInclude Include="SystemPropertyPage1.h" />
+    <ClInclude Include="SystemPropertyPage2.h" />
+    <ClInclude Include="SystemPropertyPage3.h" />
+    <ClInclude Include="SystemPropertyPage4.h" />
+    <ClInclude Include="SystemPropertyPage5.h" />
+    <ClInclude Include="SystemPropertyPage6.h" />
+    <ClInclude Include="SystemPropertyPage7.h" />
+    <ClInclude Include="SystemPropertySheet.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TerminalData.h" />
+    <ClInclude Include="TerminalListHandler.h" />
+    <ClInclude Include="TimerNumbers.h" />
+    <ClInclude Include="TLogDatabase.h" />
+    <ClInclude Include="TLogFile.h" />
+    <ClInclude Include="TLogRecord.h" />
+    <ClInclude Include="TooManyUsersDlg.h" />
+    <ClInclude Include="UpgradeDlg.h" />
+    <ClInclude Include="UpgradeHandler.h" />
+    <ClInclude Include="WaitLockDlg.h" />
+    <ClInclude Include="WinService.h" />
+    <ClInclude Include="WMNumbers.h" />
+    <ClInclude Include="WorkingDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SPosLoyalty4Shared\AccountFieldValidator.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\AccountIdentifier.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\AESHelpers.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\AlertText_base.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\AuditRecord_base.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\AuditReportTexts.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\Consolidation.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\ConsolidationMap.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\DateRangeHelpers.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\DiagnosticTimer.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\EnhancedIniFile.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\ExpiryDateRange.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\FilenameHandler.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\FileRecycler.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\FileRemover.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\GlobalFunctions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\GlobalState.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\GroupHeaderHelpers.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\ImageHandler.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyAuditAppend.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyAuditFile.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyCommandLineInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyHeaderHelpers.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyLockManager.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltySubs.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\MessageLogger.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\MyMessageBoxInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\MyMessageBoxStatic.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\PresentationOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\RedeemPoints.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\ServerData.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\ServiceOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLBuilderBind.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLConnectionOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLConnectionPool.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLDb.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLFieldValidatorBase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLHelpers.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLRecordSetConnectionPool.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLRecordSetMetadata.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLResultInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLStampOfferBuffer.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLStampOfferCache.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLFieldValidatorAccount.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRepositoryAccount.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRecordSetAccountFull.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRecordSetAccountUserID.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRowAccountFind.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRowAccountFull.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Account\SQLRowAccountList.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLFieldValidatorAuditPeriod.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRepositoryAuditPeriod.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRecordSetAuditPeriod.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRowAuditPeriod.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_AuditPeriod\SQLRowSetAuditPeriod.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLFieldValidatorCCNo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLRecordSetCCNo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLRepositoryCCNo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_CCNo\SQLRowCCNo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DbVersion\SQLFieldValidatorDbVersion.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DbVersion\SQLRecordSetDbVersion.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DbVersion\SQLRowDbVersion.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLFieldValidatorDeptInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLRepositoryDeptInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLRecordSetDeptInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_DeptInfo\SQLRowDeptInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLFieldValidatorEcrmanDatabase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLRepositoryEcrmanDatabase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLRecordSetEcrmanDatabase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_EcrmanDatabase\SQLRowEcrmanDatabase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLFieldValidatorExternalAccount.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLRepositoryExternalAccount.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLRecordSetExternalAccount.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_ExternalAccount\SQLRowExternalAccount.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLFieldValidatorGroupTopupBonus.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLRepositoryGroupTopupBonus.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLRecordSetGroupTopupBonus.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_GroupTopupBonus\SQLRowGroupTopupBonus.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLFieldValidatorGroup.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRepositoryGroup.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRecordSetGroup.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRecordSetGroupLegacy.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRowGroup.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Group\SQLRowGroupLegacy.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLFieldValidatorOfferStamp.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLRepositoryOfferStamp.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLRecordSetOfferStamp.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_OfferStamp\SQLRowOfferStamp.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLFieldValidatorPluInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLRepositoryPluInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLRecordSetPluInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_PluInfo\SQLRowPluInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLFieldValidatorScheme.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLRepositoryScheme.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLRecordSetScheme.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_Scheme\SQLRowScheme.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLFieldValidatorStaffCard.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLRepositoryStaffCard.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLRecordSetStaffCard.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffCard\SQLRowStaffCard.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLFieldValidatorStaffGiftException.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLRepositoryStaffGiftException.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLRecordSetStaffGiftException.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StaffGiftException\SQLRowStaffGiftException.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLFieldValidatorStampOfferInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLRepositoryStampOfferInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLRecordSetStampOfferInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTable_StampOfferInfo\SQLRowStampOfferInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTranBase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLTranImportDatabase.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SQLWhereBuilder.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SystemData.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\TLogRecord_base.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\TrackedFile.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\UserTexts.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\VersionStrings.cpp" />
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="AccumulatorPropertyPage1.cpp" />
+    <ClCompile Include="AccumulatorPropertyPage2.cpp" />
+    <ClCompile Include="AccumulatorPropertySheet.cpp" />
+    <ClCompile Include="AddCashDlg.cpp" />
+    <ClCompile Include="AddLoyaltyDlg.cpp" />
+    <ClCompile Include="AddPointsDlg.cpp" />
+    <ClCompile Include="AlertText.cpp" />
+    <ClCompile Include="AtcArchiveDlg.cpp" />
+    <ClCompile Include="AtcDateList.cpp" />
+    <ClCompile Include="AuditFix.cpp" />
+    <ClCompile Include="AuditRecord.cpp" />
+    <ClCompile Include="AuditReport.cpp" />
+    <ClCompile Include="AuditReportActionDlg.cpp" />
+    <ClCompile Include="AuditReportDlg.cpp" />
+    <ClCompile Include="AuditReportWrapper.cpp" />
+    <ClCompile Include="AutoBackupOptions.cpp" />
+    <ClCompile Include="AutoBackupProcessor.cpp" />
+    <ClCompile Include="BackupFilter.cpp" />
+    <ClCompile Include="BackupInfoDlg.cpp" />
+    <ClCompile Include="BackupProgressDlg.cpp" />
+    <ClCompile Include="BackupPromptDlg.cpp" />
+    <ClCompile Include="BackupResultDlg.cpp" />
+    <ClCompile Include="BackupTypeDlg.cpp" />
+    <ClCompile Include="BatchAccountDetailMemory.cpp" />
+    <ClCompile Include="BatchAccountBalanceMemory.cpp" />
+    <ClCompile Include="BatchPropertyPage1.cpp" />
+    <ClCompile Include="BatchPropertyPage2.cpp" />
+    <ClCompile Include="BatchPropertyPage3.cpp" />
+    <ClCompile Include="BatchPropertyPage5.cpp" />
+    <ClCompile Include="BatchPropertySheet.cpp" />
+    <ClCompile Include="BatchUpdate.cpp" />
+    <ClCompile Include="BatchUpdateHelpers.cpp" />
+    <ClCompile Include="BirthdaysReportDlg.cpp" />
+    <ClCompile Include="BitmapInfo.cpp" />
+    <ClCompile Include="CalculateBonus.cpp" />
+    <ClCompile Include="CalculateSpendBonus.cpp" />
+    <ClCompile Include="CardArchiveDlg.cpp" />
+    <ClCompile Include="CardPicker.cpp" />
+    <ClCompile Include="CardPickerDlg.cpp" />
+    <ClCompile Include="CashlessAuditDlg.cpp" />
+    <ClCompile Include="ColourButton.cpp" />
+    <ClCompile Include="ColourEditDlg.cpp" />
+    <ClCompile Include="ColumnHandler.cpp" />
+    <ClCompile Include="ColumnListDlg.cpp" />
+    <ClCompile Include="ColumnManager.cpp" />
+    <ClCompile Include="CommentDlg.cpp" />
+    <ClCompile Include="CommentHandler.cpp" />
+    <ClCompile Include="DatabaseExport.cpp" />
+    <ClCompile Include="DatabaseImportForManager.cpp" />
+    <ClCompile Include="DatabaseReportsDlg.cpp" />
+    <ClCompile Include="DateRangeDlg.cpp" />
+    <ClCompile Include="DateSelectorRange.cpp" />
+    <ClCompile Include="DateSelectorSingle.cpp" />
+    <ClCompile Include="DbExportEditor.cpp" />
+    <ClCompile Include="DbExportHandler.cpp" />
+    <ClCompile Include="DbExportHelpers.cpp" />
+    <ClCompile Include="DbReportHandler.cpp" />
+    <ClCompile Include="DefEditDlg.cpp" />
+    <ClCompile Include="DefEditEmailDlg.cpp" />
+    <ClCompile Include="DefTextEmailAddress.cpp" />
+    <ClCompile Include="DemoWarning.cpp" />
+    <ClCompile Include="EditAccountPropertyPage1.cpp" />
+    <ClCompile Include="EditAccountPropertyPage2.cpp" />
+    <ClCompile Include="EditAccountPropertyPage4.cpp" />
+    <ClCompile Include="EditAccountPropertyPage5.cpp" />
+    <ClCompile Include="EditLoyaltyRecord.cpp" />
+    <ClCompile Include="EditAccountPropertySheet.cpp" />
+    <ClCompile Include="EditStaffCardDlg.cpp" />
+    <ClCompile Include="EditStampsDlg.cpp" />
+    <ClCompile Include="EmailOptions.cpp" />
+    <ClCompile Include="ExportPropertyPage1.cpp" />
+    <ClCompile Include="ExportPropertyPage2.cpp" />
+    <ClCompile Include="ExportPropertyPage3.cpp" />
+    <ClCompile Include="ExportPropertyPage4.cpp" />
+    <ClCompile Include="ExportPropertySheet.cpp" />
+    <ClCompile Include="FileRemoverBackup.cpp" />
+    <ClCompile Include="FindDlg.cpp" />
+    <ClCompile Include="FindSingleDlg.cpp" />
+    <ClCompile Include="FontTable.cpp" />
+    <ClCompile Include="GroupComboHelpers.cpp" />
+    <ClCompile Include="GroupImportForManager.cpp" />
+    <ClCompile Include="GroupNoDlg.cpp" />
+    <ClCompile Include="GroupPropertyPage1.cpp" />
+    <ClCompile Include="GroupPropertyPage2.cpp" />
+    <ClCompile Include="GroupPropertyPage4.cpp" />
+    <ClCompile Include="GroupPropertySheet.cpp" />
+    <ClCompile Include="HeaderWarnDlg.cpp" />
+    <ClCompile Include="HotlistDlg.cpp" />
+    <ClCompile Include="HotlistTraceDlg.cpp" />
+    <ClCompile Include="ImportDataHandler.cpp" />
+    <ClCompile Include="ImportRecordsDlg.cpp" />
+    <ClCompile Include="ImportStatsDlg.cpp" />
+    <ClCompile Include="ListDataDatabaseTestDlg.cpp" />
+    <ClCompile Include="ListDataDeleteDlg.cpp" />
+    <ClCompile Include="ListDataDlg.cpp" />
+    <ClCompile Include="ListDataEmailAddressDlg.cpp" />
+    <ClCompile Include="ListDataGroupDlg.cpp" />
+    <ClCompile Include="ListDataHeaderChangeDlg.cpp" />
+    <ClCompile Include="ListDataPrinterSelectDlg.cpp" />
+    <ClCompile Include="ListDataRestoreDlg.cpp" />
+    <ClCompile Include="ListDataSchemeNamesDlg.cpp" />
+    <ClCompile Include="ListDataStaffCardDlg.cpp" />
+    <ClCompile Include="ListDataStaffGiftExceptionDlg.cpp" />
+    <ClCompile Include="ListDataStampOfferInfoDlg.cpp" />
+    <ClCompile Include="ListDataStampOfferPluDlg.cpp" />
+    <ClCompile Include="LockManager.cpp" />
+    <ClCompile Include="LoyaltyManager.cpp" />
+    <ClCompile Include="LoyaltyManagerDlg.cpp" />
+    <ClCompile Include="MyMessageBoxDlg.cpp" />
+    <ClCompile Include="MyMifare.cpp" />
+    <ClCompile Include="PasswordData.cpp" />
+    <ClCompile Include="PasswordDlg.cpp" />
+    <ClCompile Include="PasswordListDlg.cpp" />
+    <ClCompile Include="PasswordLogDlg.cpp" />
+    <ClCompile Include="PasswordLogger.cpp" />
+    <ClCompile Include="PasswordLogReport.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PCOptions.cpp" />
+    <ClCompile Include="PersistentSelectionEdit.cpp" />
+    <ClCompile Include="PhotoIDDlg.cpp" />
+    <ClCompile Include="PhotoIDEditDlg.cpp" />
+    <ClCompile Include="PhotoIDFilenameStack.cpp" />
+    <ClCompile Include="PhotoIDListData.cpp" />
+    <ClCompile Include="PhotoIDListDlg.cpp" />
+    <ClCompile Include="ProjectGlobalFunctions.cpp" />
+    <ClCompile Include="ProjectLoyaltyAuditFile.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetAccountFull.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetAuditPeriod.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetCCNo.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetDbVersion.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetDeptInfo.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetEcrmanDatabase.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetExternalAccount.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetGroup.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetGroupTopupBonus.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetOfferStamp.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetPluInfo.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetScheme.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetStaffCard.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetStaffGiftException.cpp" />
+    <ClCompile Include="ProjectSQLRecordSetStampOfferInfo.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryAccount.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryAuditPeriod.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryCCNo.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryDeptInfo.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryEcrmanDatabase.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryExternalAccount.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryGroup.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryGroupTopupBonus.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryOfferStamp.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryPluInfo.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryScheme.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryStaffCard.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryStaffGiftException.cpp" />
+    <ClCompile Include="ProjectSQLRepositoryStampOfferInfo.cpp" />
+    <ClCompile Include="Prompter.cpp" />
+    <ClCompile Include="PropertySheetBackup.cpp" />
+    <ClCompile Include="PropPageBackupMode.cpp" />
+    <ClCompile Include="PropPageBackupSchedule.cpp" />
+    <ClCompile Include="PurchaseReport.cpp" />
+    <ClCompile Include="RecordTransferDlg.cpp" />
+    <ClCompile Include="Recsort.cpp" />
+    <ClCompile Include="RedeemPointsDlg.cpp" />
+    <ClCompile Include="RefreshDaysDlg.cpp" />
+    <ClCompile Include="RefreshWeeklyDlg.cpp" />
+    <ClCompile Include="RefreshYearlyDlg.cpp" />
+    <ClCompile Include="RepmanHandler.cpp" />
+    <ClCompile Include="ReportAccumulator.cpp" />
+    <ClCompile Include="ReportBirthday.cpp" />
+    <ClCompile Include="ReportCashlessLiability.cpp" />
+    <ClCompile Include="ReportCashlessPosting.cpp" />
+    <ClCompile Include="ReportCSVFile.cpp" />
+    <ClCompile Include="ReportDailyDifference.cpp" />
+    <ClCompile Include="ReportDatabase.cpp" />
+    <ClCompile Include="ReportDefaultHandler.cpp" />
+    <ClCompile Include="ReportGroupPeriodSales.cpp" />
+    <ClCompile Include="ReportGroupPeriodSalesDlg.cpp" />
+    <ClCompile Include="ReportInfoAccumulator.cpp" />
+    <ClCompile Include="AuditReportConfig.cpp" />
+    <ClCompile Include="ReportInfoBirthday.cpp" />
+    <ClCompile Include="ReportInfoCashless.cpp" />
+    <ClCompile Include="ReportInfoDateRange.cpp" />
+    <ClCompile Include="ReportInfoDateRangeBase.cpp" />
+    <ClCompile Include="ReportInfoPeriodSales.cpp" />
+    <ClCompile Include="ReportInfoPurchaseHistory.cpp" />
+    <ClCompile Include="ReportInfoStartingBalance.cpp" />
+    <ClCompile Include="ReportLocationControls.cpp" />
+    <ClCompile Include="ReportPhotoIDList.cpp" />
+    <ClCompile Include="ReportPluRanking.cpp" />
+    <ClCompile Include="ReportPurchaseHistoryDlg.cpp" />
+    <ClCompile Include="ReportStartingBalance.cpp" />
+    <ClCompile Include="ReportStartingBalanceDlg.cpp" />
+    <ClCompile Include="ReportVisitTotaliser.cpp" />
+    <ClCompile Include="SelectAlertDlg.cpp" />
+    <ClCompile Include="SelectMultipleEntityDlg.cpp" />
+    <ClCompile Include="SelectMultipleEntityInfo.cpp" />
+    <ClCompile Include="SelectMultiplePasswordDlg.cpp" />
+    <ClCompile Include="ServerPropertyPage1.cpp" />
+    <ClCompile Include="ServerPropertyPage2.cpp" />
+    <ClCompile Include="ServerPropertyPage3.cpp" />
+    <ClCompile Include="ServerPropertyPage4.cpp" />
+    <ClCompile Include="ServerPropertyPage5.cpp" />
+    <ClCompile Include="ServerPropertyPage6.cpp" />
+    <ClCompile Include="ServerPropertyPage7.cpp" />
+    <ClCompile Include="ServerPropertyPage8.cpp" />
+    <ClCompile Include="ServerPropertyPage9.cpp" />
+    <ClCompile Include="ServerPropertySheet.cpp" />
+    <ClCompile Include="ServiceInstallDlg.cpp" />
+    <ClCompile Include="ServiceLogonDlg.cpp" />
+    <ClCompile Include="SetupAlertTextsDlg.cpp" />
+    <ClCompile Include="SetupAuditPeriodsDlg.cpp" />
+    <ClCompile Include="SetupEposPathsDlg.cpp" />
+    <ClCompile Include="SetupGroupPeriodsDlg.cpp" />
+    <ClCompile Include="PasswordOptionsDlg.cpp" />
+    <ClCompile Include="SetupPhotoIDDlg.cpp" />
+    <ClCompile Include="SetupReaderDlg.cpp" />
+    <ClCompile Include="SetupUserTextsDlg.cpp" />
+    <ClCompile Include="SimulateReaderDlg.cpp" />
+    <ClCompile Include="SingleListHelpers.cpp" />
+    <ClCompile Include="SMTPEmailHelpers.cpp" />
+    <ClCompile Include="SMTPErrorDlg.cpp" />
+    <ClCompile Include="SMTPResultsDlg.cpp" />
+    <ClCompile Include="SQLIn.cpp" />
+    <ClCompile Include="SQLOut.cpp" />
+    <ClCompile Include="SQLRecordSetAccountList.cpp" />
+    <ClCompile Include="SQLRowSetAccountFind.cpp" />
+    <ClCompile Include="SQLRowSetAccountList.cpp" />
+    <ClCompile Include="SQLRowSetGroup.cpp" />
+    <ClCompile Include="SQLRowSetGroupTopupBonus.cpp" />
+    <ClCompile Include="SQLRowSetStaffCard.cpp" />
+    <ClCompile Include="SQLRowSetStaffGiftException.cpp" />
+    <ClCompile Include="SQLRowSetStampOfferInfo.cpp" />
+    <ClCompile Include="SQLSchema\SQLBuilderCreateTable.cpp" />
+    <ClCompile Include="SQLSchema\SQLBuildSchema.cpp" />
+    <ClCompile Include="SQLSchema\SQLTranBuildSchema.cpp" />
+    <ClCompile Include="SQLSchema\SQLTranMigrateSchema.cpp" />
+    <ClCompile Include="SQLScriptExport.cpp" />
+    <ClCompile Include="SQLTranBatchAdd.cpp" />
+    <ClCompile Include="SQLTranBatchUpdate.cpp" />
+    <ClCompile Include="SQLTranDeleteAccount.cpp" />
+    <ClCompile Include="SQLTranRefundStaffGift.cpp" />
+    <ClCompile Include="SQLTranRetryStaffGift.cpp" />
+    <ClCompile Include="SQLTranSaveAccount.cpp" />
+    <ClCompile Include="SQLTranSaveGroup.cpp" />
+    <ClCompile Include="SQLTranSaveStaffCard.cpp" />
+    <ClCompile Include="SQLTranScriptImport.cpp" />
+    <ClCompile Include="SQLTranStampManualAdd.cpp" />
+    <ClCompile Include="SQLTranStampManualEdit.cpp" />
+    <ClCompile Include="SQLTranUnhotlistAccount.cpp" />
+    <ClCompile Include="SQLTranXFerAccount.cpp" />
+    <ClCompile Include="SQLTweakDlg.cpp" />
+    <ClCompile Include="StampOfferDeleteDlg.cpp" />
+    <ClCompile Include="StampOfferModifyDlg.cpp" />
+    <ClCompile Include="StampOfferReport.cpp" />
+    <ClCompile Include="StampOfferReportConfig.cpp" />
+    <ClCompile Include="StampOfferReportDlg.cpp" />
+    <ClCompile Include="StampOfferReportWrapper.cpp" />
+    <ClCompile Include="StandardCombos.cpp" />
+    <ClCompile Include="SystemBackup.cpp" />
+    <ClCompile Include="SystemPropertyPage1.cpp" />
+    <ClCompile Include="SystemPropertyPage2.cpp" />
+    <ClCompile Include="SystemPropertyPage3.cpp" />
+    <ClCompile Include="SystemPropertyPage4.cpp" />
+    <ClCompile Include="SystemPropertyPage5.cpp" />
+    <ClCompile Include="SystemPropertyPage6.cpp" />
+    <ClCompile Include="SystemPropertyPage7.cpp" />
+    <ClCompile Include="SystemPropertySheet.cpp" />
+    <ClCompile Include="TerminalData.cpp" />
+    <ClCompile Include="TerminalListHandler.cpp" />
+    <ClCompile Include="TLogDatabase.cpp" />
+    <ClCompile Include="TLogFile.cpp" />
+    <ClCompile Include="TLogRecord.cpp" />
+    <ClCompile Include="TooManyUsersDlg.cpp" />
+    <ClCompile Include="UpgradeDlg.cpp" />
+    <ClCompile Include="UpgradeHandler.cpp" />
+    <ClCompile Include="version.cpp" />
+    <ClCompile Include="WaitLockDlg.cpp" />
+    <ClCompile Include="WinService.cpp" />
+    <ClCompile Include="WorkingDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SPosLoyalty4Manager.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SPosLoyalty4Manager.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\SPosLoyalty4Manager.ico" />
+    <Image Include="res\SPosLoyalty4Server.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="sposloyalty4manager.exe.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

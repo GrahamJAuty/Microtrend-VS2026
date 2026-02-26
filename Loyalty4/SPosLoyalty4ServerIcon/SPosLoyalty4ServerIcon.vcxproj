@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{439CE54E-0B1E-46B7-8730-010FC019794B}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>SPosLoyalty4ServerIcon</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SPosLoyalty4ServerIcon</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>e:\microtrend\vs2022\common\ssinc;$(IncludePath)</IncludePath>
+    <LibraryPath>e:\microtrend\vs2022\common\sslib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SERVERICON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>subs.lib;datetimesubs.lib;repsubs.lib;exp.lib;dbase.lib;winsubs.lib;sysset3.lib;</AdditionalDependencies>
+      <LinkTimeCodeGeneration />
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;SERVERICON;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>subsd.lib;datetimesubsd.lib;repsubsd.lib;winsubsd.lib;expd.lib;dbased.lib;sysset3d.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SPosLoyalty4Shared\EnhancedIniFile.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\FileRemover.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyCommandLineInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\MyMessageBoxInfo.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\MyMessageBoxStatic.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\PresentationOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\ServiceOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\TrackedFile.h" />
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="FilenameHandler.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="Globalfunctions.h" />
+    <ClInclude Include="LaunchWaitDlg.h" />
+    <ClInclude Include="MessageLogger.h" />
+    <ClInclude Include="MyMessageBoxDlg.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="PCOptions.h" />
+    <ClInclude Include="Prompter.h" />
+    <ClInclude Include="RepmanHandler.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ServiceInstallDlg.h" />
+    <ClInclude Include="SPosLoyalty4ServerIcon.h" />
+    <ClInclude Include="SPosLoyalty4ServerIconDlg.h" />
+    <ClInclude Include="sslibset.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TrafficLightTrayIcon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SPosLoyalty4Shared\EnhancedIniFile.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\FileRemover.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyCommandLineInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\MyMessageBoxInfo.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\MyMessageBoxStatic.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\PresentationOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\ServiceOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\TrackedFile.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\VersionStrings.cpp" />
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="FilenameHandler.cpp" />
+    <ClCompile Include="GlobalFunctions.cpp" />
+    <ClCompile Include="LaunchWaitDlg.cpp" />
+    <ClCompile Include="MessageLogger.cpp" />
+    <ClCompile Include="MyMessageBoxDlg.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PCOptions.cpp" />
+    <ClCompile Include="Prompter.cpp" />
+    <ClCompile Include="RepmanHandler.cpp" />
+    <ClCompile Include="ServiceInstallDlg.cpp" />
+    <ClCompile Include="SPosLoyalty4ServerIcon.cpp" />
+    <ClCompile Include="SPosLoyalty4ServerIconDlg.cpp" />
+    <ClCompile Include="TrafficLightTrayicon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SPosLoyalty4ServerIcon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SPosLoyalty4ServerIcon.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon_darkgreen.ico" />
+    <Image Include="res\icon_darkred.ico" />
+    <Image Include="res\icon_darkyellow.ico" />
+    <Image Include="res\icon_green.ico" />
+    <Image Include="res\icon_main.ico" />
+    <Image Include="res\icon_red.ico" />
+    <Image Include="res\icon_yellow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="sposloyalty4servericon.exe.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
