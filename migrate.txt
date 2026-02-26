@@ -14,9 +14,8 @@ confirm build
 git add .
 git commit -m "Migrate <solution-name> to VS2026 and confirm build"
 
-git checkout main
+git checkout master
 git merge migrate-<solution-name>
 git push
 
 git branch -d migrate-<solution-name>
-git push origin --delete migrate-<solution-name>
