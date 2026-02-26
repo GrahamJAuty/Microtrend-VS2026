@@ -21,14 +21,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -47,14 +47,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;E:\Microtrend\VS2022\COMMON\SSINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;E:\Microtrend\VS2022\COMMON\SSLIB;E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Microtrend\VS2026\COMMON\CKINC;E:\Microtrend\VS2026\COMMON\SSINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2026\COMMON\CKLIB;E:\Microtrend\VS2026\COMMON\SSLIB;E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
     <TargetName>SPosEcrManager</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Microtrend\VS2026\COMMON\CKINC;E:\Microtrend\VS2026\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2026\COMMON\CKLIB;E:\Microtrend\VS2026\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
     <TargetName>SPosEcrManager</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

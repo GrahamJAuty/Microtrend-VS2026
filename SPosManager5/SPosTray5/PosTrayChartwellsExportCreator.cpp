@@ -405,7 +405,7 @@ CString CPosTrayChartwellsExportCreator::PenceToString(int nPence)
 
 int CPosTrayChartwellsExportCreator::DoubleToPence(double dValue)
 {
-	int nPence = round(dValue * 100.0);
+	int nPence = static_cast<int>(lround(dValue * 100.0));
 	return nPence;
 }
 
@@ -425,7 +425,7 @@ CString CPosTrayChartwellsExportCreator::QtyToString(int nQty)
 
 int CPosTrayChartwellsExportCreator::DoubleToQty(double dQty)
 {
-	int nQty = round(dQty * 10000.0);
+	int nQty = static_cast<int>(lround(dQty * 10000.0));
 	return nQty;
 }
 

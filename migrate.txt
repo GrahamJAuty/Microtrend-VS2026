@@ -9,7 +9,7 @@ git commit -m "Add <solution-name> source for VS2026 migration"
 open solution in VS2026
 fix include/lib paths
 retarget project
-confirm build
+confirm buildgit 
 
 git add .
 git commit -m "Migrate <solution-name> to VS2026 and confirm build"

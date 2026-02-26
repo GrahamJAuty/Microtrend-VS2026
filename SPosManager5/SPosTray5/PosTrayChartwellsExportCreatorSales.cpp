@@ -493,7 +493,7 @@ bool CPosTrayChartwellsExportCreator::CreateSalesFile(CString& strFolder, CArray
 				int nLineValue = Item.m_SubType[n].m_nValue;
 				int nLineDiscount = Item.m_SubType[n].m_nDiscount;
 				int nLineAfterDiscount = nLineValue - nLineDiscount;
-				int nLineAfterVAT = round(ReportHelpers.CalcNonTax(nLineAfterDiscount, TaxRateInfo.m_dTaxRate));
+				int nLineAfterVAT = static_cast<int>(lround(ReportHelpers.CalcNonTax(nLineAfterDiscount, TaxRateInfo.m_dTaxRate)));
 
 				CCSV csvOut;
 				csvOut.Add(Item.m_nTransactionID);
