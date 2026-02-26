@@ -1,0 +1,23 @@
+// pch.h: This is a precompiled header file.
+// Files listed below are compiled only once, improving build performance for future builds.
+// This also affects IntelliSense performance, including code completion and many code browsing features.
+// However, files listed here are ALL re-compiled if any one of them is updated between builds.
+// Do not add files here that you will be updating frequently as this negates the performance advantage.
+
+#ifndef PCH_H
+#define PCH_H
+
+// add headers that you want to pre-compile here
+#include "framework.h"
+#include "Resource.h"
+#include "sslibset.h"
+#include "globalfunctions.h"
+#include "filenameupdater.h"
+#include "datamanager.h"
+#include "datamanagernondbclasses.h"
+#include "dealerflags.h"
+#include "ecrmanoptionsini.h"
+#include "prompter.h"
+#include "..\CommonEcrStock\SPOSKeyboardManager.h"
+#include "super.h"
+#endif //PCH_H

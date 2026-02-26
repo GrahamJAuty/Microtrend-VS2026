@@ -1,0 +1,153 @@
+#pragma once
+/**********************************************************************/
+#define SH_FAMILY_PLU 0
+#define SH_FAMILY_STOCK 1
+/**********************************************************************/
+#define SH_CUSTOM 0
+#define SH_PLU_ITEM 1
+#define SH_PLU_ITEM_DEPT 2
+#define SH_PLU_ITEM_MONTH 3
+#define SH_PLU_ITEM_MONTH_DEPT 4
+#define SH_PLU_TOP100 5
+#define SH_PLU_TOP100_DEPT 6
+#define SH_PLU_TOP100_MONTH 7
+#define SH_PLU_TOP100_MONTH_DEPT 8
+#define SH_PLU_UNSOLD 9
+#define SH_PLU_UNSOLD_DEPT 10
+#define SH_PLU_UNSOLD_MONTH 11
+#define SH_PLU_UNSOLD_MONTH_DEPT 12
+#define SH_PLU_DEPT 13
+#define SH_PLU_DEPT_MONTH 14
+#define SH_PLU_DEPT_BYWDAY 15
+#define SH_PLU_MONTHLY 16
+#define SH_PLU_WEEKLY 17
+#define SH_PLU_DAILY 18
+#define SH_PLU_DAILY_BYWEEK 19
+#define SH_PLU_TAX 20
+#define SH_PLU_LOC_BYWDAY 21
+/**********************************************************************/
+#define SH_STK_ITEM 51
+#define SH_STK_ITEM_CAT 52
+#define SH_STK_ITEM_MONTH 53
+#define SH_STK_ITEM_MONTH_CAT 54
+#define SH_STK_TOP100 55
+#define SH_STK_TOP100_CAT 56
+#define SH_STK_TOP100_MONTH 57
+#define SH_STK_TOP100_MONTH_CAT 58
+#define SH_STK_UNSOLD 59
+#define SH_STK_UNSOLD_CAT 60
+#define SH_STK_UNSOLD_MONTH 61
+#define SH_STK_UNSOLD_MONTH_CAT 62
+#define SH_STK_CAT 63
+#define SH_STK_CAT_MONTH 64
+#define SH_STK_CAT_BYWDAY 65
+#define SH_STK_MONTHLY 66
+#define SH_STK_WEEKLY 67
+#define SH_STK_DAILY 68
+#define SH_STK_DAILY_BYWEEK 69
+#define SH_STK_SP_BYWDAY 70
+/**********************************************************************/
+#define SH_CUST_SUMMARY 91
+#define SH_CUST_DETAIL 92
+/**********************************************************************/
+#define SH_STKLVL_NONE 101		
+#define SH_STKLVL_SUPP 102		
+#define SH_STKLVL_SUPP_SP 103		
+#define SH_STKLVL_SUPP_SP_CAT 104
+#define SH_STKLVL_SUPP_CAT 105
+#define SH_STKLVL_SUPP_CAT_SP 106	
+#define SH_STKLVL_SP 107			
+#define SH_STKLVL_SP_SUPP 108		
+#define SH_STKLVL_SP_SUPP_CAT 109	
+#define SH_STKLVL_SP_CAT 110		
+#define SH_STKLVL_SP_CAT_SUPP 111	
+#define SH_STKLVL_CAT 112			
+#define SH_STKLVL_CAT_SUPP 113	
+#define SH_STKLVL_CAT_SUPP_SP 114	
+#define SH_STKLVL_CAT_SP 115		
+#define SH_STKLVL_CAT_SP_SUPP 116
+/**********************************************************************/
+#define SH_FIELD_PLUNO 1
+#define SH_FIELD_DEPTNO_FILTER 2
+#define SH_FIELD_TRANSERVER 3
+#define SH_FIELD_DATE_BUSINESS 4
+#define SH_FIELD_TIME 5
+#define SH_FIELD_DBASE 6
+#define SH_FIELD_LOC 7
+#define SH_FIELD_TERMINAL 8
+#define SH_FIELD_MONTH 9
+#define SH_FIELD_WEEK 10
+#define SH_FIELD_WEEKDAY 11
+#define SH_FIELD_LEVEL 12
+#define SH_FIELD_MODIFIER 13
+#define SH_FIELD_TAXBAND 14
+#define SH_FIELD_ACAT_SALE 15
+#define SH_FIELD_DEPTGRP_FILTER 16
+#define SH_FIELD_DEPTNO_ITEM 17
+#define SH_FIELD_DEPTGRP_ITEM 18
+#define SH_FIELD_DEPTNO_SALE 19
+#define SH_FIELD_DEPTGRP_SALE 20
+#define SH_FIELD_REPPOINT 21
+#define SH_FIELD_CUSTOMER 22
+#define SH_FIELD_ITEMSERVER 23
+#define SH_FIELD_PLUSUPP 24
+#define SH_FIELD_ACAT_ITEM 25
+#define SH_FIELD_DATE_CALENDAR 26
+#define SH_FIELD_DESCRIPTION 27
+#define SH_FIELD_PLUNO_ONLY 28
+#define SH_FIELD_SORTCODE 29
+#define SH_FIELD_SEQNO 30
+#define SH_FIELD_REPGRP 31
+#define SH_FIELD_CONGRP 32
+#define SH_FIELD_CASHRSPTEXT 33
+#define SH_FIELD_TABLENO 34
+#define SH_FIELD_TABLEGRP 35
+#define SH_FIELD_ATTRIBUTETEXT1 36
+/**********************************************************************/
+#define SH_FIELD_CODE 51
+#define SH_FIELD_SITE 52
+#define SH_FIELD_SP 53
+#define SH_FIELD_CAT_FILTER 54
+#define SH_FIELD_SUPP 55
+#define SH_FIELD_SUPPREF 56
+#define SH_FIELD_CAT_ITEM 57
+#define SH_FIELD_CAT_SALE 58
+#define SH_FIELD_CUSTOM1 59
+#define SH_FIELD_CUSTOM2 60
+#define SH_FIELD_CUSTOM3 61
+#define SH_FIELD_CUSTOM4 62
+#define SH_FIELD_CUSTOM5 63
+#define SH_FIELD_CODE_ONLY 64
+/**********************************************************************/
+#define SH_FIELD_GRANDTOTAL 0
+#define SH_FIELD_TOTAL 100
+#define SH_FIELD_HEADER 200
+/**********************************************************************/
+#define TAXBAND_FILTER_ALL 0x1FFF
+#define PRICELEVEL_FILTER_ALL 1023
+#define MODIFIER_FILTER_ALL 1023
+/**********************************************************************/
+#define CHART_TYPE_UNLIMITED 0
+#define CHART_TYPE_CUTOFF 1
+#define CHART_TYPE_MAXITEMS 2
+/**********************************************************************/
+#define SH_TIMESLICE_SECOND 1
+#define SH_TIMESLICE_MINUTE 2
+#define SH_TIMESLICE_5MIN 3
+#define SH_TIMESLICE_10MIN 4
+#define SH_TIMESLICE_15MIN 5
+#define SH_TIMESLICE_30MIN 6
+#define SH_TIMESLICE_60MIN 7
+/**********************************************************************/
+#define SALESHISTORY_REPORTMODE_NORMAL 0
+#define SALESHISTORY_REPORTMODE_CHART 1
+#define SALESHISTORY_REPORTMODE_WEEKLY_VAL_FULL 2
+#define SALESHISTORY_REPORTMODE_WEEKLY_VAL_DISC 3
+#define SALESHISTORY_REPORTMODE_WEEKLY_QTY 4
+#define SALESHISTORY_REPORTMODE_MONTHLY_VAL_FULL 5
+#define SALESHISTORY_REPORTMODE_MONTHLY_VAL_DISC 6
+#define SALESHISTORY_REPORTMODE_MONTHLY_QTY 7
+#define SALESHISTORY_REPORTMODE_TWOBLOCK 8
+#define SALESHISTORY_REPORTMODE_WEEKLY_QTYVAL_FULL 9
+#define SALESHISTORY_REPORTMODE_WEEKLY_QTYVAL_DISC 10
+/**********************************************************************/

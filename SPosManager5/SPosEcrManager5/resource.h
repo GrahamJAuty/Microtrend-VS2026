@@ -1,0 +1,143 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by SPosEcrManager5.rc
+//
+#define IDD_ABOUTBOX                  100
+#define CG_IDD_PROGRESS               101
+#define IDR_MAINFRAME                 102
+#define IDR_POPUP_BUTTONBAR           103
+#define IDR_POPUP_BUTTONEDIT          104
+#define IDC2_BUTTON_SUPPLIER          1500
+#define IDC2_BUTTON_USERS             1501
+#define IDC2_COMBO_DEPTNAME           1502
+#define IDC2_COMBO_LIBS               1503
+#define IDC2_COMBO_SUPPLIER           1504
+#define IDC2_COMBO_TAXBAND            1505
+#define IDC2_EDIT_APPARENT            1506
+#define IDC2_EDIT_COST                1507
+#define IDC2_EDIT_DELIVERY            1508
+#define IDC2_EDIT_DEPTNO              1509
+#define IDC2_EDIT_EPOSTEXT            1510
+#define IDC2_EDIT_GP_FIXED            1511
+#define IDC2_EDIT_GP_PERCENT          1512
+#define IDC2_EDIT_PRICE1              1513
+#define IDC2_EDIT_REPTEXT             1514
+#define IDC2_EDIT_SUPPLIER            1515
+#define IDC2_EDIT_USERS               1516
+#define IDC2_RADIO_GP_FIXED           1517
+#define IDC2_RADIO_GP_PERCENT         1518
+#define IDC2_RADIO_GP_TYPE            1519
+#define IDC2_STATIC_ICON              1520
+#define IDC2_STATIC_LITETYPE          1521
+#define IDC2_STATIC_PRICE1            1522
+#define IDC2_STATIC_SERIAL            1523
+#define IDC2_STATIC_VERSION           1524
+#define IDM_ADMIN_DELETE_AUDITS       32771
+#define IDM_ADMIN_DELETE_BARCODES     32772
+#define IDM_ADMIN_DELETE_ORDERS       32773
+#define IDM_ADMIN_DELETE_PLU_UNLINKED 32774
+#define IDM_ADMIN_DELETE_PLU_UNSOLD   32775
+#define IDM_ADMIN_DELETE_REPORTS      32776
+#define IDM_ADMIN_DELETE_SUPPLIERS    32777
+#define IDM_ADMIN_PASSWORDS           32778
+#define IDM_ADMIN_SALESXXX            32779
+#define IDM_BARCODE_NUMBERS           32780
+#define IDM_BUTTONBAR_OPTION1         32781
+#define IDM_BUTTONBAR_OPTION10        32782
+#define IDM_BUTTONBAR_OPTION11        32783
+#define IDM_BUTTONBAR_OPTION12        32784
+#define IDM_BUTTONBAR_OPTION13        32785
+#define IDM_BUTTONBAR_OPTION14        32786
+#define IDM_BUTTONBAR_OPTION15        32787
+#define IDM_BUTTONBAR_OPTION16        32788
+#define IDM_BUTTONBAR_OPTION17        32789
+#define IDM_BUTTONBAR_OPTION18        32790
+#define IDM_BUTTONBAR_OPTION19        32791
+#define IDM_BUTTONBAR_OPTION2         32792
+#define IDM_BUTTONBAR_OPTION20        32793
+#define IDM_BUTTONBAR_OPTION3         32794
+#define IDM_BUTTONBAR_OPTION4         32795
+#define IDM_BUTTONBAR_OPTION5         32796
+#define IDM_BUTTONBAR_OPTION6         32797
+#define IDM_BUTTONBAR_OPTION7         32798
+#define IDM_BUTTONBAR_OPTION8         32799
+#define IDM_BUTTONBAR_OPTION9         32800
+#define IDM_CALENDAR                  32801
+#define IDM_DATABASE_EDITDATA         32802
+#define IDM_FILE_BACKUP               32803
+#define IDM_FILE_BACKUP_LOG           32804
+#define IDM_FILE_BACKUP_STATUS        32805
+#define IDM_FILE_COMMSLOG_NETWORK     32806
+#define IDM_FILE_COMMSLOG_SYSTEM      32807
+#define IDM_FILE_EMAILLOG             32808
+#define IDM_FILE_FNBLOG               32809
+#define IDM_FILE_FTPLOG               32810
+#define IDM_FILE_POSTRAY_ACTION       32811
+#define IDM_FILE_POSTRAY_EXPORT       32812
+#define IDM_FILE_RESTORE_FOLDER       32813
+#define IDM_FILE_RESTORE_NORMAL       32814
+#define IDM_FILE_S4LABOURLOG          32815
+#define IDM_FILE_SAGE_LOG             32816
+#define IDM_FILE_WRITE_LOG            32817
+#define IDM_HELP_ABOUT                32818
+#define IDM_HELP_LICENCEDETAILS       32819
+#define IDM_IMPORT_SQL_MAIN           32820
+#define IDM_JOB_PRESET1               32821
+#define IDM_JOB_PRESET10              32822
+#define IDM_JOB_PRESET11              32823
+#define IDM_JOB_PRESET12              32824
+#define IDM_JOB_PRESET13              32825
+#define IDM_JOB_PRESET14              32826
+#define IDM_JOB_PRESET15              32827
+#define IDM_JOB_PRESET16              32828
+#define IDM_JOB_PRESET17              32829
+#define IDM_JOB_PRESET18              32830
+#define IDM_JOB_PRESET19              32831
+#define IDM_JOB_PRESET2               32832
+#define IDM_JOB_PRESET20              32833
+#define IDM_JOB_PRESET3               32834
+#define IDM_JOB_PRESET4               32835
+#define IDM_JOB_PRESET5               32836
+#define IDM_JOB_PRESET6               32837
+#define IDM_JOB_PRESET7               32838
+#define IDM_JOB_PRESET8               32839
+#define IDM_JOB_PRESET9               32840
+#define IDM_LOYALTY                   32841
+#define IDM_REPORTS_BRITANNIA         32843
+#define IDM_REPORTS_CUSTOMER          32844
+#define IDM_REPORTS_CUSTOMER_STATEMENT 32845
+#define IDM_REPORTS_DORBIERE          32846
+#define IDM_REPORTS_EPOS              32847
+#define IDM_REPORTS_IDRAUGHT          32848
+#define IDM_REPORTS_PLU_STOCK         32849
+#define IDM_REPORTS_SALESHISTORY_PLU  32850
+#define IDM_REPORTS_SALESHISTORY_PLU_DATE 32851
+#define IDM_REPORTS_SALESHISTORY_PLU_REGION 32852
+#define IDM_REPORTS_WORKING           32853
+#define IDM_SETUP_BARCODE             32854
+#define IDM_SETUP_COMMS_SETTINGS      32855
+#define IDM_SETUP_FOLDER_PASSWORDS    32856
+#define IDM_SETUP_IDRAUGHT            32857
+#define IDM_SETUP_OPTIONS             32858
+#define IDM_SETUP_PMS                 32859
+#define IDM_SETUP_POSTRAY             32860
+#define IDM_SETUP_SAGE                32861
+#define IDM_SETUP_SYSTEM              32862
+#define IDM_SETUP_TASKS               32863
+#define IDM_SETUP_TEXTS               32864
+#define IDM_SMARTPAY                  32865
+#define IDM_TASKS_ADHOC               32866
+
+// Next default values for new objects
+//
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_3D_CONTROLS                     1
+#define _APS_NEXT_RESOURCE_VALUE        105
+#define _APS_NEXT_COMMAND_VALUE         32867
+#define _APS_NEXT_CONTROL_VALUE         1525
+#define _APS_NEXT_SYMED_VALUE           1000
+#endif
+#endif
+
+//ResTidy run on 27/07/2022 at 19:00

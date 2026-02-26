@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{07FA47FE-B906-4D9B-9284-99952AD39EE0}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>SPosTray5</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <TargetName>SPosTray</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <TargetName>SPosTray</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;COMPILE_PMS;POSTRAY_UTILITY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>subsd.lib;repsubsd.lib;winsubsd.lib;datetimesubsd.lib;sysset3d.lib;sortd.lib;ssmapi32d.lib;expd.lib;socketd.lib;chilkatdbg.lib;ws2_32.lib;crypt32.lib;dnsapi.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+      <AdditionalManifestFiles>$(ProjectDir)spostray.exe.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;COMPILE_PMS;POSTRAY_UTILITY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>subs.lib;repsubs.lib;winsubs.lib;datetimesubs.lib;sysset3.lib;sort.lib;ssmapi32.lib;exp.lib;socket.lib;chilkatrel.lib;ws2_32.lib;crypt32.lib;dnsapi.lib</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+      <AdditionalManifestFiles>$(ProjectDir)spostray.exe.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\CommonEcrStockTray\SharedResources.rc" />
+    <ResourceCompile Include="SPosTray5.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\CommonEcrStockTray\res\bitmap1.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\bmp00001.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\bmp00002.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\idr_main.ico" />
+    <Image Include="..\CommonEcrStockTray\res\style1.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\style2.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\style3.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\style4.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\style5.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\style6.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\toplevel.bmp" />
+    <Image Include="..\CommonEcrStockTray\res\trading.bmp" />
+    <Image Include="res\postray.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SPosTray5.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CommonEcrStockTray\5000server.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\5000SiteArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\AddressInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\AESHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\AnalysisCategoryCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\AnalysisCategoryCSVRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\Append.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ArrayIndexer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\AutoBackupOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\AutoBackupProcessor.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BackupFilter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BarcodeCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BarcodeCSVRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BarcodePluNoTable.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BatchEmailLog.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BatchSalesExporter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BritanniaHotelsExportArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\BusinessDateInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPCSVLines.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPFlusher.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterDailyLogPluItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterDepositInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterDiscountHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterLinePosItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterOutputFile.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterStatusDisplay.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPImporterTransaction.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPSpooler.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CashRSPVersionChecker.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CCSVReportLine.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ChartwellsOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ColumnManager.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CommsHandshaker.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\Consolidation.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerActivityChecker.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerExtractor.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerNameTable.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerSalesTree.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerSelectionListAccount.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerSelectionListOneOff.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerSelectionListTempSortInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerStatementErrorInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerStatementHeaderLines.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\CustomerTrackTraceReport.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DatabaseCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DatabasePaths.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DatabasePathsSysset.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataManager.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataManagerBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataManagerNonDbClasses.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataManagerNonDbFuncCommon.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataManagerNonDbFuncEcrman.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataManagerNonDbFuncPMS.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DataNodeInfoKeyboard.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DateRangeHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DateRangeOrRegionPluInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DateSelectorRange.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DateSelectorSingle.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DealerFlags.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DefTextEmailAddress.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DefTextUnit.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DemoWarning.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DepartmentCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DepartmentCSVRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DepartmentSelector.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DepartmentSetCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DepartmentSorter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\DepositNameCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EcrmanOptionsIni.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EcrmanSupplierCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EditEnter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EmailOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EnhancedIniFile.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EntityTree.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EODDateTimeFilter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EODFileMover.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAccountBooking.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAccountBookingEvent.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAccountBookingPurchase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAccountReceive.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAccountReceiveCustomer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAccountReceiveDeposit.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportAgeVerify.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportBlockMap.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCheapestOneFreeDetail.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCheapestOneFreeSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolAccountReceive.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolAgeVerifyNoSale.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCheapestOneFreeSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCoversDaily.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCoversDataPoint.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCoversHourly.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCoversMonthly.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCoversPayment.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCoversTimedGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolCustomerHistory.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolDeptSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolDiscount.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolEODStatus.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolMiscReason.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolMixMatchItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolParams.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPaymentByItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPaymentByTaxBand.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPaymentDetail.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPaymentSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPluSales.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPluSalesDept.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPluSalesModifier.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPluSalesTax.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolPromotionSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolRefundVoid.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolServer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolSptBookCascade.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolTimed.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolTran.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolTransactionSorted.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolVatSummaryPrice.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolVatSummaryTax.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportConsolVoidReason.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversDaily.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversDailyGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversHourly.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversHourlyGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversMonthly.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversPayment.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversPriceLevel.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCoversTimedGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCustomerActivity.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCustomerBalance.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportCustomSettings.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDaily.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDailyGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDepositRedeemed.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDepositUnredeemed.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDiscountBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDiscountReason.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDiscountServer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportDiscountSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportEODStatus.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportFile.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportFileListMaker.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportGeneral.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportHourly.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportHourlyGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportMiscReason.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportMixMatchItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportNoSale.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentByItem.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentByTaxBand.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentDetail.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentReportGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentServer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPaymentSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluByPriceBandBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluByPriceBandServer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluByPriceBandSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluSalesCustomer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluSalesInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluSalesTax.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluVipDeptSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluVipSalesBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluVipSalesDept.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluVipSalesModifier.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluVipSalesServer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPluVipSalesSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPMSModes.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportPromotionSummary.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportReason.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportRefund.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportSelect.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportServer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportSptBookCascade.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportTaxSummaryPrice.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportTaxSummaryTax.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportTimed.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportTransactionSorted.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportVoid.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposReportVoidReason.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposSelectArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\EposSelectArrayFeeder.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ExportDate.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\FilenameUpdater.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\FileRemover.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\FNBDatabaseOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\FontTable.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\FtpConnect.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\FunctionAuthArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GlobalFunctions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVArrayAllergen.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVArrayBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVArrayConsol.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVArrayEpos.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVArrayPayment.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVArrayReport.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVRecordAllergen.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVRecordBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVRecordConsol.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVRecordEpos.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVRecordPayment.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\GroupCSVRecordReport.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\HexBitArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\HistoricalTaxRates.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\KeyboardSetCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LabelNameHandler.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LabelPriceInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LIPAExportDate.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocalPluExcludeList.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationCSVConvert.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationMasterMap.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationPaths.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationPathsSysset.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationSelectorEntity.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LocationSetCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\LockManager.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MessageLogger.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MinimumSPOSVersion.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MixMatchCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ModifierCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MyCommandLineInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MyMessageBoxDlg.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MyMessageBoxInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\MyMessageBoxStatic.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\netclient.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\netserver.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\NetworkCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\NetworkResources.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\NetworkSPOSVersionArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\NetworkTerminalMap.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\NetworkTester.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\OfferGroupEntriesCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\OfferGroupsCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\OPGroupArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\OPNameArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PaidInOutTextCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PaidInOutTextCSVRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\Password.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PastAndFutureDateRange.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PaymentCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PCOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluAddOrCopyInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluBarcodeArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluChangesBuffer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVLabelHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVRecordGeneral.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVRecordGetFunctions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVRecordLineCurrent.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVRecordLineLegacy.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluCSVRecordSetFunctions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluDatabaseHeader.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluSalesHistoryFileArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluSalesLine.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PluTypeHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSBookingCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSCalendarTable.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSCheckoutDateArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSClosedRoomCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSCustomerCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSInvoiceArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSInvoiceBookingBuffer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSInvoiceLineInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSInvoiceNum.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSReportFileFinder.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSRoomCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSRoomCSVRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSRoomGroup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSRoomStatusInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSRoomStatusTable.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSRoomType.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSTermLineEdit.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PMSZeroNightStayArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayDateRange.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayEposConsolParamsArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayEposConsolParamsInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportConsolidator.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportConsolidatorDiscount.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportConsolidatorPayment.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportConsolidatorSales.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportConsolidatorVoid.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportCreatorBase.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportCreatorDiscount.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportCreatorPayment.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportCreatorSales.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportCreatorVoid.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayExportFieldNames.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayFileSet.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayTask.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayTaskFieldMask.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayTaskInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayTaskIterator.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PosTrayTokenFiles.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PriceHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PriceSetHeaderManager.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PriceTextCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ProgressInfoDlg.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\PromotionsCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\Prompter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\RealTimeCommsThread.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReasonInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportCostFinder.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportDepartmentFilter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportFilters.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportPluFilter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportPluInfoFinder.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportpointCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ReportTimeAndAttendance.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\Repspawn.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\S4LabourLocationOptions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryCSVArrayCustomer.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryCSVArrayPlu.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryDateInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryReportPlu.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryReportPluBritannia.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryReportPluHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryReportPluSpecials.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SalesHistoryReportPluUnsold.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SelectLocInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SelectMultipleEntityInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerDatabaseHeader.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerLogonCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerPresetArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerRestrictionCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerRestrictionCSVRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\ServerSelectionList.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SessionCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SessionDateTimeFilter.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SmartEntertainmentPaymentMapArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SmartEntertainmentPaymentMapRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SMTPEmailHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SortedLocation.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SportsBookerPaymentMapArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SportsBookerPaymentMapRecord.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SportsBookerPriceBandCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SPOSCommsConnect.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SPOSVersions.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\StatusProgress.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\StringDateChecker.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\Super.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SysInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SystemBackup.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\SystemMap.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TableGroupCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TableGroupSetCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TableNameCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TableReportHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TaxArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TaxImportMap.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TermFileListInfo.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TerminalDateRangeListBuilder.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TimeAttendReportNameCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TimeMap.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TimePlanEntriesCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TimePlansCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TimeSliceCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TimeSliceMapCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\TreeNode.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\UnderlineMaker.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\VersionStrings.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\WaitLockDlg.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\WaitLockHelpers.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\WalletStampRuleCSVArray.cpp" />
+    <ClCompile Include="..\CommonEcrStockTray\WizardImportInfo.cpp" />
+    <ClCompile Include="..\CommonEcrTray\ReportPluDelivery.cpp" />
+    <ClCompile Include="..\CommonEcrTray\ReportPluStockLevel.cpp" />
+    <ClCompile Include="..\CommonStockTray\CustomFieldValue.cpp" />
+    <ClCompile Include="..\CommonStockTray\RecipeCSVArray.cpp" />
+    <ClCompile Include="..\CommonStockTray\RecipeRSVRecord.cpp" />
+    <ClCompile Include="..\CommonStockTray\SalesCostCSVArray.cpp" />
+    <ClCompile Include="..\CommonStockTray\SalesCostCSVRecord.cpp" />
+    <ClCompile Include="..\CommonStockTray\StockCSVArray.cpp" />
+    <ClCompile Include="..\CommonStockTray\StockCSVRecord.cpp" />
+    <ClCompile Include="..\CommonStockTray\StockItemSupplier.cpp" />
+    <ClCompile Include="..\CommonStockTray\StockLevelsCSVArray.cpp" />
+    <ClCompile Include="..\CommonStockTray\StockLevelsCSVRecord.cpp" />
+    <ClCompile Include="..\CommonStockTray\SupplierCSVArray.cpp" />
+    <ClCompile Include="..\CommonStockTray\SupplierCSVRecord.cpp" />
+    <ClCompile Include="..\SmartPaySQL\FilenameHandler.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLBuilderBind.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLConnectionOptions.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLConnectionPool.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLDb.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLFieldValidatorBase.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLHelpers.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLRecordSetConnectionPool.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLRecordSetMetadata.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLResultInfo.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Account\SQLFieldValidatorAccount.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Account\SQLPrepStatAccount.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Account\SQLRecordSetAccountFull.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Account\SQLRowAccountFull.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLFieldValidatorChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLPrepStatChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLRecordSetChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLRowChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_DbVersion\SQLFieldValidatorDbVersion.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_DbVersion\SQLRecordSetDbVersion.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_DbVersion\SQLRowDbVersion.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Group\SQLFieldValidatorGroup.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Group\SQLPrepStatGroup.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Group\SQLRecordSetGroupFull.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLTable_Group\SQLRowGroupFull.cpp" />
+    <ClCompile Include="..\SmartPaySQL\SQLWhereBuilder.cpp" />
+    <ClCompile Include="AboutDlgPosTray.cpp" />
+    <ClCompile Include="DataManagerPosTray.cpp" />
+    <ClCompile Include="MainFrmPosTray.cpp" />
+    <ClCompile Include="MainFrmPosTrayPrint.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PluMonitorPosTray.cpp" />
+    <ClCompile Include="PosTrayApp.cpp" />
+    <ClCompile Include="PosTrayCashRSPBuffer.cpp" />
+    <ClCompile Include="PosTrayCashRSPBufferThread.cpp" />
+    <ClCompile Include="PosTrayChartwellsExportCreator.cpp" />
+    <ClCompile Include="PosTrayChartwellsExportCreatorHeader.cpp" />
+    <ClCompile Include="PosTrayChartwellsExportCreatorPayment.cpp" />
+    <ClCompile Include="PosTrayChartwellsExportCreatorSales.cpp" />
+    <ClCompile Include="PosTrayChartwellsSender.cpp" />
+    <ClCompile Include="PosTrayEmailSender.cpp" />
+    <ClCompile Include="PosTrayExportConsolidatorS4Labour.cpp" />
+    <ClCompile Include="PosTrayExportCreatorS4Labour.cpp" />
+    <ClCompile Include="PosTrayExportSender.cpp" />
+    <ClCompile Include="PosTrayFNBExportCreator.cpp" />
+    <ClCompile Include="PosTrayFNBSender.cpp" />
+    <ClCompile Include="PosTrayFTPSender.cpp" />
+    <ClCompile Include="PosTrayLIPAExportCreator.cpp" />
+    <ClCompile Include="PosTrayLock.cpp" />
+    <ClCompile Include="PosTrayReportCreatorEpos.cpp" />
+    <ClCompile Include="PosTrayReportCreatorHistory.cpp" />
+    <ClCompile Include="PosTrayReportCreatorStkLevelEcr.cpp" />
+    <ClCompile Include="PosTrayReportCreatorTimeAttend.cpp" />
+    <ClCompile Include="PosTrayS4LabourSender.cpp" />
+    <ClCompile Include="PosTraySocket.cpp" />
+    <ClCompile Include="PosTraySocketMessage.cpp" />
+    <ClCompile Include="PosTraySocketServer.cpp" />
+    <ClCompile Include="PosTrayStartDlg.cpp" />
+    <ClCompile Include="PosTrayStatusDlg.cpp" />
+    <ClCompile Include="Trayicon.cpp" />
+    <ClCompile Include="Version.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CommonEcrStockTray\5000Server.h" />
+    <ClInclude Include="..\CommonEcrStockTray\5000SiteArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\AddressInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\AESHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\AnalysisCategoryCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Append.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ArrayIndexer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\AutoBackupOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\AutoBackupProcessor.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BackupErrors.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BackupFilter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BarcodeCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BarcodePluNoTable.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BaseReportHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BatchEmailLog.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BatchSalesExporter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BritanniaHotelsExportArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\BusinessDateInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPCSVLines.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPFlusher.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterBatchInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterDailyLogPluItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterDefines.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterDepositInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterDiscountHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterLinePosItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterOutputFile.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterStatusDisplay.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPImporterTransaction.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPSpooler.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CashRSPVersionChecker.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CCSVReportLine.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ChartwellsOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ColumnManager.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ColumnNames.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ComboTexts.h" />
+    <ClInclude Include="..\CommonEcrStockTray\commserrors.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CommsHandshaker.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Consolidation.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerActivityChecker.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerExtractor.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerNameTable.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerSalesTree.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerSelectionListAccount.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerSelectionListOneOff.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerSelectionListTempSortInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerStatementErrorInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerStatementHeaderLines.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomerTrackTraceReport.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomPluField.h" />
+    <ClInclude Include="..\CommonEcrStockTray\CustomReportField.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DatabaseCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataManager.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataManagerBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataManagerNonDbClasses.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataManagerNonDbFuncCommon.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataManagerNonDbFuncEcrman.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataManagerNonDbFuncPMS.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataNodeInfoKeyboard.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DataPageFilter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DateRangeHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DateRangeOrRegionPluInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DateSelectorRange.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DateSelectorSingle.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DealerFlags.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DefTextEmailAddress.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DefTextUnit.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DemoWarning.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DepartmentCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DepartmentSelector.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DepartmentSetCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DepartmentSorter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\DepositNameCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EcrmanOptionsIni.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EcrmanSupplierCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EditEnter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EditStockTypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EmailOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EnhancedIniFile.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EntityIDCreator.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EntityTree.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EODDateTimeFilter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EODFileMover.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAccountBooking.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAccountBookingEvent.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAccountBookingPurchase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAccountReceive.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAccountReceiveCustomer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAccountReceiveDeposit.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportAgeVerify.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportBlockMap.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCheapestOneFreeDetail.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCheapestOneFreeSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolAccountReceive.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolAgeVerifyNoSale.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCheapestOneFreeSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCoversDaily.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCoversDataPoint.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCoversHourly.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCoversMonthly.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCoversPayment.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCoversTimedGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolCustomerHistory.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolDeptSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolDiscount.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolEODStatus.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolLoyaltyRecon.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolMiscReason.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolMixMatchItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolParams.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPaymentByItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPaymentByTaxBand.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPaymentDetail.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPaymentSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPluSales.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPluSalesDept.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPluSalesModifier.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPluSalesTax.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolPromotionSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolRefundVoid.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolSptBookCascade.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolTaxSummaryPrice.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolTaxSummaryTax.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolTimed.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolTran.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolTransactionSorted.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportConsolVoidReason.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversDaily.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversDailyGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversHourly.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversHourlyGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversMonthly.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversPayment.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversPriceLevel.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCoversTimedGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCustomerActivity.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCustomerBalance.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportCustomSettings.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDaily.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDailyGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDepositRedeemed.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDepositUnredeemed.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDiscountBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDiscountReason.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDiscountServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportDiscountSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportEODStatus.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportFile.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportFileListMaker.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportGeneral.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportHourly.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportHourlyGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportLoyaltyRecon.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportMiscReason.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportMixMatchItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportNoSale.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentByItem.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentByTaxBand.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentDetail.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentReportGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPaymentSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluByPriceBandBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluByPriceBandServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluByPriceBandSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluSalesCustomer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluSalesInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluSalesTax.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluVipDeptSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluVipSalesBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluVipSalesDept.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluVipSalesModifier.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluVipSalesServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPluVipSalesSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPMSModes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportPromotionSummary.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportReason.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportRefund.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReports.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportSelect.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportSptBookCascade.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportTaxSummaryPrice.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportTaxSummaryTax.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportTimed.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportTransactionSorted.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportVoid.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposReportVoidReason.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposSelectArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\EposSelectArrayFeeder.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ExportDate.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FilenameUpdater.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FileRemover.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FilterTypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FNBDatabaseOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FontTable.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FtpConnect.h" />
+    <ClInclude Include="..\CommonEcrStockTray\FunctionAuthArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GlobalFunctions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GroupCSVArrayAllergen.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GroupCSVArrayBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GroupCSVArrayConsol.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GroupCSVArrayEpos.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GroupCSVArrayPayment.h" />
+    <ClInclude Include="..\CommonEcrStockTray\GroupCSVArrayReport.h" />
+    <ClInclude Include="..\CommonEcrStockTray\HexBitArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\HistoricalTaxRates.h" />
+    <ClInclude Include="..\CommonEcrStockTray\HistoryFileTypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ImportDefines.h" />
+    <ClInclude Include="..\CommonEcrStockTray\KeyboardSetCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LabelNameHandler.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LabelPriceInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LIPAExportDate.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LocalPluExcludeList.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LocationCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LocationMasterMap.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LocationSelectorEntity.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LocationSetCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\LockManager.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MaxLengths.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MessageLogger.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MinimumSPOSVersion.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MixMatchCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ModifierCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MyCommandLineInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MyCSSLockFile.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MyMessageBoxDlg.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MyMessageBoxInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\MyMessageBoxStatic.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NamespaceDept.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NamespacePayment.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NamespacePlu.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NamespaceServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetClient.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetServer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetworkCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetworkResources.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetworkSPOSVersionArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetworkTerminalMap.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NetworkTester.h" />
+    <ClInclude Include="..\CommonEcrStockTray\NodeTypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\OfferGroupEntriesCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\OfferGroupsCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\OPGroupArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\OPNameArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PaidInOutTextCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Password.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PastAndFutureDateRange.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PaymentCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PCOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluAddOrCopyInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluBarcodeArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluChangesBuffer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluDatabaseHeader.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluRangeModes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluSalesHistoryFileArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluSalesLine.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PluTypeHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSBookingCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSCalendarTable.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSCheckoutDateArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSClosedRoomCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSCustomerCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSDefines.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSInvoiceArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSInvoiceBookingBuffer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSInvoiceLineInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSInvoiceNum.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSReportFileFinder.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSRoomCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSRoomGroup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSRoomStatusInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSRoomStatusTable.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSRoomType.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSStructs.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSTermLineEdit.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PMSZeroNightStayArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayDateRange.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayEposConsolParamsArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayEposConsolParamsInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportConsolidator.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportConsolidatorDiscount.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportConsolidatorPayment.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportConsolidatorSales.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportConsolidatorVoid.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportCreatorBase.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportCreatorDiscount.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportCreatorPayment.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportCreatorSales.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportCreatorVoid.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayExportFieldNames.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayFileSet.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayNetworkInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayStatus.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayTask.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayTaskArrays.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayTaskFieldMask.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayTaskInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayTaskIterator.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PosTrayTokenFiles.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PriceHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PriceSetHeaderManager.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PriceSetIncludes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PriceTextCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ProgressInfoDlg.h" />
+    <ClInclude Include="..\CommonEcrStockTray\PromotionsCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Prompter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\RealTimeCommsThread.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReasonInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Repcsv.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportConsolidationArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportCostFinder.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportDepartmentFilter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportFilters.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportPluFilter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportPluInfoFinder.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportpointCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportTimeAndAttendance.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ReportTypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Repspawn.h" />
+    <ClInclude Include="..\CommonEcrStockTray\S4LabourLocationOptions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SalesHistoryCSVArrayCustomer.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SalesHistoryCSVArrayPlu.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SalesHistoryDateInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SalesHistoryFields.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SalesHistoryReportPlu.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SalesTypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\searchtypes.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SelectLocInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SelectMultipleEntityInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ServerCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ServerDatabaseHeader.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ServerLogonCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ServerPresetArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ServerRestrictionCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\ServerSelectionList.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SessionCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SessionDateTimeFilter.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SharedResources.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SmartEntertainmentPaymentMapArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SMTPEmailHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SortedLocation.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SportsBookerPaymentMapArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SportsBookerPriceBandCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SPOSCommsConnect.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SPOSVersions.h" />
+    <ClInclude Include="..\CommonEcrStockTray\StatusProgress.h" />
+    <ClInclude Include="..\CommonEcrStockTray\StringDateChecker.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Super.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SysInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SystemBackup.h" />
+    <ClInclude Include="..\CommonEcrStockTray\SystemMap.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TableGroupCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TableGroupSetCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TableNameCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TableReportHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TaxArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TaxImportMap.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TermFileListInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TerminalDateRangeListBuilder.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimeAttendReportNameCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimeMap.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimePlanEntriesCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimePlansCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimerNumbers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimeSliceCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\TimeSliceMapCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\Treenode.h" />
+    <ClInclude Include="..\CommonEcrStockTray\UnderlineMaker.h" />
+    <ClInclude Include="..\CommonEcrStockTray\V2ConvertErrors.h" />
+    <ClInclude Include="..\CommonEcrStockTray\version.h" />
+    <ClInclude Include="..\CommonEcrStockTray\WaitLockDlg.h" />
+    <ClInclude Include="..\CommonEcrStockTray\WaitLockHelpers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\WalletStampRuleCSVArray.h" />
+    <ClInclude Include="..\CommonEcrStockTray\WizardImportInfo.h" />
+    <ClInclude Include="..\CommonEcrStockTray\WMNumbers.h" />
+    <ClInclude Include="..\CommonEcrStockTray\WrapperErrors.h" />
+    <ClInclude Include="..\CommonEcrTray\ReportPluDelivery.h" />
+    <ClInclude Include="..\CommonEcrTray\ReportPluStockLevel.h" />
+    <ClInclude Include="..\CommonStockTray\CustomField.h" />
+    <ClInclude Include="..\CommonStockTray\RecipeCSVArray.h" />
+    <ClInclude Include="..\CommonStockTray\SalesCostCSVArray.h" />
+    <ClInclude Include="..\CommonStockTray\StockCSVArray.h" />
+    <ClInclude Include="..\CommonStockTray\StockLevelsCSVArray.h" />
+    <ClInclude Include="..\CommonStockTray\SupplierCSVArray.h" />
+    <ClInclude Include="..\SmartPaySQL\FilenameHandler.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLBuilderBind.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLConnectionOptions.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLConnectionPool.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLDb.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLDefines.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLFieldValidatorBase.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLHelpers.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLNamespaces.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLRecordSetConnectionPool.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLRecordSetMetadata.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLResultInfo.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Account\SQLFieldValidatorAccount.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Account\SQLPrepStatAccount.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Account\SQLRecordSetAccountFull.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Account\SQLRowAccountFull.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLFieldValidatorChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLPrepStatChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLRecordSetChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLRowChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_DbVersion\SQLFieldValidatorDbVersion.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_DbVersion\SQLRecordSetDbVersion.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_DbVersion\SQLRowDbVersion.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Group\SQLFieldValidatorGroup.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Group\SQLPrepStatGroup.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Group\SQLRecordSetGroupFull.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLTable_Group\SQLRowGroupFull.h" />
+    <ClInclude Include="..\SmartPaySQL\SQLWhereBuilder.h" />
+    <ClInclude Include="AboutDlgPosTray.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="MainFrmPosTray.h" />
+    <ClInclude Include="MainFrmPosTrayPrint.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="PluMonitorPosTray.h" />
+    <ClInclude Include="PosTrayApp.h" />
+    <ClInclude Include="PosTrayCashRSPBuffer.h" />
+    <ClInclude Include="PosTrayCashRSPBufferThread.h" />
+    <ClInclude Include="PosTrayChartwellsExportCreator.h" />
+    <ClInclude Include="PosTrayChartwellsSender.h" />
+    <ClInclude Include="PosTrayEmailSender.h" />
+    <ClInclude Include="PosTrayExportConsolidatorS4Labour.h" />
+    <ClInclude Include="PosTrayExportCreatorS4Labour.h" />
+    <ClInclude Include="PosTrayExportSender.h" />
+    <ClInclude Include="PosTrayFNBExportCreator.h" />
+    <ClInclude Include="PosTrayFNBSender.h" />
+    <ClInclude Include="PosTrayFTPSender.h" />
+    <ClInclude Include="PosTrayLIPAExportCreator.h" />
+    <ClInclude Include="PosTrayLock.h" />
+    <ClInclude Include="PosTrayReportCreatorEpos.h" />
+    <ClInclude Include="PosTrayReportCreatorHistory.h" />
+    <ClInclude Include="PosTrayReportCreatorStkLevelEcr.h" />
+    <ClInclude Include="PosTrayReportCreatorTimeAttend.h" />
+    <ClInclude Include="PosTrayS4LabourSender.h" />
+    <ClInclude Include="PosTraySocket.h" />
+    <ClInclude Include="PosTraySocketMessage.h" />
+    <ClInclude Include="PosTraySocketServer.h" />
+    <ClInclude Include="PosTrayStartDlg.h" />
+    <ClInclude Include="PosTrayStatusDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Sslibset.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Trayicon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="spostray.exe.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

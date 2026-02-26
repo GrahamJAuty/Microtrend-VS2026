@@ -1,0 +1,65 @@
+#pragma once
+/**********************************************************************/
+const int RX_JOB = 0x0;
+const int DN_JOB = 0x200;
+/**********************************************************************/
+const int RX_SALES = RX_JOB | 1;
+const int RX_REASON = RX_JOB | 2;
+const int RX_EODPLU = RX_JOB | 3;
+const int RX_EODCUSTOMER = RX_JOB | 4;
+/**********************************************************************/
+const int DN_PLU = DN_JOB | 1;
+const int DN_PLU_SET1 = DN_JOB | 2;
+const int DN_PLU_SET2 = DN_JOB | 3;
+const int DN_PLU_SET3 = DN_JOB | 4;
+const int DN_BAR = DN_JOB | 5;
+const int DN_ACAT = DN_JOB | 6;
+const int DN_MOD = DN_JOB | 7;
+const int DN_MIX = DN_JOB | 8;
+const int DN_DEPT = DN_JOB | 9;
+const int DN_GROUP = DN_JOB | 10;
+const int DN_KBD1 = DN_JOB | 11;
+const int DN_KBD2 = DN_JOB | 12;
+const int DN_KBD3 = DN_JOB | 13;
+const int DN_KBD4 = DN_JOB | 14;
+const int DN_KBD5 = DN_JOB | 15;
+const int DN_KBD6 = DN_JOB | 16;
+const int DN_KBD7 = DN_JOB | 17;
+const int DN_PAY = DN_JOB | 18;
+const int DN_SERVER_NAME = DN_JOB | 19;
+const int DN_DONOTUSE_20 = DN_JOB | 20;
+const int DN_DONOTUSE_21 = DN_JOB | 21;
+const int DN_DONOTUSE_22 = DN_JOB | 22;
+const int DN_DONOTUSE_23 = DN_JOB | 23;
+const int DN_DONOTUSE_24 = DN_JOB | 24;
+const int DN_DONOTUSE_25 = DN_JOB | 25;
+const int DN_DONOTUSE_26 = DN_JOB | 26;
+const int DN_IMAGES = DN_JOB | 27;
+const int DN_KBD8 = DN_JOB | 28;
+const int DN_KBD9 = DN_JOB | 29;
+const int DN_KBD10 = DN_JOB | 30;
+const int DN_KBD11 = DN_JOB | 31;
+const int DN_KBD12 = DN_JOB | 32;
+const int DN_KBD13 = DN_JOB | 33;
+const int DN_KBD14 = DN_JOB | 34;
+const int DN_TPLAN = DN_JOB | 35;
+const int DN_TAX = DN_JOB | 36;
+const int DN_PLU_KBD = DN_JOB | 37;
+const int DN_PLU_SET1_KBD = DN_JOB | 38;
+const int DN_PLU_SET2_KBD = DN_JOB | 39;
+const int DN_PLU_SET3_KBD = DN_JOB | 40;
+const int DN_PAIDIO = DN_JOB | 41;
+const int DN_PLU_INFO = DN_JOB | 42;
+const int DN_RECEIPT = DN_JOB | 43;
+const int DN_PROMO = DN_JOB | 44;
+const int DN_ALLERGEN = DN_JOB | 45;
+const int DN_FUNCTION = DN_JOB | 46;
+const int DN_SERVER_PRESET = DN_JOB | 47;
+const int DN_LOYALTY_SCHEME = DN_JOB | 48;
+const int DN_TABLE_NAME = DN_JOB | 49;
+const int DN_TABLE_AREA = DN_JOB | 50;
+const int DN_MACRO = DN_JOB | 51;
+const int DN_REASON = DN_JOB | 52;
+const int DN_WALLETSTAMPRULE = DN_JOB | 53;
+const int DN_ALLOFFER = DN_JOB | 54;
+/**********************************************************************/
