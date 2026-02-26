@@ -543,7 +543,7 @@ void CEposLoyaltyFile::ProcessItemLine(CCSV* pCsv)
 
 			if ((nThisPluNo >= nRedirGiftPluNo + 1) && (nThisPluNo <= nRedirGiftPluNo + 9999))
 			{
-				m_nStaffGiftServerNo = nThisPluNo - nRedirGiftPluNo;
+				m_nStaffGiftServerNo = static_cast<int>(nThisPluNo - nRedirGiftPluNo);
 			}
 		}
 	}

@@ -23,14 +23,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -49,13 +49,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
-    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+    <IncludePath>E:\Microtrend\VS2026\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2026\common\ssinc</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2026\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2026\common\sslib</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Microtrend\VS2022\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
-    <LibraryPath>E:\Microtrend\VS2022\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+    <IncludePath>E:\Microtrend\VS2026\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2026\common\ssinc</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2026\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2026\common\sslib</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
