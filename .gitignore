@@ -1,0 +1,30 @@
+# Ignore the folder you mentioned
+/COMMON/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.db
+
+# Build outputs
+Debug/
+Release/
+x64/
+*.obj
+*.pdb
+*.tlog
+*.ipch
+*.ilk
+*.log
+
+# Generated files
+*.exe
+*.dll
+*.lib
+*.exp
+
+# Temporary
+*.tmp
+*.bak
