@@ -1,0 +1,184 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "sysset3.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SYSSET_DLG1 DIALOGEX 0, 0, 255, 225
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+FONT 8, "MS Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "",IDC_SYSSET_STATIC_GROUP1,7,7,241,95
+    LTEXT           "Username",IDC_SYSSET_STATIC_USERNAME,62,22,131,10,SS_NOPREFIX
+    LTEXT           "UserAddress1",IDC_SYSSET_STATIC_USERADD1,62,36,131,8,SS_NOPREFIX
+    LTEXT           "UserAddress2",IDC_SYSSET_STATIC_USERADD2,62,48,131,8,SS_NOPREFIX
+    LTEXT           "UserAddress3",IDC_SYSSET_STATIC_USERADD3,62,60,131,8,SS_NOPREFIX
+    LTEXT           "UserAddress4",IDC_SYSSET_STATIC_USERADD4,62,72,131,8,SS_NOPREFIX
+    LTEXT           "UserAddress5",IDC_SYSSET_STATIC_USERADD5,62,84,131,8,SS_NOPREFIX
+    GROUPBOX        "",IDC_SYSSET_STATIC_GROUP2,7,105,241,53
+    LTEXT           "Text",IDC_SYSSET_STATIC_TEXT,21,119,127,8,NOT WS_VISIBLE
+    CTEXT           "Random",IDC_SYSSET_STATIC_RANDOM,62,116,86,14,SS_CENTERIMAGE | SS_SUNKEN
+    EDITTEXT        IDC_SYSSET_EDIT_USERPASSWORD,62,138,150,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_SYSSET_STATIC_GROUP3,7,160,241,32
+    CTEXT           "Comment1",IDC_SYSSET_STATIC_COMMENT1,9,168,236,8
+    CTEXT           "Comment2",IDC_SYSSET_STATIC_COMMENT2,9,179,236,8
+    DEFPUSHBUTTON   "OK",IDOK,103,203,49,15
+    PUSHBUTTON      "",IDC_SYSSET_BUTTON_REGISTER_ONLINE,179,203,69,15,NOT WS_VISIBLE
+    PUSHBUTTON      "&K",IDC_BUTTON_SECRET,11,11,15,14,NOT WS_VISIBLE | NOT WS_TABSTOP
+END
+
+IDD_SYSSET_DLG2 DIALOGEX 0, 0, 255, 174
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    CTEXT           "",IDC_SYSSET_STATIC_LINE1,12,12,230,8
+    CTEXT           "",IDC_SYSSET_STATIC_LINE2,12,24,230,8
+    CTEXT           "",IDC_SYSSET_STATIC_LINE3,12,42,230,8
+    CTEXT           "",IDC_SYSSET_STATIC_LINE4,12,54,230,8
+    CTEXT           "",IDC_SYSSET_STATIC_LINE5,12,73,230,8
+    CTEXT           "",IDC_SYSSET_STATIC_LINE6,12,91,230,8
+    LTEXT           "",IDC_SYSSET_STATIC_EXPIRY,51,115,42,8
+    CONTROL         "DateTimePicker1",IDC_SYSSET_DATETIMEPICKER1,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,97,112,59,15
+    LTEXT           "",IDC_SYSSET_STATIC_PHONE,13,136,79,8
+    EDITTEXT        IDC_SYSSET_EDIT_DEALER_PHONE,97,133,86,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_SYSSET_BUTTON_CLEAR_EXPIRY,198,112,50,14
+    DEFPUSHBUTTON   "OK",IDOK,198,133,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,152,50,14
+END
+
+IDD_SYSSET_DLG3 DIALOGEX 0, 0, 166, 46
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_BORDER
+FONT 8, "MS Shell Dlg 2", 400, 0, 0x0
+BEGIN
+    CTEXT           "Accessing internet, Please wait...",IDC_SYSSET_STATIC_WAIT_MESSAGE,7,16,152,14,SS_SUNKEN | WS_BORDER
+END
+
+IDD_SYSSET_DLG4 DIALOGEX 0, 0, 551, 155
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg 2", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Close",IDCANCEL,494,134,50,14
+    CONTROL         "",IDC_SYSSET_LIST_USERS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,537,118
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SYSSET_DLG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_SYSSET_DLG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_SYSSET_DLG3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_SYSSET_DLG4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 544
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "sysset3.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SYSSET_DLG4 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SYSSET_DLG1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United Kingdom) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
