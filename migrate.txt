@@ -1,0 +1,22 @@
+git checkout -b migrate-<solution-name>
+
+copy solution from VS2022 to VS2026
+remove .git, .gitignore, .gitattributes from the copy
+
+git add <path to solution source>
+git commit -m "Add <solution-name> source for VS2026 migration"
+
+open solution in VS2026
+fix include/lib paths
+retarget project
+confirm build
+
+git add .
+git commit -m "Migrate <solution-name> to VS2026 and confirm build"
+
+git checkout main
+git merge migrate-<solution-name>
+git push
+
+git branch -d migrate-<solution-name>
+git push origin --delete migrate-<solution-name>
