@@ -399,7 +399,7 @@ public:
 	//NON UI
 	int GetSearchMax() { return m_nSearchMax; }
 	int GetLockRetries() { return m_nLockRetries; }
-	bool GetThreadDiagnosticsFlag() { return m_bThreadDiagnostics; }
+	int GetThreadDiagnosticsFlags() { return m_nThreadDiagnostics; }
 	int GetLockFolderTimeout() { return m_nLockFolderTimeout; }
 	bool GetSPosPointsAwardFlag() { return m_bSPosPointsAward; }
 	bool GetSPosPointsRedeemFlag() { return m_bSPosPointsRedeem; }
@@ -544,7 +544,7 @@ public:
 	//NON UI
 	void SetSearchMax(int nMax);
 	void SetLockRetries(int n);
-	void SetThreadDiagnosticsFlag(bool b) { m_bThreadDiagnostics = b; }
+	void SetThreadDiagnosticsFlag(int n) { m_nThreadDiagnostics = n; }
 	void SetLockFolderTimeout(int n);
 	void SetSPosPointsAwardFlag(bool b) { m_bSPosPointsAward = b; }
 	void SetSPosPointsRedeemFlag(bool b) { m_bSPosPointsRedeem = b; }
@@ -680,7 +680,7 @@ private:
 	//NON UI
 	int m_nSearchMax;
 	int m_nLockRetries;
-	bool m_bThreadDiagnostics;
+	int m_nThreadDiagnostics;
 	int m_nLockFolderTimeout;
 	bool m_bSPosPointsAward;
 	bool m_bSPosPointsRedeem;

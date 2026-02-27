@@ -7,7 +7,10 @@ public:
 	CLoyRspThreadInfo();
 
 public:
-	CStringArray* m_pResponseBuffer;
+	CStringArray* m_pResponseBuffer = nullptr;
+	int m_nDbNo = 0;
+	int m_nSetNo = 0;
+	bool m_bLogFileWrites = FALSE;
 };
 
 /**********************************************************************/
@@ -19,6 +22,7 @@ public:
 
 private:
 	static void DoWorkInternal( CLoyRspThreadInfo* pInfo );
+	static void LogThread(CLoyRspThreadInfo* pInfo, CString strMsg);
 };
 
 /**********************************************************************/

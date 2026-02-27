@@ -195,7 +195,7 @@ CServerData::CServerData(void)
 	//NON UI
 	m_nSearchMax = 3;
 	m_nLockRetries = 0;
-	m_bThreadDiagnostics = FALSE;
+	m_nThreadDiagnostics = 0;
 	m_nLockFolderTimeout = 15;
 	m_bSPosPointsAward = FALSE;
 	m_bSPosPointsRedeem = FALSE;
@@ -931,7 +931,7 @@ bool CServerData::Write(CString strDatapath)
 	//NON UI
 	file.Set(ServerDataFields::SearchMax, m_nSearchMax);
 	file.Set(ServerDataFields::LockRetries, m_nLockRetries);
-	file.Set(ServerDataFields::ThreadDiagnostics, m_bThreadDiagnostics);
+	file.Set(ServerDataFields::ThreadDiagnostics, m_nThreadDiagnostics);
 	file.Set(ServerDataFields::LockFolderTimeout, m_nLockFolderTimeout);
 	file.Set(ServerDataFields::SPOSPointsAward, m_bSPosPointsAward);
 	file.Set(ServerDataFields::SPOSPointsRedeem, m_bSPosPointsRedeem);
@@ -1077,7 +1077,7 @@ void CServerData::CopyFrom( CServerData& source )
 	//NON UI
 	SetSearchMax(source.GetSearchMax());
 	SetLockRetries(source.GetLockRetries());
-	SetThreadDiagnosticsFlag(source.GetThreadDiagnosticsFlag());
+	SetThreadDiagnosticsFlag(source.GetThreadDiagnosticsFlags());
 	SetLockFolderTimeout(source.GetLockFolderTimeout());
 	SetSPosPointsAwardFlag(source.GetSPosPointsAwardFlag());
 	SetSPosPointsRedeemFlag(source.GetSPosPointsRedeemFlag());

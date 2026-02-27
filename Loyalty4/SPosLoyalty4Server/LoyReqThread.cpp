@@ -74,12 +74,16 @@ void CLoyReqThread::DoWorkInternal(CLoyReqThreadInfo* pInfo)
 			CString strFilepath = FileFinder.GetFilePath();
 
 			{
+				LogThread(pInfo, "About to open REQ file");
+
 				CSSFile fileReq;
 				if (fileReq.Open(strFilepath, "rb") == FALSE)
 				{
 					pInfo->m_EndTime = GetTickCount64();
 					return;
 				}
+
+				LogThread(pInfo, "Opened REQ file");
 
 				pInfo->m_strREQFilepath = strFilepath;
 				pInfo->m_strREQFilename = strFilename;
@@ -94,13 +98,50 @@ void CLoyReqThread::DoWorkInternal(CLoyReqThreadInfo* pInfo)
 				}
 			}
 
+			LogThread(pInfo, "Closed REQ file ");
+
 			CFileRemover FileRemover;
 			FileRemover.RemoveFile(strFilepath);
+
+			LogThread(pInfo, "Deleted REQ file ");
+
 			break;
 		}
 	}
 
 	pInfo->m_EndTime = GetTickCount64();
+}
+
+/**********************************************************************/
+
+void CLoyReqThread::LogThread(CLoyReqThreadInfo* pInfo, CString strMsg)
+{
+	if (FALSE == pInfo->m_bLogFileReads)
+	{
+		return;
+	}
+
+	CString strDate = "";
+	CString strTime = "";
+	GetMessageLogDateTime(strDate, strTime);
+
+	CSSFile fileLog;
+	CString strFilename = "";
+	strFilename.Format(".\\REQLOG_%d%d.txt", 
+		pInfo->m_nDbNo,
+		pInfo->m_nSetNo);
+
+	if (fileLog.Open(strFilename, "ab") == TRUE)
+	{
+		CString strLog = "";
+		strLog.Format("%s %s - %s",
+			(const char*)strDate,
+			(const char*)strTime,
+			(const char*)strMsg);
+
+		fileLog.WriteLine(strLog);
+		fileLog.Close();
+	}
 }
 
 /**********************************************************************/

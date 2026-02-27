@@ -107,19 +107,9 @@ void CMessageLogger::LogMessage( CString strContext, CString strMessage )
 		ReportFile.Close();
 	}
 
-	COleDateTime timeNow = COleDateTime::GetCurrentTime();
-
-	CString strDate;
-	strDate.Format( "%2.2d/%2.2d/%4.4d",
-		timeNow.GetDay(),
-		timeNow.GetMonth(),
-		timeNow.GetYear() );
-
-	CString strTime;
-	strTime.Format( "%2.2d:%2.2d:%2.2d",
-		timeNow.GetHour(),
-		timeNow.GetMinute(),
-		timeNow.GetSecond() );
+	CString strDate = "";
+	CString strTime = "";
+	GetMessageLogDateTime(strDate, strTime);
 
 	CString strPCIdClient = "";
 	CString strPCIdHost = "";
@@ -150,7 +140,8 @@ void CMessageLogger::LogMessage( CString strContext, CString strMessage )
 
 void CMessageLogger::LogThreadDiagnostic(int nType, int DbNo, int nFolderSet)
 {
-	if (Server.GetThreadDiagnosticsFlag() == FALSE)
+	//INTENTIONAL USE OF BITWISE OPERATOR
+	if ((Server.GetThreadDiagnosticsFlags() & 1 ) == 0)
 	{
 		return;
 	}

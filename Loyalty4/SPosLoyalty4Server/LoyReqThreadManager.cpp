@@ -21,6 +21,9 @@ CLoyReqThreadManager::CLoyReqThreadManager()
 		for (int nSetNo = 0; nSetNo <= EPOSREQPATH_COUNT; nSetNo++)
 		{
 			m_pThread[nDbNo][nSetNo] = NULL;
+			m_arrayThreadInfo[nDbNo][nSetNo].m_nDbNo = nDbNo;
+			m_arrayThreadInfo[nDbNo][nSetNo].m_nSetNo = nSetNo;
+			m_arrayThreadInfo[nDbNo][nSetNo].m_bLogFileReads = FALSE;
 		}
 	}
 }
@@ -133,6 +136,7 @@ void CLoyReqThreadManager::CheckThread(CServerDataFolderSetIndex& ThreadIndex)
 			pThreadInfo->m_EndTime = pThreadInfo->m_StartTime;
 			pThreadInfo->m_strREQFolder = Server.GetEposRequestPath(m_ThreadIndex);
 			pThreadInfo->m_pRequestBuffer = &m_RequestBuffer[m_ThreadIndex.m_nDbNo][m_ThreadIndex.m_nSetNo];
+			pThreadInfo->m_bLogFileReads = ((Server.GetThreadDiagnosticsFlags() & 2) != 0);
 			pThreadInfo->m_strREQFilepath = "";
 			pThreadInfo->m_strREQFilename = "";
 			pThreadInfo->m_strRSPFilepath = "";

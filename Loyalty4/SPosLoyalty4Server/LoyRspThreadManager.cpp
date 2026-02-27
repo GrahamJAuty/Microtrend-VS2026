@@ -11,6 +11,9 @@ CLoyRspThreadManager::CLoyRspThreadManager()
 		for (int nSetNo = 0; nSetNo <= EPOSREQPATH_COUNT; nSetNo++)
 		{
 			m_pThread[nDbNo][nSetNo] = NULL;
+			m_arrayThreadInfo[nDbNo][nSetNo].m_nDbNo = nDbNo;
+			m_arrayThreadInfo[nDbNo][nSetNo].m_nSetNo = nSetNo;
+			m_arrayThreadInfo[nDbNo][nSetNo].m_bLogFileWrites = FALSE;
 		}
 	}
 }
@@ -118,6 +121,7 @@ void CLoyRspThreadManager::CheckThread(CServerDataFolderSetIndex& ThreadIndex)
 				if ((strLogFolder != "") && (strReqFolder != ""))
 				{
 					m_arrayThreadInfo[ThreadIndex.m_nDbNo][ThreadIndex.m_nSetNo].m_pResponseBuffer = &m_ResponseCurrent[ThreadIndex.m_nDbNo][ThreadIndex.m_nSetNo];
+					m_arrayThreadInfo[ThreadIndex.m_nDbNo][ThreadIndex.m_nSetNo].m_bLogFileWrites = ((Server.GetThreadDiagnosticsFlags() & 2) != 0);
 					m_pThread[ThreadIndex.m_nDbNo][ThreadIndex.m_nSetNo] = AfxBeginThread(CLoyRspThread::DoWork, &m_arrayThreadInfo[ThreadIndex.m_nDbNo][ThreadIndex.m_nSetNo], THREAD_PRIORITY_NORMAL, 0, CREATE_SUSPENDED, NULL);
 
 					if (m_pThread[ThreadIndex.m_nDbNo][ThreadIndex.m_nSetNo] != NULL)

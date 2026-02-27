@@ -17,6 +17,9 @@ public:
 	bool m_bIsJSONRequest = FALSE;
 	LONGLONG m_StartTime = 0;
 	LONGLONG m_EndTime = 0;
+	int m_nDbNo = 0;
+	int m_nSetNo = 0;
+	bool m_bLogFileReads = 0;
 };
 
 /**********************************************************************/
@@ -28,6 +31,7 @@ public:
 
 private:
 	static void DoWorkInternal( CLoyReqThreadInfo* pInfo );
+	static void LogThread(CLoyReqThreadInfo* pInfo, CString strMsg);
 };
 
 /**********************************************************************/

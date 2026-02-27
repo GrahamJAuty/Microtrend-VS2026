@@ -7,16 +7,16 @@ public:
 	CLoyLogThreadInfo();
 
 public:
-	CString m_strLOGFolder;
-	CString m_strLOGFilepath;
-	CString m_strLOGFilename;
-	CString m_strRSPFilepath; 
-	CString m_strRSPFilepathTemp;
-	CStringArray* m_pLOGBuffer;
-	CStringArray* m_pEmptyFileBuffer;
-	bool m_bCopyLogFile;
-	LONGLONG m_StartTime;
-	LONGLONG m_EndTime;
+	CString m_strLOGFolder = "";
+	CString m_strLOGFilepath = "";
+	CString m_strLOGFilename = "";
+	CString m_strRSPFilepath = "";
+	CString m_strRSPFilepathTemp = "";
+	CStringArray* m_pLOGBuffer = nullptr;
+	CStringArray* m_pEmptyFileBuffer = nullptr;
+	bool m_bCopyLogFile = FALSE;
+	LONGLONG m_StartTime = 0;
+	LONGLONG m_EndTime = 0;
 };
 
 /**********************************************************************/

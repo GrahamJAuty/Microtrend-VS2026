@@ -44,19 +44,9 @@ void CMessageLogger::LogMessage( CString strContext, CString strMessage )
 		ReportFile.Close();
 	}
 
-	COleDateTime timeNow = COleDateTime::GetCurrentTime();
-
-	CString strDate;
-	strDate.Format( "%2.2d/%2.2d/%4.4d",
-		timeNow.GetDay(),
-		timeNow.GetMonth(),
-		timeNow.GetYear() );
-
-	CString strTime;
-	strTime.Format( "%2.2d:%2.2d:%2.2d",
-		timeNow.GetHour(),
-		timeNow.GetMinute(),
-		timeNow.GetSecond() );
+	CString strDate = "";
+	CString strTime = "";
+	GetMessageLogDateTime(strDate, strTime);
 
 	CString strPCIdClient = "";
 	strPCIdClient.Format( "%10.10d", Sysset.GetPCIdClient() );
