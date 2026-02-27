@@ -22,14 +22,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -48,13 +48,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\MICROTREND\VS2022\COMMON\CKINC;E:\MICROTREND\VS2022\COMMON\SSINC;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\MICROTREND\VS2022\COMMON\CKLIB;E:\MICROTREND\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\MICROTREND\VS2026\COMMON\CKINC;E:\MICROTREND\VS2026\COMMON\SSINC;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\MICROTREND\VS2026\COMMON\CKLIB;E:\MICROTREND\VS2026\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\MICROTREND\VS2022\COMMON\CKINC;E:\MICROTREND\VS2022\COMMON\SSINC;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\MICROTREND\VS2022\COMMON\CKLIB;E:\MICROTREND\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\MICROTREND\VS2026\COMMON\CKINC;E:\MICROTREND\VS2026\COMMON\SSINC;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\MICROTREND\VS2026\COMMON\CKLIB;E:\MICROTREND\VS2026\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
