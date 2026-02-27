@@ -1,0 +1,2007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SmartPay4Bgnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\AutoImportData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\AutoImportHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BackgroundTimeTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\CardPicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\CsvImportData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DatabaseExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DatabaseImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbExportHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbReportHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DeleteRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailLogDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailLowBalances.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailPointsAchievement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailPurchases.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailPurchasesReport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailWeeklyPoints.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportFlag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportSimsFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportSimsPhotoFiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\LeaversHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMail.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMailData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMailExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMailImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPay.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPayData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPayExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPayImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\PhotoIDCopy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SalesExportData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\Schoolcomms.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SchoolcommsData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SchoolcommsExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SchoolcommsImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SimsData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SimsFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuid.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuidData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuidExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuidImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TransactionReferenceDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJson.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJsonData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJsonExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJsonImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoap.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoapData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoapExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoapImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentAtcTransactionFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentBalanceFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportCsvLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportTnLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportTxLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentList2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentLogRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentPurchaseFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePay.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePayData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePayExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePayImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\AlertText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\AllergyText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\Consolidation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EmailAlertData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EmailAlertHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EnhancedIniFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EposAllergyDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\FilenameHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\FileRemover.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\GlobalFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ImageHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\MembershipDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\MyMessageBoxInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\MyMessageBoxStatic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\PaymentAuditRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\PeriodData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\Prompter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\RedeemPoints.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ReportConsolidationArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ReportFileWithEndText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ServerData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ServiceOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SystemData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TLogRecord_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TrackedFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\WaitDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileRecycler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sslibset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WinService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\Recsort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportWondeFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportWondePhotoFiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WondeData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WondeDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbReportFields.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLAuditRecord_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLBuilderBind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLFieldValidatorBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLPurse2Handler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLErrorCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLAuditRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLWrappedStatement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLDb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLExceptionLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportBromCom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BromComData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BromCom.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BromComImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\AESHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SmartPayHeaderHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLConnectionPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLRecordSetConnectionPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTranBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranBromComImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranDeleteAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLResultInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranImportDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranImportHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SmartPayCommandLineInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\DateRangeHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ExpiryDateRange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundRegistration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbExportHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLWhereBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EmailOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SmartPayAuditFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\RepmanDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLConnectionOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLSchema\SQLBuilderCreateTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLSchema\SQLNamespaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLFieldValidatorAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountFull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountUserID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLFieldValidatorAuditPeriod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRecordSetAuditPeriod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowAuditPeriod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowSetAuditPeriod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLFieldValidatorBioRegister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRecordSetBioRegister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRowBioRegister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLFieldValidatorBromComBalanceChanges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRecordSetBromComBalanceChanges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRowBromComBalanceChanges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLFieldValidatorBromComItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRecordSetBromComItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRowBromComItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLFieldValidatorBromComPendingItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRecordSetBromComPendingItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRowBromComPendingItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLFieldValidatorBromComPendingOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRecordSetBromComPendingOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRowBromComPendingOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLFieldValidatorBromComTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRecordSetBromComTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRowBromComTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLFieldValidatorClosingBalance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRecordSetClosingBalance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRowClosingBalance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLFieldValidatorDbVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRecordSetDbVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRowDbVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLFieldValidatorExternal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRecordSetExternalAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRowExternalAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLFieldValidatorGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLRecordSetGroupFull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLRowGroupFull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLFieldValidatorPeriodRefresh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRecordSetPeriodRefresh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRowPeriodRefresh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLFieldValidatorPluInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRecordSetPluInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRowPluInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLFieldValidatorUserText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLRecordSetUserText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLRowUserText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLGroupShiftChecker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTranProcessGroupShifts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\GroupShiftValidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\GroupShiftLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\AuditReportTexts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLFieldValidatorPurchaseControlRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRecordSetPurchaseControlRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLFieldValidatorPurchaseControlStamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRecordSetPurchaseControlStamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRowPurchaseControlStamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRowPurchaseControlRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLPurchaseControlBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLFieldValidatorImportFilenameCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRecordSetImportFilenameCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRowImportFilenameCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TLogCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLFieldValidatorPebblePendingTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRecordSetPebblePendingTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRowPebblePendingTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLFieldValidatorPebbleConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRecordSetPebbleConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRowPebbleConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\PebbleImport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportPebble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLFieldValidatorPebbleExportTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRecordSetPebbleExportTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRowPebbleExportTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLFieldValidatorAuditPendingExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLRowAuditPendingExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperPebble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperBromCom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ATCWebDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLFieldValidatorPebbleRecentTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRecordSetPebbleRecentTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRowPebbleRecentTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportPebble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLFieldValidatorPebbleExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRecordSetPebbleExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRowPebbleExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLFieldValidatorPebblePaymentType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRecordSetPebblePaymentType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRowPebblePaymentType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLFieldValidatorOperatorName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRecordSetOperatorName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRowOperatorName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLFieldValidatorEposTerminal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRecordSetEposTerminal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRowEposTerminal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLFieldValidatorChartwellExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRecordSetChartwellExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRowChartwellExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLFieldValidatorPebbleExportTransactionSent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRecordSetPebbleExportTransactionSent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRowPebbleExportTransactionSent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranRemovePebbleSentTransactions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SmartPayLockManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLRecordSetMetadata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRepositoryAuditPeriod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRepositoryPebbleConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLRepositoryUserText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRepositoryAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRepositoryBromComBalanceChanges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLRepositoryGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRepositoryPebblePaymentType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRepositoryPebblePendingTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRepositoryPeriodRefresh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRepositoryClosingBalance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRepositoryBromComTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRepositoryExternalAccount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRepositoryPebbleExportPayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRepositoryBromComPendingItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRepositoryBromComPendingOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRepositoryPebbleExportTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRepositoryPurchaseControlRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRepositoryPurchaseControlStamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRepositoryBioRegister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRepositoryImportFilenameCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRepositoryPebbleRecentTransaction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRepositoryBromComItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRepositoryPebbleExportTransactionSent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\GlobalState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportPebbleMembers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLFieldValidatorWebPaymentOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRecordSetWebPaymentOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRepositoryWebPaymentOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRowWebPaymentOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\LegacyWebPaymentOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLFieldValidatorPebbleLinkTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRecordSetPebbleLinkTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRepositoryPebbleLinkTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRowPebbleLinkTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BusyFileUpdateThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BusyFileUpdateThreadManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\BackgroundOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ReportEndOfDay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ClosingBalanceBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLAuditRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TaxCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EODGroupSales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\GroupSetText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\PasswordData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EODCashlessConsolidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EODDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EODTextData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\CardCounterDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TNoDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\RepmanHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\PaymentAuditReport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EposPaymentDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\EposPaymentGroupDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\PaymentAuditFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\WorkingDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SNoDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TLogFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TLogRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\TLogDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLRowSetPebblePayment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\ModuleGlobals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\PebbleHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLFieldValidatorPINNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLRecordSetPINNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLRepositoryPINNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLRowPINNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLFieldValidatorCCNo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRecordSetCCNo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRepositoryCCNo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRowCCNo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SmartPay4Bgnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\AutoImportData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\AutoImportHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BackgroundTimeTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\CardPicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\CsvImportData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DatabaseExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DatabaseImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbExportHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbReportHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DeleteRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailLogDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailLowBalances.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailPointsAchievement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailPurchases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailPurchasesReport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailWeeklyPoints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportFlag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportSimsFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportSimsPhotoFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\LeaversHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMailData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMailExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMailIimport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPayData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPayExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPayImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PhotoIDCopy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SalesExportData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\Schoolcomms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SchoolcommsData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SchoolcommsExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SchoolcommsImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SimsData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SimsFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuidData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuidExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuidImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TransactionReferenceDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJsonData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJsonExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJsonImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoapData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoapExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoapImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentAtcTransactionFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentBalanceFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentDefines.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportCsvLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportTnLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportTxLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentList2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentLogRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentPurchaseFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePayData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePayExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePayImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\AlertText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\AllergyText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\Consolidation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EmailAlertData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EmailAlertHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EnhancedIniFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EposAllergyDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\FilenameHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\FileRemover.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\GlobalFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ImageHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\MembershipDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\MyMessageBoxInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\MyMessageBoxStatic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\PaymentAuditRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\RedeemPoints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ReportFileWithEndText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ServerData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ServiceOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SystemData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TLogRecord_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TrackedFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileRecycler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WinService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\Recsort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportWondeFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportWondePhotoFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WondeData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WondeDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbReportFields.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLAuditRecord_base.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLBuilderBind.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLFieldValidatorBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLPurse2Handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLDb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLExceptionLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportBromCom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BromComData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BromCom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BromComImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\AESHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SmartPayHeaderHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLConnectionPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLRecordSetConnectionPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTranBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranBromComImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranDeleteAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLResultInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranImportDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranImportHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SmartPayCommandLineInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\DateRangeHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ExpiryDateRange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundRegistration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbExportHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLWhereBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EmailOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SmartPayAuditFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLConnectionOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLSchema\SQLBuilderCreateTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLFieldValidatorAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountFull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountUserID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFind.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLFieldValidatorAuditPeriod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRecordSetAuditPeriod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowAuditPeriod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowSetAuditPeriod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLFieldValidatorBioRegister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRecordSetBioRegister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRowBioRegister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLFieldValidatorBromComBalanceChanges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRecordSetBromComBalanceChanges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRowBromComBalanceChanges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLFieldValidatorBromComItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRecordSetBromComItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRowBromComItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLFieldValidatorBromComPendingItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRecordSetBromComPendingItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRowBromComPendingItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLFieldValidatorBromComPendingOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRecordSetBromComPendingOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRowBromComPendingOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLFieldValidatorBromComTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRecordSetBromComTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRowBromComTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLFieldValidatorClosingBalance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRecordSetClosingBalance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRowClosingBalance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLFieldValidatorDbVersion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRecordSetDbVersion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRowDbVersion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLFieldValidatorExternal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRecordSetExternalAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRowExternalAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLFieldValidatorGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLRecordSetGroupFull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLRowGroupFull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLFieldValidatorPeriodRefresh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRecordSetPeriodRefresh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRowPeriodRefresh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLFieldValidatorPluInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRecordSetPluInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRowPluInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLFieldValidatorUserText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLRecordSetUserText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLRowUserText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLGroupShiftChecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTranProcessGroupShifts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\GroupShiftValidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\GroupShiftLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\VersionStrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\AuditReportTexts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLFieldValidatorPurchaseControlRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRecordSetPurchaseControlRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLFieldValidatorPurchaseControlStamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRecordSetPurchaseControlStamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRowPurchaseControlStamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRowPurchaseControlRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLPurchaseControlBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLFieldValidatorImportFilenameCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRecordSetImportFilenameCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRowImportFilenameCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TLogCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLFieldValidatorPebblePendingTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRecordSetPebblePendingTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRowPebblePendingTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLFieldValidatorPebbleConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRecordSetPebbleConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRowPebbleConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportPebble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLFieldValidatorPebbleExportTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRecordSetPebbleExportTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRowPebbleExportTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLFieldValidatorAuditPendingExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLRowAuditPendingExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperPebble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperBromCom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLFieldValidatorPebbleRecentTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRecordSetPebbleRecentTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRowPebbleRecentTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersGetTransactions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersSendTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersPurses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersGetMembers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportPebble.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLFieldValidatorPebbleExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRecordSetPebbleExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRowPebbleExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLFieldValidatorPebblePaymentType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRecordSetPebblePaymentType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRowPebblePaymentType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLFieldValidatorOperatorName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRecordSetOperatorName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRowOperatorName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLFieldValidatorEposTerminal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRecordSetEposTerminal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRowEposTerminal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLFieldValidatorChartwellExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRecordSetChartwellExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRowChartwellExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLFieldValidatorPebbleExportTransactionSent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRecordSetPebbleExportTransactionSent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRowPebbleExportTransactionSent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranRemovePebbleSentTransactions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SmartPayLockManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLRecordSetMetadata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRepositoryAuditPeriod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRepositoryPebbleConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLRepositoryUserText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRepositoryAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRepositoryBromComBalanceChanges.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLRepositoryGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRepositoryPebblePaymentType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRepositoryPebblePendingTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRepositoryPeriodRefresh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRepositoryClosingBalance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRepositoryBromComTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRepositoryExternalAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRepositoryPebbleExportPayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRepositoryBromComPendingItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRepositoryBromComPendingOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRepositoryPebbleExportTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRepositoryPurchaseControlRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRepositoryPurchaseControlStamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRepositoryBioRegister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRepositoryImportFilenameCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRepositoryPebbleRecentTransaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRepositoryBromComItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRepositoryPebbleExportTransactionSent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\GlobalState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportPebbleMembers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLFieldValidatorWebPaymentOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRecordSetWebPaymentOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRepositoryWebPaymentOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRowWebPaymentOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\LegacyWebPaymentOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLFieldValidatorPebbleLinkTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRecordSetPebbleLinkTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRepositoryPebbleLinkTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRowPebbleLinkTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BusyFileUpdateThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BusyFileUpdateThreadManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\BackgroundOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ReportEndOfDay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\ClosingBalanceBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLAuditRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TaxCodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EODGroupSales.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\GroupSetText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\PasswordData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EODCashlessConsolidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EODTextData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\CardCounterDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TNoDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\RepmanHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\PaymentAuditReport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EposPaymentDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\EposPaymentGroupDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\PaymentAuditFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SNoDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TLogFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TLogRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\TLogDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLRowSetPebblePayment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectPaymentAuditReport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLFieldValidatorPINNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLRecordSetPINNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLRepositoryPINNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PINNumber\SQLRowPINNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLFieldValidatorCCNo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRecordSetCCNo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRepositoryCCNo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRowCCNo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectBromComImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectDatabaseImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectEmailLowBalances.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectEmailPointsAchievement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectEmailPurchases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectEmailWeeklyPoints.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectImportSimsFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectImportSimsPhotoFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectImportWondeFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectImportWondePhotoFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectParentMailData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectParentMailIimport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectParentPayImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectPebbleImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectRepmanHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectReportEndOfDay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSchoolcommsImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSQuidImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectTucasiJsonImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectTucasiSoapImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectWisePayImport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SmartPay4Bgnd.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SmartPay4Bgnd.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\SmartPay4Bgnd.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{D44B2106-4658-4C6D-8990-8B526F58B18A}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>SmartPay4Bgnd</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SPosSmartPay4Bgnd</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\MICROTREND\VS2022\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
+    <LibraryPath>E:\MICROTREND\VS2022\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\MICROTREND\VS2022\COMMON\CKINC;$(VC_IncludePath);$(WindowsSDK_IncludePath);e:\microtrend\vs2022\common\ssinc</IncludePath>
+    <LibraryPath>E:\MICROTREND\VS2022\COMMON\CKLIB;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);e:\microtrend\vs2022\common\sslib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;SYSTEMTYPE_BACKGROUND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>subsd.lib;winsubsd.lib;sysset3d.lib;expd.lib;datetimesubsd.lib;dbased.lib;repsubsd.lib;xmld.lib;ssmapi32d.lib;chilkatdbg.lib;ws2_32.lib;crypt32.lib;dnsapi.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SYSTEMTYPE_BACKGROUND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>subs.lib;winsubs.lib;sysset3.lib;exp.lib;datetimesubs.lib;dbase.lib;repsubs.lib;xml.lib;ssmapi32.lib;chilkatrel.lib;ws2_32.lib;crypt32.lib;dnsapi.lib</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ATCWebDefines.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\AutoImportData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\AutoImportHandler.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BackgroundTimeTable.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BromCom.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BromComData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\BromComImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\CardPicker.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\CsvImportData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DatabaseExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DatabaseImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbExportHandler.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbExportHelpers.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbReportFields.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DbReportHandler.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\DeleteRecord.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailHandler.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailLogDatabase.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailLowBalances.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailPointsAchievement.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailPurchases.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailPurchasesReport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\EmailWeeklyPoints.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportFlag.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportPebbleMembers.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportSimsFile.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportSimsPhotoFiles.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportWondeFile.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ImportWondePhotoFiles.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\LeaversHandler.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\LegacyWebPaymentOptions.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMail.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMailData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMailExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentMailImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPay.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPayData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPayExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\ParentPayImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\PebbleHelpers.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\PebbleImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\PhotoIDCopy.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SalesExportData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\Schoolcomms.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SchoolcommsData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SchoolcommsExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SchoolcommsImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SimsData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SimsFile.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLAuditRecord.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperBromCom.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperPebble.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportPebble.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranBromComImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranDeleteAccount.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranImportDatabase.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranImportHelpers.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage1.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage2.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\SQLTranRemovePebbleSentTransactions.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuid.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuidData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuidExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\sQuidImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TLogCache.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TransactionReferenceDatabase.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJson.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJsonData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJsonExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiJsonImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoap.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoapData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoapExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\TucasiSoapImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentAtcTransactionFile.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentBalanceFile.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentDefines.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportBromCom.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportCsvLog.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportPebble.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportTnLog.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentExportTxLog.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentList.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentList2.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentLogRecord.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WebPaymentPurchaseFile.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePay.hpp" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePayData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePayExport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WisePayImport.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WondeData.h" />
+    <ClInclude Include="..\SmartPay4ManagerBgnd\WondeDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\AESHelpers.h" />
+    <ClInclude Include="..\SmartPay4Shared\AlertText.h" />
+    <ClInclude Include="..\SmartPay4Shared\AllergyText.h" />
+    <ClInclude Include="..\SmartPay4Shared\AuditReportTexts.h" />
+    <ClInclude Include="..\SmartPay4Shared\BackgroundOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\CardCounterDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\ClosingBalanceBuilder.h" />
+    <ClInclude Include="..\SmartPay4Shared\Consolidation.h" />
+    <ClInclude Include="..\SmartPay4Shared\DateRangeHelpers.h" />
+    <ClInclude Include="..\SmartPay4Shared\EmailAlertData.h" />
+    <ClInclude Include="..\SmartPay4Shared\EmailAlertHandler.h" />
+    <ClInclude Include="..\SmartPay4Shared\EmailOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\EnhancedIniFile.h" />
+    <ClInclude Include="..\SmartPay4Shared\EODCashlessConsolidator.h" />
+    <ClInclude Include="..\SmartPay4Shared\EODDefines.h" />
+    <ClInclude Include="..\SmartPay4Shared\EODGroupSales.h" />
+    <ClInclude Include="..\SmartPay4Shared\EODTextData.h" />
+    <ClInclude Include="..\SmartPay4Shared\EposAllergyDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\EposPaymentDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\EposPaymentGroupDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\ExpiryDateRange.h" />
+    <ClInclude Include="..\SmartPay4Shared\FilenameHandler.h" />
+    <ClInclude Include="..\SmartPay4Shared\FileRemover.h" />
+    <ClInclude Include="..\SmartPay4Shared\GlobalFunctions.h" />
+    <ClInclude Include="..\SmartPay4Shared\GlobalState.h" />
+    <ClInclude Include="..\SmartPay4Shared\GroupSetText.h" />
+    <ClInclude Include="..\SmartPay4Shared\GroupShiftLogger.h" />
+    <ClInclude Include="..\SmartPay4Shared\GroupShiftValidator.h" />
+    <ClInclude Include="..\SmartPay4Shared\ImageHandler.h" />
+    <ClInclude Include="..\SmartPay4Shared\MembershipDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\ModuleGlobals.h" />
+    <ClInclude Include="..\SmartPay4Shared\MyMessageBoxInfo.h" />
+    <ClInclude Include="..\SmartPay4Shared\MyMessageBoxStatic.h" />
+    <ClInclude Include="..\SmartPay4Shared\PasswordData.h" />
+    <ClInclude Include="..\SmartPay4Shared\PaymentAuditFile.h" />
+    <ClInclude Include="..\SmartPay4Shared\PaymentAuditRecord.h" />
+    <ClInclude Include="..\SmartPay4Shared\PaymentAuditReport.h" />
+    <ClInclude Include="..\SmartPay4Shared\PeriodData.h" />
+    <ClInclude Include="..\SmartPay4Shared\Prompter.h" />
+    <ClInclude Include="..\SmartPay4Shared\Recsort.h" />
+    <ClInclude Include="..\SmartPay4Shared\RedeemPoints.h" />
+    <ClInclude Include="..\SmartPay4Shared\RepmanDefines.h" />
+    <ClInclude Include="..\SmartPay4Shared\RepmanHandler.h" />
+    <ClInclude Include="..\SmartPay4Shared\ReportConsolidationArray.h" />
+    <ClInclude Include="..\SmartPay4Shared\ReportEndOfDay.h" />
+    <ClInclude Include="..\SmartPay4Shared\ReportFileWithEndText.h" />
+    <ClInclude Include="..\SmartPay4Shared\ServerData.h" />
+    <ClInclude Include="..\SmartPay4Shared\ServiceOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\SmartPayAuditFile.h" />
+    <ClInclude Include="..\SmartPay4Shared\SmartPayCommandLineInfo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SmartPayHeaderHelpers.h" />
+    <ClInclude Include="..\SmartPay4Shared\SmartPayLockManager.h" />
+    <ClInclude Include="..\SmartPay4Shared\SNoDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLAuditRecord.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLAuditRecord_base.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLBuilderBind.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLConnectionOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLConnectionPool.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLDb.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLDefines.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLErrorCodes.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLExceptionLogger.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLFieldValidatorBase.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLGroupShiftChecker.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLHelpers.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLPurchaseControlBuffer.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLPurse2Handler.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLRecordSetConnectionPool.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLRecordSetMetadata.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLResultInfo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLRowSetPebblePayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLSchema\SQLBuilderCreateTable.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLSchema\SQLNamespaces.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLFieldValidatorAccount.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountFull.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountUserID.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRepositoryAccount.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFind.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFull.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountList.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLFieldValidatorAuditPendingExport.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLRowAuditPendingExport.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLFieldValidatorAuditPeriod.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRecordSetAuditPeriod.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRepositoryAuditPeriod.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowAuditPeriod.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowSetAuditPeriod.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLFieldValidatorBioRegister.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRecordSetBioRegister.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRepositoryBioRegister.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRowBioRegister.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLFieldValidatorBromComBalanceChanges.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRecordSetBromComBalanceChanges.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRepositoryBromComBalanceChanges.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRowBromComBalanceChanges.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLFieldValidatorBromComItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRecordSetBromComItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRepositoryBromComItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRowBromComItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLFieldValidatorBromComPendingItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRecordSetBromComPendingItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRepositoryBromComPendingItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRowBromComPendingItem.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLFieldValidatorBromComPendingOrder.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRecordSetBromComPendingOrder.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRepositoryBromComPendingOrder.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRowBromComPendingOrder.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLFieldValidatorBromComTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRecordSetBromComTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRepositoryBromComTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRowBromComTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLFieldValidatorCCNo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRecordSetCCNo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRepositoryCCNo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRowCCNo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLFieldValidatorChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRecordSetChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRowChartwellExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLFieldValidatorClosingBalance.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRecordSetClosingBalance.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRepositoryClosingBalance.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRowClosingBalance.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLFieldValidatorDbVersion.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRecordSetDbVersion.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRowDbVersion.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLFieldValidatorEposTerminal.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRecordSetEposTerminal.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRowEposTerminal.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLFieldValidatorExternal.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRecordSetExternalAccount.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRepositoryExternalAccount.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRowExternalAccount.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLFieldValidatorGroup.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLRecordSetGroupFull.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLRepositoryGroup.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_Group\SQLRowGroupFull.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLFieldValidatorImportFilenameCache.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRecordSetImportFilenameCache.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRepositoryImportFilenameCache.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRowImportFilenameCache.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLFieldValidatorOperatorName.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRecordSetOperatorName.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRowOperatorName.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLFieldValidatorPebbleConfig.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRecordSetPebbleConfig.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRepositoryPebbleConfig.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRowPebbleConfig.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLFieldValidatorPebbleExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRecordSetPebbleExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRepositoryPebbleExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRowPebbleExportPayment.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLFieldValidatorPebbleExportTransactionSent.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRecordSetPebbleExportTransactionSent.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRepositoryPebbleExportTransactionSent.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRowPebbleExportTransactionSent.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLFieldValidatorPebbleExportTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRecordSetPebbleExportTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRepositoryPebbleExportTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRowPebbleExportTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLFieldValidatorPebbleLinkTime.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRecordSetPebbleLinkTime.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRepositoryPebbleLinkTime.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRowPebbleLinkTime.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLFieldValidatorPebblePaymentType.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRecordSetPebblePaymentType.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRepositoryPebblePaymentType.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRowPebblePaymentType.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLFieldValidatorPebblePendingTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRecordSetPebblePendingTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRepositoryPebblePendingTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRowPebblePendingTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLFieldValidatorPebbleRecentTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRecordSetPebbleRecentTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRepositoryPebbleRecentTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRowPebbleRecentTransaction.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLFieldValidatorPeriodRefresh.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRecordSetPeriodRefresh.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRepositoryPeriodRefresh.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRowPeriodRefresh.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLFieldValidatorPinNumber.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLRecordSetPinNumber.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLRepositoryPinNumber.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLRowPinNumber.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLFieldValidatorPluInfo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRecordSetPluInfo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRowPluInfo.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLFieldValidatorPurchaseControlRule.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRecordSetPurchaseControlRule.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRepositoryPurchaseControlRule.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRowPurchaseControlRule.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLFieldValidatorPurchaseControlStamp.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRecordSetPurchaseControlStamp.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRepositoryPurchaseControlStamp.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRowPurchaseControlStamp.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLFieldValidatorUserText.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLRecordSetUserText.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLRepositoryUserText.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_UserText\SQLRowUserText.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLFieldValidatorWebPaymentOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRecordSetWebPaymentOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRepositoryWebPaymentOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRowWebPaymentOptions.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTranBase.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLTranProcessGroupShifts.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLWhereBuilder.h" />
+    <ClInclude Include="..\SmartPay4Shared\SQLWrappedStatement.h" />
+    <ClInclude Include="..\SmartPay4Shared\SystemData.h" />
+    <ClInclude Include="..\SmartPay4Shared\TaxCodes.h" />
+    <ClInclude Include="..\SmartPay4Shared\TLogDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\TLogFile.h" />
+    <ClInclude Include="..\SmartPay4Shared\TLogRecord.h" />
+    <ClInclude Include="..\SmartPay4Shared\TLogRecord_base.h" />
+    <ClInclude Include="..\SmartPay4Shared\TNoDatabase.h" />
+    <ClInclude Include="..\SmartPay4Shared\TrackedFile.h" />
+    <ClInclude Include="..\SmartPay4Shared\WaitDlg.h" />
+    <ClInclude Include="..\SmartPay4Shared\WorkingDlg.h" />
+    <ClInclude Include="BackgroundRegistration.h" />
+    <ClInclude Include="BackgroundWrapper.h" />
+    <ClInclude Include="BusyFileUpdateThread.h" />
+    <ClInclude Include="BusyFileUpdateThreadManager.h" />
+    <ClInclude Include="FileRecycler.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="MessageLogger.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SmartPay4Bgnd.h" />
+    <ClInclude Include="sslibset.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="WinService.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SmartPay4ManagerBgnd\AutoImportData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\AutoImportHandler.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BackgroundTimeTable.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BromCom.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BromComData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\BromComImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\CardPicker.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\CsvImportData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DatabaseExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DatabaseImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbExportHandler.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbExportHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbReportFields.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DbReportHandler.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\DeleteRecord.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailHandler.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailLogDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailLowBalances.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailPointsAchievement.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailPurchases.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailPurchasesReport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\EmailWeeklyPoints.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportFlag.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportPebbleMembers.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportSimsFile.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportSimsPhotoFiles.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportWondeFile.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ImportWondePhotoFiles.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\LeaversHandler.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\LegacyWebPaymentOptions.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMail.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMailData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMailExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentMailIimport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPay.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPayData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPayExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\ParentPayImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersGetMembers.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersGetTransactions.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersPurses.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleHelpersSendTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PebbleImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\PhotoIDCopy.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SalesExportData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\Schoolcomms.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SchoolcommsData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SchoolcommsExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SchoolcommsImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SimsData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SimsFile.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperBromCom.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportHelperPebble.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranAuditPendingExportPebble.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranBromComImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranDeleteAccount.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranImportDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranImportHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage1.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranPebbleImportStage2.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\SQLTranRemovePebbleSentTransactions.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuid.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuidData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuidExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\sQuidImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TLogCache.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TransactionReferenceDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJson.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJsonData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJsonExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiJsonImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoap.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoapData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoapExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\TucasiSoapImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentAtcTransactionFile.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentBalanceFile.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentDefines.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportBromCom.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportCsvLog.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportPebble.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportTnLog.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentExportTxLog.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentList.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentList2.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentLogRecord.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WebPaymentPurchaseFile.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePay.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePayData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePayExport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WisePayImport.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WondeData.cpp" />
+    <ClCompile Include="..\SmartPay4ManagerBgnd\WondeDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\AESHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\AlertText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\AllergyText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\AuditReportTexts.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\BackgroundOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\CardCounterDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ClosingBalanceBuilder.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\Consolidation.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\DateRangeHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EmailAlertData.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EmailAlertHandler.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EmailOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EnhancedIniFile.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EODCashlessConsolidator.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EODGroupSales.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EODTextData.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EposAllergyDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EposPaymentDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\EposPaymentGroupDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ExpiryDateRange.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\FilenameHandler.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\FileRemover.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\GlobalFunctions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\GlobalState.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\GroupSetText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\GroupShiftLogger.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\GroupShiftValidator.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ImageHandler.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\MembershipDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\MyMessageBoxInfo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\MyMessageBoxStatic.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\PasswordData.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\PaymentAuditFile.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\PaymentAuditRecord.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\PaymentAuditReport.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\Recsort.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\RedeemPoints.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\RepmanHandler.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ReportEndOfDay.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ReportFileWithEndText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ServerData.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\ServiceOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SmartPayAuditFile.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SmartPayCommandLineInfo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SmartPayHeaderHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SmartPayLockManager.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SNoDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLAuditRecord.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLAuditRecord_base.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLBuilderBind.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLConnectionOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLConnectionPool.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLDb.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLExceptionLogger.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLFieldValidatorBase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLGroupShiftChecker.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLHelpers.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLPurchaseControlBuffer.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLPurse2Handler.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLRecordSetConnectionPool.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLRecordSetMetadata.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLResultInfo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLRowSetPebblePayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLSchema\SQLBuilderCreateTable.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLFieldValidatorAccount.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountFull.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRecordSetAccountUserID.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRepositoryAccount.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFind.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountFull.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Account\SQLRowAccountList.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLFieldValidatorAuditPendingExport.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPendingExport\SQLRowAuditPendingExport.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLFieldValidatorAuditPeriod.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRecordSetAuditPeriod.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRepositoryAuditPeriod.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowAuditPeriod.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_AuditPeriod\SQLRowSetAuditPeriod.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLFieldValidatorBioRegister.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRecordSetBioRegister.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRepositoryBioRegister.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BioRegister\SQLRowBioRegister.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLFieldValidatorBromComBalanceChanges.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRecordSetBromComBalanceChanges.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRepositoryBromComBalanceChanges.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComBalanceChanges\SQLRowBromComBalanceChanges.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLFieldValidatorBromComItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRecordSetBromComItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRepositoryBromComItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComItem\SQLRowBromComItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLFieldValidatorBromComPendingItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRecordSetBromComPendingItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRepositoryBromComPendingItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingItem\SQLRowBromComPendingItem.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLFieldValidatorBromComPendingOrder.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRecordSetBromComPendingOrder.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRepositoryBromComPendingOrder.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComPendingOrder\SQLRowBromComPendingOrder.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLFieldValidatorBromComTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRecordSetBromComTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRepositoryBromComTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_BromComTransaction\SQLRowBromComTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLFieldValidatorCCNo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRecordSetCCNo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRepositoryCCNo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_CCNo\SQLRowCCNo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLFieldValidatorChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRecordSetChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ChartwellExportPayment\SQLRowChartwellExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLFieldValidatorClosingBalance.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRecordSetClosingBalance.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRepositoryClosingBalance.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ClosingBalance\SQLRowClosingBalance.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLFieldValidatorDbVersion.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRecordSetDbVersion.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_DbVersion\SQLRowDbVersion.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLFieldValidatorEposTerminal.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRecordSetEposTerminal.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_EposTerminal\SQLRowEposTerminal.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLFieldValidatorExternal.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRecordSetExternalAccount.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRepositoryExternalAccount.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ExternalAccount\SQLRowExternalAccount.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLFieldValidatorGroup.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLRecordSetGroupFull.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLRepositoryGroup.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_Group\SQLRowGroupFull.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLFieldValidatorImportFilenameCache.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRecordSetImportFilenameCache.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRepositoryImportFilenameCache.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_ImportFilenameCache\SQLRowImportFilenameCache.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLFieldValidatorOperatorName.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRecordSetOperatorName.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_OperatorName\SQLRowOperatorName.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLFieldValidatorPebbleConfig.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRecordSetPebbleConfig.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRepositoryPebbleConfig.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleConfig\SQLRowPebbleConfig.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLFieldValidatorPebbleExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRecordSetPebbleExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRepositoryPebbleExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportPayment\SQLRowPebbleExportPayment.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLFieldValidatorPebbleExportTransactionSent.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRecordSetPebbleExportTransactionSent.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRepositoryPebbleExportTransactionSent.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransactionSent\SQLRowPebbleExportTransactionSent.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLFieldValidatorPebbleExportTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRecordSetPebbleExportTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRepositoryPebbleExportTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleExportTransaction\SQLRowPebbleExportTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLFieldValidatorPebbleLinkTime.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRecordSetPebbleLinkTime.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRepositoryPebbleLinkTime.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleLinkTime\SQLRowPebbleLinkTime.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLFieldValidatorPebblePaymentType.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRecordSetPebblePaymentType.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRepositoryPebblePaymentType.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRowPebblePaymentType.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLFieldValidatorPebblePendingTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRecordSetPebblePendingTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRepositoryPebblePendingTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebblePendingTransaction\SQLRowPebblePendingTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLFieldValidatorPebbleRecentTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRecordSetPebbleRecentTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRepositoryPebbleRecentTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PebbleRecentTransaction\SQLRowPebbleRecentTransaction.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLFieldValidatorPeriodRefresh.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRecordSetPeriodRefresh.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRepositoryPeriodRefresh.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PeriodRefresh\SQLRowPeriodRefresh.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLFieldValidatorPinNumber.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLRecordSetPinNumber.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLRepositoryPinNumber.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PinNumber\SQLRowPinNumber.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLFieldValidatorPluInfo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRecordSetPluInfo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PluInfo\SQLRowPluInfo.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLFieldValidatorPurchaseControlRule.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRecordSetPurchaseControlRule.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRepositoryPurchaseControlRule.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlRule\SQLRowPurchaseControlRule.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLFieldValidatorPurchaseControlStamp.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRecordSetPurchaseControlStamp.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRepositoryPurchaseControlStamp.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_PurchaseControlStamp\SQLRowPurchaseControlStamp.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLFieldValidatorUserText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLRecordSetUserText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLRepositoryUserText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_UserText\SQLRowUserText.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLFieldValidatorWebPaymentOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRecordSetWebPaymentOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRepositoryWebPaymentOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTable_WebPaymentOptions\SQLRowWebPaymentOptions.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTranBase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLTranProcessGroupShifts.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SQLWhereBuilder.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\SystemData.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TaxCodes.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TLogDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TLogFile.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TLogRecord.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TLogRecord_base.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TNoDatabase.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\TrackedFile.cpp" />
+    <ClCompile Include="..\SmartPay4Shared\VersionStrings.cpp" />
+    <ClCompile Include="BackgroundRegistration.cpp" />
+    <ClCompile Include="BackgroundWrapper.cpp" />
+    <ClCompile Include="BusyFileUpdateThread.cpp" />
+    <ClCompile Include="BusyFileUpdateThreadManager.cpp" />
+    <ClCompile Include="FileRecycler.cpp" />
+    <ClCompile Include="MessageLogger.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ProjectBromComImport.cpp" />
+    <ClCompile Include="ProjectDatabaseImport.cpp" />
+    <ClCompile Include="ProjectEmailLowBalances.cpp" />
+    <ClCompile Include="ProjectEmailPointsAchievement.cpp" />
+    <ClCompile Include="ProjectEmailPurchases.cpp" />
+    <ClCompile Include="ProjectEmailWeeklyPoints.cpp" />
+    <ClCompile Include="ProjectImportSimsFile.cpp" />
+    <ClCompile Include="ProjectImportSimsPhotoFiles.cpp" />
+    <ClCompile Include="ProjectImportWondeFile.cpp" />
+    <ClCompile Include="ProjectImportWondePhotoFiles.cpp" />
+    <ClCompile Include="ProjectParentMailData.cpp" />
+    <ClCompile Include="ProjectParentMailIimport.cpp" />
+    <ClCompile Include="ProjectParentPayImport.cpp" />
+    <ClCompile Include="ProjectPaymentAuditReport.cpp" />
+    <ClCompile Include="ProjectPebbleImport.cpp" />
+    <ClCompile Include="ProjectRepmanHandler.cpp" />
+    <ClCompile Include="ProjectReportEndOfDay.cpp" />
+    <ClCompile Include="ProjectSchoolcommsImport.cpp" />
+    <ClCompile Include="ProjectSQuidImport.cpp" />
+    <ClCompile Include="ProjectTucasiJsonImport.cpp" />
+    <ClCompile Include="ProjectTucasiSoapImport.cpp" />
+    <ClCompile Include="ProjectWisePayImport.cpp" />
+    <ClCompile Include="SmartPay4Bgnd.cpp" />
+    <ClCompile Include="WinService.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SmartPay4Bgnd.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SmartPay4Bgnd.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\SmartPay4Bgnd.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
