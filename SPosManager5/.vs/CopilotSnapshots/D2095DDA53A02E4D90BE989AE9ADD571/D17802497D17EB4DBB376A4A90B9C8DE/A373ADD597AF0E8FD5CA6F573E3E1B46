@@ -1,0 +1,466 @@
+﻿/**********************************************************************/
+#include "..\SmartPaySQL\SQLTable_Account\SQLPrepStatAccount.h"
+#include "..\SmartPaySQL\SQLTable_ChartwellExportPayment\SQLPrepStatChartwellExportPayment.h"
+#include "..\SmartPaySQL\SQLTable_Group\SQLPrepStatGroup.h"
+#include "..\SmartPaySQL\SQLConnectionOptions.h"
+/**********************************************************************/
+#include "LocationSelectorEntity.h"
+#include "HistoryFileTypes.h"
+#include "LocationCSVArray.h"
+#include "NetworkCSVArray.h"
+#include "StringDateChecker.h"
+/**********************************************************************/
+#include "PosTrayChartwellsExportCreator.h"
+/**********************************************************************/
+
+void CPosTrayChartwellsTransactionInfo::CheckNewSettings(bool bForceCheck)
+{
+	bool bChanged = FALSE;
+
+	if (FALSE == bForceCheck)
+	{
+		if (m_nNewTransactionID != m_nCurrentTransactionID)
+		{
+			bChanged = TRUE;
+		}
+		else if (m_strNewAccountID != m_strCurrentAccountID)
+		{
+			bChanged = TRUE;
+		}
+		else if (m_strNewDate != m_strCurrentDate)
+		{
+			bChanged = TRUE;
+		}
+		else if (m_nNewTerminalNo != m_nCurrentTerminalNo)
+		{
+			bChanged = TRUE;
+		}
+	}
+
+	if ((TRUE == bChanged) || (TRUE == bForceCheck))
+	{
+		m_nCurrentTransactionID = m_nNewTransactionID;
+		m_strCurrentAccountID = m_strNewAccountID;
+		m_strCurrentDate = m_strNewDate;
+		m_nCurrentTerminalNo = m_nNewTerminalNo;
+
+		m_nGroupNo = 0;
+		m_strGroupName = "";
+		m_strClass = "";
+		m_strYear = "";
+		m_nTranPriceBand = 0;
+
+		if (::TestNumeric(m_strCurrentAccountID,20) == TRUE)
+		{
+			__int64 nCurrentAccountID = _atoi64(m_strCurrentAccountID);
+
+			CSQLRowAccountFull RowAccount;
+			RowAccount.SetUserID(nCurrentAccountID);
+
+			//GET GROUP NUMBER FROM ACCOUNT
+			CSQLPrepStatAccount PrepStatAccount;
+			if (PrepStatAccount.SelectRow(RowAccount, NULL).GetSQLError() == SQLCRUD_ERR_NONE)
+			{
+				m_nGroupNo = RowAccount.GetGroupNo();
+				m_strClass = RowAccount.GetInfo3();
+				m_strYear = RowAccount.GetInfo4();
+			}
+
+			//OVERRIDE WITH GROUP NUMBER FROM TRANSACTION IF AVAILABLE
+			{
+				CSQLRowChartwellExportPayment RowPayment;
+				RowPayment.SetUserID(nCurrentAccountID);
+				RowPayment.SetTransactionID(m_nCurrentTransactionID);
+				RowPayment.SetTerminalNo(m_nCurrentTerminalNo);
+				RowPayment.SetDate(m_strCurrentDate);
+
+				CSQLPrepStatChartwellExportPayment SQLPrepStatChartwellExportPayment;
+				if (SQLPrepStatChartwellExportPayment.SelectRow(RowPayment, NULL).GetSQLError() == SQLCRUD_ERR_NONE)
+				{
+					m_nGroupNo = RowPayment.GetGroupNo();
+				}
+			}
+
+			if (m_nGroupNo != 0)
+			{
+				CSQLRowGroupFull RowGroup;
+				RowGroup.SetGroupNo(m_nGroupNo);
+
+				CSQLPrepStatGroup SQLPrepStatGroup;
+				if (SQLPrepStatGroup.SelectRow(RowGroup, NULL).GetSQLError() == SQLCRUD_ERR_NONE)
+				{
+					m_strGroupName = RowGroup.GetGroupName();
+					m_nTranPriceBand = RowGroup.GetPriceLevel();
+				}
+				else
+				{
+					m_strGroupName.Format("Group %d", m_nGroupNo);
+					m_nTranPriceBand = 0;
+				}
+			}
+		}
+	}
+}
+
+/**********************************************************************/
+/**********************************************************************/
+/**********************************************************************/
+
+CPosTrayChartwellsExportCreator::CPosTrayChartwellsExportCreator( CPosTrayChartwellsScheduleInfo& infoExport ) : m_infoExport( infoExport )
+{
+}
+
+/**********************************************************************/
+
+CPosTrayChartwellsExportCreator::~CPosTrayChartwellsExportCreator()
+{
+}
+
+/**********************************************************************/
+
+bool CPosTrayChartwellsExportCreator::CheckDbAccess(CSQLDb& SQLDb, int& nErrorNo, int& nVersionNo, int& nExternalVersionNo )
+{
+	nErrorNo = 0;
+	nVersionNo = 0;
+	nExternalVersionNo = 0;
+
+	SQLDb.Connect(nErrorNo);
+
+	COleDateTime timeNow = COleDateTime::GetCurrentTime();
+	m_infoExport.m_strLastDbCheckTime.Format("%2.2d/%2.2d/%4.4d @ %2.2d:%2.2d:%2.2d",
+		timeNow.GetDay(),
+		timeNow.GetMonth(),
+		timeNow.GetYear(),
+		timeNow.GetHour(),
+		timeNow.GetMinute(),
+		timeNow.GetSecond());
+
+	m_infoExport.m_nLastDbCheckMinute = timeNow.GetMinute();
+
+	if (nErrorNo != 0)
+	{
+		m_infoExport.m_nDatabaseError = 1;
+		return FALSE;
+	}
+		
+	nErrorNo = 0;
+	SQLDb.GetDatabaseVersion(nErrorNo, nVersionNo, nExternalVersionNo,FALSE);
+
+	if (nErrorNo != 0)
+	{
+		m_infoExport.m_nDatabaseError = 2;
+		return FALSE;
+	}
+		
+	if (nVersionNo < 12)
+	{
+		m_infoExport.m_nDatabaseError = 3;
+		return FALSE;
+	}
+
+	nErrorNo = 0;
+	SQLDb.GetDatabaseVersion(nErrorNo, nVersionNo, nExternalVersionNo, TRUE);
+
+	if (nExternalVersionNo != 1)
+	{
+		m_infoExport.m_nDatabaseError = 4;
+		return FALSE;
+	}
+	
+	m_infoExport.m_nDatabaseError = 0;
+	return TRUE;
+}
+
+/**********************************************************************/
+
+bool CPosTrayChartwellsExportCreator::ProcessExport(COleDateTime& dateReport)
+{
+	ChartwellsOptions.Read(FALSE);
+	SQLConnectionOptions.Read();
+
+	CSQLDb SQLDb;
+	int nErrorNo = 0;
+	int nVersionNo = 0;
+	int nExternalVersionNo = 0;
+	if (CheckDbAccess(SQLDb, nErrorNo, nVersionNo, nExternalVersionNo) == FALSE)
+	{
+		return FALSE;
+	}
+
+	CString strFolder = "";
+	GetSyssetProgramPath(strFolder);
+	strFolder += "\\Chartwells";
+	::CreateSubdirectory( strFolder );
+	strFolder += "\\EXPORTS";
+	::CreateSubdirectory( strFolder );
+
+	m_strCheckDate.Format( "%4.4d%2.2d%2.2d",
+		dateReport.GetYear(),
+		dateReport.GetMonth(),
+		dateReport.GetDay() );
+
+	CLocationSelectorEntity LocSelEntity;
+	LocSelEntity.SetDatabaseNode(0);
+	LocSelEntity.GetEPOSSelectArray( m_SelectArray );
+	m_SelectArray.MakeList();
+
+	int nTotalFileSize = 0;
+	CArray<CTermFileListInfo,CTermFileListInfo> arrayFileInfo;
+
+	{
+		CDataManagerInfo info;
+		DataManager.OpenDatabaseReadOnly(0, info);
+	}
+	
+	{
+		CDataManagerInfo info;
+		DataManagerNonDb.OpenServer(DB_READONLY, -1, -1, info);
+	}
+
+	GetTermFileList(arrayFileInfo, nTotalFileSize, TRUE);
+
+	m_TranBuffer.RemoveAll();
+	if (CreateSalesFile(strFolder, arrayFileInfo) == FALSE)
+	{
+		return FALSE;
+	}
+
+	GetTermFileList(arrayFileInfo, nTotalFileSize, FALSE);
+
+	if (CreateHeaderFile(strFolder, arrayFileInfo) == FALSE)
+	{
+		return FALSE;
+	}
+
+	if (CreatePaymentFile(strFolder, arrayFileInfo) == FALSE)
+	{
+		return FALSE;
+	}
+
+	return TRUE;
+}
+
+/**********************************************************************/
+
+void CPosTrayChartwellsExportCreator::GetTermFileList ( CArray<CTermFileListInfo,CTermFileListInfo>& arrayFileInfo, int& nTotalFileSize, bool bSales )
+{
+	CWaitCursor wait;
+
+	arrayFileInfo.RemoveAll();
+	nTotalFileSize = 0;
+
+	int nHistoryFileType = bSales ? HISTORYFILE_TYPE_SALES : HISTORYFILE_TYPE_TERM;
+	CString strHistoryFileName = bSales ? "SALES" : "TRMSAVE1";	
+
+	//BUILD AN ARRAY OF THE CLUMPS OF LOCATIONS IN THE SELECT ARRAY
+	int nCurrentLocIdx = -1;
+	CWordArray arrayLocGroupStart;
+	for ( int nIndex = 0; nIndex < m_SelectArray.GetListSize(); nIndex++ )
+	{
+		CEposSelectArrayListItem ListItem;
+		m_SelectArray.GetListItem( nIndex, ListItem );
+
+		if ( ListItem.m_nLocIdx != nCurrentLocIdx )
+		{
+			nCurrentLocIdx = ListItem.m_nLocIdx;
+			arrayLocGroupStart.Add ( nIndex );
+		}
+	}
+	arrayLocGroupStart.Add ( m_SelectArray.GetListSize() );
+
+	//WORK THROUGH THE CLUMPS OF LOCATIONS TO CREATE THE FILE LIST
+	for (int nIndex = 0; nIndex < arrayLocGroupStart.GetSize() - 1; nIndex++)
+	{
+		int nStartPos = arrayLocGroupStart.GetAt(nIndex);
+		int nEndPos = arrayLocGroupStart.GetAt(nIndex + 1) - 1;
+
+		CEposSelectArrayListItem ListItemLoc;
+		m_SelectArray.GetListItem(nStartPos, ListItemLoc);
+
+		int nNetworkIdx = 0;
+		int nNetworkNo = dbLocation.GetNetworkNo(ListItemLoc.m_nLocIdx);
+		if (dbNetwork.FindNetworkByNumber(nNetworkNo, nNetworkIdx) == FALSE)
+		{
+			continue;
+		}
+
+		CString strNetworkPath = dbNetwork.GetFolderPathData ( nNetworkIdx );
+		strNetworkPath += "\\";
+
+		CStringDateChecker StringDateChecker( m_strCheckDate, m_strCheckDate );
+
+		CFileFind FileFinder;	
+		bool bWorking = ( FileFinder.FindFile ( strNetworkPath + "*.*" ) != 0 );
+
+		while (bWorking)   
+		{
+			( bWorking = FileFinder.FindNextFile() != 0 );
+
+			//IGNORE CURRENT AND PARENT DIRECTORY MARKERS
+			if (FileFinder.IsDots() == TRUE)
+			{
+				continue;
+			}
+
+			//WE ONLY NEED TO CHECK DIRECTORIES
+			if (FileFinder.IsDirectory() == FALSE)
+			{
+				continue;
+			}
+
+			CString strDateFolder = FileFinder.GetFileName();
+
+			CString strDateTran = "";
+			CString strDateSale = "";
+			if (StringDateChecker.CheckDate(FALSE, nHistoryFileType, strDateFolder, strDateTran, strDateSale) == FALSE)
+			{
+				continue;
+			}
+
+			for ( int nPos = nStartPos; nPos <= nEndPos; nPos++ )
+			{
+				CEposSelectArrayListItem ListItemTerm;
+				m_SelectArray.GetListItem( nPos, ListItemTerm );
+				int nTerminalNo = dbLocation.GetTNo( ListItemLoc.m_nLocIdx, ListItemTerm.m_nTermIdx );
+				
+				CString strFilename;
+				strFilename.Format ( "%s\\%s.%3.3d", 
+					(const char*) strDateFolder, 
+					(const char*)strHistoryFileName,
+					nTerminalNo );
+
+				CSSFile fileTest;
+				if (fileTest.Open(strNetworkPath + strFilename, "rb", _SH_DENYNO) == FALSE)
+				{
+					continue;
+				}
+
+				CTermFileListInfo infoFile;
+				infoFile.m_nSelectArrayIdx = nPos;
+				infoFile.m_strFilename = strNetworkPath + strFilename;
+				infoFile.m_strDateFolder = strDateFolder;
+				infoFile.m_strDateTran = strDateTran;
+				infoFile.m_strDateSale = strDateSale;
+				infoFile.m_nDbIdx = ListItemLoc.m_nDbIdx;
+				infoFile.m_nLocIdx = ListItemLoc.m_nLocIdx;
+				infoFile.m_nTermIdx = ListItemTerm.m_nTermIdx;
+				arrayFileInfo.Add( infoFile );
+				
+				nTotalFileSize += fileTest.GetLength();
+			}
+		}
+	}
+}
+
+/**********************************************************************/
+
+CString CPosTrayChartwellsExportCreator::GetServerName(int nServerNo)
+{
+	CString strServerName = "";
+
+	int nServerIdx = 0;
+	if (DataManagerNonDb.Server.FindServerByNumber(nServerNo, nServerIdx) == TRUE)
+	{
+		CServerCSVRecord Server;
+		DataManagerNonDb.Server.GetAt(nServerIdx, Server);
+		strServerName = Server.GetReportName();
+	}
+
+	return strServerName;
+}
+
+/**********************************************************************/
+
+CString CPosTrayChartwellsExportCreator::GetOutputDate(CString strDate)
+{
+	CString strOutputDate = strDate;
+	
+	if (strOutputDate.GetLength() == 8)
+	{
+		if (strOutputDate.Mid(5, 1) == "/")
+		{
+			if (::TestNumeric(strOutputDate.Right(2)) == TRUE)
+			{
+				strOutputDate.Insert(6, "20");
+			}
+		}
+	}
+	
+	return strOutputDate;
+}
+
+/**********************************************************************/
+
+CString CPosTrayChartwellsExportCreator::PenceToString(int nPence)
+{
+	double dPence = (double(nPence)) / 100.0;
+
+	CString strPence = "";
+	strPence.Format("%.2f", dPence);
+
+	return strPence;
+}
+
+/**********************************************************************/
+
+int CPosTrayChartwellsExportCreator::DoubleToPence(double dValue)
+{
+	int nPence = static_cast<int>(std::lround(dValue * 100.0));
+	return nPence;
+}
+
+/**********************************************************************/
+
+CString CPosTrayChartwellsExportCreator::QtyToString(int nQty)
+{
+	double dQty = (double(nQty)) / 10000.0;
+
+	CString strQty = "";
+	strQty.Format("%.3f", dQty);
+
+	return strQty;
+}
+
+/**********************************************************************/
+
+int CPosTrayChartwellsExportCreator::DoubleToQty(double dQty)
+{
+	int nQty = static_cast<int>(std::lround(dQty * 10000.0));
+	return nQty;
+}
+
+/**********************************************************************/
+
+void CPosTrayChartwellsExportCreator::RedirectToEmail(CString strOutputFile, CString strType)
+{
+	/*
+	CString strCopyFile = "";
+	strCopyFile.Format("%s_%s_%s.CSV",
+		(const char*)m_strCheckDate,
+		(const char*)ChartwellsOptions.GetChartwellsSiteNo(),
+		(const char*)strType);
+
+	CString strEmailFolder = "PosTray\\Email\\";
+	::GetSyssetProgramPath(strEmailFolder);
+	CreateSubdirectory(strEmailFolder);
+	strEmailFolder += "Chartwells\\";
+	CreateSubdirectory(strEmailFolder);
+
+	CString strNKNFilename = strEmailFolder + strCopyFile.Left(strCopyFile.GetLength() - 4) + ".NKN";
+	CString strSpace = " ";
+
+	{
+		CSSFile fileNKN;
+		if (fileNKN.Open(strNKNFilename, "wb") == TRUE)
+		{
+			fileNKN.WriteLine(ChartwellsOptions.GetFTPUserName());
+			fileNKN.WriteLine( strType + strSpace + strCopyFile);
+		}
+		fileNKN.Close();
+	}
+
+	CopyFile(strOutputFile, strEmailFolder + strCopyFile, FALSE);
+	*/
+}
+
+/**********************************************************************/

@@ -1,0 +1,558 @@
+﻿/**********************************************************************/
+#include "..\CommonEcrStockTray\ReportHelpers.h"
+/**********************************************************************/
+#include "LocationCSVArray.h"
+/**********************************************************************/
+#include "PosTrayChartwellsExportCreator.h"
+/**********************************************************************/
+
+CPosTrayChartwellsExportSalesItem::CPosTrayChartwellsExportSalesItem()
+{
+	Reset();
+}
+
+/**********************************************************************/
+
+void CPosTrayChartwellsExportSalesItem::Reset()
+{
+	m_nTransactionID = 0;
+	m_strDate = "";
+	m_strTime = "";
+	m_strAccountID = "";
+	m_nPluNo = 0;
+	m_nDeptNo = 0;
+	m_nGroupNo = 0;
+	m_nCategoryNo = 0;
+	m_nServerNo = 0;
+	m_strVATBand = "";
+	/*****/
+	m_nTotalQty = 0;
+	m_nTotalValue = 0;
+	m_nTotalDiscount = 0;
+	m_bGotDiscount = FALSE;
+
+	for (int n = 0; n < 4; n++)
+	{
+		m_SubType[n].Reset();
+	}
+}
+
+/**********************************************************************/
+
+void CPosTrayChartwellsExportSalesItem::Add(CPosTrayChartwellsExportSalesItem& source)
+{
+	m_nTotalQty += source.m_nTotalQty;
+	m_nTotalValue += source.m_nTotalValue;
+	m_nTotalDiscount += source.m_nTotalDiscount;
+	m_bGotDiscount |= source.m_bGotDiscount;
+
+	for (int n = 0; n < 4; n++)
+	{
+		if (source.m_SubType[n].m_bInUse == TRUE)
+		{
+			m_SubType[n].m_bInUse = TRUE;
+			m_SubType[n].m_nQty += source.m_SubType[n].m_nQty;
+			m_SubType[n].m_nValue += source.m_SubType[n].m_nValue;
+			m_SubType[n].m_nDiscount += source.m_SubType[n].m_nDiscount;
+		}
+	}
+}
+
+/**********************************************************************/
+
+void CPosTrayChartwellsExportSalesItem::AllocateDiscounts()
+{
+	//NO DISCOUNT TO ALLOCATE
+	if ((m_bGotDiscount == FALSE) || (m_nTotalDiscount == 0))
+	{
+		return;
+	}
+
+	//TOTAL SALES ZERO, SO CANNOT SHARE DISCOUNT BETWEEN SALES
+	if (0 == m_nTotalValue)
+	{
+		m_SubType[3].m_bInUse = TRUE;
+		m_SubType[3].m_nQty = 0;
+		m_SubType[3].m_nValue = 0;
+		m_SubType[3].m_nDiscount = m_nTotalDiscount;		
+		return;
+	}
+
+	//ALLOCATE DISCOUNT BETWEEN EVENTS
+	for (int n = 0; n <= 1; n++)
+	{
+		if (m_SubType[n].m_bInUse == TRUE)
+		{
+			int nValue = m_SubType[n].m_nValue;
+			int nDiscountShare = (m_nTotalDiscount * nValue) / m_nTotalValue;
+			m_SubType[n].m_nDiscount = nDiscountShare;
+		}
+	}
+}
+
+/**********************************************************************/
+
+int CPosTrayChartwellsExportSalesItem::Compare(CPosTrayChartwellsExportSalesItem& source, int nHint)
+{
+	if (m_nTransactionID != source.m_nTransactionID)
+	{
+		return (m_nTransactionID > source.m_nTransactionID ? 1 : -1);
+	}
+	else if (m_strDate != source.m_strDate)
+	{
+		return (m_strDate > source.m_strDate ? 1 : -1);
+	}
+	else if (m_strTime != source.m_strTime)
+	{
+		return (m_strTime > source.m_strTime ? 1 : -1);
+	}
+	else if (m_strAccountID != source.m_strAccountID)
+	{
+		return (m_strAccountID > source.m_strAccountID ? 1 : -1);
+	}
+	else if (m_nPluNo != source.m_nPluNo)
+	{
+		return (m_nPluNo > source.m_nPluNo ? 1 : -1);
+	}
+	else if (m_nDeptNo != source.m_nDeptNo)
+	{
+		return (m_nDeptNo > source.m_nDeptNo ? 1 : -1);
+	}
+	else if (m_nGroupNo != source.m_nGroupNo)
+	{
+		return (m_nGroupNo > source.m_nGroupNo ? 1 : -1);
+	}
+	else if (m_nCategoryNo != source.m_nCategoryNo)
+	{
+		return (m_nCategoryNo > source.m_nCategoryNo ? 1 : -1);
+	}
+	else if (m_nPriceBand != source.m_nPriceBand)
+	{
+		return (m_nPriceBand > source.m_nPriceBand ? 1 : -1);
+	}
+	else if (m_nServerNo != source.m_nServerNo)
+	{
+		return (m_nServerNo > source.m_nServerNo ? 1 : -1);
+	}
+	else if (m_strVATBand != source.m_strVATBand)
+	{
+		return (m_strVATBand > source.m_strVATBand ? 1 : -1);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+/**********************************************************************/
+/**********************************************************************/
+/**********************************************************************/
+
+bool CPosTrayChartwellsExportCreator::CreateSalesFile(CString& strFolder, CArray<CTermFileListInfo, CTermFileListInfo>& arrayFileInfo)
+{
+	m_TransactionInfo.m_nCurrentTransactionID = -1;
+
+	CString strOutputFile;
+	strOutputFile.Format("%s\\%s_%s_SALES.CSV",
+		(const char*)strFolder,
+		(const char*)m_strCheckDate,
+		(const char*)ChartwellsOptions.GetChartwellsSiteNo());
+
+	CString strSaleDate = "";
+	strSaleDate.Format("%s/%s/%s",
+		(const char*)m_strCheckDate.Right(2),
+		(const char*)m_strCheckDate.Mid(4, 2),
+		(const char*)m_strCheckDate.Left(4));
+
+	CSSFile fileOutput;
+	if (fileOutput.Open(strOutputFile, "wb") == FALSE)
+	{
+		return FALSE;
+	}
+
+	{
+		CCSV csvHeader;
+		csvHeader.Add("transaction_id");
+		csvHeader.Add("date");
+		csvHeader.Add("time");
+		csvHeader.Add("account_id");
+		csvHeader.Add("accountgroup_no");
+		csvHeader.Add("accountgroup_name");
+		csvHeader.Add("year");
+		csvHeader.Add("class");
+		csvHeader.Add("location_id");
+		csvHeader.Add("location_name");
+		csvHeader.Add("terminal_id");
+		csvHeader.Add("terminal_name");
+		csvHeader.Add("item_id");
+		csvHeader.Add("item_name");
+		csvHeader.Add("department_id");
+		csvHeader.Add("department_name");
+		csvHeader.Add("itemgroup_id");
+		csvHeader.Add("itemgroup_name");
+		csvHeader.Add("category_id");
+		csvHeader.Add("category_name");
+		csvHeader.Add("priceband_id");
+		csvHeader.Add("priceband_name");
+		csvHeader.Add("operator_id");
+		csvHeader.Add("operator_name");
+		csvHeader.Add("vatband_id");
+		csvHeader.Add("vatband_name");
+		csvHeader.Add("vatband_rate");
+		csvHeader.Add("item_void");
+		csvHeader.Add("item_refund");
+		csvHeader.Add("item_discount");
+		csvHeader.Add("sale_qty");
+		csvHeader.Add("sale_grossvalue");
+		csvHeader.Add("sale_discount");
+		csvHeader.Add("sale_netofdiscount");
+		csvHeader.Add("sale_vatamount");
+		csvHeader.Add("sale_netofvat");
+		fileOutput.WriteLine(csvHeader.GetLine());
+	}
+
+	for (int nFileIdx = 0; nFileIdx < arrayFileInfo.GetSize(); nFileIdx++)
+	{
+		CTermFileListInfo infoFile = arrayFileInfo.GetAt(nFileIdx);
+
+		CSSFile fileSales;
+		if (fileSales.Open(infoFile.m_strFilename, "rb", _SH_DENYNO) == FALSE)
+		{
+			continue;
+		}
+
+		m_SalesBuffer.RemoveAll();
+
+		CString strBuffer = "";
+		while (fileSales.ReadString(strBuffer) == TRUE)
+		{
+			CPluSalesLine PluSalesLine(FALSE);
+			PluSalesLine.ParseLine(strBuffer);
+
+			bool bIsRefund = FALSE;
+			bool bIsDiscount = FALSE;
+			bool bIsVoid = FALSE;
+
+			CString strTime = PluSalesLine.GetTranTime();
+			if (strTime.GetLength() == 6)
+			{
+				strTime.Insert(2, ":");
+				strTime.Insert(5, ":");
+			}
+
+			int nLineType = PluSalesLine.GetLineType();
+
+			switch (nLineType)
+			{
+			case CSVPLUDATA_PLU_SALE:
+			case CSVPLUDATA_PLU_DISCOUNT:
+			case CSVPLUDATA_PROMO_TAXABLE:
+			case CSVPLUDATA_PROMO_NONTAXABLE:
+			case CSVPLUDATA_PLU_MIXMATCH:
+			case CSVPLUDATA_MIXMATCH_NONTAXABLE:
+				break;
+
+			default:
+				continue;
+			}
+
+			if (PluSalesLine.GetPluSaleWastageFlag() == TRUE)
+			{
+				continue;
+			}
+
+			CPosTrayChartwellsExportSalesItem Item;
+
+			switch (nLineType)
+			{
+			case CSVPLUDATA_PLU_SALE:
+			case CSVPLUDATA_PLU_DISCOUNT:
+			case CSVPLUDATA_PROMO_TAXABLE:
+			case CSVPLUDATA_PROMO_NONTAXABLE:
+			case CSVPLUDATA_PLU_MIXMATCH:
+			case CSVPLUDATA_MIXMATCH_NONTAXABLE:
+			{
+				//calculated Tran ID across 3 lines to avoid compiler
+				//warning about potential overflow.
+				Item.m_nTransactionID = PluSalesLine.GetLineTNo();
+				Item.m_nTransactionID *= 1000000;
+				Item.m_nTransactionID += PluSalesLine.GetTranSeqNo();
+				Item.m_strDate = strSaleDate;
+				Item.m_strTime = strTime;
+				Item.m_strAccountID = PluSalesLine.GetLoyaltyIDAsString();
+				Item.m_nPluNo = PluSalesLine.GetPluNoNew();
+				Item.m_nDeptNo = PluSalesLine.GetDeptNo();
+				Item.m_nGroupNo = PluSalesLine.GetGroupNo() - 1;
+				Item.m_nCategoryNo = PluSalesLine.GetAnalysisNo();
+				Item.m_nPriceBand = PluSalesLine.GetPriceBand();
+				Item.m_nServerNo = PluSalesLine.GetTranServerNo();
+				Item.m_strVATBand = PluSalesLine.GetTaxBand();
+
+				if (Item.m_strVATBand == "")
+				{
+					Item.m_strVATBand = "0";
+				}
+			}
+			break;
+			}
+
+			switch (nLineType)
+			{
+			case CSVPLUDATA_PROMO_TAXABLE:
+			case CSVPLUDATA_PROMO_NONTAXABLE:
+				Item.m_nPluNo = CEposReport::GetSeparatedPromoPluNo(PluSalesLine.GetPromoNoSeparate());
+				break;
+
+			case CSVPLUDATA_MIXMATCH_NONTAXABLE:
+				Item.m_nPluNo = CEposReport::GetSeparatedMixMatchPluNo(PluSalesLine.GetMixMatchNo());
+				break;
+			}
+
+			switch (nLineType)
+			{
+			case CSVPLUDATA_PROMO_NONTAXABLE:
+			case CSVPLUDATA_MIXMATCH_NONTAXABLE:
+				Item.m_strVATBand = "0";
+				break;
+			}
+
+			switch (nLineType)
+			{
+			case CSVPLUDATA_PLU_SALE:
+				if (PluSalesLine.GetPluSaleVoidFlag() == FALSE)
+				{
+					Item.m_nTotalQty = DoubleToQty(PluSalesLine.GetSaleQty());
+					Item.m_nTotalValue = DoubleToPence(PluSalesLine.GetValue());
+					Item.m_nTotalDiscount = 0;
+					Item.m_bGotDiscount = FALSE;
+					bIsDiscount = FALSE;
+					bIsRefund = PluSalesLine.GetPluSaleRefundFlag();
+					bIsVoid = FALSE;
+				}
+				else
+				{
+					Item.m_nTotalQty = 0;
+					Item.m_nTotalValue = 0;
+					Item.m_nTotalDiscount = 0;
+					Item.m_bGotDiscount = FALSE;
+					bIsDiscount = FALSE;
+					bIsRefund = FALSE;
+					bIsVoid = TRUE;
+				}
+				break;
+
+			case CSVPLUDATA_PROMO_TAXABLE:
+			case CSVPLUDATA_PROMO_NONTAXABLE:
+			case CSVPLUDATA_MIXMATCH_NONTAXABLE:
+				Item.m_nTotalQty = DoubleToPence(PluSalesLine.GetSaleQty());
+				Item.m_nTotalValue = 0;
+				Item.m_nTotalDiscount = DoubleToPence(PluSalesLine.GetValue());
+				Item.m_bGotDiscount = TRUE;
+				bIsDiscount = TRUE;
+				bIsRefund = FALSE;
+				bIsVoid = FALSE;
+				break;
+
+			case CSVPLUDATA_PLU_DISCOUNT:
+			case CSVPLUDATA_PLU_MIXMATCH:
+				Item.m_nTotalQty = 0;
+				Item.m_nTotalValue = 0;
+				Item.m_nTotalDiscount = DoubleToPence(PluSalesLine.GetValue());
+				Item.m_bGotDiscount = TRUE;
+				bIsDiscount = TRUE;
+				bIsRefund = FALSE;
+				bIsVoid = FALSE;
+				break;
+			}
+
+			switch (nLineType)
+			{
+			case CSVPLUDATA_PROMO_TAXABLE:
+			case CSVPLUDATA_PROMO_NONTAXABLE:
+			case CSVPLUDATA_MIXMATCH_NONTAXABLE:
+			case CSVPLUDATA_PLU_DISCOUNT:
+			case CSVPLUDATA_PLU_MIXMATCH:
+			{
+				CPosTrayChartwellsExportTranItem TranItem;
+				TranItem.m_nTransactionID = Item.m_nTransactionID;
+				TranItem.m_strDate = Item.m_strDate;
+				TranItem.m_strTime = Item.m_strTime;
+				TranItem.m_strAccountID = Item.m_strAccountID;
+				TranItem.m_bGotDiscount = TRUE;
+				m_TranBuffer.Consolidate(TranItem);
+
+			}
+			break;
+			}
+
+			if (TRUE == bIsRefund)
+			{
+				Item.m_SubType[1].m_bInUse = TRUE;
+				Item.m_SubType[1].m_nQty = Item.m_nTotalQty;
+				Item.m_SubType[1].m_nValue = Item.m_nTotalValue;
+				Item.m_SubType[1].m_nDiscount = 0;
+			}
+			else if (TRUE == bIsVoid)
+			{
+				Item.m_SubType[2].m_bInUse = TRUE;
+				Item.m_SubType[2].m_nQty = 0;
+				Item.m_SubType[2].m_nValue = 0;
+				Item.m_SubType[2].m_nDiscount = 0;
+			}
+			else if ( FALSE == bIsDiscount)
+			{
+				Item.m_SubType[0].m_bInUse = TRUE;
+				Item.m_SubType[0].m_nQty = Item.m_nTotalQty;
+				Item.m_SubType[0].m_nValue = Item.m_nTotalValue;
+				Item.m_SubType[0].m_nDiscount = 0;
+			}
+		
+			m_SalesBuffer.Consolidate(Item);
+		}
+
+		fileSales.Close();
+
+		m_TransactionInfo.m_nCurrentTransactionID = -1;
+
+		for (int n = 0; n < m_SalesBuffer.GetSize(); n++)
+		{
+			CPosTrayChartwellsExportSalesItem Item;
+			m_SalesBuffer.GetAt(n, Item);
+			Item.AllocateDiscounts();
+
+			m_TransactionInfo.m_nNewTransactionID = Item.m_nTransactionID;
+			m_TransactionInfo.m_strNewAccountID = Item.m_strAccountID;
+			m_TransactionInfo.m_strNewDate = Item.m_strDate;
+			m_TransactionInfo.m_nNewTerminalNo = dbLocation.GetTNo(infoFile.m_nLocIdx, infoFile.m_nTermIdx);
+			m_TransactionInfo.CheckNewSettings(FALSE);
+
+			CSQLPluNoInfo PluNoInfo;
+			PluNoInfo.m_nEposPluNo = Item.m_nPluNo;
+			::ProcessPluNo(PluNoInfo, FALSE, TRUE);
+
+			CString strPluText = "";
+			{
+				int nPluIdx = 0;
+				if (DataManager.Plu.FindPluByNumber(PluNoInfo.m_nBasePluNo, nPluIdx) == TRUE)
+				{
+					CPluCSVRecord Plu;
+					DataManager.Plu.GetAt(nPluIdx, Plu);
+					strPluText = Plu.GetModifierReportText(PluNoInfo.m_nModifier);
+				}
+			}
+
+			CString strDeptText = "";
+			{
+				int nDeptIdx = 0;
+				if (DataManager.Department.FindDeptByNumber(Item.m_nDeptNo, nDeptIdx) == TRUE)
+				{
+					CDepartmentCSVRecord Dept;
+					DataManager.Department.GetAt(nDeptIdx, Dept);
+					strDeptText = Dept.GetReportText();
+				}
+			}
+
+			CString strGroupText = "";
+			{
+				int nGroupIdx = 0;
+				if (DataManager.EposGroup.FindGroupByNumber(Item.m_nGroupNo, nGroupIdx) == TRUE)
+				{
+					CGroupCSVRecordEpos Group;
+					DataManager.EposGroup.GetAt(nGroupIdx, Group);
+					strGroupText = Group.GetReportText();
+				}
+			}
+
+			CString strCategoryText = "";
+			{
+				CAnalysisCategoryCSVRecord Category;
+				DataManager.AnalysisCategory.GetDisplayCategory(Item.m_nCategoryNo, Category);
+				strCategoryText = Category.GetEposText();
+			}
+
+			CString strServerName = GetServerName(Item.m_nServerNo);
+
+			CTaxRateInfo TaxRateInfo;
+			int nTaxBand = DataManager.TaxRates.GetNumericTaxBand(Item.m_strVATBand);
+			DataManager.TaxRates.GetTaxRateInfo(nTaxBand, TaxRateInfo);
+
+			if (Item.m_strVATBand == "0")
+			{
+				TaxRateInfo.m_dTaxRate = 0.0;
+				TaxRateInfo.m_strReportText = "zero";
+			}
+
+			for (int n = 0; n < 4; n++ )
+			{
+				if (Item.m_SubType[n].m_bInUse == FALSE)
+				{
+					continue;
+				}
+
+				int nLineQty = Item.m_SubType[n].m_nQty;
+				int nLineValue = Item.m_SubType[n].m_nValue;
+				int nLineDiscount = Item.m_SubType[n].m_nDiscount;
+				int nLineAfterDiscount = nLineValue - nLineDiscount;
+				int nLineAfterVAT = static_cast<int>(std::lround(ReportHelpers.CalcNonTax(nLineAfterDiscount, TaxRateInfo.m_dTaxRate)));
+
+				CCSV csvOut;
+				csvOut.Add(Item.m_nTransactionID);
+				csvOut.Add(Item.m_strDate);
+				csvOut.Add(Item.m_strTime);
+				csvOut.Add(Item.m_strAccountID);
+				csvOut.Add(m_TransactionInfo.m_nGroupNo);
+				csvOut.Add(m_TransactionInfo.m_strGroupName);
+				csvOut.Add(m_TransactionInfo.m_strClass);
+				csvOut.Add(m_TransactionInfo.m_strYear);
+				csvOut.Add(dbLocation.GetNetworkLocNo(infoFile.m_nLocIdx));
+				csvOut.Add(dbLocation.GetName(infoFile.m_nLocIdx));
+				csvOut.Add(m_TransactionInfo.m_nCurrentTerminalNo);
+				csvOut.Add(dbLocation.GetTerminalName(infoFile.m_nLocIdx, infoFile.m_nTermIdx));
+				csvOut.Add(Item.m_nPluNo);
+				csvOut.Add(strPluText);
+				csvOut.Add(Item.m_nDeptNo);
+				csvOut.Add(strDeptText);
+				csvOut.Add(Item.m_nGroupNo);
+				csvOut.Add(strGroupText);
+				csvOut.Add(Item.m_nCategoryNo);
+				csvOut.Add(strCategoryText);
+				csvOut.Add(Item.m_nPriceBand + 1);
+				csvOut.Add(DataManager.PriceText.GetReportText(Item.m_nPriceBand));
+				csvOut.Add(Item.m_nServerNo);
+				csvOut.Add(strServerName);
+				csvOut.Add(Item.m_strVATBand);
+				csvOut.Add(TaxRateInfo.m_strReportText);
+				csvOut.Add(TaxRateInfo.m_dTaxRate, 2);
+				csvOut.Add(( 2 == n ) ? "Y" : "N");
+				csvOut.Add(( 1 == n ) ? "Y" : "N");
+				csvOut.Add((Item.m_bGotDiscount) && ( n != 2 ) ? "Y" : "N");
+				csvOut.Add(QtyToString(nLineQty));
+				csvOut.Add(PenceToString(nLineValue));
+				csvOut.Add(PenceToString(nLineDiscount));
+				csvOut.Add(PenceToString(nLineAfterDiscount));
+				csvOut.Add(PenceToString(nLineAfterDiscount - nLineAfterVAT));
+				csvOut.Add(PenceToString(nLineAfterVAT));
+
+				CPosTrayChartwellsExportTranItem TranItem;
+				TranItem.m_nTransactionID = Item.m_nTransactionID;
+				TranItem.m_strDate = Item.m_strDate;
+				TranItem.m_strTime = Item.m_strTime;
+				TranItem.m_strAccountID = Item.m_strAccountID;
+				TranItem.m_nQty = nLineQty;
+				TranItem.m_nValue = nLineValue;
+				TranItem.m_nDiscount = nLineDiscount;
+				TranItem.m_nVAT = nLineAfterDiscount - nLineAfterVAT;
+				m_TranBuffer.Consolidate(TranItem);
+
+				fileOutput.WriteLine(csvOut.GetLine());
+			}
+		}
+	}
+
+	fileOutput.Close();
+	RedirectToEmail(strOutputFile, "SALES");
+
+	return TRUE;
+}
+
+/**********************************************************************/

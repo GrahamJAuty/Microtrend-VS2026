@@ -1,0 +1,180 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\MICROTREND\\VS2026\\SmartPay4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\plan.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\tasks.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15487B74-CD7D-4941-A78C-2C15341B8C0C}|SmartPay4Manager\\SmartPay4Manager.vcxproj|E:\\MICROTREND\\VS2026\\SmartPay4\\SmartPay4ManagerBgnd\\PebbleHelpersSendTransaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{15487B74-CD7D-4941-A78C-2C15341B8C0C}|SmartPay4Manager\\SmartPay4Manager.vcxproj|solutionrelative:SmartPay4ManagerBgnd\\PebbleHelpersSendTransaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 23,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:149:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PebbleHelpersSendTransaction.cpp",
+              "DocumentMoniker": "E:\\MICROTREND\\VS2026\\SmartPay4\\SmartPay4ManagerBgnd\\PebbleHelpersSendTransaction.cpp",
+              "RelativeDocumentMoniker": "SmartPay4ManagerBgnd\\PebbleHelpersSendTransaction.cpp",
+              "ToolTip": "E:\\MICROTREND\\VS2026\\SmartPay4\\SmartPay4ManagerBgnd\\PebbleHelpersSendTransaction.cpp",
+              "RelativeToolTip": "SmartPay4ManagerBgnd\\PebbleHelpersSendTransaction.cpp",
+              "ViewState": "AgIAAJ0BAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-27T09:50:47.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tasks.md",
+              "DocumentMoniker": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\tasks.md",
+              "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\tasks.md",
+              "ToolTip": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\tasks.md",
+              "RelativeToolTip": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\tasks.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-27T09:50:23.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "plan.md",
+              "DocumentMoniker": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\plan.md",
+              "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\plan.md",
+              "ToolTip": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\plan.md",
+              "RelativeToolTip": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\plan.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-27T09:42:35.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "assessment.md [Preview]",
+              "DocumentMoniker": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md",
+              "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md",
+              "ToolTip": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md [Preview]",
+              "RelativeToolTip": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md [Preview]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-27T09:36:01.055Z",
+              "EditorCaption": " [Preview]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "assessment.md",
+              "DocumentMoniker": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md",
+              "RelativeDocumentMoniker": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md",
+              "ToolTip": "E:\\MICROTREND\\VS2026\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md",
+              "RelativeToolTip": "..\\.github\\upgrades\\scenarios\\cppbuildtoolsupgrade_smartpay4\\assessment.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-27T09:35:57.517Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,564 @@
+﻿//$$******************************************************************
+#include <cmath>
+//$$******************************************************************
+#include "CkJsonArray.h"
+#include "CkJsonObject.h"
+#include "CkStringBuilder.h"
+//$$******************************************************************
+#include "PebbleHelpers.h"
+//$$******************************************************************
+#include "..\SmartPay4Shared\SQLTable_PebblePaymentType\SQLRepositoryPebblePaymentType.h"
+//$$******************************************************************
+#include "..\SmartPay4Shared\Consolidation.h"
+#include "..\SmartPay4Shared\ReportConsolidationArray.h"
+//$$******************************************************************
+extern const char* szVERSION_SMARTPAY_ABOUT;
+//$$******************************************************************
+
+CPebbleTransactionItem::CPebbleTransactionItem()
+{
+	m_nPluNo = 0;
+	m_dItemQty = 0.0;
+	m_dItemCost = 0.0;
+	m_strDescription = "";
+	m_strVATBand = "A";
+}
+
+//$$******************************************************************
+//$$******************************************************************
+//$$******************************************************************
+
+CPebbleTransactionPayment::CPebbleTransactionPayment()
+{
+	m_nType = 1;
+	m_strName = "";
+	m_dAmount = 0.0;
+}
+
+//$$******************************************************************
+//$$******************************************************************
+//$$******************************************************************
+
+void CPebbleHelpers::SortSPOSPaymentsByPebbleType(CArray<CPebbleTransactionPayment, CPebbleTransactionPayment>& arraySPOSPayments, CReportConsolidationArray<CConsolidatedDoubleByInt>& arrayPebblePayments, bool bExcludePursePay)
+{
+	arrayPebblePayments.RemoveAll();
+	CSQLRepositoryPebblePaymentType PrepStatPaymentType;
+
+	for (int n = 0; n < arraySPOSPayments.GetSize(); n++)
+	{
+		if ((FALSE == bExcludePursePay) || (arraySPOSPayments[n].m_nType != 6))
+		{
+			CSQLRowPebblePaymentType RowPaymentType;
+			RowPaymentType.SetSPOSPaymentType(arraySPOSPayments[n].m_nType);
+			if (PrepStatPaymentType.SelectRow(RowPaymentType, NULL).GetSQLError() == SQLCRUD_ERR_NONE)
+			{
+				CConsolidatedDoubleByInt item;
+				item.m_nKey = RowPaymentType.GetPebbleTranType();
+				item.m_dVal = arraySPOSPayments[n].m_dAmount;
+				arrayPebblePayments.Consolidate(item);
+			}
+		}
+	}
+}
+
+//$$******************************************************************
+
+CString CPebbleHelpers::SendTopupTransactionBatch(CSQLRepositoryPebbleConfig& PebbleConfig, CSQLRowPebbleExportTransaction RowTran, CArray<CPebbleTransactionPayment, CPebbleTransactionPayment>& arrayPayments)
+{
+	CString strError = "";
+
+	if (UpdateRestConnect(strError) == FALSE)
+	{
+		return strError;
+	}
+
+	ClearRest();
+
+	if (UpdateIAT(PebbleConfig, strError) == FALSE)
+	{
+		return strError;
+	}
+
+	CReportConsolidationArray<CConsolidatedDoubleByInt> arrayTopupByPebbleType;
+	SortSPOSPaymentsByPebbleType(arrayPayments, arrayTopupByPebbleType, TRUE);
+
+	m_Rest.ClearAllHeaders();
+	m_Rest.AddHeader("accept", "application/json");
+	m_Rest.AddHeader("authorization", GetIATAuth());
+	m_Rest.AddHeader("content-type", "application/json");
+
+	CkJsonObject jsonRequest;
+	
+	{
+		CString strISODateTime = ::ConvertAuditDateTimeToISO8601(RowTran.GetDate(), RowTran.GetTime());
+
+		jsonRequest.AddArrayAt(-1, "transactions");
+		CkJsonArray* jsonArrayTran = jsonRequest.ArrayAt(jsonRequest.get_Size() - 1);
+
+		for (int n = 0; n < arrayTopupByPebbleType.GetSize(); n++)
+		{
+			CConsolidatedDoubleByInt item;
+			arrayTopupByPebbleType.GetAt(n, item);
+
+			CString strAmount = "";
+			strAmount.Format("%.2f", item.m_dVal);
+
+			jsonArrayTran->AddObjectAt(-1);
+			CkJsonObject* jsonTran = jsonArrayTran->ObjectAt(jsonArrayTran->get_Size() - 1);
+
+			jsonTran->AppendString("memberId", RowTran.GetMemberID());
+			jsonTran->AppendString("purseId", "default");
+			jsonTran->AppendString("transactionDate", strISODateTime);
+			jsonTran->AppendString("type", CSQLRowPebblePaymentType::GetPebbleTranTypeName(item.m_nKey));
+			jsonTran->AppendString("description", "SPOS Topup");
+			jsonTran->AppendString("amount", strAmount);
+			jsonTran->UpdateString("tags.SmartPay", szVERSION_SMARTPAY_ABOUT);
+
+			delete jsonTran;
+		}
+
+		delete jsonArrayTran;
+	}
+
+	CkStringBuilder sbRequestBody;
+	jsonRequest.EmitSb(sbRequestBody);
+	Diagnostic(&jsonRequest, FALSE, "Send Topup Batch");
+
+	CkStringBuilder sbResponseBody;
+
+	CString strURL = "";
+	strURL.Format("/api/v1/orgs/%s/transactions_batch",
+		(const char*)PebbleConfig.m_Row.GetActiveOrganisationID());
+	
+	bool success = m_Rest.FullRequestSb("POST", strURL, sbRequestBody, sbResponseBody);
+
+	if (success != true)
+	{
+		LogRestError();
+		strError = "Pebble API Send Topup Batch Fail";
+		Diagnostic(strError, TRUE, "Send Topup Batch");
+		return strError;
+	}
+
+	if (m_Rest.get_ResponseStatusCode() >= 400)
+	{
+		strError.Format("Pebble API Send Topup Batch Error %d", m_Rest.get_ResponseStatusCode());
+		Diagnostic(strError, TRUE, "Send Topup Batch");
+		return strError;
+	}
+
+	CkJsonObject jsonResponse;
+	jsonResponse.LoadSb(sbResponseBody);
+	Diagnostic(&jsonResponse, TRUE, "Send Topup Batch");
+
+	m_bDoneFirstAPICall = TRUE;
+
+	return "";
+}
+
+//$$******************************************************************
+
+CString CPebbleHelpers::SendTransferTransactionBatch(CSQLRepositoryPebbleConfig& PebbleConfig, CSQLRowPebbleExportTransaction RowTran, bool bXFerOut)
+{
+	CString strError = "";
+
+	if (UpdateRestConnect(strError) == FALSE)
+	{
+		return strError;
+	}
+
+	ClearRest();
+
+	if (UpdateIAT(PebbleConfig, strError) == FALSE)
+	{
+		return strError;
+	}
+
+	m_Rest.ClearAllHeaders();
+	m_Rest.AddHeader("accept", "application/json");
+	m_Rest.AddHeader("authorization", GetIATAuth());
+	m_Rest.AddHeader("content-type", "application/json");
+
+	CkJsonObject jsonRequest;
+
+	{
+		CString strISODateTime = ::ConvertAuditDateTimeToISO8601(RowTran.GetDate(), RowTran.GetTime());
+
+		jsonRequest.AddArrayAt(-1, "transactions");
+		CkJsonArray* jsonArrayTran = jsonRequest.ArrayAt(jsonRequest.get_Size() - 1);
+
+		jsonArrayTran->AddObjectAt(-1);
+		CkJsonObject* jsonTran = jsonArrayTran->ObjectAt(jsonArrayTran->get_Size() - 1);
+
+		CString strAmount = "";
+		strAmount.Format("%.2f", RowTran.GetPurse1());
+
+		CString strDescription = "";
+		strDescription.Format( "Transfer %s SmartPay Account ID %I64d",
+			bXFerOut ? "out to" : "in from",
+			RowTran.GetXFerUserID());
+
+		jsonTran->AppendString("memberId", RowTran.GetMemberID());
+		jsonTran->AppendString("purseId", "default");
+		jsonTran->AppendString("transactionDate", strISODateTime);
+		jsonTran->AppendString("type", "transfer");
+		jsonTran->AppendString("description", strDescription);
+		jsonTran->AppendString("amount", strAmount);
+		jsonTran->UpdateString("tags.SmartPay", szVERSION_SMARTPAY_ABOUT);
+
+		delete jsonTran;
+		delete jsonArrayTran;
+	}
+
+	CkStringBuilder sbRequestBody;
+	jsonRequest.EmitSb(sbRequestBody);
+	Diagnostic(&jsonRequest, FALSE, "Send Transfer Batch");
+
+	CkStringBuilder sbResponseBody;
+
+	CString strURL = "";
+	strURL.Format("/api/v1/orgs/%s/transactions_batch",
+		(const char*)PebbleConfig.m_Row.GetActiveOrganisationID());
+
+	bool success = m_Rest.FullRequestSb("POST", strURL, sbRequestBody, sbResponseBody);
+
+	if (success != true)
+	{
+		LogRestError();
+		strError = "Pebble API Send Transfer Batch Fail";
+		Diagnostic(strError, TRUE, "Send Transfer Batch");
+		return strError;
+	}
+
+	if (m_Rest.get_ResponseStatusCode() >= 400)
+	{
+		strError.Format("Pebble API Send Transfer Batch Error %d", m_Rest.get_ResponseStatusCode());
+		Diagnostic(strError, TRUE, "Send Transfer Batch");
+		return strError;
+	}
+
+	CkJsonObject jsonResponse;
+	jsonResponse.LoadSb(sbResponseBody);
+	Diagnostic(&jsonResponse, TRUE, "Send Transfer Batch");
+
+	m_bDoneFirstAPICall = TRUE;
+
+	return "";
+}
+
+//$$******************************************************************
+
+CString CPebbleHelpers::SendSaleTransactionBatch(CSQLRepositoryPebbleConfig& PebbleConfig, CSQLRowPebbleExportTransaction RowTran, CArray<CPebbleTransactionItem, CPebbleTransactionItem>& arrayItems, CArray<CPebbleTransactionPayment, CPebbleTransactionPayment>& arrayPayments)
+{
+	CString strError = "";
+
+	if (UpdateRestConnect(strError) == FALSE)
+	{
+		return strError;
+	}
+	
+	ClearRest();
+
+	if (UpdateIAT(PebbleConfig, strError) == FALSE)
+	{
+		return strError;
+	}
+
+	m_Rest.ClearAllHeaders();
+	m_Rest.AddHeader("accept", "application/json");
+	m_Rest.AddHeader("authorization", GetIATAuth());
+	m_Rest.AddHeader("content-type", "application/json");
+
+	CkJsonObject jsonRequest;
+
+	{
+		CString strISODateTime = ::ConvertAuditDateTimeToISO8601(RowTran.GetDate(), RowTran.GetTime());
+
+		jsonRequest.AddArrayAt(-1, "transactions");
+		CkJsonArray* jsonArrayTran = jsonRequest.ArrayAt(jsonRequest.get_Size() - 1);
+	
+		//ADD ADJUSTMENTS FOR NON PURSE PAYMENT IF REQUIRED
+		{
+			//SORT SPOS PAYMENTS BY PEBBLE TRANSACTION TYPE
+			CReportConsolidationArray<CConsolidatedDoubleByInt> arrayPebblePayments;
+			SortSPOSPaymentsByPebbleType(arrayPayments, arrayPebblePayments, TRUE);
+			
+			CString strDescription = "SPOS Non Purse Sale";
+		
+			for (int n = 0; n < arrayPebblePayments.GetSize(); n++)
+			{
+				CConsolidatedDoubleByInt item;
+				arrayPebblePayments.GetAt(n, item);
+
+				CString strAmount = "";
+				strAmount.Format("%.2f", item.m_dVal);
+
+				jsonArrayTran->AddObjectAt(-1);
+				CkJsonObject* jsonTran = jsonArrayTran->ObjectAt(jsonArrayTran->get_Size() - 1);
+	
+				jsonTran->AppendString("memberId", RowTran.GetMemberID());
+				jsonTran->AppendString("purseId", "default");
+				jsonTran->AppendString("transactionDate", strISODateTime);
+				jsonTran->AppendString("type", CSQLRowPebblePaymentType::GetPebbleTranTypeName(item.m_nKey));
+				jsonTran->AppendString("description", strDescription);
+				jsonTran->AppendString("amount", strAmount);
+				jsonTran->UpdateString("tags.SmartPay", szVERSION_SMARTPAY_ABOUT);
+
+				delete jsonTran;
+			}
+		}
+
+		//ADD THE SALE TRANSACTION
+		{
+			jsonArrayTran->AddObjectAt(-1);
+			CkJsonObject* jsonSaleTran = jsonArrayTran->ObjectAt(jsonArrayTran->get_Size() - 1);
+
+			CString strAmount = "";
+			strAmount.Format("%.2f GBP", RowTran.GetAmount());
+
+			jsonSaleTran->AppendString("memberId", RowTran.GetMemberID());
+			jsonSaleTran->AppendString("purseId", "sales");
+			jsonSaleTran->AppendString("transactionDate", strISODateTime);
+			jsonSaleTran->AppendString("type", "sale");
+
+			if (CompareDoubles(RowTran.GetPurse2(), 0.0, 2) != 0)
+			{
+				CkJsonObject* jsonSourceOfFunds = NULL;
+				jsonSaleTran->AddObjectAt(-1, "sourceOfFunds");
+				jsonSourceOfFunds = jsonSaleTran->ObjectAt(jsonSaleTran->get_Size() - 1);
+
+				CkJsonObject* jsonCreditPurse = NULL;
+				jsonSourceOfFunds->AddObjectAt(-1, "SmartPayCreditFSM");
+				jsonCreditPurse = jsonSourceOfFunds->ObjectAt(jsonSourceOfFunds->get_Size() - 1);
+
+				CString strFSM = "";
+				strFSM.Format("%.2f", RowTran.GetPurse2() * (-1));
+				jsonCreditPurse->AppendString("amount", strFSM);
+
+				delete jsonCreditPurse;
+				delete jsonSourceOfFunds;
+			}
+
+			jsonSaleTran->AppendString("amount", strAmount);
+			jsonSaleTran->AppendString("description", RowTran.GetWebComment());
+			jsonSaleTran->UpdateString("tags.SmartPay", szVERSION_SMARTPAY_ABOUT);
+
+			//CREATE TILL OBJECT
+			CkJsonObject* jsonTill = NULL;
+			jsonSaleTran -> AddObjectAt(-1, "till");
+			jsonTill = jsonSaleTran -> ObjectAt(jsonSaleTran -> get_Size() - 1);
+			
+			int nPebbleVatCode = -1;
+			int nVATAmount = 0;
+
+			//ADD ITEM DETAIL TO TRANSACTION
+			if (arrayItems.GetSize() > 0)
+			{
+				jsonTill->AddArrayAt(-1, "productSales");
+				CkJsonArray* jsonArrayItems = jsonTill->ArrayAt(jsonTill->get_Size() - 1);
+
+				for (int n = 0; n < arrayItems.GetSize(); n++)
+				{
+					CPebbleTransactionItem PebbleItem = arrayItems.GetAt(n);
+
+					CString strPluNo = "";
+					strPluNo.Format("%I64d", PebbleItem.m_nPluNo);
+
+					CString strItemVal = "";
+					strItemVal.Format("%.2f", PebbleItem.m_dItemCost);
+
+					CString strVATBand = PebbleItem.m_strVATBand;
+					strVATBand.MakeUpper();
+
+					CPebbleVATInfo VatInfo;
+
+					if (strVATBand == "A") VatInfo = PebbleConfig.m_Row.GetVATInfo(0);
+					else if (strVATBand == "B") VatInfo = PebbleConfig.m_Row.GetVATInfo(1);
+					else if (strVATBand == "C") VatInfo = PebbleConfig.m_Row.GetVATInfo(2);
+					else if (strVATBand == "D") VatInfo = PebbleConfig.m_Row.GetVATInfo(3);
+					else if (strVATBand == "E") VatInfo = PebbleConfig.m_Row.GetVATInfo(4);
+					else if (strVATBand == "F") VatInfo = PebbleConfig.m_Row.GetVATInfo(5);
+					else if (strVATBand == "G") VatInfo = PebbleConfig.m_Row.GetVATInfo(6);
+					else if (strVATBand == "H") VatInfo = PebbleConfig.m_Row.GetVATInfo(7);
+					else if (strVATBand == "I") VatInfo = PebbleConfig.m_Row.GetVATInfo(8);
+					else if (strVATBand == "J") VatInfo = PebbleConfig.m_Row.GetVATInfo(9);
+					else if (strVATBand == "K") VatInfo = PebbleConfig.m_Row.GetVATInfo(10);
+					else if (strVATBand == "L") VatInfo = PebbleConfig.m_Row.GetVATInfo(11);
+
+					CString strVATRate = "";
+					strVATRate.Format("%.f%%", VatInfo.m_dVATRate);
+
+					//PEBBLE VAT CODE IS ZERO UNLESS ALL ITEMS HAVE THE SAME NON ZERO VAT CODE
+					if (nPebbleVatCode == -1)
+					{
+						nPebbleVatCode = VatInfo.m_nVATCode;
+					}
+					else
+					{
+						if (nPebbleVatCode != VatInfo.m_nVATCode)
+						{
+							nPebbleVatCode = 0;
+						}
+					}
+
+					//DON'T ADD VAT FOR ZERO RATED OR EXEMPT ITEMS
+					switch (VatInfo.m_nVATCode)
+					{
+					case 0:
+					case 1:
+					case 2:
+						if (::CompareDoubles(VatInfo.m_dVATRate, 0.0, 3) != 0)
+						{
+							double nLineValue = PebbleItem.m_dItemCost * PebbleItem.m_dItemQty;
+							double dLineVAT = (nLineValue * VatInfo.m_dVATRate) / (100 + VatInfo.m_dVATRate);
+							nVATAmount += static_cast<int>(round(dLineVAT * 100.0));
+						}
+						break;
+					}
+
+					jsonArrayItems->AddObjectAt(-1);
+					CkJsonObject* jsonItem = jsonArrayItems->ObjectAt(jsonArrayItems->get_Size() - 1);
+					jsonItem->AppendString("tillProductId", strPluNo);
+					jsonItem->AppendString("tracProductId", "");
+					jsonItem->AppendInt("quantity", int(PebbleItem.m_dItemQty));
+					jsonItem->AppendString("productName", PebbleItem.m_strDescription);
+					jsonItem->AppendString("sellingPrice", strItemVal);
+					jsonItem->AppendString("productVatRate", strVATRate);
+					jsonItem->AppendString("plu", strPluNo);
+
+					delete jsonItem;
+				}
+
+				delete jsonArrayItems;
+			}
+
+			CString strPebbleVATCodes = "SRCOZX";
+
+			if ((nPebbleVatCode < 0) || (nPebbleVatCode > 5))
+			{
+				nPebbleVatCode = 0;
+			}
+
+			jsonSaleTran->AddStringAt(4, "vatCode", strPebbleVATCodes.Mid(nPebbleVatCode, 1));
+	
+			{
+				double dVATAmount = (double(nVATAmount)) / 100.0;
+
+				CString strVATAmount = "";
+				strVATAmount.Format("%.2f", dVATAmount);
+				jsonTill->AddStringAt(0, "vatAmount",strVATAmount);
+
+				strVATAmount.Format("%d", nVATAmount);
+				jsonTill->AddNumberAt(1, "vatAmountAsInteger", strVATAmount);
+			}
+
+			//ADD PAYMENT INFORMATION TO TRANSACTION
+			{
+				CReportConsolidationArray<CConsolidatedDoubleByString> arrayConsolidatedPayments(FALSE, 1);
+
+				for (int n = 0; n < arrayPayments.GetSize(); n++)
+				{
+					CString strPaymentName = "";
+
+					{
+						CSQLRowPebblePaymentType RowPaymentType;
+						RowPaymentType.SetSPOSPaymentType(arrayPayments[n].m_nType);
+
+						CSQLRepositoryPebblePaymentType PrepStatPaymentType;
+						if (PrepStatPaymentType.SelectRow(RowPaymentType, NULL).GetSQLError() == SQLCRUD_ERR_NONE)
+						{
+							strPaymentName = RowPaymentType.GetPebblePaymentName();
+						}
+					}
+
+					::TrimSpacesFromString(strPaymentName);
+
+					if (strPaymentName == "")
+					{
+						strPaymentName.Format("PAYMENT%d", arrayPayments[n].m_nType);
+					}
+
+					CConsolidatedDoubleByString item;
+					item.m_strKey = strPaymentName;
+					item.m_dVal = arrayPayments[n].m_dAmount;
+					arrayConsolidatedPayments.Consolidate(item);
+				}
+
+				if (arrayConsolidatedPayments.GetSize() > 0)
+				{
+					jsonTill->AddObjectAt(-1, "salePayments");
+					CkJsonObject* jsonPayments = jsonTill->ObjectAt(jsonTill->get_Size() - 1);
+
+					for (int n = 0; n < arrayConsolidatedPayments.GetSize(); n++)
+					{
+						CConsolidatedDoubleByString Payment;
+						arrayConsolidatedPayments.GetAt(n, Payment);
+
+						jsonPayments->AddObjectAt(-1, Payment.m_strKey);
+						CkJsonObject* jsonPayDetail = jsonPayments->ObjectAt(jsonPayments->get_Size() - 1);
+
+						CString strAmount = "";
+						strAmount.Format("%.2f", Payment.m_dVal);
+						jsonPayDetail->AppendString("paymentAmount", strAmount);
+						jsonPayDetail->AppendString("paymentChange", "0.00");
+						jsonPayDetail->AppendString("paymentTotal", strAmount);
+
+						delete jsonPayDetail;
+					}
+
+					delete jsonPayments;
+				}
+			}
+
+			//DELETE TILL OBJECT IF CREATED
+			if (jsonTill != NULL)
+			{
+				delete jsonTill;
+			}
+
+			delete jsonSaleTran;
+		}
+	
+		delete jsonArrayTran;
+	}
+
+	CkStringBuilder sbRequestBody;
+	jsonRequest.EmitSb(sbRequestBody);
+	Diagnostic(&jsonRequest, FALSE, "Send Sale Batch");
+
+	CkStringBuilder sbResponseBody;
+
+	CString strURL = "";
+	strURL.Format("/api/v1/orgs/%s/transactions_batch",
+		(const char*)PebbleConfig.m_Row.GetActiveOrganisationID());
+
+	bool success = m_Rest.FullRequestSb("POST", strURL, sbRequestBody, sbResponseBody);
+
+	if (success != true)
+	{
+		LogRestError();
+		strError = "Pebble API Send Sale Batch Fail";
+		Diagnostic(strError, TRUE, "Send Sale Batch");
+		return strError;
+	}
+
+	if (m_Rest.get_ResponseStatusCode() >= 400)
+	{
+		strError.Format("Pebble API Send Sale Batch Error %d", m_Rest.get_ResponseStatusCode());
+		Diagnostic(strError, TRUE, "Send Sale Batch");
+		return strError;
+	}
+
+	CkJsonObject jsonResponse;
+	jsonResponse.LoadSb(sbResponseBody);
+	Diagnostic(&jsonResponse, TRUE, "Send Sale Batch");
+
+	m_bDoneFirstAPICall = TRUE;
+
+	return "";
+}
+
+//$$******************************************************************
+
+
+
