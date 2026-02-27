@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KioskSmartPayLink", "CardLink.vcxproj", "{9656DB40-0BBD-4B48-8828-8047FE34D17B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9656DB40-0BBD-4B48-8828-8047FE34D17B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9656DB40-0BBD-4B48-8828-8047FE34D17B}.Debug|Win32.Build.0 = Debug|Win32
+		{9656DB40-0BBD-4B48-8828-8047FE34D17B}.Release|Win32.ActiveCfg = Release|Win32
+		{9656DB40-0BBD-4B48-8828-8047FE34D17B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50EDCD49-A99B-4AB5-B04A-53693CB0020D}
+	EndGlobalSection
+EndGlobal

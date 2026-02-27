@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+    version="2.03.0.0"
+    processorArchitecture="*"
+    name="KioskBioLink2"
+    type="win32" />
+    
+  <description>KioskBioLink2 Application</description>
+
+	<!-- Disable modern Windows features -->
+	<application>
+		<windowsSettings>
+			<!-- Disable DPI awareness -->
+			<dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">unaware</dpiAwareness>
+			<!-- Disable UI Automation -->
+			<disableWindowFiltering xmlns="http://schemas.microsoft.com/SMI/2011/WindowsSettings">true</disableWindowFiltering>
+		</windowsSettings>
+	</application>
+
+	<!-- Compatibility settings for legacy operation -->
+	<compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+		<application>
+			<!-- This app was designed for Windows 7 -->
+			<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />
+		</application>
+	</compatibility>
+  
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"/>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>KioskSmartPayLink</ProjectName>
+    <ProjectGuid>{9656DB40-0BBD-4B48-8828-8047FE34D17B}</ProjectGuid>
+    <RootNamespace>CardLink</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.32203.90</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\Microtrend\VS2022\COMMON\SSINC;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <TargetName>KioskBioLink2</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>E:\Microtrend\VS2022\COMMON\SSINC;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
+    <TargetName>KioskBioLink2</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>repsubsd.lib;dbased.lib;Aesimhei.lib;subsd.lib;datetimesubsd.lib;sysset3d.lib;winsubsd.lib;expd.lib;winmm.lib;winscard.lib;smartUIDd.lib;commsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)KioskBioLink2.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>$(ProjectDir)kioskbiolink2.exe.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile>$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>repsubs.lib;dbase.lib;Aesimhei.lib;subs.lib;datetimesubs.lib;sysset3.lib;winsubs.lib;exp.lib;winmm.lib;smartUID.lib;winscard.lib;comms.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)KioskBioLink2.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration />
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>$(ProjectDir)kioskbiolink2.exe.manifest</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutDlg.cpp" />
+    <ClCompile Include="AdminDatabase.cpp" />
+    <ClCompile Include="CardLink.cpp" />
+    <ClCompile Include="CashRemovedReport.cpp" />
+    <ClCompile Include="CoinageReport.cpp" />
+    <ClCompile Include="CommandFile.cpp" />
+    <ClCompile Include="EmptyCashDlg.cpp" />
+    <ClCompile Include="ErrorDlg.cpp" />
+    <ClCompile Include="FailureReport.cpp" />
+    <ClCompile Include="GetAdminDlg.cpp" />
+    <ClCompile Include="GetEnrolmentDetails.cpp" />
+    <ClCompile Include="GetUserDlg.cpp" />
+    <ClCompile Include="GetUserDualDlg.cpp" />
+    <ClCompile Include="GetUserThread.cpp" />
+    <ClCompile Include="GetUserThreadManager.cpp" />
+    <ClCompile Include="GlobalFunctions.cpp" />
+    <ClCompile Include="GTData.cpp" />
+    <ClCompile Include="ImageHandler.cpp" />
+    <ClCompile Include="KeypadDlg.cpp" />
+    <ClCompile Include="LoaderTestDlg.cpp" />
+    <ClCompile Include="MyCommandLineInfo.cpp" />
+    <ClCompile Include="MyMifare.cpp" />
+    <ClCompile Include="PasswordData.cpp" />
+    <ClCompile Include="PayLinkAuditRecord.cpp" />
+    <ClCompile Include="PaylinkInterface.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="PhotoIDEnquiryDlg.cpp" />
+    <ClCompile Include="PostTransaction.cpp" />
+    <ClCompile Include="PostTransactionThread.cpp" />
+    <ClCompile Include="PostTransactionThreadManager.cpp" />
+    <ClCompile Include="ReportManager.cpp" />
+    <ClCompile Include="ScannerDlg.cpp" />
+    <ClCompile Include="SelectionDlg.cpp" />
+    <ClCompile Include="SelectPurseDlg.cpp" />
+    <ClCompile Include="ServiceTimeData.cpp" />
+    <ClCompile Include="ServiceTimesDlg.cpp" />
+    <ClCompile Include="SetupDlg.cpp" />
+    <ClCompile Include="SetupReaderDlg.cpp" />
+    <ClCompile Include="Status.cpp" />
+    <ClCompile Include="StatusCheckThread.cpp" />
+    <ClCompile Include="StatusCheckThreadManager.cpp" />
+    <ClCompile Include="SystemData.cpp" />
+    <ClCompile Include="TerminalData.cpp" />
+    <ClCompile Include="UserIDRecord.cpp" />
+    <ClCompile Include="version.cpp" />
+    <ClCompile Include="WaitDlg.cpp" />
+    <ClCompile Include="WaitGetUserDlg.cpp" />
+    <ClCompile Include="WaitPostTransactionDlg.cpp" />
+    <ClCompile Include="WaitStatusDlg.cpp" />
+    <ClCompile Include="YesNoDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutDlg.h" />
+    <ClInclude Include="AdminDatabase.h" />
+    <ClInclude Include="CardLink.h" />
+    <ClInclude Include="CashRemovedReport.h" />
+    <ClInclude Include="CoinageReport.h" />
+    <ClInclude Include="CommandFile.h" />
+    <ClInclude Include="Defines.h" />
+    <ClInclude Include="EmptyCashDlg.h" />
+    <ClInclude Include="ErrorDlg.h" />
+    <ClInclude Include="FailureReport.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="GetAdminDlg.h" />
+    <ClInclude Include="GetEnrolmentDetails.h" />
+    <ClInclude Include="GetUserDlg.h" />
+    <ClInclude Include="GetUserDualDlg.h" />
+    <ClInclude Include="GetUserThread.h" />
+    <ClInclude Include="GetUserThreadManager.h" />
+    <ClInclude Include="GlobalFunctions.h" />
+    <ClInclude Include="GTData.h" />
+    <ClInclude Include="ImageHandler.h" />
+    <ClInclude Include="KeypadDlg.h" />
+    <ClInclude Include="LoaderTestDlg.h" />
+    <ClInclude Include="MyCommandLineInfo.h" />
+    <ClInclude Include="MyMifare.h" />
+    <ClInclude Include="PasswordData.h" />
+    <ClInclude Include="PayLinkAuditRecord.h" />
+    <ClInclude Include="PaylinkInterface.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="PhotoIDEnquiryDlg.h" />
+    <ClInclude Include="PostTransaction.h" />
+    <ClInclude Include="PostTransactionThread.h" />
+    <ClInclude Include="PostTransactionThreadManager.h" />
+    <ClInclude Include="ReportManager.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ScannerDlg.h" />
+    <ClInclude Include="SelectionDlg.h" />
+    <ClInclude Include="SelectPurseDlg.h" />
+    <ClInclude Include="ServiceTimeData.h" />
+    <ClInclude Include="ServiceTimesDlg.h" />
+    <ClInclude Include="SetupDlg.h" />
+    <ClInclude Include="SetupReaderDlg.h" />
+    <ClInclude Include="Status.h" />
+    <ClInclude Include="StatusCheckThread.h" />
+    <ClInclude Include="StatusCheckThreadManager.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SystemData.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TerminalData.h" />
+    <ClInclude Include="UserIDRecord.h" />
+    <ClInclude Include="WaitDlg.h" />
+    <ClInclude Include="WaitGetUserDlg.h" />
+    <ClInclude Include="WaitPostTransactionDlg.h" />
+    <ClInclude Include="WaitStatusDlg.h" />
+    <ClInclude Include="YesNoDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\CardLink.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CardLink.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CardLink.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="kioskbiolink2.exe.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="CardLink.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
