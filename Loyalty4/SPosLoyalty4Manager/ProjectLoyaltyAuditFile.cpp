@@ -54,7 +54,7 @@ void CLoyaltyAuditFile::WriteArchive ( CWnd* pParent )
 			(const char*) strReportTitle,
 			(const char*) strDateRange );
 
-		if ( ::FileExists ( strArchiveFile ) == TRUE )
+		if ( SolutionGlobalFunctions::FileExists ( strArchiveFile ) == TRUE )
 		{
 			MessageBeep ( MB_ICONEXCLAMATION );
 			if (Prompter.YesNo("A file already exists for this start date\n\nDo you wish to overwrite it?", strCaption) == IDNO)

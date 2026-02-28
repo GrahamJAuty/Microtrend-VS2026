@@ -6,6 +6,13 @@
 #include "SolutionGlobalFunctions.h"
 /******************************************************************************/
 
+bool SolutionGlobalFunctions::FileExists(const char* szFile)
+{
+	return (_access(szFile, 0) == 0) ? TRUE : FALSE;
+}
+
+/******************************************************************************/
+
 void SolutionGlobalFunctions::GetMessageLogDateTime(CString& strDate, CString& strTime)
 {
 	auto now = std::chrono::system_clock::now();

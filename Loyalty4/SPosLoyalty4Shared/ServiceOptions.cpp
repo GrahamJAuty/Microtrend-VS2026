@@ -75,7 +75,7 @@ bool CServiceOptions::Read()
 
 	CString strFilename = Filenames.GetServerServiceOptionsFilename();
 
-	if ( ::FileExists( strFilename ) == TRUE )
+	if ( SolutionGlobalFunctions::FileExists( strFilename ) == TRUE )
 	{
 		CEnhancedIniFile iniFile( SS_INI_AES );;
 		if ( iniFile.Read( strFilename ) == FALSE )

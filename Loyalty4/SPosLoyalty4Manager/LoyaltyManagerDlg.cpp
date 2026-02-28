@@ -2439,12 +2439,12 @@ void CLoyaltyManagerDlg::OnContextMenu(CWnd* pWnd, CPoint point)
 
 			CString strFilename = Filenames.GetPurchaseHistoryFilename ( m_SQLRowContextMenu.GetUserIDString() );
 			
-			bool bEnableHistory = ::FileExists(strFilename);
+			bool bEnableHistory = SolutionGlobalFunctions::FileExists(strFilename);
 
 			if (FALSE == bEnableHistory)
 			{
 				strFilename = Filenames.GetPurchaseHistoryUpdateFilename(m_SQLRowContextMenu.GetUserIDString());
-				bEnableHistory = ::FileExists(strFilename);
+				bEnableHistory = SolutionGlobalFunctions::FileExists(strFilename);
 			}
 
 			menuChanger.EnableItem(IDM_POPUP_PURCHASEHISTORY, bEnableHistory );
@@ -2960,7 +2960,7 @@ void CLoyaltyManagerDlg::OnBackupSystem()
 
 void CLoyaltyManagerDlg::OnBackupLog()
 {
-	if (::FileExists(Filenames.GetBackupLogToReadFilename()) == TRUE)
+	if (SolutionGlobalFunctions::FileExists(Filenames.GetBackupLogToReadFilename()) == TRUE)
 	{
 		CRepmanHandler RepmanHandler("", this);
 		RepmanHandler.DisplayReport(Filenames.GetBackupLogToReadFilename(), Filenames.GetBackupLogParamsFilename(), "", FALSE);

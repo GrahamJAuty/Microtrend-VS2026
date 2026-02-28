@@ -28,9 +28,9 @@ bool CSQLConnectionOptions::Read()
 		CString strFilenameOld = Filenames.GetSQLConnectionOptionsFilenameOld();
 		CString strFilenameNew = Filenames.GetSQLConnectionOptionsFilenameNew();
 
-		if (::FileExists(strFilenameNew) == FALSE)
+		if (SolutionGlobalFunctions::FileExists(strFilenameNew) == FALSE)
 		{
-			if (::FileExists(strFilenameOld) == TRUE)
+			if (SolutionGlobalFunctions::FileExists(strFilenameOld) == TRUE)
 			{
 				CopyFile(strFilenameOld, strFilenameNew, TRUE);
 			}

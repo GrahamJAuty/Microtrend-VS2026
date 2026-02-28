@@ -24,11 +24,11 @@ void CServerWrapper::CheckImports()
 void CServerWrapper::CheckNormalImport()
 {
 	CString strFilename = Filenames.GetImportsPath("srvimport.csv");
-	if (::FileExists(strFilename) == TRUE)
+	if (SolutionGlobalFunctions::FileExists(strFilename) == TRUE)
 	{
 		{
 			CString strRenamedFile = Filenames.GetImportsPath("srvimport.$$1");
-			if (::FileExists(strRenamedFile) == TRUE)						// see if already have a $$1 file waiting
+			if (SolutionGlobalFunctions::FileExists(strRenamedFile) == TRUE)						// see if already have a $$1 file waiting
 			{
 				if (::AppendDataFile(strFilename, strRenamedFile, TRUE) == TRUE)	// add to end of $$1 file
 				{
@@ -76,7 +76,7 @@ void CServerWrapper::CheckQRInfoImport()
 
 	CString strRenamedFilename = strBaseFilename + strDateTime;
 
-	if (::FileExists(strRomanFilename) == TRUE)
+	if (SolutionGlobalFunctions::FileExists(strRomanFilename) == TRUE)
 	{
 		::SendToRecycleBin(strRenamedFilename);
 		int nRenameResult = ::rename(strRomanFilename, strRenamedFilename);					

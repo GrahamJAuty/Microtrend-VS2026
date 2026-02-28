@@ -234,7 +234,7 @@ void CServiceInstallDlg::OnToggleStop()
 
 void CServiceInstallDlg::UpdateLaunchOptions()
 {
-	bool bStopRequest = FileExists(m_strServiceStopFilename);
+	bool bStopRequest = SolutionGlobalFunctions::FileExists(m_strServiceStopFilename);
 	m_checkStop.SetCheck(bStopRequest);
 	m_buttonLaunch.EnableWindow((FALSE == bStopRequest) && (m_pServiceOptions->GetAllowDesktopAppFlag() == TRUE));
 }

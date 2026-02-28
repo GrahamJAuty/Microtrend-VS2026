@@ -340,7 +340,7 @@ void CSystemBackup::BackupFiles(const char* szFileName, const char* szPathName)
 	m_strDrive.MakeLower();
 	strUserPathName.MakeLower();
 
-	if (::FileExists(strUserFilePath) == TRUE)
+	if (SolutionGlobalFunctions::FileExists(strUserFilePath) == TRUE)
 	{
 		CString strMsg = "An existing backup file was found in the specified folder.\n\n";
 		strMsg += "Are you sure you wish to overwrite it.";
@@ -719,7 +719,7 @@ void CSystemBackup::RestoreFiles( CLockManagerInfo& infoLock )
 	}
 	
 	//HANDLE FILE NOT FOUND
-	if ( ::FileExists ( strUserFilePath ) == FALSE )
+	if ( SolutionGlobalFunctions::FileExists ( strUserFilePath ) == FALSE )
 	{
 		LogRestoreMessage( strUserFilePath, BKERROR_CONTEXT_PREZIP, BKERROR_TYPE_NOTEXIST );
 		m_strOnScreenError = "The selected backup file was not found";
@@ -920,7 +920,7 @@ void CSystemBackup::RestoreFiles( CLockManagerInfo& infoLock )
 		bool bRestoreFromScript = FALSE;
 		bool bUseFallbackScript = FALSE;
 
-		if (::FileExists(Filenames.GetSQLBackupFilename()) == TRUE)
+		if (SolutionGlobalFunctions::FileExists(Filenames.GetSQLBackupFilename()) == TRUE)
 		{
 			if (TRUE == m_bFromScript)
 			{
@@ -1031,7 +1031,7 @@ void CSystemBackup::LogBackupMessage( const char* szMsg )
 	strLine.Format ( "%s", 
 		(const char*) csv.GetLine() );
 
-	if ( ::FileExists ( strBackupLogFile ) == FALSE )
+	if ( SolutionGlobalFunctions::FileExists ( strBackupLogFile ) == FALSE )
 	{
 		CReportFile ReportFile;
 		ReportFile.Open ( strBackupLogFile );

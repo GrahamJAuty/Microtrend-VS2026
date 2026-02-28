@@ -209,14 +209,14 @@ void CLoyalty4ServerApp::RunDesktop(CLoyaltyCommandLineInfo& cmdInfo)
 				{
 					ServerWrapper.Pulse();
 
-					if (FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+					if (SolutionGlobalFunctions::FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
 					{
 						MessageLogger.LogSystemMessage("Shutdown request from Loyalty");
 						ServerWrapper.ShutdownThreads();
 						break;
 					}
 
-					if (FileExists(Filenames.GetServerUpdatePluReqFilename()) == TRUE)
+					if (SolutionGlobalFunctions::FileExists(Filenames.GetServerUpdatePluReqFilename()) == TRUE)
 					{
 						ServerWrapper.ProcessUpdatePluRequest();
 					}

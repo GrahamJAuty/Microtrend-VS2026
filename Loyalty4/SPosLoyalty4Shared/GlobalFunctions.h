@@ -1,8 +1,6 @@
 #pragma once
 //**********************************************************************
 
-bool FileExists ( const char* szFile );
-
 void SendToRecycleBin ( const char* szFileMask);
 void SendToRecycleBin ( CStringArray* pArray );
 

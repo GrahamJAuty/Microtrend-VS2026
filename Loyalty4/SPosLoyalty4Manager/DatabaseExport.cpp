@@ -145,7 +145,7 @@ int CExportDatabase::ExportRecord(CSQLRowAccountFull& RowAccount)
 	CDbReportHandler dbReporter{};
 	if (dbReporter.Read(m_strLabel) == TRUE)
 	{
-		bool bExists = ::FileExists(dbReporter.m_strFilename);
+		bool bExists = SolutionGlobalFunctions::FileExists(dbReporter.m_strFilename);
 		CString strMode = (bExists == TRUE) ? "ab" : "wb";
 
 		CSSFile file;

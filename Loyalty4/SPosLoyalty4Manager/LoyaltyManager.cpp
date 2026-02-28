@@ -186,7 +186,7 @@ BOOL CLoyaltyManagerApp::InitInstance()
 		{
 			CString strFilename = ".\\SERIALNO.DAT";
 
-			if (::FileExists(strFilename) == FALSE)
+			if (SolutionGlobalFunctions::FileExists(strFilename) == FALSE)
 			{
 				CSSFile fileSerialNo;
 				if (fileSerialNo.Open(strFilename, "wb") == TRUE)

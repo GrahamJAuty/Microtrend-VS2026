@@ -457,7 +457,7 @@ BOOL CRecordTransferDlg::OnInitDialog()
 
 		strProcessButtonText = "Process Replacement";
 
-		if (::FileExists(Filenames.GetPurchaseHistoryFilename(m_RowTo.GetUserIDString())) == FALSE)		// see if replacement card as a purchase history alreaay
+		if (SolutionGlobalFunctions::FileExists(Filenames.GetPurchaseHistoryFilename(m_RowTo.GetUserIDString())) == FALSE)		// see if replacement card as a purchase history alreaay
 		{
 			m_checkCopyPurchaseHistory.SetWindowText("Carry forward purchase history");	// Overwrite replacements purchase history
 		}

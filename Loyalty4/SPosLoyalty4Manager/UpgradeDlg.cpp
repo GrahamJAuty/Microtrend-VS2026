@@ -391,11 +391,11 @@ bool CUpgradeDlg::CheckV1Server ( const char* szSystemFolder, CWorkingDlg& Worki
 		(const char*) GetStartupPath(), 
 		szSERVERSTARTUP_V1 );
 
-	if ( ::FileExists ( strStartupLink_v1 ) == TRUE )
+	if ( SolutionGlobalFunctions::FileExists ( strStartupLink_v1 ) == TRUE )
 	{
 		::SendToRecycleBin ( strStartupLink_v1 );			// remove link
 
-		if (::FileExists(strStartupLink_v1) == TRUE)
+		if (SolutionGlobalFunctions::FileExists(strStartupLink_v1) == TRUE)
 		{
 			m_nV1StartupLinkRemoved = nERROR;
 		}
@@ -446,7 +446,7 @@ bool CUpgradeDlg::TerminateV1orV2Server ( const char* szSystemFolder )
 	int nCount;
 	for ( nCount = 0 ; nCount < 10 ; nCount++ )
 	{
-		if ( ::FileExists ( strTerminateFilename ) == FALSE )	// see if request been been processed
+		if ( SolutionGlobalFunctions::FileExists ( strTerminateFilename ) == FALSE )	// see if request been been processed
 			break;
 
 		Sleep(1000);										// wait again
@@ -482,11 +482,11 @@ bool CUpgradeDlg::CheckV2Server(const char* szSystemFolder, CWorkingDlg& Working
 			(const char*) GetStartupPath(), 
 			szSERVERSTARTUP_V2_OLD);
 
-		if (::FileExists(strStartupLink_v2) == TRUE)
+		if (SolutionGlobalFunctions::FileExists(strStartupLink_v2) == TRUE)
 		{
 			::SendToRecycleBin(strStartupLink_v2);			// remove link
 
-			if (::FileExists(strStartupLink_v2) == TRUE)
+			if (SolutionGlobalFunctions::FileExists(strStartupLink_v2) == TRUE)
 			{
 				m_nV2OldStartupLinkRemoved = nERROR;
 			}
@@ -503,11 +503,11 @@ bool CUpgradeDlg::CheckV2Server(const char* szSystemFolder, CWorkingDlg& Working
 			(const char*) GetStartupPath(), 
 			szSERVERSTARTUP_V2_NEW);
 
-		if (::FileExists(strStartupLink_v2) == TRUE)
+		if (SolutionGlobalFunctions::FileExists(strStartupLink_v2) == TRUE)
 		{
 			::SendToRecycleBin(strStartupLink_v2);			// remove link
 
-			if (::FileExists(strStartupLink_v2) == TRUE)
+			if (SolutionGlobalFunctions::FileExists(strStartupLink_v2) == TRUE)
 			{
 				m_nV2NewStartupLinkRemoved = nERROR;
 			}

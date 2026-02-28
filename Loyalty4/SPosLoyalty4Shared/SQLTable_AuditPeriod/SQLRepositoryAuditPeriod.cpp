@@ -192,7 +192,7 @@ bool CSQLRepositoryAuditPeriod::ImportLegacyAuditPeriod(CDatabase* pDatabase)
 
 	CString strFilename = Filenames.GetLegacyPeriodDataFilename();
 
-	if (FileExists(strFilename) == FALSE)
+	if (SolutionGlobalFunctions::FileExists(strFilename) == FALSE)
 	{
 		bResult = TRUE;
 	}

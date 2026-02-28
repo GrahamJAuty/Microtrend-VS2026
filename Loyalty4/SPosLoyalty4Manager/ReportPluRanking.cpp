@@ -102,7 +102,7 @@ void CReportPluRanking::Show()
 			CString strPluList = Filenames.GetPluDatabaseListFilename(m_ReportInfo.GetDbNo());
 			if (arrayPLUs.Read(strPluList) == FALSE)
 			{
-				if (::FileExists(strPluList) == TRUE)
+				if (SolutionGlobalFunctions::FileExists(strPluList) == TRUE)
 				{
 					strMsg = "Cannot open the product selection list file";
 				}

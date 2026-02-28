@@ -205,7 +205,7 @@ void CServiceInstallDlg::UpdateInstallOptions()
 {
 	m_bServiceRunning = FALSE;
 	
-	bool bStopRequest = FileExists( m_strServiceStopFilename );
+	bool bStopRequest = SolutionGlobalFunctions::FileExists( m_strServiceStopFilename );
 	m_checkStop.SetCheck( bStopRequest );
 	
 	bool bInstallStatusKnown;

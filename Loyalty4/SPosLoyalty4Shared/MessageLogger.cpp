@@ -93,7 +93,7 @@ void CMessageLogger::LogMessage( CString strContext, CString strMessage )
 
 	CheckMaxLogFileSize(strNew, strOld);
 
-	if ( ::FileExists ( strNew ) == FALSE )
+	if ( SolutionGlobalFunctions::FileExists ( strNew ) == FALSE )
 	{
 		CReportFile ReportFile;
 		ReportFile.Open ( strNew );

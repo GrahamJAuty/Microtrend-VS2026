@@ -159,7 +159,7 @@ bool CPresentationOptions::Read()
 
 bool CPresentationOptions::ReadInternal()
 {
-	if ( ::FileExists( Filenames.GetPresentationOptionsFilename() ) == TRUE )
+	if ( SolutionGlobalFunctions::FileExists( Filenames.GetPresentationOptionsFilename() ) == TRUE )
 	{
 		CEnhancedIniFile iniFile;
 		if ( iniFile.Read( Filenames.GetPresentationOptionsFilename()) == FALSE )

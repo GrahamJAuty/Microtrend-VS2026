@@ -55,7 +55,7 @@ void CBitmapInfo::LoadImage( const char* szImagePath, bool bForceReload )
 		{
 			m_bGotImage = FALSE;
 
-			if ( ::FileExists( szImagePath ) == TRUE )
+			if ( SolutionGlobalFunctions::FileExists( szImagePath ) == TRUE )
 			{
 				CImage Image;
 				if ( ( Image.Load( szImagePath ) & 0x80000000 ) == 0 )

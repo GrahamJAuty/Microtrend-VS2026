@@ -98,7 +98,7 @@ BOOL CCardArchiveDlg::OnInitDialog()
 		}
 	}
 
-	if (::FileExists(m_ReportConfig.GetAuditFilename()) == TRUE)	// current audit file
+	if (SolutionGlobalFunctions::FileExists(m_ReportConfig.GetAuditFilename()) == TRUE)	// current audit file
 	{
 		CSSListTaggedSelectItem item;
 		item.m_strText = szCURRENTAUDIT;

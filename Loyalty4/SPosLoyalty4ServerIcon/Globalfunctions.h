@@ -1,7 +1,6 @@
 #pragma once
 //*******************************************************************
 
-bool FileExists(const char* szFile);
 void TrimSpacesFromString(CString& strText, bool bRemoveLeadingZeros = FALSE);
 void GetPCPathHost(CString& strPath);
 void GetPCPathClient(CString& strPath);

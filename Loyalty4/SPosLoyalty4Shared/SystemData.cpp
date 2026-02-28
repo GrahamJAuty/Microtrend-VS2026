@@ -120,9 +120,9 @@ bool CSystemData::Read()
 
 	bool bReadOldIniFile = FALSE;
 
-	if (::FileExists(Filenames.GetSystemFilenameNew()) == FALSE)		// see if have new file
+	if (SolutionGlobalFunctions::FileExists(Filenames.GetSystemFilenameNew()) == FALSE)		// see if have new file
 	{
-		if (::FileExists(Filenames.GetSystemFilenameOld1()) == FALSE)	// if have old file
+		if (SolutionGlobalFunctions::FileExists(Filenames.GetSystemFilenameOld1()) == FALSE)	// if have old file
 		{
 			ConvertOldCSVFile();
 			Write();
@@ -520,7 +520,7 @@ bool CSystemData::IsMiFareSystem()
 bool CSystemData::HaveBarman()
 {
 	CString strProgName = "sposbarcodemanager.pgm";
-	return ::FileExists ( strProgName );
+	return SolutionGlobalFunctions::FileExists ( strProgName );
 }
 
 //$$******************************************************************

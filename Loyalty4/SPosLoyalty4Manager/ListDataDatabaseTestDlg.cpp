@@ -257,7 +257,7 @@ void CListDataDatabaseTestDlg::HandleTestButton( CString strFilepath, CString st
 			else
 			{
 				strMsg = "Path to import folder is valid.";
-				if (::FileExists(strFilepath) == TRUE)
+				if (SolutionGlobalFunctions::FileExists(strFilepath) == TRUE)
 				{
 					strMsg += "\n\n";
 					strMsg += strText;

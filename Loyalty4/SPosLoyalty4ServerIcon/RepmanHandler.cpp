@@ -22,10 +22,10 @@ CRepmanHandler::CRepmanHandler ( const char* szTitle, CWnd* pParent )
 int CRepmanHandler::DisplayReport ( const char* szReport, const char* szParams, const char* szParamsKey, bool bPrintReqd )
 {
 	CString strProgName = "repman.pgm";
-	if ( ::FileExists ( strProgName ) == FALSE )
+	if ( SolutionGlobalFunctions::FileExists ( strProgName ) == FALSE )
 		return nREPORT_NOREPMAN;
 
-	if ( ::FileExists ( szReport ) == FALSE )
+	if ( SolutionGlobalFunctions::FileExists ( szReport ) == FALSE )
 		return nREPORT_NOSOURCE;
 
 	CString strParamsKey = szParamsKey;

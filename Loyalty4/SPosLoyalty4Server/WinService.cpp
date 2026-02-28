@@ -889,7 +889,7 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 			break;
 		}
 
-		if (FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+		if (SolutionGlobalFunctions::FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
 		{
 			MessageLogger.LogSystemMessage("Service shutdown request by token file");
 			bGotStopEvent = TRUE;
@@ -927,13 +927,13 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 					break;
 				}
 
-				if (FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+				if (SolutionGlobalFunctions::FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
 				{
 					MessageLogger.LogSystemMessage("Service shutdown request by token file");
 					break;
 				}
 
-				if (FileExists(Filenames.GetServerUpdatePluReqFilename()) == TRUE)
+				if (SolutionGlobalFunctions::FileExists(Filenames.GetServerUpdatePluReqFilename()) == TRUE)
 				{
 					ServerWrapper.ProcessUpdatePluRequest();
 				}

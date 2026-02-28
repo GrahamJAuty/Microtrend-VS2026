@@ -55,7 +55,7 @@ bool CPCOptionsClient::Read()
 {
 	CString strFilename = Filenames.GetPCOptionsClientFilename();
 	
-	if ( ::FileExists( strFilename ) == TRUE )
+	if ( SolutionGlobalFunctions::FileExists( strFilename ) == TRUE )
 	{
 		CEnhancedIniFile iniFile;
 		if ( iniFile.Read( strFilename ) == FALSE )

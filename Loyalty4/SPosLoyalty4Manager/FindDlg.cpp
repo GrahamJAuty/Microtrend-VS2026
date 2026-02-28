@@ -446,10 +446,10 @@ void CFindDlg::OnContextMenu(CWnd* pWnd, CPoint point)
 
 			bool bEnableHistory;
 			CString strFilename = Filenames.GetPurchaseHistoryFilename(strUserID);
-			if ((bEnableHistory = ::FileExists(strFilename)) == FALSE)
+			if ((bEnableHistory = SolutionGlobalFunctions::FileExists(strFilename)) == FALSE)
 			{
 				strFilename = Filenames.GetPurchaseHistoryUpdateFilename(strUserID);
-				bEnableHistory = ::FileExists(strFilename);
+				bEnableHistory = SolutionGlobalFunctions::FileExists(strFilename);
 			}
 
 			menuChanger.EnableItem(IDM_POPUP_PURCHASEHISTORY, bEnableHistory);

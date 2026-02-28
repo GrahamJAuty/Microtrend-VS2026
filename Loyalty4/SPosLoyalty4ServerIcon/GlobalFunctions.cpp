@@ -6,10 +6,6 @@
 #include "Globalfunctions.h"
 //*******************************************************************
 
-bool FileExists(const char* szFile) { return (_access(szFile, 0) == 0) ? TRUE : FALSE; }
-
-//*******************************************************************
-
 void TrimSpacesFromString(CString& strText, bool bRemoveLeadingZeros)
 {
 	strText.TrimLeft(' ');

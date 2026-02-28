@@ -30,7 +30,7 @@ void CMessageLogger::LogMessage( CString strContext, CString strMessage )
 
 	CString strNew = Filenames.GetTrayLogFilename();
 	
-	if ( ::FileExists ( strNew ) == FALSE )
+	if ( SolutionGlobalFunctions::FileExists ( strNew ) == FALSE )
 	{
 		CReportFile ReportFile;
 		ReportFile.Open ( strNew );

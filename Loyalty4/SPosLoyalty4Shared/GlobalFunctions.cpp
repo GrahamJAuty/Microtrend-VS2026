@@ -14,10 +14,6 @@
 #include "GlobalFunctions.h"
 /******************************************************************************/
 
-bool FileExists  ( const char* szFile ) { return ( _access ( szFile, 0 ) == 0 ) ? TRUE : FALSE; }
-
-/******************************************************************************/
-
 void SendToRecycleBin ( CStringArray* pArray )
 {
 	for (int i = 0; i < pArray->GetSize(); i++)

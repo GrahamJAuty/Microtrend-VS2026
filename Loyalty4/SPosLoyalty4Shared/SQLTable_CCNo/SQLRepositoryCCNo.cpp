@@ -175,7 +175,7 @@ bool CSQLRepositoryCCNo::ImportLegacyCCNo(CDatabase* pDatabase)
 	CSSIniFile iniFile;
 	CString strFilename = Filenames.GetLegacyCCNoFilename();
 
-	if (FileExists(strFilename) == FALSE)
+	if (SolutionGlobalFunctions::FileExists(strFilename) == FALSE)
 	{
 		return TRUE;
 	}

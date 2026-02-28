@@ -2095,7 +2095,7 @@ void CServerData::UpdateEcrmanDbInfo()
 
 	if (strImportFile != "")
 	{
-		if (::FileExists(strImportFile) == TRUE)	// see if an update exists
+		if (SolutionGlobalFunctions::FileExists(strImportFile) == TRUE)	// see if an update exists
 		{
 			CSQLRepositoryEcrmanDatabase repoDb;
 			repoDb.ImportEcrmanDatabase(strImportFile);

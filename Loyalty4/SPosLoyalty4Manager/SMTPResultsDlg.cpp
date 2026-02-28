@@ -516,7 +516,7 @@ void CSMTPResultsDlg::OnTimer(UINT nIDEvent)
 			{
 				CString strFileName = m_SMTPHelpers.GetEmailFileName(nInfoIdx);
 
-				if (::FileExists(strFileName + ".OK") == TRUE)
+				if (SolutionGlobalFunctions::FileExists(strFileName + ".OK") == TRUE)
 				{
 					m_arrayTabPendingNotSent.RemoveAt(m_nWaitingIdx);
 					SetEmailStatus(nInfoIdx, SMTP_PENDING_SENT);
@@ -524,7 +524,7 @@ void CSMTPResultsDlg::OnTimer(UINT nIDEvent)
 					SelectPendingListItem(nPendingIdx);
 					m_nState = SMTP_RESULTS_FIND_JOB;
 				}
-				else if (::FileExists(strFileName + ".ERR") == TRUE)
+				else if (SolutionGlobalFunctions::FileExists(strFileName + ".ERR") == TRUE)
 				{
 					SetEmailStatus(nInfoIdx, SMTP_PENDING_WAIT_RETRY);
 					SetEmailError(nInfoIdx, SMTP_SEND_ERROR_SMTP, SMTP_ERROR_EXCEPTION);

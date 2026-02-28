@@ -94,7 +94,7 @@ bool CEmailOptions::Read()
 
 bool CEmailOptions::ReadInternal()
 {
-	if (::FileExists(Filenames.GetEmailOptionsFilename()) == TRUE)
+	if (SolutionGlobalFunctions::FileExists(Filenames.GetEmailOptionsFilename()) == TRUE)
 	{
 		CEnhancedIniFile iniFile(SS_INI_AES);
 		if (iniFile.Read(Filenames.GetEmailOptionsFilename()) == FALSE)

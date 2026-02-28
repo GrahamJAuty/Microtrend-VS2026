@@ -123,7 +123,7 @@ void CServerWrapper::RequestCheckLogInternal(CString strExtension)
 		{
 			strRenamedLogFile = strEposLogNoExt + ".$$1";
 
-			if (::FileExists(strRenamedLogFile) == TRUE)					// see if already have a $$1 file waiting
+			if (SolutionGlobalFunctions::FileExists(strRenamedLogFile) == TRUE)					// see if already have a $$1 file waiting
 			{
 				if (::AppendDataFile(strEposLogFile, strRenamedLogFile) == TRUE)	// add to end of $$1 file
 				{

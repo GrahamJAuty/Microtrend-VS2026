@@ -109,7 +109,7 @@ bool CServerWrapper::HaveAccountAccess(const char* szAccountID)
 	bool bReply = TRUE;
 	CString strRecordEditFilename = Filenames.GetRecordEditFilename(szAccountID);
 
-	if (::FileExists(strRecordEditFilename) == TRUE)			// see if edit file is present
+	if (SolutionGlobalFunctions::FileExists(strRecordEditFilename) == TRUE)			// see if edit file is present
 	{
 		if (::IsAccountInuse(szAccountID) == TRUE)				// see if still active
 			bReply = FALSE;

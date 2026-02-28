@@ -340,7 +340,7 @@ void CServerWrapper::UpdatePluInfo(int nDbNo)
 
 	if (strImportFile != "")
 	{
-		if (::FileExists(strImportFile) == TRUE)	// see if an update exists
+		if (SolutionGlobalFunctions::FileExists(strImportFile) == TRUE)	// see if an update exists
 		{
 			CSQLRepositoryPluInfo repoInfo;
 			repoInfo.ImportPluInfo(nDbNo, strImportFile);
@@ -357,7 +357,7 @@ void CServerWrapper::UpdateDeptInfo(int nDbNo)
 
 	if (strImportFile != "")
 	{
-		if (::FileExists(strImportFile) == TRUE)	// see if an update exists
+		if (SolutionGlobalFunctions::FileExists(strImportFile) == TRUE)	// see if an update exists
 		{
 			CSQLRepositoryDeptInfo repoInfo;
 			repoInfo.ImportDeptInfo(nDbNo, strImportFile);
@@ -374,7 +374,7 @@ void CServerWrapper::UpdateStampOfferInfo()
 
 	if (strImportFile != "")
 	{
-		if (::FileExists(strImportFile) == TRUE)	// see if an update exists
+		if (SolutionGlobalFunctions::FileExists(strImportFile) == TRUE)	// see if an update exists
 		{
 			CSQLRepositoryStampOfferInfo repInfo;
 			repInfo.ImportStampOfferInfo(strImportFile);
@@ -391,7 +391,7 @@ void CServerWrapper::UpdateLoyaltySchemeInfo()
 
 	if (strImportFile != "")
 	{
-		if (::FileExists(strImportFile) == TRUE)	// see if an update exists
+		if (SolutionGlobalFunctions::FileExists(strImportFile) == TRUE)	// see if an update exists
 		{
 			CSQLRepositoryScheme PrepStatScheme;
 			PrepStatScheme.ImportScheme(strImportFile);

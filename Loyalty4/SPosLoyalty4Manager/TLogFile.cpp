@@ -12,7 +12,7 @@ CTLogFile::CTLogFile(const char* szCardNo)
 	m_strTLogFile = Filenames.GetPurchaseHistoryFilename(szCardNo);
 	CString strUpdateFilename = Filenames.GetPurchaseHistoryUpdateFilename(szCardNo);
 
-	if (::FileExists(strUpdateFilename) == TRUE)			// see if any updates exist
+	if (SolutionGlobalFunctions::FileExists(strUpdateFilename) == TRUE)			// see if any updates exist
 	{
 		if (Merge(strUpdateFilename) == TRUE)				// yes - merge in
 		{
