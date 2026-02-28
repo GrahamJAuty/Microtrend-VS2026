@@ -52,8 +52,6 @@ CString ConvertISO8601ToSimpleDateTime(CString strISO, bool bDateOnly = FALSE);
 CString GetGCSafeTag(CString strLabel, CString strValue);
 CString GetGCSafeText(CString strOriginal);
 
-void GetMessageLogDateTime(CString& strDate, CString& strTime);
-
 /**********************************************************************/
 #ifndef SERVERICON
 /**********************************************************************/

@@ -163,6 +163,7 @@
     <ClInclude Include="..\SPosLoyalty4Shared\ReportConsolidationMap.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\ServerData.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\ServiceOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\SQLBuilderBind.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\SQLConnectionOptions.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\SQLConnectionPool.h" />
@@ -569,6 +570,7 @@
     <ClCompile Include="..\SPosLoyalty4Shared\RedeemPoints.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\ServerData.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\ServiceOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\SQLBuilderBind.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\SQLConnectionOptions.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\SQLConnectionPool.cpp" />

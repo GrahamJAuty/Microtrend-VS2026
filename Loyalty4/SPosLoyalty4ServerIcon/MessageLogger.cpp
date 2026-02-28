@@ -46,7 +46,7 @@ void CMessageLogger::LogMessage( CString strContext, CString strMessage )
 
 	CString strDate = "";
 	CString strTime = "";
-	GetMessageLogDateTime(strDate, strTime);
+	SolutionGlobalFunctions::GetMessageLogDateTime(strDate, strTime);
 
 	CString strPCIdClient = "";
 	strPCIdClient.Format( "%10.10d", Sysset.GetPCIdClient() );

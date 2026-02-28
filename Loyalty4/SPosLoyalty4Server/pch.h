@@ -14,6 +14,7 @@
 #include "sslibset.h"
 #include "..\SPosLoyalty4Shared\FilenameHandler.h"
 #include "..\SPosLoyalty4Shared\GlobalFunctions.h"
+#include "..\SPosLoyalty4Shared\SolutionGlobalFunctions.h"
 #include "..\SPosLoyalty4Shared\SystemData.h"
 #include "..\SPosLoyalty4Shared\ServerData.h"
 #include "Prompter.h"

@@ -441,6 +441,9 @@
     <ClInclude Include="..\SPosLoyalty4Shared\GlobalState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -867,6 +870,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectGlobalFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

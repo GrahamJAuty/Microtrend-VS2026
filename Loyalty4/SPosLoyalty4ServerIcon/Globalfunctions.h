@@ -12,6 +12,4 @@ void CreateSubdirectory(const char* szDir);
 CString GetRunOnceFilename();
 CString CreateRunOnceTimeStamp();
 
-void GetMessageLogDateTime(CString& strDate, CString& strTime);
-
 //*******************************************************************

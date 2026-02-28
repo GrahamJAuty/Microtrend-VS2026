@@ -12,5 +12,6 @@
 #include "sslibset.h"
 #include "FilenameHandler.h"
 #include "GlobalFunctions.h"
+#include "..\SPosLoyalty4Shared\SolutionGlobalFunctions.h"
 #include "Prompter.h"
 #endif //PCH_H

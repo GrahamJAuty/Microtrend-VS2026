@@ -1239,6 +1239,9 @@
     <ClInclude Include="ProjectSQLRepositoryAuditPeriod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -2427,6 +2430,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSQLRepositoryAuditPeriod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

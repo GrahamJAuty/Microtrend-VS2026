@@ -95,7 +95,7 @@ void CLoyRspThread::LogThread(CLoyRspThreadInfo* pInfo, CString strMsg)
 
 	CString strDate = "";
 	CString strTime = "";
-	GetMessageLogDateTime(strDate, strTime);
+	SolutionGlobalFunctions::GetMessageLogDateTime(strDate, strTime);
 
 	CSSFile fileLog;
 	CString strFilename = "";

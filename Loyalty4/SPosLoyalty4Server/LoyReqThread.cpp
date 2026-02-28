@@ -123,7 +123,7 @@ void CLoyReqThread::LogThread(CLoyReqThreadInfo* pInfo, CString strMsg)
 
 	CString strDate = "";
 	CString strTime = "";
-	GetMessageLogDateTime(strDate, strTime);
+	SolutionGlobalFunctions::GetMessageLogDateTime(strDate, strTime);
 
 	CSSFile fileLog;
 	CString strFilename = "";

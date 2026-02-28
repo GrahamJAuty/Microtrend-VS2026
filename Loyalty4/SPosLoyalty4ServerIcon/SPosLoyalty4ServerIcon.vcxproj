@@ -129,6 +129,7 @@
     <ClInclude Include="..\SPosLoyalty4Shared\MyMessageBoxStatic.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\PresentationOptions.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\ServiceOptions.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\TrackedFile.h" />
     <ClInclude Include="AboutDlg.h" />
     <ClInclude Include="FilenameHandler.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="..\SPosLoyalty4Shared\MyMessageBoxStatic.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\PresentationOptions.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\ServiceOptions.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\TrackedFile.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\VersionStrings.cpp" />
     <ClCompile Include="AboutDlg.cpp" />
