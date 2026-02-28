@@ -136,7 +136,7 @@ BOOL CEditAccountPropertyPage4::OnKillActive()
 {
 	CString strAESHex = "";
 	CString strUserName = GetEditBoxText(m_editUserName);
-	TrimSpacesFromString(strUserName, FALSE);
+	SolutionGlobalFunctions::TrimSpacesFromString(strUserName, FALSE);
 	strUserName.MakeLower();
 
 	if (strUserName != "")

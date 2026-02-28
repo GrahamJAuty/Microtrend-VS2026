@@ -263,7 +263,7 @@ void CSQLRepositoryScheme::GetSchemeNameList(CReportConsolidationArray<CSortedSt
 		item.m_nItem = RowSC.GetSchemeNo();
 		item.m_strItem = RowSC.GetSchemeName();
 		
-		TrimSpacesFromString(item.m_strItem, FALSE);
+		SolutionGlobalFunctions::TrimSpacesFromString(item.m_strItem, FALSE);
 
 		if (item.m_strItem == "" )
 		{

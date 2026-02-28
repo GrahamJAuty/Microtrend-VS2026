@@ -62,7 +62,7 @@ void CSingleListContentHelpersEmailAddress::SetColumns( CSSListCtrlVirtual& list
 CListDataEmailAddressDlg::CListDataEmailAddressDlg( const char* szName, CWnd* pParent) : CListDataDlg ( pParent )
 {
 	m_strInitialName = szName;
-	::TrimSpacesFromString( m_strInitialName, FALSE );
+	SolutionGlobalFunctions::TrimSpacesFromString( m_strInitialName, FALSE );
 
 	m_pContentHelpers = new CSingleListContentHelpersEmailAddress();
 	m_pDisplayHelpers = new CSingleListDisplayHelpers( m_listData, *m_pContentHelpers );

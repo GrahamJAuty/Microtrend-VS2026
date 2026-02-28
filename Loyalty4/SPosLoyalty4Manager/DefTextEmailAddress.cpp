@@ -14,7 +14,7 @@ const char* CDefTextEmailAddress::GetNickname ( int nIndex )
 	{
 		CCSV csv ( GetAt ( nIndex ) );
 		m_strNickname = csv.GetString ( 0 );
-		::TrimSpacesFromString( m_strNickname, FALSE );
+		SolutionGlobalFunctions::TrimSpacesFromString( m_strNickname, FALSE );
 	}
 	else
 		m_strNickname = "Unknown";
@@ -51,7 +51,7 @@ const char* CDefTextEmailAddress::GetEmailAddress ( int nIndex, int nPos )
 	{
 		CCSV csv ( GetAt ( nIndex ) );
 		m_strEmailAddress = csv.GetString ( nPos + 1 );
-		::TrimSpacesFromString( m_strEmailAddress, FALSE );
+		SolutionGlobalFunctions::TrimSpacesFromString( m_strEmailAddress, FALSE );
 	}
 	else
 		m_strEmailAddress = "Unknown";
@@ -106,7 +106,7 @@ void CDefTextEmailAddress::SetAddressBookEntry ( int nIndex, const char* szName,
 	if ( ( nIndex >= 0 ) &&  ( nIndex < GetSize() ) )
 	{
 		CString strName = szName;
-		::TrimSpacesFromString( strName, FALSE );
+		SolutionGlobalFunctions::TrimSpacesFromString( strName, FALSE );
 
 		CCSV csv;
 		csv.Add ( strName );
@@ -114,7 +114,7 @@ void CDefTextEmailAddress::SetAddressBookEntry ( int nIndex, const char* szName,
 		for ( int n = 0; ( n < arrayEmail.GetSize() ) && ( n < MAX_ADDRESSES_PER_NICKNAME ); n++ )
 		{
 			CString strEmail = arrayEmail.GetAt(n);
-			::TrimSpacesFromString( strEmail, FALSE );
+			SolutionGlobalFunctions::TrimSpacesFromString( strEmail, FALSE );
 			csv.Add ( strEmail );
 		}
 
@@ -127,7 +127,7 @@ void CDefTextEmailAddress::SetAddressBookEntry ( int nIndex, const char* szName,
 void CDefTextEmailAddress::AddAddressBookEntry ( const char* szName, CStringArray& arrayEmail )
 {
 	CString strName = szName;
-	::TrimSpacesFromString( strName, FALSE );
+	SolutionGlobalFunctions::TrimSpacesFromString( strName, FALSE );
 
 	CCSV csv;
 	csv.Add ( strName );
@@ -135,7 +135,7 @@ void CDefTextEmailAddress::AddAddressBookEntry ( const char* szName, CStringArra
 	for ( int n = 0; ( n < arrayEmail.GetSize() ) && ( n < MAX_ADDRESSES_PER_NICKNAME ); n++ )
 	{
 		CString strEmail = arrayEmail.GetAt(n);
-		::TrimSpacesFromString( strEmail, FALSE );
+		SolutionGlobalFunctions::TrimSpacesFromString( strEmail, FALSE );
 		csv.Add ( strEmail );
 	}
 
@@ -178,7 +178,7 @@ int CDefTextEmailAddress::FindNameOrFirstAddress( const char* szName )
 {
 	CString strNameToFind = szName;
 	
-	::TrimSpacesFromString( strNameToFind, FALSE );
+	SolutionGlobalFunctions::TrimSpacesFromString( strNameToFind, FALSE );
 	if ( "" == strNameToFind )
 		return -1;
 	

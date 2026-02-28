@@ -477,7 +477,7 @@ void CReportPluRanking::Consolidate(CString strUserID, CWorkingDlg& dlgWorking, 
 						if (PluSale.m_nPluNo != 0)
 						{
 							CString strText = tlogRecord.GetItemText();
-							::TrimSpacesFromString(strText);
+							SolutionGlobalFunctions::TrimSpacesFromString(strText, FALSE);
 
 							if (strText != "")
 							{

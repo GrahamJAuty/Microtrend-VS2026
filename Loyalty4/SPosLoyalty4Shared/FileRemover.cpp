@@ -52,7 +52,7 @@ bool CFileRemover::RemoveFile( const char* szFile )
 void CFileRemover::RemoveFolder ( const char* szFolder )
 {
 	CString strFolder = szFolder;
-	::TrimSpacesFromString( strFolder );
+	SolutionGlobalFunctions::TrimSpacesFromString( strFolder, FALSE );
 	
 	if ( strFolder == "" )
 		return;
@@ -70,7 +70,7 @@ void CFileRemover::RemoveFolderContents ( const char* szFolder, int& nFileNo )
 	CByteArray bDirectoryFlags;
 
 	CString strFolder = szFolder;
-	::TrimSpacesFromString( strFolder );
+	SolutionGlobalFunctions::TrimSpacesFromString( strFolder, FALSE );
 	
 	if ( strFolder == "" )
 		return;

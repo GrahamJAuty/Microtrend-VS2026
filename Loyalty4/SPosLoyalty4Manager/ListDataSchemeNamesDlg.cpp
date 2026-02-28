@@ -203,7 +203,7 @@ void CListDataSchemeNamesDlg::HandleButton2()
 		if (dlg.DoModal() == IDOK)
 		{
 			CString strName = dlg.m_strName;
-			TrimSpacesFromString(strName);
+			SolutionGlobalFunctions::TrimSpacesFromString(strName, FALSE);
 
 			if (strName != item.m_strItem)
 			{

@@ -249,7 +249,7 @@ bool CServerWrapper::ProcessLogFile( CSQLRowAccountFull& RowAccount, const char*
 				if (TRUE == bOk)
 				{
 					CString strFullname = Server.GetUnknownAccountCreateName();
-					::TrimSpacesFromString(strFullname, TRUE);
+					SolutionGlobalFunctions::TrimSpacesFromString(strFullname, TRUE);
 					RowAccount.SetFullname(strFullname);
 
 					repoAccount.InsertRow(RowAccount, NULL);

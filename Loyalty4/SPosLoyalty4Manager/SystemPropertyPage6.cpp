@@ -333,7 +333,7 @@ void CSystemPropertyPage6::OnButtonEmailList()
 	CString strNewEmail = strOldEmail;
 
 	strOldEmail = strOldEmail.SpanExcluding("(");
-	::TrimSpacesFromString(strOldEmail, FALSE);
+	SolutionGlobalFunctions::TrimSpacesFromString(strOldEmail, FALSE);
 
 	CListDataEmailAddressDlg dlg(strOldEmail, this);
 
@@ -441,7 +441,7 @@ void CSystemPropertyPage6::SaveRecord()
 	CString strEmail = "";
 	m_comboEmail.GetWindowText(strEmail);
 	strEmail = strEmail.SpanExcluding("(");
-	::TrimSpacesFromString(strEmail, FALSE);
+	SolutionGlobalFunctions::TrimSpacesFromString(strEmail, FALSE);
 	EmailOptions.SetEmailRepmanToAddressInternal(strEmail);
 
 	if (m_strNewPassword != "")

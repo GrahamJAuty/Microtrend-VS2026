@@ -65,7 +65,7 @@ bool CSQLDb::OpenDatabase(CString strName)
 	CString strPassword = SQLConnectionOptions.GetPasswordPT();
 	int nQueryTimeout = SQLConnectionOptions.GetQueryTimeout();
 	int nPortNumber = SQLConnectionOptions.GetPortNumber();
-	::TrimSpacesFromString(strLANServerName);
+	SolutionGlobalFunctions::TrimSpacesFromString(strLANServerName, FALSE);
 	
 	if (strLANServerName == "")
 	{

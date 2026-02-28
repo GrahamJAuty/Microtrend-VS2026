@@ -70,7 +70,7 @@ BOOL CSetupEposPathsDlg::OnInitDialog()
 		FolderSetIndex.m_nSetNo = nSetNo;
 
 		CString strLabel = Server.GetEposPathLabel(FolderSetIndex);
-		TrimSpacesFromString(strLabel);
+		SolutionGlobalFunctions::TrimSpacesFromString(strLabel, FALSE);
 
 		if (strLabel == "")
 		{
@@ -117,7 +117,7 @@ void CSetupEposPathsDlg::OnSelectDatabase()
 
 		CString strLabel = Server.GetEposPathLabel(FolderSetIndex);
 
-		TrimSpacesFromString(strLabel);
+		SolutionGlobalFunctions::TrimSpacesFromString(strLabel, FALSE);
 		if (strLabel == "")
 		{
 			strLabel = Server.GetDefaultEposPathLabel(nSetNo);
@@ -276,7 +276,7 @@ void CSetupEposPathsDlg::OnButtonLabel()
 	{
 		CString strLabel = dlg.m_strName;
 
-		TrimSpacesFromString(strLabel);
+		SolutionGlobalFunctions::TrimSpacesFromString(strLabel, FALSE);
 
 		if (strLabel == "")
 		{

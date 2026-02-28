@@ -1018,7 +1018,7 @@ bool CEditAccountPropertyPage1::CheckCompulsoryField(bool bIsDate, CEdit* pEdit,
 
 void CEditAccountPropertyPage1::DisplayCompulsoryMessage(CString strText, CString strDefText)
 {
-	TrimSpacesFromString(strText);
+	SolutionGlobalFunctions::TrimSpacesFromString(strText, FALSE);
 
 	if (strText == "")
 	{

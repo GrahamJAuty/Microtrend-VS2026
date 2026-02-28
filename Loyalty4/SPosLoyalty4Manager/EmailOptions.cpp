@@ -145,7 +145,7 @@ CString CEmailOptions::GetEmailSMTPServerToUse()
 	if (GetEmailMethodToUse() == 1)
 	{
 		strServer = GetEmailSMTPServerInternal();
-		::TrimSpacesFromString(strServer, FALSE);
+		SolutionGlobalFunctions::TrimSpacesFromString(strServer, FALSE);
 
 		CString strTest = strServer;
 		strTest.MakeUpper();

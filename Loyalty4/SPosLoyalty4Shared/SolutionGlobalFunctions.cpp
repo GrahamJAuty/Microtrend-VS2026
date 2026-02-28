@@ -13,6 +13,19 @@ bool SolutionGlobalFunctions::FileExists(const char* szFile)
 
 /******************************************************************************/
 
+void SolutionGlobalFunctions::TrimSpacesFromString(CString& strText, bool bRemoveLeadingZeros)
+{
+	strText.TrimLeft(' ');
+	strText.TrimRight(' ');
+
+	if (TRUE == bRemoveLeadingZeros)
+	{
+		strText.TrimLeft('0');
+	}
+}
+
+/******************************************************************************/
+
 void SolutionGlobalFunctions::GetMessageLogDateTime(CString& strDate, CString& strTime)
 {
 	auto now = std::chrono::system_clock::now();

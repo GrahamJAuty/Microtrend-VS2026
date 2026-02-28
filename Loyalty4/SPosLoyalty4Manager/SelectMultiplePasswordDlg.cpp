@@ -10,7 +10,7 @@ CSelectMultiplePasswordDlg::CSelectMultiplePasswordDlg(CPasswordData* pPasswords
 	m_pPasswords = pPasswords;
 
 	CString strUserName = pPasswords->GetUserName(nSourceIdx);
-	::TrimSpacesFromString(strUserName, FALSE);
+	SolutionGlobalFunctions::TrimSpacesFromString(strUserName, FALSE);
 	if (strUserName == "")
 	{
 		strUserName = "No User Name";

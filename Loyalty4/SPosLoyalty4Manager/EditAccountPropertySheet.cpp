@@ -94,7 +94,7 @@ void CEditAccountPropertySheet::UpdateTitle( CSQLRowAccountFull& RowAccount )
 	
 	{
 		CString strName = RowAccount.GetFullname();
-		::TrimSpacesFromString(strName, FALSE);
+		SolutionGlobalFunctions::TrimSpacesFromString(strName, FALSE);
 
 		if (strName != "")
 		{

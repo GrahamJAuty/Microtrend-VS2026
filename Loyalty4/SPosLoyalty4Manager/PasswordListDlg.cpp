@@ -186,7 +186,7 @@ void CPasswordListDlg::OnButtonClonePassword()
 				m_pPasswords->CopyOptions(nSourceIdx, nDestIdx);
 
 				CString strUserName = m_pPasswords->GetUserName(nDestIdx);
-				::TrimSpacesFromString(strUserName, FALSE);
+				SolutionGlobalFunctions::TrimSpacesFromString(strUserName, FALSE);
 
 				if ((strUserName == "") || (strUserName.Left(7) == "Copy of"))
 				{
@@ -253,13 +253,13 @@ void CPasswordListDlg::OnOK()
 	if (UpdateData(TRUE) == TRUE)
 	{
 		CString strMasterPassword = GetEditBoxText(m_editMasterPassword);
-		::TrimSpacesFromString(strMasterPassword, FALSE);
+		SolutionGlobalFunctions::TrimSpacesFromString(strMasterPassword, FALSE);
 		m_pPasswords->SetMasterPassword(strMasterPassword);
 		
 		if (TRUE == m_bHaveReader)
 		{
 			CString strCardNo = GetEditBoxText(m_editCard);
-			::TrimSpacesFromString(strCardNo, FALSE);
+			SolutionGlobalFunctions::TrimSpacesFromString(strCardNo, FALSE);
 			m_pPasswords->SetMasterCardNo(strCardNo);
 		}
 

@@ -7,8 +7,6 @@ void SendToRecycleBin ( CStringArray* pArray );
 int GetFileLineCount ( const char* szFilename );
 CString GetFileExtension ( const char* szFilename );
 
-void TrimSpacesFromString ( CString& strText, bool bRemoveLeadingZeros = FALSE );
-
 void StripFilename ( const char* szFullPathname, CString& strPath );
 void StripPathname ( const char* szPathname, CString& strFilename );
 

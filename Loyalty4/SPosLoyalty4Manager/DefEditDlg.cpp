@@ -69,7 +69,7 @@ void CDefEditDlg::OnOK()
 	if ( UpdateData ( TRUE ) == TRUE )
 	{
 		m_editName.GetWindowText( m_strName );
-		::TrimSpacesFromString( m_strName, FALSE );
+		SolutionGlobalFunctions::TrimSpacesFromString( m_strName, FALSE );
 		EndDialog ( IDOK );
 	}
 }

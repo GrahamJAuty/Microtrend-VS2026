@@ -6,19 +6,6 @@
 #include "Globalfunctions.h"
 //*******************************************************************
 
-void TrimSpacesFromString(CString& strText, bool bRemoveLeadingZeros)
-{
-	strText.TrimLeft(' ');
-	strText.TrimRight(' ');
-
-	if (TRUE == bRemoveLeadingZeros)
-	{
-		strText.TrimLeft('0');
-	}
-}
-
-//*******************************************************************
-
 void GetPCPathHost(CString& strPath)
 {
 	CString strTemp = Sysset.GetPCPathHost();

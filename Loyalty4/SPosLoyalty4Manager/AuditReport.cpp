@@ -720,7 +720,7 @@ void CAuditReport::WriteHeaderLine(CString strLabel)
 			strName = RowGroup.GetGroupName();
 		}
 
-		TrimSpacesFromString(strName);
+		SolutionGlobalFunctions::TrimSpacesFromString(strName, FALSE);
 
 		if (strName == "")
 		{

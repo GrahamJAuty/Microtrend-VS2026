@@ -158,19 +158,6 @@ CString SignedFormatDoubleValue ( double dValue )
 }
 
 //*******************************************************************
-
-void TrimSpacesFromString( CString& strText, bool bRemoveLeadingZeros )
-{
-	strText.TrimLeft ( ' ' );
-	strText.TrimRight ( ' ' );
-	
-	if ( TRUE == bRemoveLeadingZeros ) 
-	{
-		strText.TrimLeft ( '0' );
-	}
-}
-
-//*******************************************************************
 // szpathname = "c:\path1\path2\fred.dat, strFilename = fred.dat
 
 CString GetFileExtension(const char* szFilename)
@@ -461,7 +448,7 @@ int HexToInt ( const char* szHex )
 	int nResult = 0;
 
 	CString strHex = szHex;
-	TrimSpacesFromString( strHex, TRUE );
+	SolutionGlobalFunctions::TrimSpacesFromString( strHex, TRUE );
 
 	for ( int nPos = 0; nPos < strHex.GetLength(); nPos++ )
 	{

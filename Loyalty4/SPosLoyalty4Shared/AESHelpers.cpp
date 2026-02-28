@@ -8,7 +8,7 @@ bool CAESHelpers::PlainTextToAESHex(CString strPlainText, CString& strAESHex)
 {
 	strAESHex = "";
 
-	::TrimSpacesFromString(strPlainText, FALSE);
+	SolutionGlobalFunctions::TrimSpacesFromString(strPlainText, FALSE);
 	
 	int nTextLen = strPlainText.GetLength();
 

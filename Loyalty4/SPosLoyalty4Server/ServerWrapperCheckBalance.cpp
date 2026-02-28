@@ -345,7 +345,7 @@ void CServerWrapper::CreateBalanceReply1(CAccountIdentifier& AccountIdentifier, 
 				}
 				else
 				{
-					::TrimSpacesFromString(strTest, TRUE);
+					SolutionGlobalFunctions::TrimSpacesFromString(strTest, TRUE);
 					if (strTest.GetLength() < Server.GetUnknownCardMinLength())
 					{
 						bAddUnknowns = FALSE;
@@ -370,7 +370,7 @@ void CServerWrapper::CreateBalanceReply1(CAccountIdentifier& AccountIdentifier, 
 				csvFirstLine.Add("0");							// no awarded
 				
 				CString strPendingName = Server.GetUnknownAccountPendingName();
-				::TrimSpacesFromString(strPendingName, TRUE);
+				SolutionGlobalFunctions::TrimSpacesFromString(strPendingName, TRUE);
 				
 				if (strPendingName == "")
 				{
@@ -406,9 +406,9 @@ void CServerWrapper::CreateBalanceReply1(CAccountIdentifier& AccountIdentifier, 
 				CString strLine1 = Server.GetUnknownAccountLine1();
 				CString strLine2 = Server.GetUnknownAccountLine2();
 				CString strLine3 = Server.GetUnknownAccountLine3();
-				::TrimSpacesFromString(strLine1, FALSE);
-				::TrimSpacesFromString(strLine2, FALSE);
-				::TrimSpacesFromString(strLine3, FALSE);
+				SolutionGlobalFunctions::TrimSpacesFromString(strLine1, FALSE);
+				SolutionGlobalFunctions::TrimSpacesFromString(strLine2, FALSE);
+				SolutionGlobalFunctions::TrimSpacesFromString(strLine3, FALSE);
 
 				if (strLine1 + strLine2 + strLine3 == "")
 				{
@@ -575,7 +575,7 @@ void CServerWrapper::CreateBalanceReplyInternal(int nType, CSQLRowAccountFull& R
 			csvFirstLine.Add("0");							// no awarded
 			
 			CString strCardName = RowAccount.GetFullname();
-			::TrimSpacesFromString(strCardName, TRUE);
+			SolutionGlobalFunctions::TrimSpacesFromString(strCardName, TRUE);
 			
 			if (strCardName == "")
 			{

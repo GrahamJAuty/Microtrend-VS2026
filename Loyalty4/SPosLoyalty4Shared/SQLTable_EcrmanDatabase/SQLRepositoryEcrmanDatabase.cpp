@@ -234,7 +234,7 @@ void CSQLRepositoryEcrmanDatabase::GetDatabaseNameList(CStringArray& arrayDbName
 		if ((nDbNo >= 1) && (nDbNo < arrayDbNames.GetSize()))
 		{
 			CString strName = RowDb.GetDbName();
-			TrimSpacesFromString(strName, FALSE);
+			SolutionGlobalFunctions::TrimSpacesFromString(strName, FALSE);
 
 			if (strName != "")
 			{

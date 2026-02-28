@@ -111,7 +111,7 @@ void CGroupComboHelpers::FillSchemeCombo(CSSTabbedComboBox& combo, int nGroupNo,
 				arrayNames.GetAt(nPos, item);
 			}
 
-			TrimSpacesFromString(item.m_strItem, FALSE);
+			SolutionGlobalFunctions::TrimSpacesFromString(item.m_strItem, FALSE);
 
 			if (item.m_strItem == "")
 			{

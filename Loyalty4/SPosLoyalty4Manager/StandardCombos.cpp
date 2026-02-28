@@ -350,7 +350,7 @@ void CStandardCombos::FillFolderSetCombo(CSSTabbedComboBox& combo, int nDbNo, in
 			FolderSetIndex.m_nSetNo = nSetNo;
 
 			CString strName = Server.GetEposPathLabel(FolderSetIndex);
-			TrimSpacesFromString(strName);
+			SolutionGlobalFunctions::TrimSpacesFromString(strName, FALSE);
 
 			if (strName == "")
 			{
