@@ -1,15 +1,26 @@
 //**********************************************************************
 #include "SQLConnectionPool.h"
+#include "SQLTranBase.h"
 //**********************************************************************
 
 CDatabase* CSQLConnectionPool::GetPooledConnection(int& nConnection, CDatabase* pDatabase)
 {
+	// Priority 1: Explicit database pointer provided
 	if (pDatabase != NULL)
 	{
 		nConnection = -1;
 		return pDatabase;
 	}
 
+	// Priority 2: Check for active transaction on this thread
+	CSQLTranBase* pCurrentTrans = CSQLTranBase::GetCurrentTransaction();
+	if (pCurrentTrans != nullptr)
+	{
+		nConnection = -1;
+		return pCurrentTrans->GetDatabase();
+	}
+
+	// Priority 3: Pool a new connection (original logic)
 	int nFirstNullPos = -1;
 
 	for (int n = 0; n < m_arrayConnections.GetSize(); n++)

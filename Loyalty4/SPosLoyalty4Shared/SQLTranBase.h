@@ -18,6 +18,11 @@ public:
 	virtual void AfterTransaction();
 	void ShowErrorMessage(CString strAction);
 	int GetState() { return m_nState; }
+	CDatabase* GetDatabase() const { return m_pDatabase; }
+
+	// NEW: Thread-local transaction context
+	static CSQLTranBase* GetCurrentTransaction();
+	static bool IsInTransaction();
 
 protected:
 	int m_nState;
@@ -28,6 +33,9 @@ protected:
 protected:
 	CStringArray m_arrayAuditBuffer;
 	CString m_strProcessError;
+
+private:
+	static thread_local CSQLTranBase* s_pCurrentTransaction;
 };
 
 /**********************************************************************/

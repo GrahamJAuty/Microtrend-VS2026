@@ -19,7 +19,7 @@ void CSQLTranRefundStaffGift::DoWork(CSQLRowStaffGiftException& RowSG)
 		RowAccount.SetUserID(RowSG.GetCustomerID());
 
 		CSQLRepositoryAccount repoAccount;
-		if (repoAccount.SelectRow(RowAccount,NULL).GetSQLError() != SQLCRUD_ERR_NONE)
+		if (repoAccount.SelectRow(RowAccount,m_pDatabase).GetSQLError() != SQLCRUD_ERR_NONE)
 		{
 			m_strProcessError = "(Unable to access customer account)";
 			return;
@@ -27,14 +27,14 @@ void CSQLTranRefundStaffGift::DoWork(CSQLRowStaffGiftException& RowSG)
 
 		RowAccount.AddToPurse1(RowSG.GetValue());
 
-		if (repoAccount.UpdateRow(RowAccount, NULL).GetSQLError() != SQLCRUD_ERR_NONE)
+		if (repoAccount.UpdateRow(RowAccount, m_pDatabase).GetSQLError() != SQLCRUD_ERR_NONE)
 		{
 			m_strProcessError = "(Unable to update customer account)";
 			return;
 		}
 
 		CSQLRepositoryStaffGiftException repoGift;
-		if (repoGift.DeleteRow(RowSG, NULL).GetSQLError() != SQLCRUD_ERR_NONE)
+		if (repoGift.DeleteRow(RowSG, m_pDatabase).GetSQLError() != SQLCRUD_ERR_NONE)
 		{
 			m_strProcessError = "(Unable to delete staff gift exception)";
 			return;

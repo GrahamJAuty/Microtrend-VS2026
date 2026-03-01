@@ -15,6 +15,8 @@
 /**********************************************************************/
 #include "SQLTranBase.h"
 /**********************************************************************/
+thread_local CSQLTranBase* CSQLTranBase::s_pCurrentTransaction = nullptr;
+/**********************************************************************/
 
 CSQLTranBase::CSQLTranBase()
 {
@@ -49,6 +51,7 @@ int CSQLTranBase::BeginTrans()
 			{
 				if (m_pDatabase->BeginTrans() == TRUE)
 				{
+					s_pCurrentTransaction = this;
 					m_nState = SQLTRAN_STATE_ACTIVE;
 				}
 			}
@@ -70,6 +73,8 @@ int CSQLTranBase::BeginTrans()
 
 int CSQLTranBase::EndTrans()
 {
+	s_pCurrentTransaction = nullptr;
+
 	switch (m_nState)
 	{
 	case SQLTRAN_STATE_ACTIVE:
@@ -164,6 +169,21 @@ void CSQLTranBase::ShowErrorMessage(CString strAction)
 	Prompter.Error(strError);
 
 #endif
+}
+
+/**********************************************************************/
+
+// NEW: Static helper methods
+CSQLTranBase* CSQLTranBase::GetCurrentTransaction()
+{
+	return s_pCurrentTransaction;
+}
+
+/**********************************************************************/
+
+bool CSQLTranBase::IsInTransaction()
+{
+	return s_pCurrentTransaction != nullptr;
 }
 
 /**********************************************************************/

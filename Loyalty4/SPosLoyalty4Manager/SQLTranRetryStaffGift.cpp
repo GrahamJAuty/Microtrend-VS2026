@@ -18,14 +18,14 @@ void CSQLTranRetryStaffGift::DoWork(CSQLRowStaffGiftException& RowSG, CSQLRowAcc
 		RowAccount.AddToPurse1(RowSG.GetValue());
 
 		CSQLRepositoryAccount repoAccount;
-		if (repoAccount.UpdateRow(RowAccount, NULL).GetSQLError() != SQLCRUD_ERR_NONE)
+		if (repoAccount.UpdateRow(RowAccount, m_pDatabase).GetSQLError() != SQLCRUD_ERR_NONE)
 		{
 			m_strProcessError = "(Unable to update staff account)";
 			return;
 		}
 
 		CSQLRepositoryStaffGiftException repoGift;
-		if (repoGift.DeleteRow(RowSG, NULL).GetSQLError() != SQLCRUD_ERR_NONE)
+		if (repoGift.DeleteRow(RowSG, m_pDatabase).GetSQLError() != SQLCRUD_ERR_NONE)
 		{
 			m_strProcessError = "(Unable to delete staff gift exception)";
 			return;
