@@ -411,7 +411,7 @@ CString CPebbleHelpers::SendSaleTransactionBatch(CSQLRepositoryPebbleConfig& Peb
 						{
 							double nLineValue = PebbleItem.m_dItemCost * PebbleItem.m_dItemQty;
 							double dLineVAT = (nLineValue * VatInfo.m_dVATRate) / (100 + VatInfo.m_dVATRate);
-							nVATAmount += round(dLineVAT * 100.0);
+							nVATAmount += static_cast<int>(dLineVAT * 100.0 + 0.5);
 						}
 						break;
 					}

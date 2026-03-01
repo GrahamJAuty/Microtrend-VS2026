@@ -32,6 +32,8 @@ private:
 	CString GetPrimaryKeyName(CString strTableName);
 	CString GetDropConstraintCommand(CString strTableName, CString strConstraint);
 	static void AddAlterTableAddColumnCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, bool bNotNull, CString strDefault = "");
+	static void AddAlterTableNotNullCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, CString strDefault);
+
 	bool ColumnExists(CString strTableName, CString strColumnName);
 
 private:

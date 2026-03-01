@@ -660,6 +660,34 @@ void CSQLTranMigrateSchema::AddAlterTableAddColumnCommand(CStringArray& arrayCom
 
 /**********************************************************************/
 
+void CSQLTranMigrateSchema::AddAlterTableNotNullCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, CString strDefault)
+{
+	CString strCommand = "";
+	strCommand += "UPDATE ";
+	strCommand += strTable;
+	strCommand += " SET ";
+	strCommand += strField;
+	strCommand += " = ";
+	strCommand += strDefault;
+	strCommand += " WHERE ";
+	strCommand += strField;
+	strCommand += " IS NULL";
+	arrayCommand.Add(strCommand);
+
+	strCommand = "";
+	strCommand += "ALTER TABLE ";
+	strCommand += strTable;
+	strCommand += " ALTER COLUMN ";
+	strCommand += strField;
+	strCommand += " ";
+	strCommand += strType;
+	strCommand += " ";
+	strCommand += "NOT NULL";
+	arrayCommand.Add(strCommand);
+}
+
+/**********************************************************************/
+
 bool CSQLTranMigrateSchema::ColumnExists(CString strTableName, CString strColumnName)
 {
 	bool bGotColumn = FALSE;

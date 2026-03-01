@@ -19,10 +19,11 @@ public:
 	virtual void AfterTransaction();
 	void ShowErrorMessage(CString strAction);
 	int GetState() { return m_nState; }
+	CDatabase* GetDatabase() const { return m_pDatabase; }
 
-public:
-	static void AddAlterTableAddColumnCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, bool bNotNull, CString strDefault = "");
-	static void AddAlterTableNotNullCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, CString strDefault = "");
+	// NEW: Thread-local transaction context
+	static CSQLTranBase* GetCurrentTransaction();
+	static bool IsInTransaction();
 
 protected:
 	int m_nState;
@@ -32,6 +33,9 @@ protected:
 
 protected:
 	CSQLAuditRecord_base m_atc;
+
+private:
+	static thread_local CSQLTranBase* s_pCurrentTransaction;
 };
 
 /**********************************************************************/

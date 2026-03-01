@@ -10,6 +10,8 @@
 /**********************************************************************/
 #include "SQLTranBase.h"
 /**********************************************************************/
+thread_local CSQLTranBase* CSQLTranBase::s_pCurrentTransaction = nullptr;
+/**********************************************************************/
 
 CSQLTranBase::CSQLTranBase()
 {
@@ -42,6 +44,7 @@ int CSQLTranBase::BeginTrans()
 			{
 				if (m_pDatabase->BeginTrans() == TRUE)
 				{
+					s_pCurrentTransaction = this;
 					m_nState = SQLTRAN_STATE_ACTIVE;
 				}
 			}
@@ -63,6 +66,8 @@ int CSQLTranBase::BeginTrans()
 
 int CSQLTranBase::EndTrans()
 {
+	s_pCurrentTransaction = nullptr;
+
 	switch (m_nState)
 	{
 	case SQLTRAN_STATE_ACTIVE:
@@ -150,63 +155,18 @@ void CSQLTranBase::AfterTransaction()
 
 /**********************************************************************/
 
-void CSQLTranBase::AddAlterTableAddColumnCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, bool bNotNull, CString strDefault)
+// NEW: Static helper methods
+CSQLTranBase* CSQLTranBase::GetCurrentTransaction()
 {
-	CString strCommand = "";
-	strCommand += "ALTER TABLE ";
-	strCommand += strTable;
-	strCommand += " ADD ";
-	strCommand += strField;
-	strCommand += " ";
-	strCommand += strType;
-
-	if (FALSE == bNotNull)
-	{
-		arrayCommand.Add(strCommand);
-	}
-	else
-	{
-		strCommand += " NOT NULL CONSTRAINT TEMP_";
-		strCommand += strField;
-		strCommand += " DEFAULT ";
-		strCommand += strDefault;
-		arrayCommand.Add(strCommand);
-
-		strCommand = "";
-		strCommand += "ALTER TABLE ";
-		strCommand += strTable;
-		strCommand += " DROP CONSTRAINT TEMP_";
-		strCommand += strField;
-		arrayCommand.Add(strCommand);
-	}
+	return s_pCurrentTransaction;
 }
 
 /**********************************************************************/
 
-void CSQLTranBase::AddAlterTableNotNullCommand(CStringArray& arrayCommand, CString strTable, CString strField, CString strType, CString strDefault)
+bool CSQLTranBase::IsInTransaction()
 {
-	CString strCommand = "";
-	strCommand += "UPDATE ";
-	strCommand += strTable;
-	strCommand += " SET ";
-	strCommand += strField;
-	strCommand += " = ";
-	strCommand += strDefault;
-	strCommand += " WHERE ";
-	strCommand += strField;
-	strCommand += " IS NULL";
-	arrayCommand.Add(strCommand);
-
-	strCommand = "";
-	strCommand += "ALTER TABLE ";
-	strCommand += strTable;
-	strCommand += " ALTER COLUMN ";
-	strCommand += strField;
-	strCommand += " ";
-	strCommand += strType;
-	strCommand += " ";
-	strCommand += "NOT NULL";
-	arrayCommand.Add(strCommand);
+	return s_pCurrentTransaction != nullptr;
 }
 
 /**********************************************************************/
+
