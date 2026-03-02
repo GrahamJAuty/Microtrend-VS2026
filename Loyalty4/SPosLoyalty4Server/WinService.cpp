@@ -864,7 +864,7 @@ void CWinService::Run()
 
 /**********************************************************************/
  
-DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
+DWORD WINAPI CWinService::ServiceWorkerThread(LPVOID lpParam)
 {
 	bool bGotStopEvent = FALSE;
 
@@ -885,6 +885,7 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 
 		if (ServerRegistration.CanGiveUp() == TRUE)
 		{
+			MessageLogger.LogSystemMessage("Software registration timeout");
 			bGotStopEvent = TRUE;
 			break;
 		}
@@ -899,6 +900,9 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 		Sleep(50);
 	}
 
+	bool bGotDbAccess = FALSE;
+	bool bFirstDbAttempt = TRUE;
+
 	if ((ServerRegistration.IsRegistered() == TRUE) && (FALSE == bGotStopEvent))
 	{
 		CString strMsg = "";
@@ -908,43 +912,80 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 
 		MessageLogger.LogSystemMessage(strMsg);
 
-		if (ServerRegistration.CheckDbAccess() == FALSE)
+		while (TRUE)
 		{
-			MessageLogger.LogSystemMessage(ServerRegistration.GetErrorText1());
-			MessageLogger.LogSystemMessage(ServerRegistration.GetErrorText2());
-		}
-		else
-		{
-			CServerWrapper ServerWrapper;
-			ServerWrapper.InitSystem(TRUE);
-
-			while (TRUE)
+			if (WaitForSingleObject(CWinService::ServiceStopEvent, 0) == WAIT_OBJECT_0)
 			{
-				ServerWrapper.Pulse();
-
-				if (WaitForSingleObject(CWinService::ServiceStopEvent, 0) == WAIT_OBJECT_0)
-				{
-					break;
-				}
-
-				if (SolutionGlobalFunctions::FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
-				{
-					MessageLogger.LogSystemMessage("Service shutdown request by token file");
-					break;
-				}
-
-				if (SolutionGlobalFunctions::FileExists(Filenames.GetServerUpdatePluReqFilename()) == TRUE)
-				{
-					ServerWrapper.ProcessUpdatePluRequest();
-				}
-
-				Sleep(50);
+				bGotStopEvent = TRUE;
+				break;
 			}
+
+			bool bCanGiveUp = ServerRegistration.CanGiveUp();
+
+			if (ServerRegistration.CheckDbAccess(bFirstDbAttempt || bCanGiveUp) == FALSE)
+			{
+				if (bFirstDbAttempt || bCanGiveUp)
+				{
+					MessageLogger.LogSystemMessage(ServerRegistration.GetErrorText1());
+					MessageLogger.LogSystemMessage(ServerRegistration.GetErrorText2());
+				}
+			}
+			else
+			{
+				MessageLogger.LogSystemMessage("Database access OK");
+				bGotDbAccess = TRUE;
+				break;
+			}
+
+			if (TRUE == bCanGiveUp)
+			{
+				MessageLogger.LogSystemMessage("Database access timeout");
+				bGotStopEvent = TRUE;
+				break;
+			}
+
+			if (SolutionGlobalFunctions::FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+			{
+				MessageLogger.LogSystemMessage("Service shutdown request by token file");
+				bGotStopEvent = TRUE;
+				break;
+			}
+
+			bFirstDbAttempt = FALSE;
+			Sleep(500);
+		}
+	}
+
+	if ((TRUE == bGotDbAccess) && (FALSE == bGotStopEvent))
+	{
+		CServerWrapper ServerWrapper;
+		ServerWrapper.InitSystem(TRUE);
+
+		while (TRUE)
+		{
+			ServerWrapper.Pulse();
+
+			if (WaitForSingleObject(CWinService::ServiceStopEvent, 0) == WAIT_OBJECT_0)
+			{
+				break;
+			}
+
+			if (SolutionGlobalFunctions::FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+			{
+				MessageLogger.LogSystemMessage("Service shutdown request by token file");
+				break;
+			}
+
+			if (SolutionGlobalFunctions::FileExists(Filenames.GetServerUpdatePluReqFilename()) == TRUE)
+			{
+				ServerWrapper.ProcessUpdatePluRequest();
+			}
+
+			Sleep(50);
 		}
 	}
 
 	SetEvent(ServiceDoneShutdownEvent);
-
 	return ERROR_SUCCESS;
 }
 

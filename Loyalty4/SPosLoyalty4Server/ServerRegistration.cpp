@@ -71,15 +71,19 @@ void CServerRegistration::CheckRegistration()
 
 //*******************************************************************
 
-bool CServerRegistration::CheckDbAccess()
+bool CServerRegistration::CheckDbAccess(bool bLogErrors)
 {
 	SQLConnectionOptions.Read();
-	g_GlobalState.DetermineODBCDriverVersion(TRUE);
+	g_GlobalState.DetermineODBCDriverVersion(TRUE, bLogErrors);
+
+	g_GlobalState.SetNoLogSQLExceptionsFlag(FALSE == bLogErrors);
 
 	int nError = 0;
 	CSQLDb SQLDb;
 	SQLDb.Connect(nError, FALSE);
-	
+
+	g_GlobalState.SetNoLogSQLExceptionsFlag(FALSE);
+
 	if (nError != 0)
 	{
 		m_strError1 = "Unable to access Loyalty database";

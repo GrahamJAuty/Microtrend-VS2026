@@ -23,12 +23,16 @@ public:
 	bool GetFixedDatabaseOptionsFlag() { return m_bFixedDatabaseOptions; }
 
 public:
+	void SetNoLogSQLExceptionsFlag(bool b) { m_bNoLogSQLExceptions = b; }
+	bool GetNoLogSQLExceptionsFlag() { return m_bNoLogSQLExceptions; }
+
+public:
 	CString GetExecuteSQLLastError() { return m_strExecuteSQLLastError; }
 	void SetExecuteSQLLastError(CString strError) { m_strExecuteSQLLastError = strError; }
 
 public:
 	int GetODBCDriverVersion() { return m_nODBCDriverVersion; }
-	void DetermineODBCDriverVersion(bool bServer);
+	void DetermineODBCDriverVersion(bool bServer, bool bLog = TRUE);
 
 private:
 	void DetermineODBCDriverVersion(CReportUniqueMap<CMapKeyInt, CMapDataEmpty>& mapVersions);
@@ -38,6 +42,7 @@ private:
 	int m_nODBCDriverVersion = 17;
 	bool m_bServerDesktopApp = FALSE;
 	bool m_bFixedDatabaseOptions = FALSE;
+	bool m_bNoLogSQLExceptions = FALSE;
 	CString m_strExecuteSQLLastError = "";
 };
 

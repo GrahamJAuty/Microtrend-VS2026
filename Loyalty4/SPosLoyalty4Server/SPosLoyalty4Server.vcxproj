@@ -135,6 +135,7 @@
     <ClInclude Include="..\SPosLoyalty4Shared\FileRemover.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\GlobalFunctions.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\GlobalState.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\IDatabase.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\ImageHandler.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyAuditAppend.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyAuditFile.h" />

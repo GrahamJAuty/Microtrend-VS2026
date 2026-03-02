@@ -175,26 +175,29 @@ int CSQLHelpers::ExecuteSQL(CDatabase* pDatabase, CString strSQL)
 
 void CSQLHelpers::LogSQLException(CString strSQL, CString strError)
 {
-	CString strFilename = Filenames.GetSQLExceptionsLogFilename();
-
-	CSSFile fileLog;
-	if (fileLog.Open(strFilename, "ab") == TRUE)
+	if (g_GlobalState.GetNoLogSQLExceptionsFlag() == FALSE)
 	{
-		COleDateTime timeNow = COleDateTime::GetCurrentTime();
+		CString strFilename = Filenames.GetSQLExceptionsLogFilename();
 
-		CString strTime = "";
-		strTime.Format("%2.2d/%2.2d/%4.4d  %2.2d:%2.2d:%2.2d",
-			timeNow.GetDay(),
-			timeNow.GetMonth(),
-			timeNow.GetYear(),
-			timeNow.GetHour(),
-			timeNow.GetMinute(),
-			timeNow.GetSecond());
+		CSSFile fileLog;
+		if (fileLog.Open(strFilename, "ab") == TRUE)
+		{
+			COleDateTime timeNow = COleDateTime::GetCurrentTime();
 
-		fileLog.WriteLine(strTime);
-		fileLog.WriteLine(strSQL);
-		fileLog.WriteLine(strError);
-		fileLog.WriteLine("********************");
+			CString strTime = "";
+			strTime.Format("%2.2d/%2.2d/%4.4d  %2.2d:%2.2d:%2.2d",
+				timeNow.GetDay(),
+				timeNow.GetMonth(),
+				timeNow.GetYear(),
+				timeNow.GetHour(),
+				timeNow.GetMinute(),
+				timeNow.GetSecond());
+
+			fileLog.WriteLine(strTime);
+			fileLog.WriteLine(strSQL);
+			fileLog.WriteLine(strError);
+			fileLog.WriteLine("********************");
+		}
 	}
 }
 

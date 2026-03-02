@@ -1242,6 +1242,9 @@
     <ClInclude Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SPosLoyalty4Shared\IDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

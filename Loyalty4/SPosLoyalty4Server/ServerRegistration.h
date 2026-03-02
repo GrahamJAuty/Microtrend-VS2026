@@ -8,7 +8,7 @@ public:
 
 public:
 	void CheckRegistration();
-	bool CheckDbAccess();
+	bool CheckDbAccess(bool bLogErrors = TRUE);
 	const char* GetErrorText1() { return m_strError1; }
 	const char* GetErrorText2() { return m_strError2; }
 
