@@ -8,7 +8,7 @@
 /**********************************************************************/
 
 //Read connection options before calling this function
-void CGlobalState::DetermineODBCDriverVersion(int nProgramType)
+void CGlobalState::DetermineODBCDriverVersion(int nProgramType, bool bLog)
 {
 	CReportUniqueMap<CMapKeyInt, CMapDataEmpty> mapVersions;
 	SQLConnectionOptions.GetODBCDriverVersions(mapVersions);
@@ -28,40 +28,42 @@ void CGlobalState::DetermineODBCDriverVersion(int nProgramType)
 	m_nODBCDriverVersion = 0;
 	DetermineODBCDriverVersion(mapVersions);
 
-	CString strVersion = "";
-	strVersion.Format("%d", m_nODBCDriverVersion);
-
-	CString strMsg = "";
-	strMsg += "SmartPay ";
-
-	switch (nProgramType)
+	if (TRUE == bLog)
 	{
-	case 1:
-		strMsg += "Server ";
-		break;
+		CString strVersion = "";
+		strVersion.Format("%d", m_nODBCDriverVersion);
 
-	case 2:
-		strMsg += "Background Processor ";
-		break;
+		CString strMsg = "";
+		strMsg += "SmartPay ";
 
-	case 0:
-	default:
-		strMsg += "Manager ";
-		break;
+		switch (nProgramType)
+		{
+		case 1:
+			strMsg += "Server ";
+			break;
+
+		case 2:
+			strMsg += "Background Processor ";
+			break;
+
+		case 0:
+		default:
+			strMsg += "Manager ";
+			break;
+		}
+
+		strMsg += "using ODBC Driver Version ";
+		strMsg += strVersion;
+
+		if (m_nODBCDriverVersion < nIdealVersion)
+		{
+			CString strIdeal = "";
+			strIdeal.Format(" (preferred version %d)", nIdealVersion);
+			strMsg += strIdeal;
+		}
+
+		MessageLogger.LogSystemMessage(strMsg);
 	}
-
-	strMsg += "using ODBC Driver Version ";
-	strMsg += strVersion;
-
-	if (m_nODBCDriverVersion < nIdealVersion)
-	{
-		CString strIdeal = "";
-		strIdeal.Format(" (preferred version %d)", nIdealVersion);
-		strMsg += strIdeal;
-	}
-
-	MessageLogger.LogSystemMessage(strMsg);
-
 }
 
 /**********************************************************************/

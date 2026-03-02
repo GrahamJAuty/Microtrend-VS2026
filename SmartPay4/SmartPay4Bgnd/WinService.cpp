@@ -892,6 +892,9 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 		Sleep(50);
 	}
 
+	bool bGotDbAccess = FALSE;
+	bool bFirstDbAttempt = TRUE;
+
 	if ((BackgroundRegistration.IsRegistered() == TRUE) && (FALSE == bGotStopEvent))
 	{
 		CString strMsg = "";
@@ -901,39 +904,77 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 
 		MessageLogger.LogSystemMessage(strMsg);
 
-		if (BackgroundRegistration.CheckDbAccess() == FALSE)
+		while (TRUE)
 		{
-			MessageLogger.LogSystemMessage(BackgroundRegistration.GetErrorText1());
-			MessageLogger.LogSystemMessage(BackgroundRegistration.GetErrorText2());
-		}
-		else
-		{
-			CBackgroundWrapper BackgroundWrapper;
-			BackgroundWrapper.InitSystem(TRUE);
-
-			CBusyFileUpdateThreadManager BFUThreadManager;
-			BFUThreadManager.CheckThread();
-	
-			while (TRUE)
+			if (WaitForSingleObject(CWinService::ServiceStopEvent, 0) == WAIT_OBJECT_0)
 			{
-				BackgroundWrapper.Pulse(BFUThreadManager);
-
-				if (WaitForSingleObject(CWinService::ServiceStopEvent, 0) == WAIT_OBJECT_0)
-				{
-					break;
-				}
-
-				if (FileExists(Filenames.GetBgndServiceStopFilename()) == TRUE)
-				{
-					MessageLogger.LogSystemMessage("Service shutdown request by token file");
-					break;
-				}
-
-				Sleep(50);
+				bGotStopEvent = TRUE;
+				break;
 			}
 
-			BFUThreadManager.ShutdownThread();
+			bool bCanGiveUp = BackgroundRegistration.CanGiveUp();
+
+			if (BackgroundRegistration.CheckDbAccess(bFirstDbAttempt || bCanGiveUp) == FALSE)
+			{
+				if (bFirstDbAttempt || bCanGiveUp)
+				{
+					MessageLogger.LogSystemMessage(BackgroundRegistration.GetErrorText1());
+					MessageLogger.LogSystemMessage(BackgroundRegistration.GetErrorText2());
+				}
+			}
+			else
+			{
+				MessageLogger.LogSystemMessage("Database access OK");
+				bGotDbAccess = TRUE;
+				break;
+			}
+
+			if (TRUE == bCanGiveUp)
+			{
+				MessageLogger.LogSystemMessage("Database access timeout");
+				bGotStopEvent = TRUE;
+				break;
+			}
+
+			if (FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+			{
+				MessageLogger.LogSystemMessage("Service shutdown request by token file");
+				bGotStopEvent = TRUE;
+				break;
+			}
+
+			bFirstDbAttempt = FALSE;
+			Sleep(500);
 		}
+	}
+
+	if ((TRUE == bGotDbAccess) && (FALSE == bGotStopEvent))
+	{
+		CBackgroundWrapper BackgroundWrapper;
+		BackgroundWrapper.InitSystem(TRUE);
+
+		CBusyFileUpdateThreadManager BFUThreadManager;
+		BFUThreadManager.CheckThread();
+
+		while (TRUE)
+		{
+			BackgroundWrapper.Pulse(BFUThreadManager);
+
+			if (WaitForSingleObject(CWinService::ServiceStopEvent, 0) == WAIT_OBJECT_0)
+			{
+				break;
+			}
+
+			if (FileExists(Filenames.GetBgndServiceStopFilename()) == TRUE)
+			{
+				MessageLogger.LogSystemMessage("Service shutdown request by token file");
+				break;
+			}
+
+			Sleep(50);
+		}
+
+		BFUThreadManager.ShutdownThread();
 	}
 
 	SetEvent(ServiceDoneShutdownEvent);

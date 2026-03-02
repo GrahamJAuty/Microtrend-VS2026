@@ -71,14 +71,18 @@ void CServerRegistration::CheckRegistration()
 
 //*******************************************************************
 
-bool CServerRegistration::CheckDbAccess()
+bool CServerRegistration::CheckDbAccess(bool bLogErrors)
 {
 	SQLConnectionOptions.Read();
-	g_GlobalState.DetermineODBCDriverVersion(1);
+	g_GlobalState.DetermineODBCDriverVersion(1, bLogErrors);
+
+	g_GlobalState.SetNoLogSQLExceptionsFlag(FALSE == bLogErrors);
 
 	int nError = 0;
 	CSQLDb SQLDb;
 	SQLDb.Connect(nError, FALSE);
+
+	g_GlobalState.SetNoLogSQLExceptionsFlag(FALSE);
 
 	if (nError != 0)
 	{
