@@ -111,6 +111,8 @@ void CDbExportHandler::Reset()
 	m_strFileFilters = "";
 	m_strDefExtension = "";
 
+	m_bFolderMode = FALSE;				// export to folder rather than file
+	m_strFolderName = "";				// export folder name (folder mode only)
 	m_strFilename = "";					// export file name OR report name descriptor
 	m_strHeader = "";					// fields to export OR fields to include in report
 
@@ -121,6 +123,13 @@ void CDbExportHandler::Reset()
 	m_bGroupSortAllowed = TRUE;
 	m_bCardListAllowed = TRUE;
 	m_bUnknownAllowed = FALSE;
+}
+
+//****************************************************
+
+bool CDbExportHandler::CanBeFolderMode()
+{
+	return (m_strLabel == "DB1") || (m_strLabel == "DB2") || (m_strLabel == "DB3");
 }
 
 //****************************************************
@@ -144,7 +153,17 @@ bool CDbExportHandler::Read(const char* szLabel)
 
 			if (m_strLabel == csv.GetString(0))
 			{
-				m_strFilename = csv.GetString(1);		// filename 
+				CCSV csvFileInfo(csv.GetString(1));
+				m_strFilename = csvFileInfo.GetString(0);
+				m_strFolderName = csvFileInfo.GetString(1);
+				m_bFolderMode = csvFileInfo.GetBool(2);
+
+				if (FALSE == CanBeFolderMode())
+				{
+					m_bFolderMode = FALSE;
+					m_strFolderName = "";
+				}
+
 				m_strHeader = csv.GetString(2);		// header
 				CCSV csvBuf1(csv.GetString(3));		// report filters
 				CCSV csvBuf2(csv.GetString(4));		// conditional
@@ -268,9 +287,20 @@ bool CDbExportHandler::Save ( const char* szLabel )
 			}
 		}
 
+		if (FALSE == CanBeFolderMode())
+		{
+			m_bFolderMode = FALSE;
+			m_strFolderName = "";
+		}
+
+		CCSV csvFileInfo;
+		csvFileInfo.Add(m_strFilename);
+		csvFileInfo.Add(m_strFolderName);
+		csvFileInfo.Add(m_bFolderMode);
+
 		CCSV csv;
 		csv.Add ( m_strLabel );
-		csv.Add ( m_strFilename );
+		csv.Add ( csvFileInfo.GetLine() );
 		csv.Add ( m_strHeader );
 		csv.Add ( m_csvFilters.GetLine() );
 		csv.Add ( m_csvConditions.GetLine() );

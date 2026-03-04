@@ -73,6 +73,8 @@ public:
 	bool IsCardInRange(__int64 nUserID);
 	bool IsCardInRange(__int64 nUserID, int nGroupNo);
 
+	bool CanBeFolderMode();
+
 	int GetCardRangeIndex() { return m_csvFilters.GetInt(0); }	//0=range, 1=list
 	__int64 GetStartCardNoInt64() { return m_csvFilters.GetInt64(1); }
 	const char* GetStartCardNoString() { return m_csvFilters.GetString(1); }
@@ -158,7 +160,9 @@ public:
 
 	CString m_strLabel;
 	CString m_strTitle;
-	CString m_strFilename;
+	bool m_bFolderMode = FALSE;
+	CString m_strFolderName = "";
+	CString m_strFilename = "";
 	CString m_strHeader;
 	CString m_strFileFilters;
 	CString m_strDefExtension;

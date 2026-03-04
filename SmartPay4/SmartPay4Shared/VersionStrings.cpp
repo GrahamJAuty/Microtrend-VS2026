@@ -1,4 +1,4 @@
 /**********************************************************************/
-const char* szVERSION_SMARTPAY_ABOUT = "V4.18.001";
-const char* szUPDATE_TOKEN_DATE = "20260212";
+const char* szVERSION_SMARTPAY_ABOUT = "V4.18.002";
+const char* szUPDATE_TOKEN_DATE = "20260220";
 /**********************************************************************/

@@ -47,7 +47,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Microtrend\VS2026\COMMON\CKINC;E:\Microtrend\VS2026\COMMON\SSINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
+    <IncludePath>E:\MICROTREND\VS2026\SPosManager5\ThirdParty\SimpleXLSXWriter;E:\Microtrend\VS2026\COMMON\CKINC;E:\Microtrend\VS2026\COMMON\SSINC;E:\Microtrend\VS2022\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Microtrend\VS2026\COMMON\CKLIB;E:\Microtrend\VS2026\COMMON\SSLIB;E:\Microtrend\VS2022\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
     <TargetName>SPosEcrManager</TargetName>
   </PropertyGroup>
@@ -152,6 +152,7 @@
     <Image Include="res\SPosEcrManager5Doc.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\mainpage.dox" />
     <None Include="res\SPosEcrManager5.rc2" />
   </ItemGroup>
   <ItemGroup>
@@ -1208,6 +1209,24 @@
     <ClCompile Include="..\CommonEcrStock\XMLWrangler.cpp" />
     <ClCompile Include="..\CommonEcrTray\ReportPluDelivery.cpp" />
     <ClCompile Include="..\CommonEcrTray\ReportPluStockLevel.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\PathManager.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\scratch\clsScratchTable.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\clsRGBColorRecord.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\XLSXColorLib.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chart.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chartsheet.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Drawing.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\SimpleXlsxDef.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Workbook.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Worksheet.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\XlsxHeaders.cpp" />
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="AboutDlgEcrman.cpp" />
     <ClCompile Include="ClearHistoryPluDelivery.cpp" />
     <ClCompile Include="DatabaseImportHandlerEcrman.cpp" />
@@ -2295,6 +2314,20 @@
     <ClInclude Include="..\CommonEcrStock\XMLWrangler.h" />
     <ClInclude Include="..\CommonEcrTray\ReportPluDelivery.h" />
     <ClInclude Include="..\CommonEcrTray\ReportPluStockLevel.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\PathManager.hpp" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\scratch\clsScratchTable.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\UTF8Encoder.hpp" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\clsRGBColorRecord.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\XLSXColorLib.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chart.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chartsheet.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Drawing.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\SimpleXlsxDef.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Workbook.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Worksheet.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\XlsxHeaders.h" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\XMLWriter.hpp" />
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.h" />
     <ClInclude Include="AboutDlgEcrman.h" />
     <ClInclude Include="ClearHistoryPluDelivery.h" />
     <ClInclude Include="DatabaseImportHandlerEcrman.h" />

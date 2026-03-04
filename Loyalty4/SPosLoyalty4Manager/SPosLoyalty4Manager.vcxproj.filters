@@ -1245,6 +1245,9 @@
     <ClInclude Include="..\SPosLoyalty4Shared\IDatabase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\SPosLoyalty4Shared\LegacyDatabaseAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -2436,6 +2439,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SPosLoyalty4Shared\LegacyDatabaseAdapter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

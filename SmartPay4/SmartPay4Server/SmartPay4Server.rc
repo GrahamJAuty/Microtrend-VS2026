@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Microtrend"
             VALUE "FileDescription", "SmartPay Server v4"
-            VALUE "FileVersion", "4.18.001"
+            VALUE "FileVersion", "4.18.002"
             VALUE "InternalName", "SmartPay Server v4"
             VALUE "LegalCopyright", "Copyright © 2026 Microtrend"
             VALUE "OriginalFilename", "SPosSmartPay4Server.exe"
             VALUE "ProductName", "SmartPay Server v4"
-            VALUE "ProductVersion", "4.18.001"
+            VALUE "ProductVersion", "4.18.002"
         END
     END
     BLOCK "VarFileInfo"

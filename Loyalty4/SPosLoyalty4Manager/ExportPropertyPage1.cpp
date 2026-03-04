@@ -37,9 +37,11 @@ void CExportPropertyPage1::SetPointer ( CDbExportHandler* pDbExportHandler )
 void CExportPropertyPage1::DoDataExchange(CDataExchange* pDX)
 {
 	CPropertyPage::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_EDIT_FILENAME, m_editFilename);
-	DDX_Control(pDX, IDC_BUTTON_BROWSE, m_buttonBrowse);
+	DDX_Control(pDX, IDC_CHECK_FOLDERMODE, m_checkFolderMode);
 	DDX_Control(pDX, IDC_STATIC_FILENAME, m_staticFilename);
+	DDX_Control(pDX, IDC_EDIT_FILENAME, m_editFilename);
+	DDX_Control(pDX, IDC_EDIT_FOLDER, m_editFolder);
+	DDX_Control(pDX, IDC_BUTTON_BROWSE, m_buttonBrowse);
 	DDX_Control(pDX, IDC_BUTTON_SELECT, m_buttonSelect);
 }
 
@@ -51,6 +53,7 @@ BEGIN_MESSAGE_MAP(CExportPropertyPage1, CPropertyPage)
 	ON_BN_CLICKED(IDC_BUTTON_DOWN, OnButtonDown)
 	ON_BN_CLICKED(IDC_BUTTON_SELECT, OnButtonSelect)
 	ON_BN_CLICKED(IDC_BUTTON_BROWSE, OnButtonBrowse)
+	ON_BN_CLICKED(IDC_CHECK_FOLDERMODE, OnToggleFolderMode)
 END_MESSAGE_MAP()
 
 //$$******************************************************************
@@ -62,6 +65,7 @@ BOOL CExportPropertyPage1::OnInitDialog()
 	CPropertyPage::OnInitDialog();
 
 	m_editFilename.SetWindowText(m_pDbExportHandler->m_strFilename);
+	m_editFolder.SetWindowText(m_pDbExportHandler->m_strFolderName);
 
 	CString strDatabaseHeader = "";
 	if (System.GetEnablePurse2Flag() == TRUE)
@@ -205,14 +209,42 @@ BOOL CExportPropertyPage1::OnInitDialog()
 			m_editFilename.ShowWindow(SW_HIDE);
 			m_staticFilename.ShowWindow(SW_HIDE);
 		}
+
+		m_checkFolderMode.SetCheck(FALSE);
+		ShowAndEnableWindow(&m_checkFolderMode, FALSE);
+		OnToggleFolderMode();
 	}
 	else
 	{
-		CString strFilename = GetEditBoxText(m_editFilename);
-		if (strFilename == "")
+		if (m_pDbExportHandler->CanBeFolderMode() == TRUE)
 		{
-			m_editFilename.SetFocus();
-			return FALSE;
+			m_checkFolderMode.SetCheck(m_pDbExportHandler->m_bFolderMode);
+		}
+		else
+		{
+			m_checkFolderMode.SetCheck(FALSE);
+			ShowAndEnableWindow(&m_checkFolderMode, FALSE);
+		}
+
+		OnToggleFolderMode();
+
+		if (m_checkFolderMode.GetCheck() == FALSE)
+		{
+			CString strFilename = GetEditBoxText(m_editFilename);
+			if (strFilename == "")
+			{
+				m_editFilename.SetFocus();
+				return FALSE;
+			}
+		}
+		else
+		{
+			CString strFolder = GetEditBoxText(m_editFolder);
+			if (strFolder == "")
+			{
+				m_editFolder.SetFocus();
+				return FALSE;
+			}
 		}
 	}
 
@@ -231,6 +263,16 @@ void CExportPropertyPage1::OnMeasureItem(int nIDCtl, LPMEASUREITEMSTRUCT lpMeasu
 
 //$$******************************************************************
 
+void CExportPropertyPage1::OnToggleFolderMode() 
+{
+	BOOL bFolderMode = m_checkFolderMode.GetCheck();
+	ShowAndEnableWindow(&m_editFilename, !bFolderMode);
+	ShowAndEnableWindow(&m_editFolder, bFolderMode);
+	m_staticFilename.SetWindowText(bFolderMode ? "Folder name" : "Filename");
+}
+
+//$$******************************************************************
+
 BOOL CExportPropertyPage1::OnKillActive()
 {
 	CreateHeaderLine();
@@ -241,9 +283,11 @@ BOOL CExportPropertyPage1::OnKillActive()
 		return FALSE;
 	}
 
+	bool bFolderMode = IsTicked(m_checkFolderMode);
 	CString strFilename = GetEditBoxText(m_editFilename);
+	CString strFolder = GetEditBoxText(m_editFolder);
 
-	if (strFilename.GetLength() != 0)					// check have filename
+	if ( (strFilename.GetLength() != 0) && ( FALSE == bFolderMode ) )	
 	{
 		CSSFile file;
 		if (file.Open(strFilename, "rb") == TRUE)	// file may not be found
@@ -278,7 +322,9 @@ BOOL CExportPropertyPage1::OnKillActive()
 		}
 	}
 
+	m_pDbExportHandler->m_bFolderMode = bFolderMode;
 	m_pDbExportHandler->m_strFilename = strFilename;
+	m_pDbExportHandler->m_strFolderName = strFolder;
 	m_pDbExportHandler->m_strHeader = m_strHeader;
 
 	return CPropertyPage::OnKillActive();
@@ -371,26 +417,48 @@ void CExportPropertyPage1::SetSelectButtonText()
 
 void CExportPropertyPage1::OnButtonBrowse()
 {
-	CString strFileFilters = m_pDbExportHandler->m_strFileFilters;
-	strFileFilters += "|All Files (*.*)|*.*||";
-
-	CFileDialog dlg ( FALSE, m_pDbExportHandler->m_strDefExtension, NULL, OFN_OVERWRITEPROMPT|OFN_HIDEREADONLY|OFN_NOCHANGEDIR, strFileFilters, this );
-	dlg.m_ofn.lpstrTitle = "Select Export filename";
-
-	CString strPath = "";
-	CString strFilename = GetEditBoxText(m_editFilename);
-	::StripFilename ( strFilename, strPath );
-	if (strPath == "")
+	if (IsTicked(m_checkFolderMode) == FALSE)
 	{
-		strPath = ".";
+		CString strFileFilters = m_pDbExportHandler->m_strFileFilters;
+		strFileFilters += "|All Files (*.*)|*.*||";
+
+		CFileDialog dlg(FALSE, m_pDbExportHandler->m_strDefExtension, NULL, OFN_OVERWRITEPROMPT | OFN_HIDEREADONLY | OFN_NOCHANGEDIR, strFileFilters, this);
+		dlg.m_ofn.lpstrTitle = "Select Export filename";
+
+		CString strPath = "";
+		CString strFilename = GetEditBoxText(m_editFilename);
+		::StripFilename(strFilename, strPath);
+		if (strPath == "")
+		{
+			strPath = ".";
+		}
+
+		dlg.m_ofn.lpstrInitialDir = strPath;
+
+		if (dlg.DoModal() == IDOK)
+		{
+			strFilename = dlg.GetPathName();
+			m_editFilename.SetWindowTextA(strFilename);
+		}
 	}
-
-	dlg.m_ofn.lpstrInitialDir = strPath;
-
-	if ( dlg.DoModal() == IDOK )
+	else
 	{
-		strFilename = dlg.GetPathName();
-		m_editFilename.SetWindowTextA(strFilename);
+		BROWSEINFO bi = { 0 };
+		bi.hwndOwner = this->m_hWnd;
+		bi.lpszTitle = "Select Export Folder";
+		bi.ulFlags = BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
+
+		LPITEMIDLIST pidl = SHBrowseForFolder(&bi);
+		if (pidl != NULL)
+		{
+			char szPath[MAX_PATH];
+			if (SHGetPathFromIDList(pidl, szPath))
+			{
+				m_editFolder.SetWindowText(szPath);
+			}
+
+			CoTaskMemFree(pidl);
+		}
 	}
 }
 

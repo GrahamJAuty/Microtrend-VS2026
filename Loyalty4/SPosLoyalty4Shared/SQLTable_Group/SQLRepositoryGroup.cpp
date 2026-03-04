@@ -7,8 +7,36 @@
 #include "SQLRepositoryGroup.h"
 //**********************************************************************
 		
-CSQLRepositoryGroup::CSQLRepositoryGroup()
+CSQLRepositoryGroup::CSQLRepositoryGroup() : m_pTransaction(nullptr)
 {
+}
+
+//**********************************************************************
+
+CSQLRepositoryGroup::CSQLRepositoryGroup(CSQLTranBase* pTransaction) : m_pTransaction(pTransaction)
+{
+}
+
+//**********************************************************************
+
+CDatabase* CSQLRepositoryGroup::GetLegacyDatabase(CDatabase* pDatabase) const
+{
+	// Priority:
+	// 1. Explicit parameter
+	// 2. Transaction's database
+	// 3. NULL (pooling)
+
+	if (pDatabase != nullptr)
+	{
+		return pDatabase;
+	}
+
+	if (m_pTransaction != nullptr)
+	{
+		return m_pTransaction->GetDatabase();
+	}
+
+	return nullptr;
 }
 
 //**********************************************************************
@@ -18,7 +46,7 @@ CSQLResultInfo CSQLRepositoryGroup::SelectRow(CSQLRowGroup& SQLRowGroup, CDataba
 	auto operation = [&]() -> CSQLResultInfo
 	{
 		CSQLResultInfo Result;
-		CSQLRecordSetGroup RecordSet(pDatabase, RSParams_Group_NormalByGroupNo{SQLRowGroup.GetGroupNo()});
+		CSQLRecordSetGroup RecordSet(GetLegacyDatabase(pDatabase), RSParams_Group_NormalByGroupNo{SQLRowGroup.GetGroupNo()});
 		
 		if (RecordSet.Open(CRecordset::forwardOnly, NULL, CRecordset::readOnly) == FALSE)
 		{
@@ -52,7 +80,7 @@ CSQLResultInfo CSQLRepositoryGroup::UpdateRow(CSQLRowGroup& SQLRowGroup, CDataba
 	auto operation = [&]() -> CSQLResultInfo
 	{
 		CSQLResultInfo Result;
-		CSQLRecordSetGroup RecordSet(pDatabase, RSParams_Group_NormalByGroupNo{ SQLRowGroup.GetGroupNo() });
+		CSQLRecordSetGroup RecordSet(GetLegacyDatabase(pDatabase), RSParams_Group_NormalByGroupNo{ SQLRowGroup.GetGroupNo() });
 
 		if (RecordSet.Open(CRecordset::dynaset, NULL, CRecordset::none) == FALSE)
 		{
@@ -87,7 +115,7 @@ CSQLResultInfo CSQLRepositoryGroup::InsertRow(CSQLRowGroup& SQLRowGroup, CDataba
 	auto operation = [&]() -> CSQLResultInfo
 	{
 		CSQLResultInfo Result;
-		CSQLRecordSetGroup RecordSet(pDatabase, RSParams_Group_NormalNoParams{});
+		CSQLRecordSetGroup RecordSet(GetLegacyDatabase(pDatabase), RSParams_Group_NormalNoParams{});
 		RecordSet.SetInsertFilterString();
 
 		if (RecordSet.Open(CRecordset::dynaset, NULL, CRecordset::none) == FALSE)
@@ -115,7 +143,7 @@ CSQLResultInfo CSQLRepositoryGroup::DeleteRow(CSQLRowGroup& SQLRowGroup, CDataba
 	auto operation = [&]() -> CSQLResultInfo
 	{
 		CSQLResultInfo Result;
-		CSQLRecordSetGroup RecordSet(pDatabase, RSParams_Group_NormalByGroupNo{ SQLRowGroup.GetGroupNo() });
+		CSQLRecordSetGroup RecordSet(GetLegacyDatabase(pDatabase), RSParams_Group_NormalByGroupNo{ SQLRowGroup.GetGroupNo() });
 
 		if (RecordSet.Open(CRecordset::dynaset, NULL, CRecordset::none) == FALSE)
 		{
@@ -144,11 +172,27 @@ CSQLResultInfo CSQLRepositoryGroup::DeleteRow(CSQLRowGroup& SQLRowGroup, CDataba
 
 //**********************************************************************
 
+CSQLResultInfo CSQLRepositoryGroup::DeleteRow_Modern(CSQLRowGroup& row)
+{
+	IDatabase* pDb = GetModernDatabase();
+	if (!pDb)
+	{
+		// Fallback to legacy for now
+		return DeleteRow(row, NULL);
+	}
+
+	// In future: use modern backend
+	// For now, this is just a placeholder
+	return DeleteRow(row, NULL);
+}
+
+//**********************************************************************
+
 CSQLResultInfo CSQLRepositoryGroup::RowExists(int nGroupNo, CDatabase* pDatabase)
 {
 	auto operation = [&]() -> CSQLResultInfo
 	{
-		CSQLRecordSetGroup RecordSet(pDatabase, 
+		CSQLRecordSetGroup RecordSet(GetLegacyDatabase(pDatabase), 
 			RSParams_Group_NormalByGroupNo{ nGroupNo }, 
 			TRUE);
 

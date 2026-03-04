@@ -16,8 +16,10 @@ public:
 	enum { IDD = IDD_PROPPAGE_EXPORT1 };
 	CSSListTaggedSelectCtrl m_listFields;
 	CButton m_buttonBrowse;
+	CButton m_checkFolderMode;
 	CStatic m_staticFilename;
 	CEdit m_editFilename;
+	CEdit m_editFolder;
 	CButton m_buttonSelect;
 	
 protected:
@@ -29,6 +31,7 @@ protected:
 	afx_msg void OnButtonUp();
 	afx_msg void OnButtonDown();
 	afx_msg void OnButtonSelect();
+	afx_msg void OnToggleFolderMode();
 	DECLARE_MESSAGE_MAP()
 
 private:

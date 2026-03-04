@@ -64,7 +64,20 @@ int CExportDatabase::CreateFile(bool bShowProgress, int& nExportCount )
 		return nREPORT_CANCEL;								// no export format set up
 	}
 
-	m_strExportFilename = dbReporter.m_strFilename;
+	if ((FALSE == dbReporter.m_bFolderMode) || (dbReporter.CanBeFolderMode() == FALSE))
+	{
+		m_strExportFilename = dbReporter.m_strFilename;
+	}
+	else
+	{
+		COleDateTime timeNow = COleDateTime::GetCurrentTime();
+		m_strExportFilename.Format("%s\\%s_%4.4d%2.2d%2.2d_%2.2d%2.2d%2.2d_LoyaltyDbExport.csv", 
+			(const char*)dbReporter.m_strFolderName, 
+			(const char*)dbReporter.m_strLabel,
+			timeNow.GetYear(), timeNow.GetMonth(), timeNow.GetDay(),
+			timeNow.GetHour(), timeNow.GetMinute(), timeNow.GetSecond());
+	}
+
 	m_strTitle = dbReporter.m_strTitle;
 
 	CSSFile file;

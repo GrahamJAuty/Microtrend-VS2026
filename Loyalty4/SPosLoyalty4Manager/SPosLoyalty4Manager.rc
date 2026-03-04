@@ -105,16 +105,19 @@ BEGIN
 END
 
 IDD_PROPPAGE_EXPORT1 DIALOGEX 0, 0, 441, 280
-STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_DISABLED | WS_CAPTION
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Fields"
 FONT 8, "MS Shell Dlg 2", 0, 0, 0x0
 BEGIN
     PUSHBUTTON      "All",IDC_BUTTON_SELECT,248,7,50,28,BS_MULTILINE
     PUSHBUTTON      "Move\nUp",IDC_BUTTON_UP,248,87,50,28,BS_MULTILINE
     PUSHBUTTON      "Move\nDown",IDC_BUTTON_DOWN,248,125,50,28,BS_MULTILINE
+    CONTROL         "Export to folder with timestamp",IDC_CHECK_FOLDERMODE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,250,184,133,10
+    LTEXT           "Filename", IDC_STATIC_FILENAME, 7, 247, 44, 8
     EDITTEXT        IDC_EDIT_FILENAME,7,259,228,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FOLDER, 7, 259, 228, 14, ES_AUTOHSCROLL
     PUSHBUTTON      "&Browse",IDC_BUTTON_BROWSE,253,259,50,14
-    LTEXT           "Filename",IDC_STATIC_FILENAME,7,247,44,8
     CONTROL         "",IDC_LIST_EXPORT,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_OWNERDRAWFIXED | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,7,228,227
 END
 
@@ -4034,12 +4037,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Microtrend"
             VALUE "FileDescription", "Loyalty Manager v4"
-            VALUE "FileVersion", "4.26.002"
+            VALUE "FileVersion", "4.26.003"
             VALUE "InternalName", "Loyalty Manager v4"
             VALUE "LegalCopyright", "Copyright © 2026 Microtrend"
             VALUE "OriginalFilename", "SPosLoyalty4Manager.exe"
             VALUE "ProductName", "Loyalty Manager v4"
-            VALUE "ProductVersion", "4.26.002"
+            VALUE "ProductVersion", "4.26.003"
         END
     END
     BLOCK "VarFileInfo"

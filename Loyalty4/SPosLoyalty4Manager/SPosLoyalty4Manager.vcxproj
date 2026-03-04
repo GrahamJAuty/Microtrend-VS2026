@@ -148,6 +148,7 @@
     <ClInclude Include="..\SPosLoyalty4Shared\GroupHeaderHelpers.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\IDatabase.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\ImageHandler.h" />
+    <ClInclude Include="..\SPosLoyalty4Shared\LegacyDatabaseAdapter.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyAuditAppend.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyAuditFile.h" />
     <ClInclude Include="..\SPosLoyalty4Shared\LoyaltyCommandLineInfo.h" />
@@ -558,6 +559,7 @@
     <ClCompile Include="..\SPosLoyalty4Shared\GlobalState.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\GroupHeaderHelpers.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\ImageHandler.cpp" />
+    <ClCompile Include="..\SPosLoyalty4Shared\LegacyDatabaseAdapter.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyAuditAppend.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyAuditFile.cpp" />
     <ClCompile Include="..\SPosLoyalty4Shared\LoyaltyCommandLineInfo.cpp" />

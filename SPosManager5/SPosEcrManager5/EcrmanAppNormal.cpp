@@ -197,6 +197,8 @@ CEcrmanApp::CEcrmanApp() : CWinApp ( "Ecr Manager" )
 }
 
 /**********************************************************************/
+#include "xlsx\simplexlsxdef.h"
+#include "xlsx\workbook.h"
 
 BOOL CEcrmanApp::InitInstance()
 {
@@ -223,6 +225,19 @@ BOOL CEcrmanApp::InitInstance()
 	}
 
 	SysInfo.SetStackBase(m_dwStackBase);
+
+	SimpleXlsx::CWorkbook book; 
+	//std::vector<SimpleXlsx::ColumnWidth> ColWidth;
+	//ColWidth.push_back(SimpleXlsx::ColumnWidth(0, 3, 25));
+	SimpleXlsx::CWorksheet& Sheet = book.AddSheet("TestSheet" /*ColWidth*/);
+
+	Sheet.BeginRow();
+	Sheet.AddCell("One");
+	Sheet.AddCell("Two");
+	Sheet.AddCell("Three");
+	Sheet.EndRow();
+
+	book.Save("Test.xlsx");
 
 	InitCommonControls();
 	

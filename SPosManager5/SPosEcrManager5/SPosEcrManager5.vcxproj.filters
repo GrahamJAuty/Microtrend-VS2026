@@ -73,6 +73,7 @@
     <None Include="res\SPosEcrManager5.rc2">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\mainpage.dox" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CommonEcrTray\ReportPluDelivery.cpp">
@@ -3372,6 +3373,42 @@
     <ClCompile Include="..\CommonEcrStockTray\BackupFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\PathManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\scratch\clsScratchTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chartsheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Drawing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\SimpleXlsxDef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Workbook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Worksheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\XlsxHeaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\clsRGBColorRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\XLSXColorLib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClearHistoryPluDelivery.h">
@@ -6579,6 +6616,48 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\CommonEcrStockTray\BackupFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\PathManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\UTF8Encoder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\XMLWriter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\scratch\clsScratchTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Chartsheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Drawing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\SimpleXlsxDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Workbook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Worksheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\XlsxHeaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\clsRGBColorRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\XLSXColors\XLSXColorLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

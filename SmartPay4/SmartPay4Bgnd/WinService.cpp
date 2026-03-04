@@ -936,7 +936,7 @@ DWORD WINAPI CWinService::ServiceWorkerThread (LPVOID lpParam)
 				break;
 			}
 
-			if (FileExists(Filenames.GetServerServiceStopFilename()) == TRUE)
+			if (FileExists(Filenames.GetBgndServiceStopFilename()) == TRUE)
 			{
 				MessageLogger.LogSystemMessage("Service shutdown request by token file");
 				bGotStopEvent = TRUE;
