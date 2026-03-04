@@ -866,6 +866,10 @@ void CServerWrapper::ProcessJSONCreateAccount(CJSONObjectCollector& JSONObjectCo
 	{
 		RowAccount.SetExpiryDate(strExpiry);
 	}
+	else if (Server.GetJSONImportAsExpiredFlag() == TRUE)
+	{
+		RowAccount.SetExpiryDate("01/01/2026");
+	}
 
 	if (TRUE == bGotAddress1)
 	{

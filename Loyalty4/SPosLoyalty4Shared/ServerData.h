@@ -243,6 +243,7 @@ namespace ServerDataFields
 	const char* const DoubleBonusWithHash = "DoubleBonusWithHash";
 	const char* const DoubleBonusBeginDate = "DoubleBonusBeginDate";
 	const char* const DoubleBonusEndDate = "DoubleBonusEndDate";
+	const char* const JSONImportAsExpired = "JSONImportAsExpired";
 
 	//OBSOLETE
 	const char* const ObsoleteCardNoFormat = "CardNoFormat";
@@ -412,6 +413,7 @@ public:
 	bool GetDoubleBonusWithHashFlag() { return m_bDoubleBonusWithHash; }
 	CString GetDoubleBonusBeginDate() { return m_strDoubleBonusBeginDate; }
 	CString GetDoubleBonusEndDate() { return m_strDoubleBonusEndDate; }
+	bool GetJSONImportAsExpiredFlag() { return m_bJSONImportAsExpired; }
 
 	//OBSOLETE
 	int GetObsoleteCardNoFormat() { return m_nObsoleteCardNoFormat; }
@@ -557,6 +559,7 @@ public:
 	void SetDoubleBonusWithHashFlag(bool b) { m_bDoubleBonusWithHash = b; }	
 	void SetDoubleBonusBeginDate(CString str);
 	void SetDoubleBonusEndDate(CString str);
+	void SetJSONImportAsExpiredFlag(bool b) { m_bJSONImportAsExpired = b; }
 
 	//OBSOLETE
 	void SetObsoleteCardNoFormat( int n ) { m_nObsoleteCardNoFormat = n; }
@@ -693,6 +696,7 @@ private:
 	bool m_bDoubleBonusWithHash;
 	CString m_strDoubleBonusBeginDate;
 	CString m_strDoubleBonusEndDate;
+	bool m_bJSONImportAsExpired;
 
 	//OBSOLETE
 	int m_nObsoleteCardNoFormat;				//

@@ -207,6 +207,7 @@ CServerData::CServerData(void)
 	m_bDoubleBonusWithHash = FALSE;
 	m_strDoubleBonusBeginDate = "20250101";
 	m_strDoubleBonusEndDate = "20250101";
+	m_bJSONImportAsExpired = FALSE;
 
 	//OBSOLETE
 	m_nObsoleteCardNoFormat = 0;
@@ -565,6 +566,7 @@ bool CServerData::Read(CString strDatapath)
 	SetDoubleBonusWithHashFlag(file.GetBool(ServerDataFields::DoubleBonusWithHash, FALSE));
 	SetDoubleBonusBeginDate(file.GetString(ServerDataFields::DoubleBonusBeginDate, "20250101"));
 	SetDoubleBonusEndDate(file.GetString(ServerDataFields::DoubleBonusEndDate, "20250101"));
+	SetJSONImportAsExpiredFlag(file.GetBool(ServerDataFields::JSONImportAsExpired, FALSE));
 
 	{
 		CString strTest = file.GetString(ServerDataFields::BypassVersionSafetyCheck, "");
@@ -943,6 +945,7 @@ bool CServerData::Write(CString strDatapath)
 	file.Set(ServerDataFields::DoubleBonusWithHash, m_bDoubleBonusWithHash);
 	file.Set(ServerDataFields::DoubleBonusBeginDate, m_strDoubleBonusBeginDate);
 	file.Set(ServerDataFields::DoubleBonusEndDate, m_strDoubleBonusEndDate);
+	file.Set(ServerDataFields::JSONImportAsExpired, m_bJSONImportAsExpired);
 
 	switch (m_nSimulateReaderType)
 	{
@@ -1089,6 +1092,7 @@ void CServerData::CopyFrom( CServerData& source )
 	SetDoubleBonusWithHashFlag(source.GetDoubleBonusWithHashFlag());
 	SetDoubleBonusBeginDate(source.GetDoubleBonusBeginDate());
 	SetDoubleBonusEndDate(source.GetDoubleBonusEndDate());
+	SetJSONImportAsExpiredFlag(source.GetJSONImportAsExpiredFlag());
 
 	//OBSOLETE
 	SetObsoleteCardCheckDigitFlag(source.GetObsoleteCardCheckDigitFlag());
