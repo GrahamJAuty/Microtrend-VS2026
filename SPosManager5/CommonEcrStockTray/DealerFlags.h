@@ -92,6 +92,7 @@
 #define DEALERFLAG_MISC49		349
 #define DEALERFLAG_MISC50		350
 #define DEALERFLAG_MISC51		351
+#define DEALERFLAG_MISC52		352
 /**********************************************************************/
 #define DEALERFLAG_LABEL		400
 #define DEALERFLAG_LABEL1		401
@@ -235,6 +236,7 @@ public:
 	int GetFixDepositRecyclePayNo() { return m_nFixDepositRecylePayNo; } //50
 	__int64 GetFixDepositRecyclePluNo() { return m_nFixDepositRecyclePluNo; } //50
 	bool GetCOFAllDiscountFlag() { return m_bCOFAllDiscount; } //51
+	bool GetGratuityFix3Flag() { return m_bGratuityFix3; } //52
 
 	//LABEL
 	bool GetEcrTextOnLabelsFlag() { return m_bEcrTextOnLabels; } //1
@@ -367,6 +369,7 @@ public:
 	void SetDuplicateCheckIgnoreTimeFlag(bool b) { m_bDuplicateCheckIgnoreTime = b;  } //49
 	void SetFixDepositRecycle(bool b, int nRedeemPayNo = 0, int nRecyclePayNo = 0, __int64 nPluNo = 0); //50
 	void SetCOFAllDiscountFlag(bool b) { m_bCOFAllDiscount = b; } //51
+	void SetGratuityFix3Flag(bool b) { m_bGratuityFix3 = b; } //52
 
 	//LABEL
 	void SetEcrTextOnLabelsFlag( bool b ) { m_bEcrTextOnLabels = b; } //1
@@ -498,6 +501,7 @@ private:
 	int m_nFixDepositRecylePayNo; //50
 	__int64 m_nFixDepositRecyclePluNo; //50
 	bool m_bCOFAllDiscount; //51
+	bool m_bGratuityFix3; //52
 	
 	//LABEL
 	bool m_bEcrTextOnLabels; //1

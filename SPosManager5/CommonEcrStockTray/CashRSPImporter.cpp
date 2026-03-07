@@ -1654,8 +1654,12 @@ void CCashRSPImporter::ProcessPaymentsBuffer(CCashRSPSpooler& CashRSPSpooler)
 	int nGratuityLineTender = 0;
 	int nGratuityLineAmount = 0;
 	int nGratuityLineGratuity = 0;
+
+	bool bGratuityFix1 = DealerFlags.GetGratuityFixFlag();
+	bool bGratuityFix2 = DealerFlags.GetGratuityFix2Flag();
+	bool bGratuityFix3 = DealerFlags.GetGratuityFix3Flag();
 	
-	if ((DealerFlags.GetGratuityFixFlag() == TRUE) || (DealerFlags.GetGratuityFix2Flag() == TRUE))
+	if (bGratuityFix1 || bGratuityFix2 || bGratuityFix3)
 	{
 		for (int n = 0; n < nPaymentCount; n++)
 		{
@@ -1667,7 +1671,19 @@ void CCashRSPImporter::ProcessPaymentsBuffer(CCashRSPSpooler& CashRSPSpooler)
 			int nGratuity = csvPayment.GetPaymentGratuity();
 			int nSurplus = csvPayment.GetPaymentSurplus(m_TransactionInfo.m_CashRSPVersionChecker.GetCurrentTransactionVersionNo());
 
-			if ( ( nTender > nAmount ) && ( nSurplus == 0 ) && ( nGratuity != nTender - nAmount ) )
+			bool bMayNeedGratuityFix = FALSE;
+
+			if (bGratuityFix1 || bGratuityFix2)
+			{
+				bMayNeedGratuityFix = (nTender > nAmount) && (nSurplus == 0) && (nGratuity != nTender - nAmount);
+			}
+
+			if (bGratuityFix3)
+			{
+				bMayNeedGratuityFix |= (nGratuity != 0);
+			}
+
+			if ( TRUE == bMayNeedGratuityFix )
 			{
 				if ( -1 != nPossibleGratuityLine )
 				{
@@ -1823,7 +1839,7 @@ void CCashRSPImporter::ProcessPaymentsBuffer(CCashRSPSpooler& CashRSPSpooler)
 
 		if ( n == nPossibleGratuityLine )
 		{
-			if (DealerFlags.GetGratuityFixFlag() == TRUE)
+			if (bGratuityFix1)
 			{
 				if (
 					(nGratuityLineGratuity > 0) &&
@@ -1841,7 +1857,7 @@ void CCashRSPImporter::ProcessPaymentsBuffer(CCashRSPSpooler& CashRSPSpooler)
 
 		if ( n == nPossibleGratuityLine )
 		{
-			if (DealerFlags.GetGratuityFix2Flag() == TRUE)
+			if (bGratuityFix2)
 			{
 				int nOverTender = nGratuityLineTender - nGratuityLineAmount;
 
@@ -1852,6 +1868,26 @@ void CCashRSPImporter::ProcessPaymentsBuffer(CCashRSPSpooler& CashRSPSpooler)
 				{
 					nGratuityLineGratuity = nOverTender / 2;
 					csvPayment.SetPaymentAmount(nGratuityLineAmount + nGratuityLineGratuity);
+					csvPayment.SetPaymentGratuity(nGratuityLineGratuity);
+					m_TransactionInfo.m_bufferDailyLogTerm.SetAt(nPos, csvPayment.GetLine());
+					nPossibleGratuityLine = -1;
+				}
+			}
+		}
+
+		if (n == nPossibleGratuityLine)
+		{
+			if (bGratuityFix3)
+			{
+				if (
+					(nGratuityLineGratuity > 0) &&
+					(((nGratuityLineTender - m_TransactionInfo.m_nHeaderValue) * 2) == nGratuityLineGratuity) &&
+					(nGratuityLineTender == nGratuityLineAmount + nGratuityLineGratuity))
+				{
+					int nAdjust = nGratuityLineGratuity / 2;
+					nGratuityLineAmount += nAdjust;
+					nGratuityLineGratuity -= nAdjust;
+					csvPayment.SetPaymentAmount(nGratuityLineAmount);
 					csvPayment.SetPaymentGratuity(nGratuityLineGratuity);
 					m_TransactionInfo.m_bufferDailyLogTerm.SetAt(nPos, csvPayment.GetLine());
 					nPossibleGratuityLine = -1;

@@ -94,6 +94,7 @@ BOOL CDefEditHiddenDlg::OnInitDialog()
 	}
 	
 	AppendFlag(strHidden, DealerFlags.GetCOFAllDiscountFlag(), 51);
+	AppendFlag(strHidden, DealerFlags.GetGratuityFix3Flag(), 52);
 
 #ifdef STOCKMAN_SYSTEM
 	AppendFlag(strHidden, DealerFlags.GetRebuildStockSalesHistoryFlag(), 20);
@@ -179,6 +180,7 @@ void CDefEditHiddenDlg::OnOK()
 		DealerFlags.SetDuplicateCheckIgnoreTimeFlag(FALSE);
 		DealerFlags.SetFixDepositRecycle(FALSE);
 		DealerFlags.SetCOFAllDiscountFlag(FALSE);
+		DealerFlags.SetGratuityFix3Flag(FALSE);
 
 #ifdef STOCKMAN_SYSTEM
 		DealerFlags.SetDorbiereImportFlag(FALSE);
@@ -264,6 +266,7 @@ void CDefEditHiddenDlg::ProcessFlag(CString& strFlag)
 	if (strFlag == "MISC48")	DealerFlags.SetLinkPluFixFlag(TRUE);
 	if (strFlag == "MISC49")	DealerFlags.SetDuplicateCheckIgnoreTimeFlag(TRUE);
 	if (strFlag == "MISC51")	DealerFlags.SetCOFAllDiscountFlag(TRUE);
+	if (strFlag == "MISC52")	DealerFlags.SetGratuityFix3Flag(TRUE);
 
 #ifdef STOCKMAN_SYSTEM
 	if (strFlag == "MISC20")	DealerFlags.SetRebuildStockSalesHistoryFlag(TRUE);

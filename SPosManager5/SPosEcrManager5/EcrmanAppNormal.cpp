@@ -226,10 +226,11 @@ BOOL CEcrmanApp::InitInstance()
 
 	SysInfo.SetStackBase(m_dwStackBase);
 
+	/*
 	SimpleXlsx::CWorkbook book; 
 	//std::vector<SimpleXlsx::ColumnWidth> ColWidth;
 	//ColWidth.push_back(SimpleXlsx::ColumnWidth(0, 3, 25));
-	SimpleXlsx::CWorksheet& Sheet = book.AddSheet("TestSheet" /*ColWidth*/);
+	SimpleXlsx::CWorksheet& Sheet = book.AddSheet("TestSheet", ColWidth);
 
 	Sheet.BeginRow();
 	Sheet.AddCell("One");
@@ -238,6 +239,7 @@ BOOL CEcrmanApp::InitInstance()
 	Sheet.EndRow();
 
 	book.Save("Test.xlsx");
+	*/
 
 	InitCommonControls();
 	

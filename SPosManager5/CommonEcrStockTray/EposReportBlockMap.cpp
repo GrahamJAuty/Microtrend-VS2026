@@ -77,8 +77,10 @@ void CEposReportBlockMapEntity::GetHeaderText( CString& strHeader, bool bFullLin
 	{
 	case NODE_LOCATION_TERMINAL:
 
-		if ( dbLocation.IsPMSPseudoLocation( m_nLocIdx ) == TRUE )
+		if (dbLocation.IsPMSPseudoLocation(m_nLocIdx) == TRUE)
+		{
 			strHeader += "Guest Accounts";
+		}
 		else
 		{
 			strHeader += dbLocation.GetName( m_nLocIdx );
@@ -88,26 +90,38 @@ void CEposReportBlockMapEntity::GetHeaderText( CString& strHeader, bool bFullLin
 		break;
 
 	case NODE_LOCATION:
-		if ( dbLocation.IsPMSPseudoLocation( m_nLocIdx ) == TRUE )
+		if (dbLocation.IsPMSPseudoLocation(m_nLocIdx) == TRUE)
+		{
 			strHeader += "Guest Accounts";
+		}
 		else
-			strHeader += dbLocation.GetName( m_nLocIdx );
+		{
+			strHeader += dbLocation.GetName(m_nLocIdx);
+		}
 		break;
 
 	case NODE_REPORTPOINT:
-		if ( m_nRpIdx >= 0 )
-			strHeader = dbReportpoint.GetName( m_nRpIdx );
+		if (m_nRpIdx >= 0)
+		{
+			strHeader = dbReportpoint.GetName(m_nRpIdx);
+		}
 		else
+		{
 			strHeader = "No Report Point";
+		}
 		break;
 
 #ifdef STOCKMAN_SYSTEM
 
 	case NODE_STOCKPOINT:
-		if ( m_nRpIdx >= 0 )
-			strHeader = dbStockpoint.GetName( m_nRpIdx );
+		if (m_nRpIdx >= 0)
+		{
+			strHeader = dbStockpoint.GetName(m_nRpIdx);
+		}
 		else
+		{
 			strHeader = "No Stock Point";
+		}
 		break;
 
 #endif
@@ -184,11 +198,15 @@ CEposReportBlockMap::CEposReportBlockMap(void)
 	m_bConsolidateByLocation = FALSE;
 	m_bConsolidateByDatabase = FALSE;
 	m_bConsolidateBySystem = FALSE;
-	
-	if ( EcrmanOptions.GetReportsGroupReportpointFlag() == TRUE )
+
+	if (EcrmanOptions.GetReportsGroupReportpointFlag() == TRUE)
+	{
 		m_nSpecialMode = BLOCKMAP_SPECIAL_REPPOINT;
+	}
 	else
+	{
 		m_nSpecialMode = BLOCKMAP_SPECIAL_NONE;
+	}
 }
 
 /**********************************************************************/
@@ -237,8 +255,10 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 				int nDbNo = dbDatabase.GetDbNo( ListItem.m_nDbIdx );
 				int nSpNo = dbLocation.GetSpNo( ListItem.m_nLocIdx, ListItem.m_nTermIdx );
 			
-				if ( dbStockpoint.FindStockpointByNumber( nDbNo, nSpNo, info.m_nRpIdx ) == FALSE )
+				if (dbStockpoint.FindStockpointByNumber(nDbNo, nSpNo, info.m_nRpIdx) == FALSE)
+				{
 					info.m_nRpIdx = -1;
+				}
 			}
 			break;
 
@@ -249,8 +269,10 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 				int nDbNo = dbDatabase.GetDbNo( ListItem.m_nDbIdx );
 				int nRpNo = dbLocation.GetRpNoReport( ListItem.m_nLocIdx, ListItem.m_nTermIdx );
 			
-				if ( dbReportpoint.FindReportpointByNumber( nDbNo, nRpNo, info.m_nRpIdx ) == FALSE )
+				if (dbReportpoint.FindReportpointByNumber(nDbNo, nRpNo, info.m_nRpIdx) == FALSE)
+				{
 					info.m_nRpIdx = -1;
+				}
 			}
 			break;
 
@@ -281,8 +303,10 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 		case BLOCKMAP_SPECIAL_REPPOINT:
 			if ( info.m_nRpIdx != nCurrentRp )
 			{
-				if ( ( nCurrentRp != -2 ) && ( TRUE == m_bConsolidateByLocation ) )
-					LinkTerminalsToBlock( NODE_REPORTPOINT );
+				if ((nCurrentRp != -2) && (TRUE == m_bConsolidateByLocation))
+				{
+					LinkTerminalsToBlock(NODE_REPORTPOINT);
+				}
 
 				m_nTempRpStart = m_nTempIdx;
 				nCurrentRp = info.m_nRpIdx;
@@ -294,8 +318,10 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 		case BLOCKMAP_SPECIAL_DORBIERE:
 			if ( info.m_nRpIdx != nCurrentRp )
 			{
-				if ( ( nCurrentRp != -2 ) && ( TRUE == m_bConsolidateByLocation ) )
-					LinkTerminalsToBlock( NODE_STOCKPOINT );
+				if ((nCurrentRp != -2) && (TRUE == m_bConsolidateByLocation))
+				{
+					LinkTerminalsToBlock(NODE_STOCKPOINT);
+				}
 
 				m_nTempRpStart = m_nTempIdx;
 				nCurrentRp = info.m_nRpIdx;
@@ -308,8 +334,10 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 		default:
 			if ( info.m_nLocIdx != nCurrentLoc )
 			{
-				if ( ( nCurrentLoc != -1 ) && ( TRUE == m_bConsolidateByLocation ) )
-					LinkTerminalsToBlock( NODE_LOCATION );
+				if ((nCurrentLoc != -1) && (TRUE == m_bConsolidateByLocation))
+				{
+					LinkTerminalsToBlock(NODE_LOCATION);
+				}
 
 				m_nTempLocStart = m_nTempIdx;
 				nCurrentLoc = info.m_nLocIdx;
@@ -319,15 +347,19 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 
 		if ( info.m_nDbIdx != nCurrentDb )
 		{
-			if ( ( nCurrentDb != -1 ) && ( TRUE == m_bConsolidateByDatabase ) )
-				LinkTerminalsToBlock( NODE_DATABASE );
+			if ((nCurrentDb != -1) && (TRUE == m_bConsolidateByDatabase))
+			{
+				LinkTerminalsToBlock(NODE_DATABASE);
+			}
 
 			m_nTempDbStart = m_nTempIdx;
 			nCurrentDb = info.m_nDbIdx;
 		}
 
-		if ( TRUE == m_bConsolidateByTerminal )
-			LinkTerminalsToBlock( NODE_LOCATION_TERMINAL );
+		if (TRUE == m_bConsolidateByTerminal)
+		{
+			LinkTerminalsToBlock(NODE_LOCATION_TERMINAL);
+		}
 	}
 
 	switch( m_nSpecialMode )
@@ -336,29 +368,39 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 #ifdef STOCKMAN_SYSTEM
 
 	case BLOCKMAP_SPECIAL_DORBIERE:
-		if ( ( nCurrentRp != -2 ) && ( TRUE == m_bConsolidateByLocation ) )
-			LinkTerminalsToBlock( NODE_STOCKPOINT );
+		if ((nCurrentRp != -2) && (TRUE == m_bConsolidateByLocation))
+		{
+			LinkTerminalsToBlock(NODE_STOCKPOINT);
+		}
 		break;
 
 #endif
 
 	case BLOCKMAP_SPECIAL_REPPOINT:
-		if ( ( nCurrentRp != -2 ) && ( TRUE == m_bConsolidateByLocation ) )
-			LinkTerminalsToBlock( NODE_REPORTPOINT );
+		if ((nCurrentRp != -2) && (TRUE == m_bConsolidateByLocation))
+		{
+			LinkTerminalsToBlock(NODE_REPORTPOINT);
+		}
 		break;
 	
 	case BLOCKMAP_SPECIAL_NONE:
 	default:
-		if ( ( nCurrentLoc != -1 ) && ( TRUE == m_bConsolidateByLocation ) )
-			LinkTerminalsToBlock( NODE_LOCATION );
+		if ((nCurrentLoc != -1) && (TRUE == m_bConsolidateByLocation))
+		{
+			LinkTerminalsToBlock(NODE_LOCATION);
+		}
 		break;
 	}
 
-	if ( ( nCurrentDb != -1 ) && ( TRUE == m_bConsolidateByDatabase ) )
-		LinkTerminalsToBlock( NODE_DATABASE );
+	if ((nCurrentDb != -1) && (TRUE == m_bConsolidateByDatabase))
+	{
+		LinkTerminalsToBlock(NODE_DATABASE);
+	}
 	
-	if ( TRUE == m_bConsolidateBySystem )
-		LinkTerminalsToBlock( NODE_SYSTEM );
+	if (TRUE == m_bConsolidateBySystem)
+	{
+		LinkTerminalsToBlock(NODE_SYSTEM);
+	}
 
 	m_arrayTempIndex.RemoveAll();
 
@@ -384,7 +426,9 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 					m_arrayBlockMapEntity.SetAt( x, entity2 );
 				}
 				else
+				{
 					break;
+				}
 			}
 			break;
 
@@ -399,7 +443,9 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 					m_arrayBlockMapEntity.SetAt( x, entity2 );
 				}
 				else
+				{
 					break;
+				}
 			}
 			break;
 
@@ -414,7 +460,9 @@ void CEposReportBlockMap::BuildMap( CEposSelectArray& SelectArray )
 					m_arrayBlockMapEntity.SetAt( x, entity2 );
 				}
 				else
+				{
 					break;
+				}
 			}
 			break;
 		}
@@ -466,8 +514,10 @@ void CEposReportBlockMap::LinkTerminalsToBlock( int nNodeType )
 		m_arrayTempIndex.GetAt( nSortIdx, info );
 
 		int nSelArrayIdx = info.m_nSelArrayIdx;
-		if ( ( nSelArrayIdx >= 0 ) && ( nSelArrayIdx < m_mapTerminalToBlock.GetSize() ) )
-			arraySelArrayIdx.Add( nSelArrayIdx );
+		if ((nSelArrayIdx >= 0) && (nSelArrayIdx < m_mapTerminalToBlock.GetSize()))
+		{
+			arraySelArrayIdx.Add(nSelArrayIdx);
+		}
 	}
 
 	{
@@ -553,21 +603,25 @@ void CEposReportBlockMap::LinkTerminalsToBlock( int nNodeType )
 
 void CEposReportBlockMap::GetBlockMapEntity( int nIdx, CEposReportBlockMapEntity& entity )
 {
-	if ( ( nIdx >= 0 ) && ( nIdx < m_arrayBlockMapEntity.GetSize() ) )
-		entity = m_arrayBlockMapEntity.GetAt( nIdx );
+	if ((nIdx >= 0) && (nIdx < m_arrayBlockMapEntity.GetSize()))
+	{
+		entity = m_arrayBlockMapEntity.GetAt(nIdx);
+	}
 }
 
 /**********************************************************************/
 
-void CEposReportBlockMap::GetBlockListForTerminal( int nSelArrayIdx, CArray<int,int>& BlockList )
+void CEposReportBlockMap::GetBlockListForTerminal(int nSelArrayIdx, CArray<int, int>& BlockList)
 {
 	BlockList.RemoveAll();
-	if ( ( nSelArrayIdx >= 0 ) && ( nSelArrayIdx < m_mapTerminalToBlock.GetSize() ) )
+	if ((nSelArrayIdx >= 0) && (nSelArrayIdx < m_mapTerminalToBlock.GetSize()))
 	{
-		CCSV csv( m_mapTerminalToBlock.GetAt( nSelArrayIdx ) );
+		CCSV csv(m_mapTerminalToBlock.GetAt(nSelArrayIdx));
 
-		for ( int n = 0; n < csv.GetSize(); n++ )
-			BlockList.Add( csv.GetInt(n) );
+		for (int n = 0; n < csv.GetSize(); n++)
+		{
+			BlockList.Add(csv.GetInt(n));
+		}
 	}
 }
 

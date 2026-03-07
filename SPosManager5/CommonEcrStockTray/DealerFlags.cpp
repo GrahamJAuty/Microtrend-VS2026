@@ -94,6 +94,7 @@ void CDealerFlags::Reset()
 	m_bDuplicateCheckIgnoreTime = FALSE; //49
 	SetFixDepositRecycle(FALSE); //50
 	m_bCOFAllDiscount = FALSE; //51
+	m_bGratuityFix3 = FALSE; //52
 
 	//LABEL
 	m_bEcrTextOnLabels = FALSE; //1
@@ -603,6 +604,10 @@ void CDealerFlags::ReadInternal()
 			m_bCOFAllDiscount = TRUE;
 			break;
 
+		case DEALERFLAG_MISC52:
+			m_bGratuityFix3 = TRUE;
+			break;
+
 		case DEALERFLAG_LABEL1:	
 			m_bEcrTextOnLabels = TRUE;
 			break;
@@ -997,6 +1002,7 @@ void CDealerFlags::WriteInternal()
 	}
 
 	WriteFlag(m_bCOFAllDiscount, "MISC51");
+	WriteFlag(m_bGratuityFix3, "MISC52");
 
 	WriteFlag(m_bEcrTextOnLabels, "LABEL1");
 	WriteFlag(TRUE, "LABEL2", m_nSPosBarcodeLength);

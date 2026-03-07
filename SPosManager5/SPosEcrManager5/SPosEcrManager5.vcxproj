@@ -53,7 +53,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Microtrend\VS2026\COMMON\CKINC;E:\Microtrend\VS2026\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
+    <IncludePath>E:\MICROTREND\VS2026\SPosManager5\ThirdParty\SimpleXLSXWriter;E:\Microtrend\VS2026\COMMON\CKINC;E:\Microtrend\VS2026\COMMON\SSINC;$(SolutionDir)CommonEcrStockTray;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Microtrend\VS2026\COMMON\CKLIB;E:\Microtrend\VS2026\COMMON\SSLIB;$(LibraryPath)</LibraryPath>
     <TargetName>SPosEcrManager</TargetName>
   </PropertyGroup>
@@ -1218,14 +1218,17 @@
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Drawing.cpp" />
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\SimpleXlsxDef.cpp">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996</DisableSpecificWarnings>
     </ClCompile>
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Workbook.cpp">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996</DisableSpecificWarnings>
     </ClCompile>
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\Worksheet.cpp" />
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Xlsx\XlsxHeaders.cpp" />
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.cpp">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4996</DisableSpecificWarnings>
     </ClCompile>
     <ClCompile Include="AboutDlgEcrman.cpp" />
     <ClCompile Include="ClearHistoryPluDelivery.cpp" />

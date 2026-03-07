@@ -79,12 +79,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Microtrend"
             VALUE "FileDescription", "Loyalty Server v4"
-            VALUE "FileVersion", "4.26.003"
+            VALUE "FileVersion", "4.26.004"
             VALUE "InternalName", "Loyalty Server v4"
             VALUE "LegalCopyright", "Copyright © 2026 Microtrend"
             VALUE "OriginalFilename", "SPosLoyalty4Server.exe"
             VALUE "ProductName", "Loyalty Server v4"
-            VALUE "ProductVersion", "4.26.003"
+            VALUE "ProductVersion", "4.26.004"
         END
     END
     BLOCK "VarFileInfo"

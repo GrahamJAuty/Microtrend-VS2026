@@ -1,4 +1,4 @@
 /**********************************************************************/
-const char* szVERSION_LOYALTY_ABOUT = "V4.26.003";
+const char* szVERSION_LOYALTY_ABOUT = "V4.26.004";
 const char* szUPDATE_TOKEN_DATE = "20260218";
 /**********************************************************************/
