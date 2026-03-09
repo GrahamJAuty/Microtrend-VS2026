@@ -8,6 +8,7 @@
 #include "EposReportCustomMixMatchDlg.h"
 #include "EposReportCustomNewDlg.h"
 #include "EposReportCustomPaymentDetailDlg.h"
+#include "EposReportCustomPaymentSummaryDlg.h"
 #include "EposReportCustomPluPriceBandDlg.h"
 #include "EposReportCustomTransactionDlg.h"
 #include "EposReports.h"
@@ -439,10 +440,14 @@ void CEposReportSelectNewDlg::OnButtonCreate()
 			break;
 
 		case 11:
+			nFamily = EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY;
+			break;
+
+		case 12:
 			nFamily = EPOS_CUSTOM_FAMILY_PAYMENTDETAIL;
 			break;
 
-		case 12:	
+		case 13:	
 			switch (SysInfo.GetLoyaltyOrSmartPayType())
 			{
 			case LOYALTY_TYPE_LOY_V3:
@@ -458,7 +463,7 @@ void CEposReportSelectNewDlg::OnButtonCreate()
 			}
 			break;
 
-		case 13:
+		case 14:
 			switch (SysInfo.GetLoyaltyOrSmartPayType())
 			{
 			case LOYALTY_TYPE_LOY_V3:
@@ -603,6 +608,13 @@ void CEposReportSelectNewDlg::OnButtonEdit()
 				{
 					CEposReportCustomPaymentDetailDlg dlg( m_EposReportSelect, infoReport, FALSE, this );
 					bSave = ( dlg.DoModal() == IDOK );
+				}
+				break;
+
+				case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
+				{
+					CEposReportCustomPaymentSummaryDlg dlg(m_EposReportSelect, infoReport, FALSE, this);
+					bSave = (dlg.DoModal() == IDOK);
 				}
 				break;
 

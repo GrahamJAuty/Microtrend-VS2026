@@ -807,6 +807,65 @@ void CEposReportCustomSettingsLoyaltyRecon::SetLoyaltyRequestPath(const char* sz
 /**********************************************************************/
 /**********************************************************************/
 
+CEposReportCustomSettingsPaymentSummary::CEposReportCustomSettingsPaymentSummary()
+{
+	Reset();
+}
+
+/**********************************************************************/
+
+void CEposReportCustomSettingsPaymentSummary::Reset()
+{
+	m_nReportSubType = 0;
+	m_bSeparateByDate = FALSE;
+	m_bAllowAdhoc = FALSE;
+}
+
+/**********************************************************************/
+
+void CEposReportCustomSettingsPaymentSummary::SetReportSubType(int n)
+{
+	if ((n >= 0) && (n <= 2))
+	{
+		m_nReportSubType = n;
+	}
+}
+
+/**********************************************************************/
+
+void CEposReportCustomSettingsPaymentSummary::GetSettingsCSVLine(CString& strLine)
+{
+	CCSV csv;
+	csv.Add(1);
+	csv.Add(m_nReportSubType);
+	csv.Add(m_bSeparateByDate);
+	csv.Add(m_bAllowAdhoc);
+	strLine = csv.GetLine();
+}
+
+/**********************************************************************/
+
+void CEposReportCustomSettingsPaymentSummary::SetSettingsCSVLine(CString& strLine)
+{
+	Reset();
+
+	CCSV csv(strLine);
+
+	int nVer = csv.GetInt(0);
+	switch (nVer)
+	{
+	case 1:
+		SetReportSubType(csv.GetInt(1));
+		SetSeparateByDateFlag(csv.GetBool(2));
+		SetAllowAdhocFlag(csv.GetBool(3));
+		break;
+	}
+}
+
+/**********************************************************************/
+/**********************************************************************/
+/**********************************************************************/
+
 CEposReportCustomSettingsPaymentDetail::CEposReportCustomSettingsPaymentDetail()
 {
 	Reset();

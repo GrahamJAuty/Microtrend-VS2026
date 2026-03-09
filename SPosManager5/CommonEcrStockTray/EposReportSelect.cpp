@@ -73,6 +73,7 @@ void CEposReportSelectInfo::SetCustomReportFamily( int n )
 	case EPOS_CUSTOM_FAMILY_MIXMATCH:
 	case EPOS_CUSTOM_FAMILY_DISCOUNT:
 	case EPOS_CUSTOM_FAMILY_LOYALTYRECON:
+	case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
 	case EPOS_CUSTOM_FAMILY_PAYMENTDETAIL:
 		m_nCustomReportFamily = n;
 		break;
@@ -302,6 +303,7 @@ void CEposReportSelectInfo::InitialiseCustomReportConsolPrefs()
 	case EPOS_CUSTOM_FAMILY_MIXMATCH:
 	case EPOS_CUSTOM_FAMILY_DISCOUNT:
 	case EPOS_CUSTOM_FAMILY_PAYMENTDETAIL:
+	case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
 	case EPOS_CUSTOM_FAMILY_PLU_PRICEBAND:
 		m_strConsolPrefsDefault = "1,0,0,1";
 		m_strConsolPrefsSummary = "1,0,0,1";
@@ -831,6 +833,7 @@ void CEposReportSelect::LoadReportSelection()
 							case EPOS_CUSTOM_FAMILY_PLU_PRICEBAND:
 							case EPOS_CUSTOM_FAMILY_LOYALTYRECON:
 							case EPOS_CUSTOM_FAMILY_PAYMENTDETAIL:
+							case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
 								bAcceptCustom = ( SysInfo.IsEcrLiteSystem() == FALSE );
 								break;
 

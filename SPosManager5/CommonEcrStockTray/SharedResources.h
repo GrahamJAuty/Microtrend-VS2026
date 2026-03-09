@@ -506,6 +506,7 @@
 #define IDD_PROPPAGE_STOCK_PLULINK      1113
 #define IDD_PROPPAGE_STOCK_SUPPLIER     1114
 #define IDD_PROPPAGE_WIZARD_IMPORT      1115
+#define IDD_EPOS_REPORT_CUSTOM_PAYMENTSUMMARY 1116
 #define IDB_ICONS_COMBO                 1500
 #define IDB_ICONS_TREE                  1501
 #define IDB_SCREENSTYLE1                1502
@@ -3388,6 +3389,9 @@
 #define IDC_TIMEPICKER_WEEKLY           4380
 #define IDC_VSCROLL                     4381
 #define ID_INDICATOR_PROGRESS           4382
+#define IDC_RADIO_SUBTYPE1              4383
+#define IDC_RADIO_SUBTYPE2              4384
+#define IDC_RADIO_SUBTYPE3              4385
 #define IDM_ADD                         32771
 #define IDM_ADD_ALLOWANCES              32772
 #define IDM_ADD_LDISC                   32773
@@ -3604,7 +3608,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        488
 #define _APS_NEXT_COMMAND_VALUE         32979
-#define _APS_NEXT_CONTROL_VALUE         4383
+#define _APS_NEXT_CONTROL_VALUE         4387
 #define _APS_NEXT_SYMED_VALUE           1116
 #endif
 #endif

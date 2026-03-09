@@ -17,22 +17,32 @@ CEposReportPaymentBase::CEposReportPaymentBase( CEposSelectArray& SelectArray ) 
 
 	SetPMSDepositsFlag( TRUE );
 
-	if ( EcrmanOptions.GetReportsShowPaymentQuantityFlag() )
+	if (EcrmanOptions.GetReportsShowPaymentQuantityFlag())
+	{
 		m_strSimpleUnderline = "\t\t\t<LI>";
+	}
 	else
+	{
 		m_strSimpleUnderline = "\t\t<LI>";
+	}
 	
 	int nTotals = 5;
 	
-	if ( TRUE == EcrmanOptions.GetReportsShowPaymentQuantityFlag() )
+	if (TRUE == EcrmanOptions.GetReportsShowPaymentQuantityFlag())
+	{
 		nTotals++;
+	}
 
-	if ( TRUE == EcrmanOptions.GetReportsShowCashChangeFlag() )
+	if (TRUE == EcrmanOptions.GetReportsShowCashChangeFlag())
+	{
 		nTotals++;
+	}
 	
 	m_strDetailUnderline = "\t";
-	for ( int n = 0; n < nTotals; n++ )
+	for (int n = 0; n < nTotals; n++)
+	{
 		m_strDetailUnderline += "\t<LI>";
+	}
 }
 
 /**********************************************************************/
@@ -137,42 +147,48 @@ void CEposReportPaymentBase::InitialiseConsolidationBlocksStageTwo()
 
 		CEposReportPaySumBlock block{};
 		block.Copy( entity );
-
-		block.m_pPaymentsAll = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsItem = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsAccount = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsDeposit = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsCustomer = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsRoom = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsLoyalty = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsSmartPay = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsSmartPhone = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsSptBook = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaymentsMixed = new CReportConsolidationArray<CEposReportConsolPaySum>;
-		block.m_pPaidIn = new CReportConsolidationArray<CEposReportConsolPaySumOneVal>;
-		block.m_pPaidOut = new CReportConsolidationArray<CEposReportConsolPaySumOneVal>;
-		block.m_pNet = new CReportConsolidationArray<CEposReportConsolPaySumOneVal>;
-		
-		block.m_bGotPaidIOTotal = FALSE;
-		block.m_nPaidInTotalCash = 0;
-		block.m_nPaidInTotalNonCash = 0;
-		block.m_nPaidOutTotalCash = 0;
-		block.m_nPaidOutTotalNonCash = 0;
-
-		block.m_bGotDepositRA = FALSE;
-		block.m_bGotCustomerRA = FALSE;
-		block.m_bGotRoomRA = FALSE;
-		block.m_bGotLoyaltyRA = FALSE;
-		block.m_dDepositRA = 0.0;
-		block.m_dDepositRefund = 0.0;
-		block.m_dCustomerRA = 0.0;
-		block.m_dRoomRA = 0.0;
-		block.m_dLoyaltyRA = 0.0;
-		block.m_dSmartPayRA = 0.0;
-		block.m_dSmartPhoneRA = 0.0;
-		block.m_dSptBookRA = 0.0;
+		block.PrepareForUse();
 
 		m_arrayReportBlocks.Add( block );
+	}
+}
+
+/**********************************************************************/
+
+int CEposReportPaymentBase::GetDateBlockIndex(int nMainBlockIndex, const CString strDate)
+{
+	if ( ( nMainBlockIndex < 0 ) || ( nMainBlockIndex >= m_arrayReportBlocks.GetSize() ) )
+	{
+		return -1;
+	}
+
+	if (strDate.GetLength() != 8)
+	{
+		return -1;
+	}
+
+	CEposReportPaymentSummaryDateBlockIndex index;
+	index.m_nBaseBlockIdx = nMainBlockIndex;
+	index.m_strDate = strDate;
+
+	int nPos = 0;
+	if (m_arrayDateBlockIndex.Find(index, nPos) == TRUE)
+	{
+		m_arrayDateBlockIndex.GetAt(nPos, index);
+		return index.m_nDateBlockIdx;
+	}
+	else
+	{
+		CEposReportPaySumBlock block{};
+		block.Copy(m_arrayReportBlocks[nMainBlockIndex]);
+		block.PrepareForUse();
+		
+		m_arrayReportBlocks.Add(block);
+
+		index.m_nDateBlockIdx = m_arrayReportBlocks.GetSize() - 1;
+		m_arrayDateBlockIndex.Consolidate(index);
+
+		return m_arrayReportBlocks.GetSize() - 1;
 	}
 }
 
@@ -213,19 +229,25 @@ void CEposReportPaymentBase::Consolidate()
 
 		int nPMSStatus = m_PMSModes.GetPMSLocationStatus( infoFile );
 		
-		if ( 0 == nPMSStatus)
+		if (0 == nPMSStatus)
+		{
 			continue;
+		}
 
 		bool bIsPMSLocation = ( 1 == nPMSStatus );
 
 		CSSFile fileSales;
-		if ( fileSales.Open ( infoFile.m_strFilename, "rb", _SH_DENYNO ) == FALSE )
+		if (fileSales.Open(infoFile.m_strFilename, "rb", _SH_DENYNO) == FALSE)
+		{
 			continue;
+		}
 
-		int nDbIdx;
+		int nDbIdx = 0;
 		int nDbNo = dbLocation.GetDbNo( infoFile.m_nLocIdx );
-		if ( dbDatabase.FindDatabaseByNumber( nDbNo, nDbIdx ) == FALSE )
+		if (dbDatabase.FindDatabaseByNumber(nDbNo, nDbIdx) == FALSE)
+		{
 			nDbIdx = 0;
+		}
 
 		int nConnectionType = CONNECTION_TYPE_STANDARD_NONE;
 		{
@@ -233,8 +255,9 @@ void CEposReportPaymentBase::Consolidate()
 			dbLocation.GetLocSPOSVersion( infoFile.m_nLocIdx, nDummy, nConnectionType );
 		}
 
-		int nLinesToRead;
-		CString strBuffer;
+		int nLinesToRead = 0;
+		CString strBuffer = "";
+		m_strCurrentTransactionDate = "";
 		if ( ::FindFirstTermLine( fileSales, strBuffer, nLinesToRead ) == TRUE )
 		{
 			m_CashRSPVersionChecker.ResetTransactionVersions();
@@ -271,7 +294,7 @@ void CEposReportPaymentBase::Consolidate()
 
 						SetConsolidationServer( nDbIdx, infoFile.m_nLocIdx, csvIn.GetTransactionServer() );
 
-						CString strCheckDate;
+						CString strCheckDate = "";
 						bool bAcceptDateTime = FALSE;
 
 						if ( ( TRUE == bIsPMSLocation ) && ( m_PMSModes.GetDateMode() == PMS_DATEMODE_ACCOUNT ) )
@@ -289,18 +312,80 @@ void CEposReportPaymentBase::Consolidate()
 								continue;
 							}
 
-							strCheckDate.Format ( "20%s%s%s",
-								(const char*) strDate.Right(2),
-								(const char*) strDate.Mid(3,2),
-								(const char*) strDate.Left(2) );
+							strCheckDate.Format("20%s%s%s",
+								(const char*)strDate.Right(2),
+								(const char*)strDate.Mid(3, 2),
+								(const char*)strDate.Left(2));
 
 							CString strCheckTime;
-							strCheckTime.Format ( "%s%s%s",
-								(const char*) strTime.Left(2),
-								(const char*) strTime.Mid(3,2),
-								(const char*) strTime.Right(2) );
+							strCheckTime.Format("%s%s%s",
+								(const char*)strTime.Left(2),
+								(const char*)strTime.Mid(3, 2),
+								(const char*)strTime.Right(2));
 
-							bAcceptDateTime = SimpleTimeCheck ( infoFile.m_nLocIdx, strCheckDate, strCheckTime );
+							if (m_ReportSettings.GetSeparateByDateFlag() == FALSE )
+							{
+								m_strCurrentTransactionDate = "";
+								bAcceptDateTime = SimpleTimeCheck ( infoFile.m_nLocIdx, strCheckDate, strCheckTime );
+							}
+							else if (FALSE == m_bEODMode)
+							{
+								bAcceptDateTime = FALSE;
+								m_strCurrentTransactionDate = "";
+
+								switch (DataManagerNonDb.SessionDateTimeFilter.CheckTime(strCheckDate, strCheckTime))
+								{
+								case 1:
+									bAcceptDateTime = TRUE;
+									m_strCurrentTransactionDate = strCheckDate;
+									break;
+
+								case 2:
+									{
+										COleDateTime dateCheck;
+										CString strDateTime = strCheckDate + "120000";
+										if (GetOleDateFromString(strDateTime, dateCheck) == TRUE)
+										{
+											bAcceptDateTime = TRUE;
+											dateCheck -= COleDateTimeSpan(1, 0, 0, 0);
+											GetStringFromOleDate(dateCheck, m_strCurrentTransactionDate);
+											m_strCurrentTransactionDate = m_strCurrentTransactionDate.Left(8);
+										}
+									}
+									break;
+
+								case 3:
+									{
+										COleDateTime dateCheck;
+										CString strDateTime = strCheckDate + "120000";
+										if (GetOleDateFromString(strDateTime, dateCheck) == TRUE)
+										{
+											bAcceptDateTime = TRUE;
+											dateCheck -= COleDateTimeSpan(2, 0, 0, 0);
+											GetStringFromOleDate(dateCheck, m_strCurrentTransactionDate);
+											m_strCurrentTransactionDate = m_strCurrentTransactionDate.Left(8);
+										}
+									}
+									break;
+								}
+							}
+							else
+							{
+								CString strDateTime = strCheckDate + strCheckTime;
+								if (DataManagerNonDb.EODDateTimeFilterArray.CheckTime(infoFile.m_nLocIdx, strDateTime) == TRUE)
+								{
+									bAcceptDateTime = TRUE;
+									
+									CSortedDateTimeItem dateTimeItem;
+									DataManagerNonDb.EODDateTimeFilterArray.GetBusinessDay(infoFile.m_nLocIdx, strDateTime, dateTimeItem);
+									m_strCurrentTransactionDate = dateTimeItem.m_strDateTime.Left(8);
+								}
+								else
+								{
+									bAcceptDateTime = FALSE;
+									m_strCurrentTransactionDate = "";	
+								}
+							}
 						}
 
 						if ( TRUE == bAcceptDateTime )
@@ -620,20 +705,26 @@ void CEposReportPaymentBase::ConsolidatePaymentBuffer( bool bGotDepositItem, boo
 		case 1:
 			{
 				//CONSOLIDATED RA TYPES
-				if ( FALSE == bGotNormalItem )
+				if (FALSE == bGotNormalItem)
+				{
 					nBlock = 2;
+				}
 
 				//MIXED TRANSACTION TYPES
-				else if ( nItemTypes > 1 )
+				else if (nItemTypes > 1)
+				{
 					nBlock = 11;
+				}
 			}
 			break;
 
 		case 2:
 			{
 				//MIXED TRANSACTION TYPES
-				if ( nItemTypes > 1 )
+				if (nItemTypes > 1)
+				{
 					nBlock = 11;
+				}
 			}
 			break;
 			
@@ -644,21 +735,23 @@ void CEposReportPaymentBase::ConsolidatePaymentBuffer( bool bGotDepositItem, boo
 			break;
 		}
 
-		for ( int n = 0; n < m_arrayPaymentBuffer.GetSize(); n++ )
+		for (int n = 0; n < m_arrayPaymentBuffer.GetSize(); n++)
 		{
-			CCSVEposTermLine csvIn ( m_arrayPaymentBuffer.GetAt(n) );
+			CCSVEposTermLine csvIn(m_arrayPaymentBuffer.GetAt(n));
 
 			int nPaymentNo = csvIn.GetPaymentNumber();
 			int nTender = csvIn.GetPaymentTender();
 			int nAmount = csvIn.GetPaymentAmount();
 			int nGratuity = csvIn.GetPaymentGratuity();
 			int nCashback = csvIn.GetPaymentCashback();
-			int nSurplus = csvIn.GetPaymentSurplus( m_CashRSPVersionChecker.GetCurrentTransactionVersionNo() );
-			int nChange = nTender - ( nAmount + nGratuity + nSurplus );
+			int nSurplus = csvIn.GetPaymentSurplus(m_CashRSPVersionChecker.GetCurrentTransactionVersionNo());
+			int nChange = nTender - (nAmount + nGratuity + nSurplus);
 
 			//SKIP CUSTOMER MARKERS FOR TRANSACTIONS WITH NO POST TO ACCOUNT
-			if ( ( 0 == nTender ) && ( 0 == nAmount ) && ( 0 == nGratuity ) && ( 0 == nSurplus ) && ( 0 == nCashback ) )
+			if ((0 == nTender) && (0 == nAmount) && (0 == nGratuity) && (0 == nSurplus) && (0 == nCashback))
+			{
 				continue;
+			}
 
 			int nType, nDummy32;
 			__int64 nDummy64;
@@ -688,8 +781,10 @@ void CEposReportPaymentBase::ConsolidatePaymentBuffer( bool bGotDepositItem, boo
 				}
 			}
 	
-			if ( ( EcrmanOptions.GetReportsShowCashChangeFlag() == FALSE ) && ( CASHRSP_ITEMPAYTYPE_DEPOSIT != nType ) )
+			if ((EcrmanOptions.GetReportsShowCashChangeFlag() == FALSE) && (CASHRSP_ITEMPAYTYPE_DEPOSIT != nType))
+			{
 				nChange = 0;
+			}
 
 			CEposReportConsolPaySum ConsolLocal;
 			ConsolLocal.m_bIsCash = bIsCash;
@@ -746,13 +841,19 @@ void CEposReportPaymentBase::ConsolidatePaymentBuffer( bool bGotDepositItem, boo
 			}
 	
 			//CHANGE REDUCES NET CASH
-			if ( 0 != nChange )
-				ConsolidateNet( nPaymentNoForChange, -nChange );
-				
+			if (0 != nChange)
+			{
+				ConsolidateNet(nPaymentNoForChange, -nChange);
+			}
+
 			//CASHBACK REDUCES NET CASH
-			if ( 0 != nCashback )
-				if ( EcrmanOptions.GetReportsShowCashChangeFlag() == TRUE )
-					ConsolidateNet( 1, -nCashback );
+			if (0 != nCashback)
+			{
+				if (EcrmanOptions.GetReportsShowCashChangeFlag() == TRUE)
+				{
+					ConsolidateNet(1, -nCashback);
+				}
+			}
 		}
 	}
 
@@ -762,39 +863,59 @@ void CEposReportPaymentBase::ConsolidatePaymentBuffer( bool bGotDepositItem, boo
 		
 /**********************************************************************/
 
-void CEposReportPaymentBase::ConsolidatePayment( int nType, int nSubType, CEposReportConsolPaySum& infoConsol )
+void CEposReportPaymentBase::ConsolidatePayment(int nType, int nSubType, CEposReportConsolPaySum& infoConsol)
 {
 	infoConsol.m_nReportGroup = 0;
-	if ( REPORT_TYPE_PAYMENT_GROUP_SUMMARY == m_nReportType )
+	if (REPORT_TYPE_PAYMENT_GROUP_SUMMARY == m_nReportType)
 	{
 		int nPaymentIdx;
-		if ( DataManager.Payment.FindPaymentByNumber( nSubType, nPaymentIdx ) == TRUE )
+		if (DataManager.Payment.FindPaymentByNumber(nSubType, nPaymentIdx) == TRUE)
 		{
 			CPaymentCSVRecord Payment;
-			DataManager.Payment.GetAt( nPaymentIdx, Payment );
+			DataManager.Payment.GetAt(nPaymentIdx, Payment);
 			infoConsol.m_nReportGroup = Payment.GetReportGroup();
 		}
 	}
 
 	infoConsol.m_nSubType = nSubType;
-	for ( int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++ )
+
+	for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 	{
 		int nBlock = m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart;
-		
-		switch( nType )
+		ConsolidatePaymentInternal(nType, nBlock, infoConsol);
+	}
+
+	if (m_strCurrentTransactionDate.GetLength() == 8)
+	{
+		for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 		{
-		case 1:		m_arrayReportBlocks[ nBlock ].m_pPaymentsAll ->			Consolidate( infoConsol );	break;
-		case 2:		m_arrayReportBlocks[ nBlock ].m_pPaymentsAccount ->		Consolidate( infoConsol );	break;
-		case 3:		m_arrayReportBlocks[ nBlock ].m_pPaymentsDeposit ->		Consolidate( infoConsol );	break;
-		case 4:		m_arrayReportBlocks[ nBlock ].m_pPaymentsCustomer ->	Consolidate( infoConsol );	break;
-		case 5:		m_arrayReportBlocks[ nBlock ].m_pPaymentsRoom ->		Consolidate( infoConsol );	break;
-		case 6:		m_arrayReportBlocks[ nBlock ].m_pPaymentsLoyalty ->		Consolidate( infoConsol );	break;
-		case 7:		m_arrayReportBlocks[ nBlock ].m_pPaymentsSmartPay ->	Consolidate( infoConsol );	break;
-		case 8:		m_arrayReportBlocks[ nBlock ].m_pPaymentsSmartPhone ->	Consolidate( infoConsol );	break;
-		case 9:		m_arrayReportBlocks[ nBlock ].m_pPaymentsSptBook ->		Consolidate( infoConsol );	break;
-		case 10:	m_arrayReportBlocks[ nBlock ].m_pPaymentsItem ->		Consolidate( infoConsol );	break;
-		case 11:	m_arrayReportBlocks[ nBlock ].m_pPaymentsMixed ->		Consolidate( infoConsol );	break;
+			int nDateBlock = GetDateBlockIndex(m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart, m_strCurrentTransactionDate);
+
+			if ((nDateBlock >= 0) && (nDateBlock < m_arrayReportBlocks.GetSize()))
+			{
+				ConsolidatePaymentInternal(nType, nDateBlock, infoConsol);
+			}
 		}
+	}
+}
+
+/**********************************************************************/
+
+void CEposReportPaymentBase::ConsolidatePaymentInternal(int nType, int nDataBlock, CEposReportConsolPaySum& infoConsol)
+{
+	switch (nType)
+	{
+	case 1:		m_arrayReportBlocks[nDataBlock].m_pPaymentsAll->Consolidate(infoConsol); break;
+	case 2:		m_arrayReportBlocks[nDataBlock].m_pPaymentsAccount->Consolidate(infoConsol); break;
+	case 3:		m_arrayReportBlocks[nDataBlock].m_pPaymentsDeposit->Consolidate(infoConsol); break;
+	case 4:		m_arrayReportBlocks[nDataBlock].m_pPaymentsCustomer->Consolidate(infoConsol); break;
+	case 5:		m_arrayReportBlocks[nDataBlock].m_pPaymentsRoom->Consolidate(infoConsol); break;
+	case 6:		m_arrayReportBlocks[nDataBlock].m_pPaymentsLoyalty->Consolidate(infoConsol); break;
+	case 7:		m_arrayReportBlocks[nDataBlock].m_pPaymentsSmartPay->Consolidate(infoConsol); break;
+	case 8:		m_arrayReportBlocks[nDataBlock].m_pPaymentsSmartPhone->Consolidate(infoConsol);	break;
+	case 9:		m_arrayReportBlocks[nDataBlock].m_pPaymentsSptBook->Consolidate(infoConsol); break;
+	case 10:	m_arrayReportBlocks[nDataBlock].m_pPaymentsItem->Consolidate(infoConsol); break;
+	case 11:	m_arrayReportBlocks[nDataBlock].m_pPaymentsMixed->Consolidate(infoConsol); break;
 	}
 }
 
@@ -804,37 +925,56 @@ void CEposReportPaymentBase::ConsolidatePaidOut( int nSubType, __int64 nValue ){
 void CEposReportPaymentBase::ConsolidateNet( int nSubType, __int64 nValue ){ ConsolidateOneVal( 3, nSubType, nValue ); }
 /**********************************************************************/
 
-void CEposReportPaymentBase::ConsolidateOneVal( int nType, int nSubType, __int64 nValue )
+void CEposReportPaymentBase::ConsolidateOneVal(int nType, int nSubType, __int64 nValue)
 {
 	CEposReportConsolPaySumOneVal infoConsol;
 	infoConsol.m_nReportGroup = 0;
 	infoConsol.m_nSubType = nSubType;
 	infoConsol.m_nValue = nValue;
 
-	if ( 3 == nType )
+	if (3 == nType)
 	{
-		if ( REPORT_TYPE_PAYMENT_GROUP_SUMMARY == m_nReportType )
+		if (REPORT_TYPE_PAYMENT_GROUP_SUMMARY == m_nReportType)
 		{
 			int nPaymentIdx;
-			if ( DataManager.Payment.FindPaymentByNumber( nSubType, nPaymentIdx ) == TRUE )
+			if (DataManager.Payment.FindPaymentByNumber(nSubType, nPaymentIdx) == TRUE)
 			{
 				CPaymentCSVRecord Payment;
-				DataManager.Payment.GetAt( nPaymentIdx, Payment );
+				DataManager.Payment.GetAt(nPaymentIdx, Payment);
 				infoConsol.m_nReportGroup = Payment.GetReportGroup();
 			}
 		}
 	}
 
-	for ( int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++ )
+	for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 	{
 		int nBlock = m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart;
-		
-		switch( nType )
+		ConsolidateOneValInternal(nType, nBlock, infoConsol);
+	}
+
+	if (m_strCurrentTransactionDate.GetLength() == 8)
+	{
+		for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 		{
-		case 1:		m_arrayReportBlocks[ nBlock ].m_pPaidIn ->				Consolidate( infoConsol );	break;
-		case 2:		m_arrayReportBlocks[ nBlock ].m_pPaidOut ->				Consolidate( infoConsol );	break;
-		case 3:		m_arrayReportBlocks[ nBlock ].m_pNet ->					Consolidate( infoConsol );	break;
+			int nDateBlock = GetDateBlockIndex(m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart, m_strCurrentTransactionDate);
+
+			if ((nDateBlock >= 0) && (nDateBlock < m_arrayReportBlocks.GetSize()))
+			{
+				ConsolidateOneValInternal(nType, nDateBlock, infoConsol);
+			}
 		}
+	}
+}
+
+/**********************************************************************/
+
+void CEposReportPaymentBase::ConsolidateOneValInternal(int nType, int nDataBlock, CEposReportConsolPaySumOneVal& infoConsol)
+{
+	switch (nType)
+	{
+	case 1:		m_arrayReportBlocks[nDataBlock].m_pPaidIn->Consolidate(infoConsol);	break;
+	case 2:		m_arrayReportBlocks[nDataBlock].m_pPaidOut->Consolidate(infoConsol); break;
+	case 3:		m_arrayReportBlocks[nDataBlock].m_pNet->Consolidate(infoConsol); break;
 	}
 }
 
@@ -845,20 +985,40 @@ void CEposReportPaymentBase::ConsolidatePaidOutTotalCash( __int64 nValue ){ Cons
 void CEposReportPaymentBase::ConsolidatePaidOutTotalNonCash( __int64 nValue ){ ConsolidatePayIOTotal( 4, nValue ); }
 /**********************************************************************/
 
-void CEposReportPaymentBase::ConsolidatePayIOTotal( int nType, __int64 nValue )
+void CEposReportPaymentBase::ConsolidatePayIOTotal(int nType, __int64 nValue)
 {
-	for ( int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++ )
+	for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 	{
 		int nBlock = m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart;
-		m_arrayReportBlocks[ nBlock ].m_bGotPaidIOTotal = TRUE;
+		m_arrayReportBlocks[nBlock].m_bGotPaidIOTotal = TRUE;
+		ConsolidatePayIOTotalInternal(nType, nBlock, nValue);
+	}
 
-		switch( nType )
+	if (m_strCurrentTransactionDate.GetLength() == 8)
+	{
+		for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 		{
-		case 1:	m_arrayReportBlocks[ nBlock ].m_nPaidInTotalCash += nValue;			break;
-		case 2:	m_arrayReportBlocks[ nBlock ].m_nPaidInTotalNonCash += nValue;		break;
-		case 3:	m_arrayReportBlocks[ nBlock ].m_nPaidOutTotalCash += nValue;		break;
-		case 4:	m_arrayReportBlocks[ nBlock ].m_nPaidOutTotalNonCash += nValue;		break;
+			int nDateBlock = GetDateBlockIndex(m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart, m_strCurrentTransactionDate);
+
+			if ((nDateBlock >= 0) && (nDateBlock < m_arrayReportBlocks.GetSize()))
+			{
+				m_arrayReportBlocks[nDateBlock].m_bGotPaidIOTotal = TRUE;
+				ConsolidatePayIOTotalInternal(nType, nDateBlock, nValue);
+			}
 		}
+	}
+}
+
+/**********************************************************************/
+
+void CEposReportPaymentBase::ConsolidatePayIOTotalInternal(int nType, int nDataBlock, int nValue)
+{
+	switch (nType)
+	{
+	case 1:	m_arrayReportBlocks[nDataBlock].m_nPaidInTotalCash += nValue;		break;
+	case 2:	m_arrayReportBlocks[nDataBlock].m_nPaidInTotalNonCash += nValue;	break;
+	case 3:	m_arrayReportBlocks[nDataBlock].m_nPaidOutTotalCash += nValue;		break;
+	case 4:	m_arrayReportBlocks[nDataBlock].m_nPaidOutTotalNonCash += nValue;	break;
 	}
 }
 
@@ -877,44 +1037,63 @@ void CEposReportPaymentBase::ConsolidateRA( int nType, double dValue )
 	for ( int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++ )
 	{
 		int nBlock = m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart;
-		
-		switch( nType )
+		ConsolidateRAInternal(nType, nBlock, dValue);
+	}
+
+	if (m_strCurrentTransactionDate.GetLength() == 8)
+	{
+		for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
 		{
-		case 1:
-			m_arrayReportBlocks[ nBlock ].m_bGotDepositRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dDepositRA += dValue;
-			break;
+			int nDateBlock = GetDateBlockIndex(m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart, m_strCurrentTransactionDate);
 
-		case 2:
-			m_arrayReportBlocks[ nBlock ].m_bGotCustomerRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dCustomerRA += dValue;
-			break;
-
-		case 3:
-			m_arrayReportBlocks[ nBlock ].m_bGotRoomRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dRoomRA += dValue;
-			break;
-
-		case 4:
-			m_arrayReportBlocks[ nBlock ].m_bGotLoyaltyRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dLoyaltyRA += dValue;
-			break;
-
-		case 5:
-			m_arrayReportBlocks[ nBlock ].m_bGotSmartPayRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dSmartPayRA += dValue;
-			break;
-
-		case 6:
-			m_arrayReportBlocks[ nBlock ].m_bGotSmartPhoneRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dSmartPhoneRA += dValue;
-			break;
-
-		case 7:
-			m_arrayReportBlocks[ nBlock ].m_bGotSptBookRA = TRUE;
-			m_arrayReportBlocks[ nBlock ].m_dSptBookRA += dValue;
-			break;
+			if ((nDateBlock >= 0) && (nDateBlock < m_arrayReportBlocks.GetSize()))
+			{
+				ConsolidateRAInternal(nType, nDateBlock, dValue);
+			}
 		}
+	}
+}
+
+/**********************************************************************/
+
+void CEposReportPaymentBase::ConsolidateRAInternal(int nType, int nDataBlock, double dValue)
+{
+	switch (nType)
+	{
+	case 1:
+		m_arrayReportBlocks[nDataBlock].m_bGotDepositRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dDepositRA += dValue;
+		break;
+
+	case 2:
+		m_arrayReportBlocks[nDataBlock].m_bGotCustomerRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dCustomerRA += dValue;
+		break;
+
+	case 3:
+		m_arrayReportBlocks[nDataBlock].m_bGotRoomRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dRoomRA += dValue;
+		break;
+
+	case 4:
+		m_arrayReportBlocks[nDataBlock].m_bGotLoyaltyRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dLoyaltyRA += dValue;
+		break;
+
+	case 5:
+		m_arrayReportBlocks[nDataBlock].m_bGotSmartPayRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dSmartPayRA += dValue;
+		break;
+
+	case 6:
+		m_arrayReportBlocks[nDataBlock].m_bGotSmartPhoneRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dSmartPhoneRA += dValue;
+		break;
+
+	case 7:
+		m_arrayReportBlocks[nDataBlock].m_bGotSptBookRA = TRUE;
+		m_arrayReportBlocks[nDataBlock].m_dSptBookRA += dValue;
+		break;
 	}
 }
 
@@ -927,6 +1106,20 @@ void CEposReportPaymentBase::ConsolidateDepositRefund( double dValue )
 		int nBlock = m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart;	
 		m_arrayReportBlocks[ nBlock ].m_bGotDepositRA = TRUE;
 		m_arrayReportBlocks[ nBlock ].m_dDepositRefund += dValue;
+	}
+
+	if (m_strCurrentTransactionDate.GetLength() == 8)
+	{
+		for (int n = 0; n < m_arrayTerminalBlocks.GetSize(); n++)
+		{
+			int nDateBlock = GetDateBlockIndex(m_arrayTerminalBlocks.GetAt(n) + m_nServerBlockIdxStart, m_strCurrentTransactionDate);
+
+			if ((nDateBlock >= 0) && (nDateBlock < m_arrayReportBlocks.GetSize()))
+			{
+				m_arrayReportBlocks[nDateBlock].m_bGotDepositRA = TRUE;
+				m_arrayReportBlocks[nDateBlock].m_dDepositRefund += dValue;
+			}
+		}
 	}
 }
 

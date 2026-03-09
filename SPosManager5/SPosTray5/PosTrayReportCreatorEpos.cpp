@@ -522,6 +522,30 @@ bool CPosTrayReportCreatorEpos::CreateReport( int nReportType, int nConLevel, CS
 				bResult = TRUE;
 				break;
 
+			case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
+				{
+					CString strParams = infoReport.GetCustomReportParams();
+					CEposReportCustomSettingsPaymentSummary Settings;
+					Settings.SetSettingsCSVLine(strParams);
+
+					switch (Settings.GetReportSubType())
+					{
+					case 1:
+						pReport = new CEposReportPaymentServer(m_SelectArray, strParams);
+						break;
+
+					case 2:
+						pReport = new CEposReportPaymentReportGroup(m_SelectArray, strParams);
+						break;
+
+					case 0:
+					default:
+						pReport = new CEposReportPaymentSummary(m_SelectArray, strParams);
+						break;
+					}
+				}
+				break;
+
 			case EPOS_CUSTOM_FAMILY_PLU_PRICEBAND:
 				{
 					CString strParams = infoReport.GetCustomReportParams();

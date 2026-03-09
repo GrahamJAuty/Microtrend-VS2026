@@ -932,7 +932,7 @@ DWORD WINAPI CWinService::ServiceWorkerThread(LPVOID lpParam)
 
 		Sleep(100);
 
-		if (GetTickCount64() > dwLastConfirmLiveTime + 10000)
+		if (GetTickCount64() > dwLastConfirmLiveTime + 60000)
 		{
 			dwLastConfirmLiveTime = GetTickCount64();
 			

@@ -9,11 +9,12 @@
 class CEposReportPaymentServer : public CEposReportPaymentBase
 {
 public:
-	CEposReportPaymentServer( CEposSelectArray& SelectArray );
+	CEposReportPaymentServer(CEposSelectArray& SelectArray);
+	CEposReportPaymentServer(CEposSelectArray& SelectArray, const char* szCustomSettings);
 
 private:
 	virtual void InitialiseConsolidationBlocks();
-	virtual void SetConsolidationServer( int nDbIdx, int nLocIdx, int nServerNo );
+	virtual void SetConsolidationServer(int nDbIdx, int nLocIdx, int nServerNo);
 
 public:
 	virtual bool CreateReport();

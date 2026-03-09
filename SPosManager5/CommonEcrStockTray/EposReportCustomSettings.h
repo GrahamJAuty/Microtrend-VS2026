@@ -318,6 +318,36 @@ private:
 
 /**********************************************************************/
 
+class CEposReportCustomSettingsPaymentSummary
+{
+public:
+	CEposReportCustomSettingsPaymentSummary();
+
+public:
+	void GetSettingsCSVLine(CString& strLine);
+	void SetSettingsCSVLine(CString& strLine);
+
+private:
+	void Reset();
+
+public:
+	int GetReportSubType() { return m_nReportSubType; }
+	bool GetSeparateByDateFlag() { return m_bSeparateByDate; }
+	bool GetAllowAdhocFlag() { return m_bAllowAdhoc; }
+	
+public:
+	void SetReportSubType(int n);
+	void SetSeparateByDateFlag(bool b) { m_bSeparateByDate = b; }
+	void SetAllowAdhocFlag(bool b) { m_bAllowAdhoc = b; }
+
+private:
+	bool m_bSeparateByDate = FALSE;
+	int m_nReportSubType = 0;
+	bool m_bAllowAdhoc = FALSE;
+};
+
+/**********************************************************************/
+
 class CEposReportCustomSettingsPaymentDetail
 {
 public:

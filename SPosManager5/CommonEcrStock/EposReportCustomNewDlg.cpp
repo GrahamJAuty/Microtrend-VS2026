@@ -87,6 +87,7 @@ void CEposReportCustomNewDlg::FillListBox()
 		arrayReports.Add("Deposits");
 		arrayReports.Add("Mix Match Usage");
 		arrayReports.Add("Discount Detail");
+		arrayReports.Add("Payment Summary");
 		arrayReports.Add("Payment Detail");
 
 		{
@@ -141,11 +142,11 @@ void CEposReportCustomNewDlg::OnOK()
 		case LOYALTY_TYPE_LOY_V4:
 		case LOYALTY_TYPE_SMP_V2:
 		case LOYALTY_TYPE_SMP_V4:
-			nMaxSel = 13;
+			nMaxSel = 14;
 			break;
 
 		default:
-			nMaxSel = 12;
+			nMaxSel = 13;
 			break;
 		}
 	}

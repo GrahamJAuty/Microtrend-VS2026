@@ -4384,6 +4384,9 @@
     <ClCompile Include="..\CommonEcrStockTray\BackupFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\CommonEcrStock\EposReportCustomPaymentSummaryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdhocDeliveryDatabaseDlg.h">
@@ -8530,6 +8533,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\CommonEcrStockTray\BackupFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonEcrStock\EposReportCustomPaymentSummaryDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

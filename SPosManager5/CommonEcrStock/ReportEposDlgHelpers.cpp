@@ -11,6 +11,7 @@
 #include "EposReportCustomLoyaltyReconDlg.h"
 #include "EposReportCustomMixMatchDlg.h"
 #include "EposReportCustomPaymentDetailDlg.h"
+#include "EposReportCustomPaymentSummaryDlg.h"
 #include "EposReportCustomPluPriceBandDlg.h"
 #include "EposReportCustomTransactionDlg.h"
 #include "EposReportSelect.h"
@@ -1338,6 +1339,49 @@ bool CReportEposDlgHelpers::CreateReport( int nReportType, int nConLevel, CStrin
 				if (TRUE == bResult)
 				{
 					pReport = new CEposReportPaymentDetail(m_SelectArray, infoReport.GetCustomReportParams());
+				}
+			}
+			break;
+
+			case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
+			{
+				if ((FALSE == bPrint) && (FALSE == bQuick))
+				{
+					CEposReportCustomSettingsPaymentSummary Settings;
+					CString strParams = infoReport.GetCustomReportParams();
+					Settings.SetSettingsCSVLine(strParams);
+
+					if (Settings.GetAllowAdhocFlag() == TRUE)
+					{
+						CEposReportCustomPaymentSummaryDlg dlg(m_EposReportSelect, infoReport, TRUE, m_pParentWnd);
+						if (dlg.DoModal() != IDOK)
+						{
+							bResult = FALSE;
+						}
+					}
+				}
+
+				if (TRUE == bResult)
+				{
+					CEposReportCustomSettingsPaymentSummary Settings;
+					CString strParams = infoReport.GetCustomReportParams();
+					Settings.SetSettingsCSVLine(strParams);
+
+					switch (Settings.GetReportSubType())
+					{
+					case 1:
+						pReport = new CEposReportPaymentServer(m_SelectArray, infoReport.GetCustomReportParams());
+						break;
+
+					case 2:
+						pReport = new CEposReportPaymentReportGroup(m_SelectArray, infoReport.GetCustomReportParams());
+						break;
+
+					case 0:
+					default:
+						pReport = new CEposReportPaymentSummary(m_SelectArray, infoReport.GetCustomReportParams());
+						break;
+					}
 				}
 			}
 			break;

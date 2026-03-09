@@ -18,6 +18,7 @@ public:
 protected:
 	void ConsolidatePaymentBuffer( bool bGotDepositItem, bool bGotNormalItem, bool bGotCustomerRAItem, bool bGotRoomRAItem, bool bGotLoyaltyRAItem, bool bGotSmartPayRAItem, bool bGotSmartPhoneRAItem, bool bGotSptBookRA );
 	void ConsolidatePayment( int nType, int nSubType, CEposReportConsolPaySum& infoConsol );
+	void ConsolidatePaymentInternal(int nType, int nDataBlock, CEposReportConsolPaySum& infoConsol);
 	void ConsolidatePaymentsForCashSummary( CReportConsolidationArray<CEposReportConsolPaySum>& source, CReportConsolidationArray<CEposReportConsolPaySum>& dest );
 	
 protected:
@@ -25,6 +26,7 @@ protected:
 	void ConsolidatePaidOut( int nSubType, __int64 nValue );
 	void ConsolidateNet( int nSubType, __int64 nValue );
 	void ConsolidateOneVal( int nType, int nSubType, __int64 nValue );
+	void ConsolidateOneValInternal(int nType, int nDataBlock, CEposReportConsolPaySumOneVal& infoConsol);
 
 protected:
 	void ConsolidatePaidInTotalCash( __int64 nValue );
@@ -32,6 +34,7 @@ protected:
 	void ConsolidatePaidOutTotalCash( __int64 nValue );
 	void ConsolidatePaidOutTotalNonCash( __int64 nValue );
 	void ConsolidatePayIOTotal( int nType, __int64 nValue );
+	void ConsolidatePayIOTotalInternal(int nType, int nDataBlock, int nValue);
 
 protected:
 	void ConsolidateDepositRA( double dValue );
@@ -43,6 +46,7 @@ protected:
 	void ConsolidateSmartPhoneRA( double dValue );
 	void ConsolidateSptBookRA( double dValue );
 	void ConsolidateRA( int nType, double dValue );
+	void ConsolidateRAInternal(int nType, int nDataBlock, double dValue);
 	
 protected:
 	void CreateSalesSection( CEposReportPaySumBlock& Block );
@@ -75,6 +79,9 @@ protected:
 	void InitialiseConsolidationBlocksStageTwo();
 
 protected:
+	int GetDateBlockIndex(int nMainBlockIndex, const CString strDate);
+		
+protected:
 	CStringArray m_arrayPaymentBuffer;
 	CStringArray m_arrayPaidIOBuffer;
 
@@ -87,6 +94,13 @@ protected:
 	CEposReportBlockMap m_BlockMap;
 	CArray<CEposReportPaySumBlock,CEposReportPaySumBlock> m_arrayReportBlocks;
 	CArray<int,int> m_arrayTerminalBlocks;
+
+protected:
+	CReportConsolidationArray<CEposReportPaymentSummaryDateBlockIndex> m_arrayDateBlockIndex;
+	CString m_strCurrentTransactionDate = "";
+
+protected:
+	CEposReportCustomSettingsPaymentSummary m_ReportSettings;
 };
 
 /**********************************************************************/

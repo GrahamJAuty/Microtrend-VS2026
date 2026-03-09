@@ -77,6 +77,26 @@ public:
 
 /**********************************************************************/
 
+struct CEposReportPaymentSummaryDateBlockIndex
+{
+public:
+	CEposReportPaymentSummaryDateBlockIndex();
+	void Reset();
+
+public:
+	int Compare(CEposReportPaymentSummaryDateBlockIndex& source, int nHint = 0);
+	void Add(CEposReportPaymentSummaryDateBlockIndex& source);
+
+public:
+	int m_nBaseBlockIdx;
+	CString m_strDate;
+
+public:
+	int m_nDateBlockIdx;
+};
+
+/**********************************************************************/
+
 struct CEposReportConsolServerBlockMap
 {
 public:
@@ -101,45 +121,49 @@ struct CEposReportPaySumBlock : public CEposReportBlockMapEntity
 public:
 	bool GotData();
 	__int64 GetLineCount();
+	void PrepareForUse();
 
 public:
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsAll;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsItem;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsAccount;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsDeposit;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsCustomer;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsRoom;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsLoyalty;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsSmartPay;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsSmartPhone;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsSptBook;
-	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsMixed;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsAll = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsItem = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsAccount = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsDeposit = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsCustomer = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsRoom = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsLoyalty = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsSmartPay = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsSmartPhone = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsSptBook = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySum>* m_pPaymentsMixed = nullptr;
 	
-	CReportConsolidationArray<CEposReportConsolPaySumOneVal>* m_pPaidIn;
-	CReportConsolidationArray<CEposReportConsolPaySumOneVal>* m_pPaidOut;
-	CReportConsolidationArray<CEposReportConsolPaySumOneVal>* m_pNet;
+	CReportConsolidationArray<CEposReportConsolPaySumOneVal>* m_pPaidIn = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySumOneVal>* m_pPaidOut = nullptr;
+	CReportConsolidationArray<CEposReportConsolPaySumOneVal>* m_pNet = nullptr;
 	
-	bool m_bGotPaidIOTotal;
-	__int64 m_nPaidInTotalCash;
-	__int64 m_nPaidInTotalNonCash;
-	__int64 m_nPaidOutTotalCash;
-	__int64 m_nPaidOutTotalNonCash;
+	bool m_bGotPaidIOTotal = FALSE;
+	__int64 m_nPaidInTotalCash = 0;
+	__int64 m_nPaidInTotalNonCash = 0;
+	__int64 m_nPaidOutTotalCash = 0;
+	__int64 m_nPaidOutTotalNonCash = 0;
 	
-	bool m_bGotDepositRA;
-	bool m_bGotCustomerRA;
-	bool m_bGotRoomRA;
-	bool m_bGotLoyaltyRA;
-	bool m_bGotSmartPayRA;
-	bool m_bGotSmartPhoneRA;
-	bool m_bGotSptBookRA;
-	double m_dDepositRA;
-	double m_dDepositRefund;
-	double m_dCustomerRA;
-	double m_dRoomRA;
-	double m_dLoyaltyRA;
-	double m_dSmartPayRA;
-	double m_dSmartPhoneRA;
-	double m_dSptBookRA;
+	bool m_bGotDepositRA = FALSE;
+	bool m_bGotCustomerRA = FALSE;
+	bool m_bGotRoomRA = FALSE;
+	bool m_bGotLoyaltyRA = FALSE;
+	bool m_bGotSmartPayRA = FALSE;
+	bool m_bGotSmartPhoneRA = FALSE;
+	bool m_bGotSptBookRA = FALSE;
+	double m_dDepositRA = 0.0;
+	double m_dDepositRefund = 0.0;
+	double m_dCustomerRA = 0.0;
+	double m_dRoomRA = 0.0;
+	double m_dLoyaltyRA = 0.0;
+	double m_dSmartPayRA = 0.0;
+	double m_dSmartPhoneRA = 0.0;
+	double m_dSptBookRA = 0.0;
+
+private:
+	bool m_bDonePrepareForUse = FALSE;
 };
 
 /**********************************************************************/

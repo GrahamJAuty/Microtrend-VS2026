@@ -4,9 +4,7 @@
 #include "PosTrayTask.h"
 #include "PosTrayEposConsolParamsInfo.h"
 #include "ReportConsolidationArray.h"
-/**********************************************************************/
- 
-/**********************************************************************/
+ /**********************************************************************/
 #define EPOS_CUSTOM_FAMILY_NONE 0
 #define EPOS_CUSTOM_FAMILY_GENERAL 1
 #define EPOS_CUSTOM_FAMILY_TRANSACTION 2
@@ -22,6 +20,7 @@
 #define EPOS_CUSTOM_FAMILY_LOYALTYRECON 12
 #define EPOS_CUSTOM_FAMILY_PAYMENTDETAIL 13
 #define EPOS_CUSTOM_FAMILY_PLU_PRICEBAND 14
+#define EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY 15
 /**********************************************************************/
 #define EPOS_CUSTOM_FIRST_REPORT 1000
 /**********************************************************************/

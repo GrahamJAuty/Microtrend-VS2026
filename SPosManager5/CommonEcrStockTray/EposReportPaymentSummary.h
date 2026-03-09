@@ -8,6 +8,7 @@ class CEposReportPaymentSummary : public CEposReportPaymentBase
 {
 public:
 	CEposReportPaymentSummary( CEposSelectArray& SelectArray );
+	CEposReportPaymentSummary(CEposSelectArray& SelectArray, const char* szCustomSettings);
 
 public:
 	virtual bool CreateGraph();

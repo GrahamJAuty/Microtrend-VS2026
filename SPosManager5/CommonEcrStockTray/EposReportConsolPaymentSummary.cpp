@@ -151,6 +151,52 @@ int CEposReportConsolServerBlockMap::Compare( CEposReportConsolServerBlockMap& s
 /**********************************************************************/
 /**********************************************************************/
 
+void CEposReportPaySumBlock::PrepareForUse()
+{
+	if (m_bDonePrepareForUse)
+	{
+		return;
+	}
+
+	m_pPaymentsAll = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsItem = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsAccount = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsDeposit = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsCustomer = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsRoom = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsLoyalty = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsSmartPay = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsSmartPhone = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsSptBook = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaymentsMixed = new CReportConsolidationArray<CEposReportConsolPaySum>;
+	m_pPaidIn = new CReportConsolidationArray<CEposReportConsolPaySumOneVal>;
+	m_pPaidOut = new CReportConsolidationArray<CEposReportConsolPaySumOneVal>;
+	m_pNet = new CReportConsolidationArray<CEposReportConsolPaySumOneVal>;
+
+	m_bGotPaidIOTotal = FALSE;
+	m_nPaidInTotalCash = 0;
+	m_nPaidInTotalNonCash = 0;
+	m_nPaidOutTotalCash = 0;
+	m_nPaidOutTotalNonCash = 0;
+
+	m_bGotDepositRA = FALSE;
+	m_bGotCustomerRA = FALSE;
+	m_bGotRoomRA = FALSE;
+	m_bGotLoyaltyRA = FALSE;
+	m_dDepositRA = 0.0;
+	m_dDepositRefund = 0.0;
+	m_dCustomerRA = 0.0;
+	m_dRoomRA = 0.0;
+	m_dLoyaltyRA = 0.0;
+	m_dSmartPayRA = 0.0;
+	m_dSmartPhoneRA = 0.0;
+	m_dSptBookRA = 0.0;
+
+	m_bDonePrepareForUse = TRUE;
+}
+
+/**********************************************************************/
+
 bool CEposReportPaySumBlock::GotData()
 {
 	return ( GetLineCount() != 0 );
@@ -183,5 +229,41 @@ __int64 CEposReportPaySumBlock::GetLineCount()
 
 /**********************************************************************/
 /**********************************************************************/
+/**********************************************************************/
+
+CEposReportPaymentSummaryDateBlockIndex::CEposReportPaymentSummaryDateBlockIndex()
+{
+	Reset();
+}
+
+/**********************************************************************/
+
+void CEposReportPaymentSummaryDateBlockIndex::Reset()
+{
+	m_nBaseBlockIdx = 0;
+	m_strDate = "";
+	m_nDateBlockIdx = 0;
+}
+
+/**********************************************************************/
+
+void CEposReportPaymentSummaryDateBlockIndex::Add( CEposReportPaymentSummaryDateBlockIndex& source )
+{
+}
+
+/**********************************************************************/
+
+int CEposReportPaymentSummaryDateBlockIndex::Compare( CEposReportPaymentSummaryDateBlockIndex& source, int nHint )
+{
+	if ( m_nBaseBlockIdx != source.m_nBaseBlockIdx )
+		return ( ( m_nBaseBlockIdx > source.m_nBaseBlockIdx ) ? 1 : -1 );
+
+	if ( m_strDate != source.m_strDate )
+		return ( ( m_strDate > source.m_strDate ) ? 1 : -1 );
+
+	else
+		return 0;
+}
+
 /**********************************************************************/
 

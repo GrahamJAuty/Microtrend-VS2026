@@ -3409,6 +3409,9 @@
     <ClCompile Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\CommonEcrStock\EposReportCustomPaymentSummaryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClearHistoryPluDelivery.h">
@@ -6658,6 +6661,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\ThirdParty\SimpleXLSXWriter\Zip\zip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonEcrStock\EposReportCustomPaymentSummaryDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

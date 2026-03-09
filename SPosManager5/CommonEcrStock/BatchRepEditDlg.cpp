@@ -200,6 +200,7 @@ CBatchRepEditDlg::CBatchRepEditDlg(CPresetReportInfo& BatchRecord, CWnd* pParent
 			case EPOS_CUSTOM_FAMILY_COVERS_HOURLYDPT:
 			case EPOS_CUSTOM_FAMILY_LOYALTYRECON:
 			case EPOS_CUSTOM_FAMILY_PAYMENTDETAIL:
+			case EPOS_CUSTOM_FAMILY_PAYMENTSUMMARY:
 			case EPOS_CUSTOM_FAMILY_PLU_PRICEBAND:
 				bAcceptType = (SysInfo.IsEcrLiteSystem() == FALSE);
 				break;

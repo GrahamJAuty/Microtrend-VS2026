@@ -699,6 +699,7 @@
     <ClCompile Include="..\CommonEcrStock\EposReportCustomMixMatchDlg.cpp" />
     <ClCompile Include="..\CommonEcrStock\EposReportCustomNewDlg.cpp" />
     <ClCompile Include="..\CommonEcrStock\EposReportCustomPaymentDetailDlg.cpp" />
+    <ClCompile Include="..\CommonEcrStock\EposReportCustomPaymentSummaryDlg.cpp" />
     <ClCompile Include="..\CommonEcrStock\EposReportCustomPluPriceBandDlg.cpp" />
     <ClCompile Include="..\CommonEcrStock\EposReportCustomTransactionDlg.cpp" />
     <ClCompile Include="..\CommonEcrStock\EposReportSelectNewDlg.cpp" />
@@ -2128,6 +2129,7 @@
     <ClInclude Include="..\CommonEcrStock\EposReportCustomMixMatchDlg.h" />
     <ClInclude Include="..\CommonEcrStock\EposReportCustomNewDlg.h" />
     <ClInclude Include="..\CommonEcrStock\EposReportCustomPaymentDetailDlg.h" />
+    <ClInclude Include="..\CommonEcrStock\EposReportCustomPaymentSummaryDlg.h" />
     <ClInclude Include="..\CommonEcrStock\EposReportCustomPluPriceBandDlg.h" />
     <ClInclude Include="..\CommonEcrStock\EposReportCustomTransactionDlg.h" />
     <ClInclude Include="..\CommonEcrStock\EposReportSelectNewDlg.h" />
