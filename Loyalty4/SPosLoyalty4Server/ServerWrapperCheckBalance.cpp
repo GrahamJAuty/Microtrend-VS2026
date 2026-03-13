@@ -94,6 +94,8 @@ void CServerWrapper::RequestCheckBalance()
 			m_LoyReqTidyUpThreadManager.CheckThread(FolderSetIndex);
 		}
 	}
+
+	m_SocketThreadManager.CleanUpWorkerThreads();
 }
 
 //**********************************************************************

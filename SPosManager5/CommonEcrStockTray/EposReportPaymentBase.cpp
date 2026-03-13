@@ -279,9 +279,9 @@ void CEposReportPaymentBase::Consolidate()
 				{
 				case CASHRSP_LINETYPE_TRAN_NORMAL:
 					{
-						ConsolidatePaymentBuffer( bGotDepositItem, bGotNormalItem, bGotCustomerRAItem, bGotRoomRAItem, bGotLoyaltyRAItem, bGotSmartPayRAItem, bGotSmartPhoneRAItem, bGotSptBookRAItem );
+						ConsolidatePaymentBuffer(bGotDepositItem, bGotNormalItem, bGotCustomerRAItem, bGotRoomRAItem, bGotLoyaltyRAItem, bGotSmartPayRAItem, bGotSmartPhoneRAItem, bGotSptBookRAItem);
 						m_CashRSPVersionChecker.ApplyPendingTransactionInfo();
-							
+
 						bInclude = FALSE;
 						bGotDepositItem = FALSE;
 						bGotNormalItem = FALSE;
@@ -291,16 +291,17 @@ void CEposReportPaymentBase::Consolidate()
 						bGotSmartPayRAItem = FALSE;
 						bGotSmartPhoneRAItem = FALSE;
 						bGotSptBookRAItem = FALSE;
+						m_strCurrentTransactionDate = "";
 
-						SetConsolidationServer( nDbIdx, infoFile.m_nLocIdx, csvIn.GetTransactionServer() );
+						SetConsolidationServer(nDbIdx, infoFile.m_nLocIdx, csvIn.GetTransactionServer());
 
 						CString strCheckDate = "";
+						CString strCheckTime = "";
 						bool bAcceptDateTime = FALSE;
 
-						if ( ( TRUE == bIsPMSLocation ) && ( m_PMSModes.GetDateMode() == PMS_DATEMODE_ACCOUNT ) )
+						if ((TRUE == bIsPMSLocation) && (m_PMSModes.GetDateMode() == PMS_DATEMODE_ACCOUNT))
 						{
-							strCheckDate = infoFile.m_strDateTran;
-							bAcceptDateTime = TRUE;
+							m_PMSModes.GetPMSTransactionDate(TRUE, infoFile, strCheckDate, strCheckTime);
 						}
 						else
 						{
@@ -317,89 +318,36 @@ void CEposReportPaymentBase::Consolidate()
 								(const char*)strDate.Mid(3, 2),
 								(const char*)strDate.Left(2));
 
-							CString strCheckTime;
 							strCheckTime.Format("%s%s%s",
 								(const char*)strTime.Left(2),
 								(const char*)strTime.Mid(3, 2),
 								(const char*)strTime.Right(2));
-
-							if (m_ReportSettings.GetSeparateByDateFlag() == FALSE )
-							{
-								m_strCurrentTransactionDate = "";
-								bAcceptDateTime = SimpleTimeCheck ( infoFile.m_nLocIdx, strCheckDate, strCheckTime );
-							}
-							else if (FALSE == m_bEODMode)
-							{
-								bAcceptDateTime = FALSE;
-								m_strCurrentTransactionDate = "";
-
-								switch (DataManagerNonDb.SessionDateTimeFilter.CheckTime(strCheckDate, strCheckTime))
-								{
-								case 1:
-									bAcceptDateTime = TRUE;
-									m_strCurrentTransactionDate = strCheckDate;
-									break;
-
-								case 2:
-									{
-										COleDateTime dateCheck;
-										CString strDateTime = strCheckDate + "120000";
-										if (GetOleDateFromString(strDateTime, dateCheck) == TRUE)
-										{
-											bAcceptDateTime = TRUE;
-											dateCheck -= COleDateTimeSpan(1, 0, 0, 0);
-											GetStringFromOleDate(dateCheck, m_strCurrentTransactionDate);
-											m_strCurrentTransactionDate = m_strCurrentTransactionDate.Left(8);
-										}
-									}
-									break;
-
-								case 3:
-									{
-										COleDateTime dateCheck;
-										CString strDateTime = strCheckDate + "120000";
-										if (GetOleDateFromString(strDateTime, dateCheck) == TRUE)
-										{
-											bAcceptDateTime = TRUE;
-											dateCheck -= COleDateTimeSpan(2, 0, 0, 0);
-											GetStringFromOleDate(dateCheck, m_strCurrentTransactionDate);
-											m_strCurrentTransactionDate = m_strCurrentTransactionDate.Left(8);
-										}
-									}
-									break;
-								}
-							}
-							else
-							{
-								CString strDateTime = strCheckDate + strCheckTime;
-								if (DataManagerNonDb.EODDateTimeFilterArray.CheckTime(infoFile.m_nLocIdx, strDateTime) == TRUE)
-								{
-									bAcceptDateTime = TRUE;
-									
-									CSortedDateTimeItem dateTimeItem;
-									DataManagerNonDb.EODDateTimeFilterArray.GetBusinessDay(infoFile.m_nLocIdx, strDateTime, dateTimeItem);
-									m_strCurrentTransactionDate = dateTimeItem.m_strDateTime.Left(8);
-								}
-								else
-								{
-									bAcceptDateTime = FALSE;
-									m_strCurrentTransactionDate = "";	
-								}
-							}
 						}
 
-						if ( TRUE == bAcceptDateTime )
+						CBusinessDateInfo businessDateInfo;
+						bAcceptDateTime = businessDateInfo.ValidateBusinessDate(infoFile.m_nLocIdx, m_bEODMode, strCheckDate, strCheckTime);
+
+						if (TRUE == bAcceptDateTime)
 						{
+							if (m_ReportSettings.GetSeparateByDateFlag() == TRUE)
+							{
+								COleDateTime oleDate = businessDateInfo.GetBusinessDate();
+								m_strCurrentTransactionDate.Format("%4.4d%2.2d%2.2d",
+									oleDate.GetYear(),
+									oleDate.GetMonth(),
+									oleDate.GetDay());
+							}
+
 							bInclude = TRUE;
 
-							COleDateTime oleDate = COleDateTime (
+							COleDateTime oleDate = COleDateTime(
 								atoi(strCheckDate.Left(4)),
-								atoi(strCheckDate.Mid(4,2)),
+								atoi(strCheckDate.Mid(4, 2)),
 								atoi(strCheckDate.Right(2)),
-								0, 0, 0 );
+								0, 0, 0);
 
-							m_SelectArray.ProcessStartDate ( infoFile.m_nSelectArrayIdx, oleDate );
-							m_SelectArray.ProcessEndDate( infoFile.m_nSelectArrayIdx, oleDate );
+							m_SelectArray.ProcessStartDate(infoFile.m_nSelectArrayIdx, oleDate);
+							m_SelectArray.ProcessEndDate(infoFile.m_nSelectArrayIdx, oleDate);
 						}
 					}
 					break;

@@ -131,6 +131,8 @@ void CServerWrapper::InitSystem( bool bForce )
 
 	//HOLDING FOLDER FOR LOG FILES
 	Filenames.CreateLogBufferFolder();
+
+	m_SocketThreadManager.StartListenerThread();
 }
 
 //*****************************************************************
@@ -407,6 +409,7 @@ void CServerWrapper::ShutdownThreads()
 	m_LoyReqThreadManager.ShutdownThreads();
 	m_LoyRspThreadManager.ShutdownThreads();
 	m_LoyLogThreadManager.ShutdownThreads();
+	m_SocketThreadManager.ShutdownThreads();
 }
 
 //*******************************************************************

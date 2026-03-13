@@ -447,6 +447,15 @@
     <ClInclude Include="..\SPosLoyalty4Shared\IDatabase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SocketListenerThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketThreadManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketWorkerThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -876,6 +885,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\SPosLoyalty4Shared\SolutionGlobalFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketListenerThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketThreadManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketWorkerThread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

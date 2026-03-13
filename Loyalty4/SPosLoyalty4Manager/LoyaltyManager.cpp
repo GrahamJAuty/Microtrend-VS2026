@@ -79,11 +79,65 @@ END_MESSAGE_MAP()
 //******************************************************************
 // CLoyaltyManagerApp construction
 
+
+#include "CkSocket.h"
+#include <thread>
+#include <iostream>
+
+void runClient1()
+{
+	// Give the server a moment to start.
+	std::this_thread::sleep_for(std::chrono::milliseconds(200));
+
+	CkSocket client;
+
+	bool success = client.Connect("localhost", 5555, false, 5000);
+	if (!success) {
+		TRACE("\n");
+		TRACE("Client: Connect failed: ");
+		TRACE(client.lastErrorText());
+		TRACE("\n");
+		return;
+	}
+
+	TRACE("\n");
+	TRACE("Client: Connected.\n");
+
+	client.SendString("Hello World ##END");
+}
+
+void runClient2()
+{
+	// Give the server a moment to start.
+	std::this_thread::sleep_for(std::chrono::milliseconds(200));
+
+	CkSocket client;
+
+	bool success = client.Connect("localhost", 5555, false, 5000);
+	if (!success) {
+		TRACE("\n");
+		TRACE("Client: Connect failed: ");
+		TRACE(client.lastErrorText());
+		TRACE("\n");
+		return;
+	}
+
+	TRACE("\n");
+	TRACE("Client: Connected.\n");
+
+	client.SendString("Raindrops keep falling on my head ##END");
+}
+
 CLoyaltyManagerApp::CLoyaltyManagerApp()
 {
 	CKUnlock();
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
+
+	std::thread client1(runClient1);
+	std::thread client2(runClient2);
+	client1.join();
+	client2.join();
 }
 
 //******************************************************************

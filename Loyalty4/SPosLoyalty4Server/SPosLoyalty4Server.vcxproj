@@ -255,6 +255,9 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ServerRegistration.h" />
     <ClInclude Include="ServerWrapper.h" />
+    <ClInclude Include="SocketListenerThread.h" />
+    <ClInclude Include="SocketThreadManager.h" />
+    <ClInclude Include="SocketWorkerThread.h" />
     <ClInclude Include="SPosLoyalty4Server.h" />
     <ClInclude Include="SQLStaffAccountBuffer.h" />
     <ClInclude Include="SQLTranMemberMojoImport.h" />
@@ -405,6 +408,9 @@
     <ClCompile Include="ServerWrapperRecon.cpp" />
     <ClCompile Include="ServerWrapperRegistration.cpp" />
     <ClCompile Include="ServerWrapperSearch.cpp" />
+    <ClCompile Include="SocketListenerThread.cpp" />
+    <ClCompile Include="SocketThreadManager.cpp" />
+    <ClCompile Include="SocketWorkerThread.cpp" />
     <ClCompile Include="SPosLoyalty4Server.cpp" />
     <ClCompile Include="SQLStaffAccountBuffer.cpp" />
     <ClCompile Include="SQLTranMemberMojoImport.cpp" />

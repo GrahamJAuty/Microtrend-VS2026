@@ -21,6 +21,7 @@
 #include "LoyReqTidyUpThreadManager.h"
 #include "LoyReqThreadManager.h"
 #include "LoyRspThreadManager.h"
+#include "SocketThreadManager.h"
 /**********************************************************************/
 #define RSPFILE_ERROR_NONE 0
 #define RSPFILE_ERROR_LEGACY 1
@@ -298,6 +299,7 @@ private:
 	ULONGLONG m_nLastPurgeTime;
 
 private:
+	CSocketThreadManager m_SocketThreadManager;
 	CLoyReqTidyUpThreadManager m_LoyReqTidyUpThreadManager;
 	CLoyReqThreadManager m_LoyReqThreadManager;
 	CLoyRspThreadManager m_LoyRspThreadManager;
